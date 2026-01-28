@@ -1613,7 +1613,7 @@ task.spawn(function()
         task.spawn(function()
             local s = tick()
             while IsIsolating and Toggled do
-                if (tick()-s > 5.5) or (not targetHum or targetHum.Health <= 0) or (not hum or hum.Health <= 0) then break end
+                if (tick()-s > 1.5) or (not targetHum or targetHum.Health <= 0) or (not hum or hum.Health <= 0) then break end
                 hrp.CFrame = CFrame.new(freezePos.X, HIDE_Y, freezePos.Z)
                 hrp.AssemblyLinearVelocity = Vector3.zero
                 RunService.Heartbeat:Wait()
@@ -1655,7 +1655,7 @@ task.spawn(function()
             for _, p in ipairs(Players:GetPlayers()) do
                 if p ~= LocalPlayer and p.Character then
                     local eHrp = p.Character:FindFirstChild("HumanoidRootPart")
-                    if eHrp and (eHrp.Position - cam.CFrame.Position).Magnitude < 120 then
+                    if eHrp and (eHrp.Position - cam.CFrame.Position).Magnitude < 50 then
                         if cam.CFrame.LookVector:Dot((eHrp.Position - cam.CFrame.Position).Unit) > 0.3 then
                             Start(p.Character:FindFirstChild("Humanoid"))
                             found = true break
@@ -2028,161 +2028,6 @@ task.spawn(function()
             -- 速度をゼロにして震えを抑える
             root.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
         end
-    end)
-end)
--- ==================================================
--- All-Z Fix (アンチコンボ単体実装)
--- ==================================================
-task.spawn(function()
-    local BF = (typeof(BloxFruitsTab) == "Instance" or typeof(BloxFruitsTab) == "userdata") and BloxFruitsTab or MainTab 
-    if not BF then return end
-
-    local LP = game:GetService("Players").LocalPlayer
-    local RS = game:GetService("RunService")
-    local UIS = game:GetService("UserInputService")
-    local Players = game:GetService("Players")
-
-    -- [[ 設定値 ]]
-    local HIDE_Y = -199996.48
-    local FLY_SPEED = 100
-    _G.AllZFixEnabled = false
-    local IsIsolating = false
-    local FakeCharacter = nil
-    local MoveConnection = nil
-
-    -- 復帰関数
-    local function ResetIsolation()
-        IsIsolating = false
-        if MoveConnection then MoveConnection:Disconnect() end
-        MoveConnection = nil
-        
-        local char = LP.Character
-        local hrp = char and char:FindFirstChild("HumanoidRootPart")
-
-        if FakeCharacter then
-            if hrp then hrp.CFrame = FakeCharacter.HumanoidRootPart.CFrame end
-            FakeCharacter:Destroy()
-            FakeCharacter = nil
-        end
-        
-        local cam = workspace.CurrentCamera
-        if char and char:FindFirstChild("Humanoid") then
-            cam.CameraType = Enum.CameraType.Custom
-            cam.CameraSubject = char.Humanoid
-        end
-    end
-
-    -- 隔離開始
-    local function StartIsolation(targetHum)
-        if IsIsolating or not _G.AllZFixEnabled then return end
-        IsIsolating = true
-        
-        local char = LP.Character
-        local hrp = char:FindFirstChild("HumanoidRootPart")
-        local hum = char:FindFirstChild("Humanoid")
-        local freezePos = hrp.Position
-
-        char.Archivable = true
-        FakeCharacter = char:Clone()
-        FakeCharacter.Parent = workspace
-        for _, v in ipairs(FakeCharacter:GetDescendants()) do
-            if v:IsA("BasePart") then v.CanCollide = false end
-        end
-        workspace.CurrentCamera.CameraSubject = FakeCharacter.Humanoid
-
-        -- 本体固定ループ (地底へ移動)
-        task.spawn(function()
-            while IsIsolating and _G.AllZFixEnabled and targetHum and targetHum.Health > 0 do
-                if not hum or hum.Health <= 0 then break end
-                hrp.CFrame = CFrame.new(freezePos.X, HIDE_Y, freezePos.Z)
-                hrp.AssemblyLinearVelocity = Vector3.zero
-                RS.Heartbeat:Wait()
-            end
-            ResetIsolation()
-        end)
-
-        -- 操作ロジック
-        local bv = Instance.new("BodyVelocity", FakeCharacter.HumanoidRootPart)
-        bv.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
-        local bg = Instance.new("BodyGyro", FakeCharacter.HumanoidRootPart)
-        bg.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
-
-        MoveConnection = RS.RenderStepped:Connect(function()
-            if not FakeCharacter then return end
-            local cam = workspace.CurrentCamera
-            local moveDir = hum.MoveDirection
-            local velocity = Vector3.zero
-
-            if moveDir.Magnitude > 0 then
-                velocity = (cam.CFrame.LookVector * -moveDir.Z) + (cam.CFrame.RightVector * moveDir.X)
-            end
-            if UIS:IsKeyDown(Enum.KeyCode.Space) then velocity += Vector3.new(0, 1, 0)
-            elseif UIS:IsKeyDown(Enum.KeyCode.LeftShift) then velocity += Vector3.new(0, -1, 0) end
-
-            if velocity.Magnitude > 0 then
-                bv.Velocity = velocity.Unit * FLY_SPEED
-            else
-                bv.Velocity = Vector3.zero
-                FakeCharacter.HumanoidRootPart.AssemblyLinearVelocity = Vector3.zero
-            end
-            bg.CFrame = cam.CFrame
-        end)
-    end
-
-    -- 【ダブル検知ロジック】
-    task.spawn(function()
-        while true do
-            if _G.AllZFixEnabled and not IsIsolating then
-                local char = LP.Character
-                local myHrp = char and char:FindFirstChild("HumanoidRootPart")
-                if char then
-                    -- 1. Saishi-Z (アニメーション)
-                    local hum = char:FindFirstChild("Humanoid")
-                    local isSaishiZ = false
-                    if hum then
-                        for _, anim in pairs(hum:GetPlayingAnimationTracks()) do
-                            local name = anim.Name:lower()
-                            if ((name:find("z") and name:find("charge")) or name == "saddi_z_charge") and not name:find("x") then
-                                isSaishiZ = true; break
-                            end
-                        end
-                    end
-
-                    -- 2. Spikey-Z (TridentGrab)
-                    local grab = char:FindFirstChild("TridentGrabZ")
-
-                    if isSaishiZ then
-                        task.wait(0.2)
-                        for _, player in ipairs(Players:GetPlayers()) do
-                            if player ~= LP and player.Character then
-                                local eHrp = player.Character:FindFirstChild("HumanoidRootPart")
-                                local eHum = player.Character:FindFirstChild("Humanoid")
-                                if eHrp and eHum and myHrp and (eHrp.Position - myHrp.Position).Magnitude < 30 then
-                                    StartIsolation(eHum); break
-                                end
-                            end
-                        end
-                    elseif grab then
-                        for _, player in ipairs(Players:GetPlayers()) do
-                            if player ~= LP and player.Character then
-                                local eHrp = player.Character:FindFirstChild("HumanoidRootPart")
-                                local eHum = player.Character:FindFirstChild("Humanoid")
-                                if eHrp and eHum and (eHrp.Position - grab.Value).Magnitude < 30 then
-                                    StartIsolation(eHum); break
-                                end
-                            end
-                        end
-                    end
-                end
-            end
-            task.wait(0.1)
-        end
-    end)
-
-    -- UIトグル
-    CreateToggle(BF, "All-Z Fix (アンチコンボ)", false, function(state)
-        _G.AllZFixEnabled = state
-        if not state then ResetIsolation() end
     end)
 end)
 -- ==================================================
