@@ -1557,6 +1557,411 @@ end
 -- 変数定義（既存のコードにある場合は重複しても問題ありません）
 local LocalPlayer = game:GetService("Players").LocalPlayer
 -- ==================================================
+
+-- Blox Fruits: Z-Delay (Saishi長押し対策版)
+
+-- ==================================================
+
+task.spawn(function()
+
+    -- タブの特定
+
+    local BF = (typeof(BloxFruitsTab) == "Instance" or typeof(BloxFruitsTab) == "userdata") and BloxFruitsTab or MainTab 
+
+    if not BF then return end
+
+
+
+    local LP = game:GetService("Players").LocalPlayer
+
+    local RS = game:GetService("RunService")
+
+    local UIS = game:GetService("UserInputService")
+
+    local Players = game:GetService("Players")
+
+
+
+    -- [[ 設定値 ]]
+
+    local HIDE_Y = -199996.48
+
+    local FLY_SPEED = 100
+
+    _G.ZDelayEnabled = false
+
+    local IsIsolating = false
+
+    local ScanLock = false
+
+    local FakeCharacter = nil
+
+    local MoveConnection = nil
+
+
+
+    -- 復帰関数
+
+    local function ResetZDelay()
+
+        IsIsolating = false
+
+        if MoveConnection then MoveConnection:Disconnect() end
+
+        MoveConnection = nil
+
+        
+
+        local cam = workspace.CurrentCamera
+
+        cam.CameraType = Enum.CameraType.Custom
+
+        if LP.Character and LP.Character:FindFirstChild("Humanoid") then
+
+            cam.CameraSubject = LP.Character.Humanoid
+
+        end
+
+
+
+        if FakeCharacter then
+
+            local hrp = LP.Character and LP.Character:FindFirstChild("HumanoidRootPart")
+
+            if hrp and LP.Character.Humanoid.Health > 0 then 
+
+                hrp.CFrame = FakeCharacter.HumanoidRootPart.CFrame 
+
+            end
+
+            FakeCharacter:Destroy()
+
+            FakeCharacter = nil
+
+        end
+
+    end
+
+
+
+    -- 隔離（地底退避）開始
+
+    local function StartIsolation(targetHum)
+
+        if IsIsolating or not _G.ZDelayEnabled then return end
+
+        IsIsolating = true
+
+        
+
+        local char = LP.Character
+
+        local hrp = char:FindFirstChild("HumanoidRootPart")
+
+        local hum = char:FindFirstChild("Humanoid")
+
+        local freezePos = hrp.Position
+
+        
+
+        char.Archivable = true
+
+        FakeCharacter = char:Clone()
+
+        FakeCharacter.Parent = workspace
+
+        for _, v in ipairs(FakeCharacter:GetDescendants()) do 
+
+            if v:IsA("BasePart") then v.CanCollide = false end 
+
+        end
+
+        workspace.CurrentCamera.CameraSubject = FakeCharacter.Humanoid
+
+        
+
+        task.spawn(function()
+
+            local startTime = tick()
+
+            while IsIsolating and _G.ZDelayEnabled do
+
+                -- 6秒経過、ターゲット死亡、または自分が死亡した場合は終了
+
+                if (tick() - startTime > 6) or (not targetHum or targetHum.Health <= 0) or (not hum or hum.Health <= 0) then 
+
+                    break 
+
+                end
+
+                hrp.CFrame = CFrame.new(freezePos.X, HIDE_Y, freezePos.Z)
+
+                hrp.AssemblyLinearVelocity = Vector3.zero
+
+                RS.Heartbeat:Wait()
+
+            end
+
+            ResetZDelay()
+
+        end)
+
+
+
+        -- 偽キャラの操作
+
+        local bv = Instance.new("BodyVelocity", FakeCharacter.HumanoidRootPart)
+
+        bv.MaxForce = Vector3.new(1,1,1) * math.huge
+
+        local bg = Instance.new("BodyGyro", FakeCharacter.HumanoidRootPart)
+
+        bg.MaxTorque = Vector3.new(1,1,1) * math.huge
+
+
+
+        MoveConnection = RS.RenderStepped:Connect(function()
+
+            if not FakeCharacter then return end
+
+            local moveDir = hum.MoveDirection
+
+            local cam = workspace.CurrentCamera
+
+            local velocity = (cam.CFrame.LookVector * -moveDir.Z) + (cam.CFrame.RightVector * moveDir.X)
+
+            
+
+            if UIS:IsKeyDown(Enum.KeyCode.Space) then 
+
+                velocity += Vector3.new(0, 1, 0)
+
+            elseif UIS:IsKeyDown(Enum.KeyCode.LeftShift) then 
+
+                velocity += Vector3.new(0, -1, 0) 
+
+            end
+
+            
+
+            bv.Velocity = velocity.Magnitude > 0 and velocity.Unit * FLY_SPEED or Vector3.zero
+
+            bg.CFrame = cam.CFrame
+
+        end)
+
+    end
+
+
+
+    -- スキャン関数
+
+    local function AutoScan()
+
+        local cam = workspace.CurrentCamera
+
+        for _, p in ipairs(Players:GetPlayers()) do
+
+            if p ~= LP and p.Character then
+
+                local eHrp = p.Character:FindFirstChild("HumanoidRootPart")
+
+                if eHrp and (eHrp.Position - cam.CFrame.Position).Magnitude < 120 then
+
+                    if cam.CFrame.LookVector:Dot((eHrp.Position - cam.CFrame.Position).Unit) > 0.3 then
+
+                        StartIsolation(p.Character:FindFirstChild("Humanoid"))
+
+                        return true
+
+                    end
+
+                end
+
+            end
+
+        end
+
+        return false
+
+    end
+
+
+
+    -- 監視メインループ
+
+    task.spawn(function()
+
+        while true do
+
+            if _G.ZDelayEnabled and not IsIsolating and not ScanLock then
+
+                local char = LP.Character
+
+                local hum = char and char:FindFirstChild("Humanoid")
+
+                
+
+                if char and hum then
+
+                    local isZTriggered = false
+
+                    local playingTracks = hum:GetPlayingAnimationTracks()
+
+                    
+
+                    for _, anim in pairs(playingTracks) do
+
+                        local name = anim.Name:lower()
+
+                        -- Xを含まず、Z・Charge・Saddiが含まれる場合
+
+                        if not name:find("x") and (name:find("z") or name:find("charge") or name:find("saddi")) then
+
+                            isZTriggered = true
+
+                            break
+
+                        end
+
+                    end
+
+
+
+                    if not isZTriggered and char:FindFirstChild("TridentGrabZ") then
+
+                        isZTriggered = true
+
+                    end
+
+
+
+                    if isZTriggered then
+
+                        ScanLock = true
+
+                        task.wait(0.2) -- Saishi用のディレイ
+
+                        
+
+                        AutoScan()
+
+
+
+                        -- アニメーション停止まで待機（長押し対策）
+
+                        task.spawn(function()
+
+                            while true do
+
+                                local stillPlaying = false
+
+                                for _, a in pairs(hum:GetPlayingAnimationTracks()) do
+
+                                    local n = a.Name:lower()
+
+                                    if not n:find("x") and (n:find("z") or n:find("charge") or n:find("saddi")) then
+
+                                        stillPlaying = true; break
+
+                                    end
+
+                                end
+
+                                if not stillPlaying and not IsIsolating then break end
+
+                                task.wait(0.2)
+
+                            end
+
+                            task.wait(0.5) -- 余裕を持たせる
+
+                            ScanLock = false
+
+                        end)
+
+                    end
+
+                end
+
+            end
+
+            RS.Heartbeat:Wait()
+
+        end
+
+    end)
+
+
+
+    -- HUBへのUI登録
+
+    CreateToggle(BF, "Z-Delay (アンチコンボ改良版)", false, function(state)
+
+        _G.ZDelayEnabled = state
+
+        if not state then ResetZDelay() end
+
+    end)
+
+end)
+-- ==================================================
+-- Blox Fruits: Buso & Energy (Z-Delayと同じ形式)
+-- ==================================================
+task.spawn(function()
+    -- タブの特定 (お前のコードを完全継承)
+    local BF = (typeof(BloxFruitsTab) == "Instance" or typeof(BloxFruitsTab) == "userdata") and BloxFruitsTab or MainTab 
+    if not BF then return end
+
+    local LP = game:GetService("Players").LocalPlayer
+    local RS = game:GetService("RunService")
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local CollectionService = game:GetService("CollectionService")
+
+    -- リモート取得
+    local CommF = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("CommF_")
+
+    --------------------------------------------------
+    -- 1. Auto Buso Haki (自動武装)
+    --------------------------------------------------
+    _G.AutoBuso = false
+    -- お前がさっき見せた「CreateToggle(BF, ...)」の形式だ
+    CreateToggle(BF, "Auto Buso Haki", false, function(state)
+        _G.AutoBuso = state
+    end)
+
+    task.spawn(function()
+        while true do
+            task.wait(0.5)
+            if _G.AutoBuso then
+                pcall(function()
+                    local char = LP.Character
+                    if char and CollectionService:HasTag(char, "Buso") and not char:FindFirstChild("HasBuso") then
+                        CommF:InvokeServer("Buso")
+                    end
+                end)
+            end
+        end
+    end)
+
+    --------------------------------------------------
+    -- 2. Infinite Energy (無限エネルギー)
+    --------------------------------------------------
+    _G.InfiniteEnergy = false
+    CreateToggle(BF, "Infinite Energy", false, function(state)
+        _G.InfiniteEnergy = state
+    end)
+
+    RS.Heartbeat:Connect(function()
+        if _G.InfiniteEnergy then
+            local char = LP.Character
+            if char and char:FindFirstChild("Energy") then
+                char.Energy.Value = char.Energy.MaxValue
+            end
+        end
+    end)
+end)
+-- ==================================================
 -- Blox Fruits 機能まとめ (FastAttack統合 & エラー修正版)
 -- ==================================================
 task.spawn(function()
@@ -2254,4 +2659,3 @@ game:GetService("RunService").Stepped:Connect(function()
         end
     end
 end)
-
