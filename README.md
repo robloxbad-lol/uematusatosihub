@@ -1842,7 +1842,7 @@ task.spawn(function()
     end)
 end)
 -- ==================================================
--- Blox Fruits: Race V4 & Ability 統合セクション
+-- All-Z Fix (アンチコンボ単体実装)
 -- ==================================================
 task.spawn(function()
     local BF = (typeof(BloxFruitsTab) == "Instance" or typeof(BloxFruitsTab) == "userdata") and BloxFruitsTab or MainTab 
@@ -1850,85 +1850,234 @@ task.spawn(function()
 
     local LP = game:GetService("Players").LocalPlayer
     local RS = game:GetService("RunService")
-    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local UIS = game:GetService("UserInputService")
+    local Players = game:GetService("Players")
 
     -- [[ 設定値 ]]
-    _G.AutoRaceV4 = false
-    _G.AutoRaceAbility = false
+    local HIDE_Y = -199996.48
+    local FLY_SPEED = 100
+    _G.AllZFixEnabled = false
+    local IsIsolating = false
+    local FakeCharacter = nil
+    local MoveConnection = nil
+
+    -- 復帰関数
+    local function ResetIsolation()
+        IsIsolating = false
+        if MoveConnection then MoveConnection:Disconnect() end
+        MoveConnection = nil
+        
+        local char = LP.Character
+        local hrp = char and char:FindFirstChild("HumanoidRootPart")
+
+        if FakeCharacter then
+            if hrp then hrp.CFrame = FakeCharacter.HumanoidRootPart.CFrame end
+            FakeCharacter:Destroy()
+            FakeCharacter = nil
+        end
+        
+        local cam = workspace.CurrentCamera
+        if char and char:FindFirstChild("Humanoid") then
+            cam.CameraType = Enum.CameraType.Custom
+            cam.CameraSubject = char.Humanoid
+        end
+    end
+
+    -- 隔離開始
+    local function StartIsolation(targetHum)
+        if IsIsolating or not _G.AllZFixEnabled then return end
+        IsIsolating = true
+        
+        local char = LP.Character
+        local hrp = char:FindFirstChild("HumanoidRootPart")
+        local hum = char:FindFirstChild("Humanoid")
+        local freezePos = hrp.Position
+
+        char.Archivable = true
+        FakeCharacter = char:Clone()
+        FakeCharacter.Parent = workspace
+        for _, v in ipairs(FakeCharacter:GetDescendants()) do
+            if v:IsA("BasePart") then v.CanCollide = false end
+        end
+        workspace.CurrentCamera.CameraSubject = FakeCharacter.Humanoid
+
+        -- 本体固定ループ (地底へ移動)
+        task.spawn(function()
+            while IsIsolating and _G.AllZFixEnabled and targetHum and targetHum.Health > 0 do
+                if not hum or hum.Health <= 0 then break end
+                hrp.CFrame = CFrame.new(freezePos.X, HIDE_Y, freezePos.Z)
+                hrp.AssemblyLinearVelocity = Vector3.zero
+                RS.Heartbeat:Wait()
+            end
+            ResetIsolation()
+        end)
+
+        -- 操作ロジック
+        local bv = Instance.new("BodyVelocity", FakeCharacter.HumanoidRootPart)
+        bv.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+        local bg = Instance.new("BodyGyro", FakeCharacter.HumanoidRootPart)
+        bg.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
+
+        MoveConnection = RS.RenderStepped:Connect(function()
+            if not FakeCharacter then return end
+            local cam = workspace.CurrentCamera
+            local moveDir = hum.MoveDirection
+            local velocity = Vector3.zero
+
+            if moveDir.Magnitude > 0 then
+                velocity = (cam.CFrame.LookVector * -moveDir.Z) + (cam.CFrame.RightVector * moveDir.X)
+            end
+            if UIS:IsKeyDown(Enum.KeyCode.Space) then velocity += Vector3.new(0, 1, 0)
+            elseif UIS:IsKeyDown(Enum.KeyCode.LeftShift) then velocity += Vector3.new(0, -1, 0) end
+
+            if velocity.Magnitude > 0 then
+                bv.Velocity = velocity.Unit * FLY_SPEED
+            else
+                bv.Velocity = Vector3.zero
+                FakeCharacter.HumanoidRootPart.AssemblyLinearVelocity = Vector3.zero
+            end
+            bg.CFrame = cam.CFrame
+        end)
+    end
+
+    -- 【ダブル検知ロジック】
+    task.spawn(function()
+        while true do
+            if _G.AllZFixEnabled and not IsIsolating then
+                local char = LP.Character
+                local myHrp = char and char:FindFirstChild("HumanoidRootPart")
+                if char then
+                    -- 1. Saishi-Z (アニメーション)
+                    local hum = char:FindFirstChild("Humanoid")
+                    local isSaishiZ = false
+                    if hum then
+                        for _, anim in pairs(hum:GetPlayingAnimationTracks()) do
+                            local name = anim.Name:lower()
+                            if ((name:find("z") and name:find("charge")) or name == "saddi_z_charge") and not name:find("x") then
+                                isSaishiZ = true; break
+                            end
+                        end
+                    end
+
+                    -- 2. Spikey-Z (TridentGrab)
+                    local grab = char:FindFirstChild("TridentGrabZ")
+
+                    if isSaishiZ then
+                        task.wait(0.2)
+                        for _, player in ipairs(Players:GetPlayers()) do
+                            if player ~= LP and player.Character then
+                                local eHrp = player.Character:FindFirstChild("HumanoidRootPart")
+                                local eHum = player.Character:FindFirstChild("Humanoid")
+                                if eHrp and eHum and myHrp and (eHrp.Position - myHrp.Position).Magnitude < 30 then
+                                    StartIsolation(eHum); break
+                                end
+                            end
+                        end
+                    elseif grab then
+                        for _, player in ipairs(Players:GetPlayers()) do
+                            if player ~= LP and player.Character then
+                                local eHrp = player.Character:FindFirstChild("HumanoidRootPart")
+                                local eHum = player.Character:FindFirstChild("Humanoid")
+                                if eHrp and eHum and (eHrp.Position - grab.Value).Magnitude < 30 then
+                                    StartIsolation(eHum); break
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+            task.wait(0.1)
+        end
+    end)
+
+    -- UIトグル
+    CreateToggle(BF, "All-Z Fix (アンチコンボ)", false, function(state)
+        _G.AllZFixEnabled = state
+        if not state then ResetIsolation() end
+    end)
+end)
+-- ==================================================
+-- Blox Fruits: Race V4 & V3 分離セクション
+-- ==================================================
+task.spawn(function()
+    local BF = (typeof(BloxFruitsTab) == "Instance" or typeof(BloxFruitsTab) == "userdata") and BloxFruitsTab or MainTab 
+    if not BF then return end
+
+    local LP = game:GetService("Players").LocalPlayer
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local RS = game:GetService("RunService")
+
+    -- [[ 設定 ]]
+    _G.AutoRaceV4_Force = false
+    _G.AutoRaceV3_Ability = false
+    
     local AbilityCooldown = 0
     local RaceAbilities = {
         "Last Resort", "Agility", "Water Body", "Heavenly Blood",
         "Heightened Senses", "Energy Core", "Primordial Reign"
     }
 
-    -- アビリティを所持しているか確認する関数
-    local function HasRaceAbility()
+    local function HasAbility()
         local char = LP.Character
         if not char then return false end
         for _, v in ipairs(RaceAbilities) do
-            if LP.Backpack:FindFirstChild(v) or char:FindFirstChild(v) then
-                return true
-            end
+            if LP.Backpack:FindFirstChild(v) or char:FindFirstChild(v) then return true end
         end
         return false
     end
 
     --------------------------------------------------
-    -- 1. UI追加 (トグルボタン)
+    -- 1. UI追加 (2つのボタンに分離)
     --------------------------------------------------
-    CreateToggle(BF, "Auto Race V4 (自動変身)", false, function(v)
-        _G.AutoRaceV4 = v
+    CreateToggle(BF, "Auto Race V4 (強制変身)", false, function(v)
+        _G.AutoRaceV4_Force = v
     end)
 
-    CreateToggle(BF, "Auto Race Ability (スキル自動)", false, function(v)
-        _G.AutoRaceAbility = v
-    end)
-
-    --------------------------------------------------
-    -- 2. Auto Race V4 (変身ロジック)
-    --------------------------------------------------
-    task.spawn(function()
-        while task.wait(0.2) do
-            if _G.AutoRaceV4 then
-                pcall(function()
-                    local char = LP.Character
-                    local RaceEnergy = char and char:FindFirstChild("RaceEnergy")
-                    local RaceTransformed = char and char:FindFirstChild("RaceTransformed")
-
-                    if RaceEnergy and RaceTransformed then
-                        -- エナジーが溜まっていて、かつ変身していない場合に発動
-                        if RaceEnergy.Value >= 1 and not RaceTransformed.Value then
-                            ReplicatedStorage.Events.ActivateRaceV4:Fire()
-                        end
-                    end
-                end)
-            end
-        end
+    CreateToggle(BF, "Auto Race Ability (V3スキル連打)", false, function(v)
+        _G.AutoRaceV3_Ability = v
     end)
 
     --------------------------------------------------
-    -- 3. Auto Race Ability (スキル自動発動ロジック)
+    -- 2. 独立ロジック
     --------------------------------------------------
     RS.Heartbeat:Connect(function(dt)
-        if not _G.AutoRaceAbility then return end
-        
+        local char = LP.Character
+        if not char then return end
+
         pcall(function()
-            local char = LP.Character
-            local hum = char and char:FindFirstChildOfClass("Humanoid")
-            
-            if hum and hum.Health > 0 and HasRaceAbility() then
-                AbilityCooldown = AbilityCooldown - dt
-                if AbilityCooldown <= 0 then
-                    -- 種族アビリティの発動リモート
+            -- --- [ ボタン1: V4 強制変身 ] ---
+            if _G.AutoRaceV4_Force then
+                local energy = char:FindFirstChild("RaceEnergy")
+                if energy and energy.Value >= 1 then
+                    -- フラグ偽装
+                    local rt = char:FindFirstChild("RaceTransformed")
+                    if rt then rt.Value = false end
+                    
+                    -- 強制送信
                     ReplicatedStorage.Remotes.CommE:FireServer("ActivateAbility")
-                    AbilityCooldown = 0.2 -- 発動間隔
+                    
+                    local t = LP.Backpack:FindFirstChild("Awakening") or char:FindFirstChild("Awakening")
+                    if t and t:FindFirstChild("RemoteFunction") then 
+                        t.RemoteFunction:InvokeServer(true) 
+                    end
+                end
+            end
+
+            -- --- [ ボタン2: V3 スキル連打 ] ---
+            if _G.AutoRaceV3_Ability then
+                local hum = char:FindFirstChildOfClass("Humanoid")
+                if hum and hum.Health > 0 and HasAbility() then
+                    AbilityCooldown = AbilityCooldown - dt
+                    if AbilityCooldown <= 0 then
+                        -- スキル発動
+                        ReplicatedStorage.Remotes.CommE:FireServer("ActivateAbility")
+                        AbilityCooldown = 0.2
+                    end
                 end
             end
         end)
     end)
-
-end)
----------------------------------
+end)---------------------------------
 -- ⛵ BloxFruitsタブ：Boat Speed (100 - 500)
 ---------------------------------
 -- 1. 設定に追加
