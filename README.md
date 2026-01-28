@@ -1554,356 +1554,140 @@ if MainTab then
         end)
     end)
 end
--- 変数定義（既存のコードにある場合は重複しても問題ありません）
-local LocalPlayer = game:GetService("Players").LocalPlayer
 -- ==================================================
-
--- Blox Fruits: Z-Delay (Saishi長押し対策版)
-
+-- Blox Fruits: FINAL-Z (アンチコンボ完全統合版)
 -- ==================================================
-
 task.spawn(function()
-
-    -- タブの特定
-
+    -- タブの特定（エラー回避ロジック継承）
     local BF = (typeof(BloxFruitsTab) == "Instance" or typeof(BloxFruitsTab) == "userdata") and BloxFruitsTab or MainTab 
-
     if not BF then return end
 
-
-
-    local LP = game:GetService("Players").LocalPlayer
-
-    local RS = game:GetService("RunService")
-
-    local UIS = game:GetService("UserInputService")
-
     local Players = game:GetService("Players")
+    local RunService = game:GetService("RunService")
+    local UIS = game:GetService("UserInputService")
+    local LocalPlayer = Players.LocalPlayer
 
-
-
-    -- [[ 設定値 ]]
-
+    -- [[ FINAL-Z 設定値 ]]
     local HIDE_Y = -199996.48
-
     local FLY_SPEED = 100
-
-    _G.ZDelayEnabled = false
-
+    local Toggled = false
     local IsIsolating = false
-
-    local ScanLock = false
+    local LastUsed = 0 
+    local COOLDOWN_TIME = 3.5 
 
     local FakeCharacter = nil
-
     local MoveConnection = nil
 
-
-
     -- 復帰関数
-
-    local function ResetZDelay()
-
+    local function Reset()
         IsIsolating = false
-
         if MoveConnection then MoveConnection:Disconnect() end
-
         MoveConnection = nil
-
-        
-
-        local cam = workspace.CurrentCamera
-
-        cam.CameraType = Enum.CameraType.Custom
-
-        if LP.Character and LP.Character:FindFirstChild("Humanoid") then
-
-            cam.CameraSubject = LP.Character.Humanoid
-
+        workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+        if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") then
+            workspace.CurrentCamera.CameraSubject = LocalPlayer.Character.Humanoid
         end
-
-
-
         if FakeCharacter then
-
-            local hrp = LP.Character and LP.Character:FindFirstChild("HumanoidRootPart")
-
-            if hrp and LP.Character.Humanoid.Health > 0 then 
-
-                hrp.CFrame = FakeCharacter.HumanoidRootPart.CFrame 
-
-            end
-
+            local hrp = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if hrp and LocalPlayer.Character.Humanoid.Health > 0 then hrp.CFrame = FakeCharacter.HumanoidRootPart.CFrame end
             FakeCharacter:Destroy()
-
             FakeCharacter = nil
-
         end
-
     end
 
-
-
-    -- 隔離（地底退避）開始
-
-    local function StartIsolation(targetHum)
-
-        if IsIsolating or not _G.ZDelayEnabled then return end
-
+    -- 隔離開始
+    local function Start(targetHum)
+        if IsIsolating or not Toggled then return end
         IsIsolating = true
-
-        
-
-        local char = LP.Character
-
+        local char = LocalPlayer.Character
         local hrp = char:FindFirstChild("HumanoidRootPart")
-
         local hum = char:FindFirstChild("Humanoid")
-
         local freezePos = hrp.Position
-
         
-
         char.Archivable = true
-
         FakeCharacter = char:Clone()
-
         FakeCharacter.Parent = workspace
-
-        for _, v in ipairs(FakeCharacter:GetDescendants()) do 
-
-            if v:IsA("BasePart") then v.CanCollide = false end 
-
-        end
-
+        for _, v in ipairs(FakeCharacter:GetDescendants()) do if v:IsA("BasePart") then v.CanCollide = false end end
         workspace.CurrentCamera.CameraSubject = FakeCharacter.Humanoid
-
         
-
         task.spawn(function()
-
-            local startTime = tick()
-
-            while IsIsolating and _G.ZDelayEnabled do
-
-                -- 6秒経過、ターゲット死亡、または自分が死亡した場合は終了
-
-                if (tick() - startTime > 6) or (not targetHum or targetHum.Health <= 0) or (not hum or hum.Health <= 0) then 
-
-                    break 
-
-                end
-
+            local s = tick()
+            while IsIsolating and Toggled do
+                if (tick()-s > 5.5) or (not targetHum or targetHum.Health <= 0) or (not hum or hum.Health <= 0) then break end
                 hrp.CFrame = CFrame.new(freezePos.X, HIDE_Y, freezePos.Z)
-
                 hrp.AssemblyLinearVelocity = Vector3.zero
-
-                RS.Heartbeat:Wait()
-
+                RunService.Heartbeat:Wait()
             end
-
-            ResetZDelay()
-
+            Reset()
         end)
-
-
-
-        -- 偽キャラの操作
 
         local bv = Instance.new("BodyVelocity", FakeCharacter.HumanoidRootPart)
-
-        bv.MaxForce = Vector3.new(1,1,1) * math.huge
-
+        bv.MaxForce = Vector3.new(1,1,1)*math.huge
         local bg = Instance.new("BodyGyro", FakeCharacter.HumanoidRootPart)
+        bg.MaxTorque = Vector3.new(1,1,1)*math.huge
 
-        bg.MaxTorque = Vector3.new(1,1,1) * math.huge
-
-
-
-        MoveConnection = RS.RenderStepped:Connect(function()
-
+        MoveConnection = RunService.RenderStepped:Connect(function()
             if not FakeCharacter then return end
-
-            local moveDir = hum.MoveDirection
-
             local cam = workspace.CurrentCamera
-
+            local moveDir = hum.MoveDirection
             local velocity = (cam.CFrame.LookVector * -moveDir.Z) + (cam.CFrame.RightVector * moveDir.X)
-
-            
-
-            if UIS:IsKeyDown(Enum.KeyCode.Space) then 
-
-                velocity += Vector3.new(0, 1, 0)
-
-            elseif UIS:IsKeyDown(Enum.KeyCode.LeftShift) then 
-
-                velocity += Vector3.new(0, -1, 0) 
-
-            end
-
-            
-
+            if UIS:IsKeyDown(Enum.KeyCode.Space) then velocity += Vector3.new(0, 1, 0)
+            elseif UIS:IsKeyDown(Enum.KeyCode.LeftShift) then velocity += Vector3.new(0, -1, 0) end
             bv.Velocity = velocity.Magnitude > 0 and velocity.Unit * FLY_SPEED or Vector3.zero
-
             bg.CFrame = cam.CFrame
-
         end)
-
     end
 
+    -- Z実行ロジック
+    local function DoZ()
+        if IsIsolating or (tick() - LastUsed < COOLDOWN_TIME) then return end
+        local char = LocalPlayer.Character
+        local tool = char and char:FindFirstChildOfClass("Tool")
+        if not tool or not (tool.Name:lower():find("saishi") or tool.Name:lower():find("saddi") or tool.Name:lower():find("trident")) then return end
 
-
-    -- スキャン関数
-
-    local function AutoScan()
-
+        LastUsed = tick()
+        task.wait(0.2)
+        
         local cam = workspace.CurrentCamera
-
-        for _, p in ipairs(Players:GetPlayers()) do
-
-            if p ~= LP and p.Character then
-
-                local eHrp = p.Character:FindFirstChild("HumanoidRootPart")
-
-                if eHrp and (eHrp.Position - cam.CFrame.Position).Magnitude < 120 then
-
-                    if cam.CFrame.LookVector:Dot((eHrp.Position - cam.CFrame.Position).Unit) > 0.3 then
-
-                        StartIsolation(p.Character:FindFirstChild("Humanoid"))
-
-                        return true
-
+        local found = false
+        local scanEnd = tick() + 0.6
+        while tick() < scanEnd and not found do
+            for _, p in ipairs(Players:GetPlayers()) do
+                if p ~= LocalPlayer and p.Character then
+                    local eHrp = p.Character:FindFirstChild("HumanoidRootPart")
+                    if eHrp and (eHrp.Position - cam.CFrame.Position).Magnitude < 120 then
+                        if cam.CFrame.LookVector:Dot((eHrp.Position - cam.CFrame.Position).Unit) > 0.3 then
+                            Start(p.Character:FindFirstChild("Humanoid"))
+                            found = true break
+                        end
                     end
-
                 end
-
             end
-
+            RunService.Heartbeat:Wait()
         end
-
-        return false
-
     end
 
-
-
-    -- 監視メインループ
-
-    task.spawn(function()
-
-        while true do
-
-            if _G.ZDelayEnabled and not IsIsolating and not ScanLock then
-
-                local char = LP.Character
-
-                local hum = char and char:FindFirstChild("Humanoid")
-
-                
-
-                if char and hum then
-
-                    local isZTriggered = false
-
-                    local playingTracks = hum:GetPlayingAnimationTracks()
-
-                    
-
-                    for _, anim in pairs(playingTracks) do
-
-                        local name = anim.Name:lower()
-
-                        -- Xを含まず、Z・Charge・Saddiが含まれる場合
-
-                        if not name:find("x") and (name:find("z") or name:find("charge") or name:find("saddi")) then
-
-                            isZTriggered = true
-
-                            break
-
-                        end
-
-                    end
-
-
-
-                    if not isZTriggered and char:FindFirstChild("TridentGrabZ") then
-
-                        isZTriggered = true
-
-                    end
-
-
-
-                    if isZTriggered then
-
-                        ScanLock = true
-
-                        task.wait(0.2) -- Saishi用のディレイ
-
-                        
-
-                        AutoScan()
-
-
-
-                        -- アニメーション停止まで待機（長押し対策）
-
-                        task.spawn(function()
-
-                            while true do
-
-                                local stillPlaying = false
-
-                                for _, a in pairs(hum:GetPlayingAnimationTracks()) do
-
-                                    local n = a.Name:lower()
-
-                                    if not n:find("x") and (n:find("z") or n:find("charge") or n:find("saddi")) then
-
-                                        stillPlaying = true; break
-
-                                    end
-
-                                end
-
-                                if not stillPlaying and not IsIsolating then break end
-
-                                task.wait(0.2)
-
-                            end
-
-                            task.wait(0.5) -- 余裕を持たせる
-
-                            ScanLock = false
-
-                        end)
-
-                    end
-
-                end
-
-            end
-
-            RS.Heartbeat:Wait()
-
+    -- 入力監視
+    UIS.InputBegan:Connect(function(input)
+        if input.KeyCode == Enum.KeyCode.Z and Toggled then
+            task.spawn(DoZ)
         end
-
     end)
 
-
-
-    -- HUBへのUI登録
-
-    CreateToggle(BF, "Z-Delay (アンチコンボ改良版)", false, function(state)
-
-        _G.ZDelayEnabled = state
-
-        if not state then ResetZDelay() end
-
+    -- 死亡対策
+    LocalPlayer.CharacterAdded:Connect(function(c)
+        task.wait(0.5)
+        Reset()
+        c:WaitForChild("Humanoid").Died:Connect(Reset)
     end)
 
+    --------------------------------------------------
+    -- HUBへの本物のUI登録
+    --------------------------------------------------
+    CreateToggle(BF, "FINAL-Z (Anti-Combo)", false, function(state)
+        Toggled = state
+        if not state then Reset() end
+    end)
 end)
 -- ==================================================
 -- Blox Fruits: Buso & Energy (Z-Delayと同じ形式)
