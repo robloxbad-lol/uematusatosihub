@@ -2288,3 +2288,184 @@ game:GetService("RunService").Stepped:Connect(function()
         end
     end
 end)
+---------------------------------
+-- 🆕 Player Information (提供コードをそのまま実行)
+---------------------------------
+local PlayerInfoTab = CreateTab("Player Information")
+
+-- お前のコードをこのタブの中（親）として動かす設定
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+
+-- 除外リスト
+local ignoreList = {
+    ["Summon Sea Beast"] = true, ["Awakening"] = true, ["Tool"] = true,
+    ["Last Resort"] = true, ["Agility"] = true, ["Water Body"] = true,
+    ["Heavenly Blood"] = true, ["Heightened Senses"] = true,
+    ["Energy Core"] = true, ["Primordial Reign"] = true
+}
+local v3Skills = {"Last Resort", "Agility", "Water Body", "Heavenly Blood", "Heightened Senses", "Energy Core", "Primordial Reign"}
+
+-- [[ お前のコードをタブ内に配置 ]]
+-- 本来 ScreenGui だったものを、HUBのタブ（ScrollingFrameなど）の中に収まるように調整
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(1, -10, 0, 550) -- 横幅をタブに合わせる
+mainFrame.Position = UDim2.new(0, 5, 0, 5)
+mainFrame.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+mainFrame.Parent = PlayerInfoTab -- ここでタブに関連付け
+Instance.new("UICorner", mainFrame)
+
+-- ドラッグバー (タブ内なので一応残すが、固定も可能)
+local dragBar = Instance.new("Frame")
+dragBar.Size = UDim2.new(1, 0, 0, 50); dragBar.BackgroundColor3 = Color3.fromRGB(25, 25, 25); dragBar.Parent = mainFrame
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Size = UDim2.new(1, 0, 1, 0); titleLabel.BackgroundTransparency = 1; titleLabel.Text = "  PLAYER INTELLIGENCE (v3.5)"
+titleLabel.TextColor3 = Color3.new(1,1,1); titleLabel.Font = Enum.Font.SourceSansBold; titleLabel.TextSize = 18; titleLabel.TextXAlignment = Enum.TextXAlignment.Left; titleLabel.Parent = dragBar
+
+local scrollFrame = Instance.new("ScrollingFrame")
+scrollFrame.Size = UDim2.new(1, -15, 1, -65); scrollFrame.Position = UDim2.new(0, 7, 0, 55); scrollFrame.BackgroundTransparency = 1
+scrollFrame.CanvasSize = UDim2.new(0, 0, 0, 0); scrollFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y; scrollFrame.ScrollBarThickness = 5; scrollFrame.Parent = mainFrame
+Instance.new("UIListLayout", scrollFrame).Padding = UDim.new(0, 8)
+
+-- 以降、お前のロジックを100%継承
+local function findSmartData(player, key)
+    local attr = player:GetAttribute(key)
+    if attr ~= nil then return tostring(attr) end
+    local success, prop = pcall(function() return player[key] end)
+    if success and prop ~= nil then return tostring(prop) end
+    local folders = {player:FindFirstChild("Data"), player:FindFirstChild("leaderstats"), player}
+    for _, f in pairs(folders) do
+        if f then
+            local obj = f:FindFirstChild(key)
+            if obj and obj:IsA("ValueBase") then return tostring(obj.Value) end
+        end
+    end
+    return "Not Found"
+end
+
+local function getDeepStat(player, statName)
+    local d = player:FindFirstChild("Data")
+    if d and d:FindFirstChild("Stats") then
+        local cat = d.Stats:FindFirstChild(statName)
+        if cat then
+            local l = cat:FindFirstChild("Level")
+            return l and tostring(l.Value) or (cat:IsA("ValueBase") and tostring(cat.Value) or "0")
+        end
+    end
+    return "0"
+end
+
+local function getRaceVersion(player)
+    local bp = player:FindFirstChild("Backpack")
+    local ch = player.Character
+    local function h(n) return (bp and bp:FindFirstChild(n)) or (ch and ch:FindFirstChild(n)) end
+    if h("Awakening") then return "v4" end
+    for _, s in ipairs(v3Skills) do if h(s) then return "v3" end end
+    return "v1/v2"
+end
+
+local function createPlayerEntry(player)
+    if scrollFrame:FindFirstChild(player.Name) then return end
+    
+    local container = Instance.new("Frame")
+    container.Name = player.Name; container.Size = UDim2.new(1, -5, 0, 65); container.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+    container.ClipsDescendants = true; container.Parent = scrollFrame; Instance.new("UICorner", container)
+
+    local mainBtn = Instance.new("TextButton")
+    mainBtn.Size = UDim2.new(1, 0, 0, 65); mainBtn.BackgroundTransparency = 1; mainBtn.Text = ""; mainBtn.Parent = container
+
+    local img = Instance.new("ImageLabel")
+    img.Size = UDim2.new(0, 55, 0, 55); img.Position = UDim2.new(0, 5, 0, 5); img.BackgroundTransparency = 1; img.Parent = mainBtn
+    task.spawn(function() img.Image = Players:GetUserThumbnailAsync(player.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size100x100) end)
+
+    local nameLabel = Instance.new("TextLabel")
+    nameLabel.Size = UDim2.new(1, -70, 0, 25); nameLabel.Position = UDim2.new(0, 70, 0, 5); nameLabel.BackgroundTransparency = 1
+    nameLabel.Text = player.DisplayName; nameLabel.Font = Enum.Font.SourceSansBold; nameLabel.TextSize = 16; nameLabel.TextXAlignment = Enum.TextXAlignment.Left; nameLabel.Parent = mainBtn
+
+    local statsLabel = Instance.new("TextLabel")
+    statsLabel.Size = UDim2.new(1, -70, 0, 20); statsLabel.Position = UDim2.new(0, 70, 0, 30); statsLabel.BackgroundTransparency = 1
+    statsLabel.TextColor3 = Color3.fromRGB(0, 200, 255); statsLabel.TextSize = 13; statsLabel.TextXAlignment = Enum.TextXAlignment.Left; statsLabel.Font = Enum.Font.SourceSansBold; statsLabel.Parent = mainBtn
+
+    local fragLabelShort = Instance.new("TextLabel")
+    fragLabelShort.Size = UDim2.new(1, -70, 0, 15); fragLabelShort.Position = UDim2.new(0, 70, 0, 45); fragLabelShort.BackgroundTransparency = 1
+    fragLabelShort.TextColor3 = Color3.fromRGB(255, 85, 255); fragLabelShort.TextSize = 12; fragLabelShort.TextXAlignment = Enum.TextXAlignment.Left; fragLabelShort.Font = Enum.Font.SourceSansBold; fragLabelShort.Parent = mainBtn
+
+    local detailArea = Instance.new("ScrollingFrame")
+    detailArea.Size = UDim2.new(1, -10, 0, 320); detailArea.Position = UDim2.new(0, 5, 0, 75); detailArea.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    detailArea.CanvasSize = UDim2.new(0,0,0,0); detailArea.AutomaticCanvasSize = Enum.AutomaticSize.Y; detailArea.ScrollBarThickness = 3; detailArea.Parent = container
+    Instance.new("UICorner", detailArea)
+    Instance.new("UIListLayout", detailArea).Padding = UDim.new(0, 5)
+
+    local hpLabel = Instance.new("TextLabel")
+    hpLabel.Size = UDim2.new(1, -20, 0, 25); hpLabel.BackgroundTransparency = 1; hpLabel.TextColor3 = Color3.fromRGB(0, 255, 150)
+    hpLabel.Font = Enum.Font.SourceSansBold; hpLabel.TextSize = 16; hpLabel.TextXAlignment = Enum.TextXAlignment.Left; hpLabel.Parent = detailArea
+
+    local infoText = Instance.new("TextLabel")
+    infoText.Size = UDim2.new(1, -20, 0, 0); infoText.AutomaticSize = Enum.AutomaticSize.Y; infoText.BackgroundTransparency = 1
+    infoText.TextColor3 = Color3.fromRGB(255, 255, 100); infoText.Font = Enum.Font.SourceSansItalic; infoText.TextSize = 14; infoText.TextXAlignment = Enum.TextXAlignment.Left; infoText.Parent = detailArea
+
+    local statInfo = Instance.new("TextLabel")
+    statInfo.Size = UDim2.new(1, -20, 0, 0); statInfo.AutomaticSize = Enum.AutomaticSize.Y; statInfo.BackgroundTransparency = 1
+    statInfo.TextColor3 = Color3.fromRGB(255, 165, 0); statInfo.Font = Enum.Font.Code; statInfo.TextSize = 14; statInfo.TextXAlignment = Enum.TextXAlignment.Left; statInfo.Parent = detailArea
+
+    local invText = Instance.new("TextLabel")
+    invText.Size = UDim2.new(1, -20, 0, 0); invText.AutomaticSize = Enum.AutomaticSize.Y; invText.BackgroundTransparency = 1
+    invText.TextColor3 = Color3.new(1, 1, 1); invText.TextSize = 14; invText.TextXAlignment = Enum.TextXAlignment.Left
+    invText.TextWrapped = true; invText.Font = Enum.Font.SourceSans; invText.Parent = detailArea
+
+    local isOpen = false
+    mainBtn.MouseButton1Click:Connect(function()
+        isOpen = not isOpen
+        container:TweenSize(UDim2.new(1, -5, 0, isOpen and 400 or 65), "Out", "Quad", 0.2, true)
+    end)
+
+    task.spawn(function()
+        while container.Parent do
+            local teamName = player.Team and player.Team.Name or "None"
+            if string.find(string.lower(teamName), "pirate") then nameLabel.TextColor3 = Color3.fromRGB(255, 50, 50)
+            elseif string.find(string.lower(teamName), "marine") then nameLabel.TextColor3 = Color3.fromRGB(50, 150, 255)
+            else nameLabel.TextColor3 = Color3.fromRGB(255, 255, 255) end
+
+            local lv = findSmartData(player, "Level")
+            local rc = findSmartData(player, "Race")
+            local rv = getRaceVersion(player)
+            local fr = findSmartData(player, "Fragments")
+            
+            statsLabel.Text = "Lv: "..lv.." | "..rc.." ("..rv..")"
+            fragLabelShort.Text = "Fragments: "..fr
+
+            if isOpen then
+                local ch = player.Character
+                hpLabel.Text = "  [ HEALTH ] : " .. ((ch and ch:FindFirstChild("Humanoid")) and math.floor(ch.Humanoid.Health) or "DEAD")
+                
+                local tag = findSmartData(player, "ChatTagText")
+                local loc = findSmartData(player, "ExactLocation")
+                infoText.Text = string.format("  タイトル: %s\n  現在の場所: %s", tag, loc)
+
+                local def = getDeepStat(player, "Defense")
+                local fru = getDeepStat(player, "Demon Fruit")
+                local gun = getDeepStat(player, "Gun")
+                local mel = getDeepStat(player, "Melee")
+                local swd = getDeepStat(player, "Sword")
+                statInfo.Text = string.format("  [ STATISTICS ]\n  Team: %s\n  Defense: %s\n  Fruit: %s\n  Gun: %s\n  Melee: %s\n  Sword: %s\n  Fragments: %s", teamName, def, fru, gun, mel, swd, fr)
+
+                local itemList = {}
+                local function collect(folder)
+                    for _, i in pairs(folder:GetChildren()) do if i:IsA("Tool") and not ignoreList[i.Name] then table.insert(itemList, i.Name) end end
+                end
+                if ch then collect(ch) end
+                collect(player.Backpack)
+                table.sort(itemList)
+
+                local displayLines = {"  [ INVENTORY ]"}
+                for _, name in ipairs(itemList) do table.insert(displayLines, "  - " .. name) end
+                invText.Text = #itemList > 0 and table.concat(displayLines, "\n") or "  [ INVENTORY ]\n  (Empty)"
+            end
+            task.wait(0.6)
+        end
+    end)
+end
+
+for _, p in pairs(Players:GetPlayers()) do createPlayerEntry(p) end
+Players.PlayerAdded:Connect(createPlayerEntry)
+Players.PlayerRemoving:Connect(function(p) if scrollFrame:FindFirstChild(p.Name) then scrollFrame[p.Name]:Destroy() end end)
