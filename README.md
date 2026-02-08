@@ -150,8 +150,16 @@ ToggleBtn.MouseButton1Click:Connect(function() PlaySound("6895079853"); Main.Vis
 ---------------------------------
 -- タブ・パーツ構成
 ---------------------------------
-local SideBar = Instance.new("Frame", Main)
-SideBar.Size = UDim2.new(0, 130, 1, 0); SideBar.BackgroundColor3 = Color3.fromRGB(15, 0, 0)
+-- ★ここを修正：サイドバー本体をScrollingFrameに変更
+local SideBar = Instance.new("ScrollingFrame", Main)
+SideBar.Size = UDim2.new(0, 130, 1, -10)
+SideBar.Position = UDim2.new(0, 0, 0, 5)
+SideBar.BackgroundColor3 = Color3.fromRGB(15, 0, 0)
+SideBar.BorderSizePixel = 0
+SideBar.ScrollBarThickness = 2
+SideBar.AutomaticCanvasSize = Enum.AutomaticSize.Y
+SideBar.CanvasSize = UDim2.new(0, 0, 0, 0)
+
 local Pages = Instance.new("Frame", Main)
 Pages.Size = UDim2.new(1, -140, 1, -50); Pages.Position = UDim2.new(0, 140, 0, 50); Pages.BackgroundTransparency = 1
 
@@ -167,6 +175,10 @@ NameTag.Text = player.DisplayName; NameTag.TextColor3 = Color3.fromRGB(255, 255,
 local TabList = Instance.new("UIListLayout", SideBar)
 TabList.Padding = UDim.new(0, 8); TabList.HorizontalAlignment = Enum.HorizontalAlignment.Center
 
+-- ダミー要素を置いてレイアウトがアバターの上に来ないように調整
+local Spacer = Instance.new("Frame", SideBar)
+Spacer.Size = UDim2.new(0, 0, 0, 95); Spacer.BackgroundTransparency = 1
+
 local function CreateTab(name)
     local Page = Instance.new("ScrollingFrame", Pages)
     Page.Size = UDim2.new(1, 0, 1, 0)
@@ -180,7 +192,6 @@ local function CreateTab(name)
     Layout.Padding = UDim.new(0, 12)
     Layout.SortOrder = Enum.SortOrder.LayoutOrder
 
-    -- ★ここが修正ポイント：中身が増えたらスクロール幅を自動で伸ばす
     Layout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
         Page.CanvasSize = UDim2.new(0, 0, 0, Layout.AbsoluteContentSize.Y + 50)
     end)
@@ -200,12 +211,12 @@ local function CreateTab(name)
             if v:IsA("ScrollingFrame") then v.Visible = false end
         end
         Page.Visible = true
-        -- 表示した瞬間にもサイズ合わせ
         Page.CanvasSize = UDim2.new(0, 0, 0, Layout.AbsoluteContentSize.Y + 50)
     end)
 
     return Page
 end
+
 local function CreateToggle(parent, name, currentVal, callback)
     local ToggleFrame = Instance.new("TextButton", parent)
     ToggleFrame.Size = UDim2.new(1, -10, 0, 45); ToggleFrame.BackgroundColor3 = Color3.fromRGB(25, 0, 0); ToggleFrame.Text = ""
@@ -250,7 +261,6 @@ local function CreateButton(parent, name, callback)
     Btn.Size = UDim2.new(1, -10, 0, 45); Btn.BackgroundColor3 = Color3.fromRGB(35, 0, 0); Btn.Text = name; Btn.TextColor3 = Color3.fromRGB(255, 255, 255); Btn.Font = Enum.Font.SourceSansBold; Btn.TextSize = 16; Instance.new("UICorner", Btn)
     Btn.MouseButton1Click:Connect(function() PlaySound("6895079853"); callback() end)
 end
-
 ---------------------------------
 -- 設定適用 & タブ配置
 ---------------------------------
@@ -1065,82 +1075,101 @@ end)
 ---------------------------------
 -- 👑 Mainタブ：True Cinematic (色彩完全自由)
 ---------------------------------
-local function ApplyTrueColorSyncRTX()
+local function ApplyZenithRTX_V2()
     local lighting = game:GetService("Lighting")
     local workspace = game:GetService("Workspace")
+    local terrain = workspace.Terrain
     local runService = game:GetService("RunService")
 
-    -- 1. 【重要】Lightingの「色」に関する設定には触れない
-    -- BrightnessやAmbientを固定しないことで、ゲーム側の色変化を維持します。
+    -- 1. 【最強のライティング設定】影と反射のキレを維持
     lighting.GlobalShadows = true
+    lighting.ShadowSoftness = 0 -- 影をクッキリ
+    lighting.Brightness = 1.8
     lighting.EnvironmentDiffuseScale = 1
     lighting.EnvironmentSpecularScale = 1
+    lighting.ExposureCompensation = 0.1
 
-    -- 既存のポストエフェクト（バグの原因）を一旦リセット
-    for _, v in pairs(lighting:GetChildren()) do 
-        if v:IsA("PostEffect") then v:Destroy() end 
-    end
-
-    -- 2. ポストエフェクト：色を「固定」せず「質感」だけを底上げ
-    -- Bloom: 光のボケ味だけを追加
-    local bloom = Instance.new("BloomEffect", lighting)
-    bloom.Intensity = 0.4
-    bloom.Size = 24
-    bloom.Threshold = 0.9
-
-    -- ColorCorrection: TintColor（色固定）を使わずに、鮮やかさだけ調整
-    local color = Instance.new("ColorCorrectionEffect", lighting)
-    color.Contrast = 0.25 -- 影を少し深くする
-    color.Saturation = 0.2 -- 色を少し鮮明にするだけ
-    -- color.TintColor は絶対に追加しません（これで色固定を防ぎます）
-
-    -- 3. 【外れない】リアル・モーションブラー
-    local blur = Instance.new("BlurEffect", lighting)
-    blur.Name = "DynamicMotionBlur"
-    blur.Size = 0
+    -- 2. 【空の黄金バランス & 雲の移動】
+    local clouds = terrain:FindFirstChildOfClass("Clouds") or Instance.new("Clouds", terrain)
+    clouds.Enabled = true
+    clouds.Cover = 0.62
+    clouds.Density = 0.75
     
-    local lastCFrame = workspace.CurrentCamera.CFrame
-    runService:BindToRenderStep("RTX_MotionBlur", Enum.RenderPriority.Camera.Value + 1, function()
-        local camera = workspace.CurrentCamera
-        if not camera then return end
-        local currentCFrame = camera.CFrame
-        
-        -- 動きの激しさを計算
-        local delta = (currentCFrame.LookVector - lastCFrame.LookVector).Magnitude
-        local speed = (currentCFrame.Position - lastCFrame.Position).Magnitude
-        
-        -- ブラー強度（自然に見える範囲）
-        local targetSize = math.min((delta * 40) + (speed * 0.6), 9)
-        blur.Size = blur.Size + (targetSize - blur.Size) * 0.4 
-        lastCFrame = currentCFrame
+    -- 雲を流す（色には影響しません）
+    pcall(function() runService:UnbindFromRenderStep("ZenithCloudDrift") end)
+    local cloudTime = 0
+    runService:BindToRenderStep("ZenithCloudDrift", Enum.RenderPriority.Last.Value, function(delta)
+        cloudTime = cloudTime + delta
+        clouds.Cover = 0.62 + (math.sin(cloudTime * 0.15) * 0.015)
     end)
 
-    -- 4. オブジェクト：色を上書きせず、光の反射だけをリアルにする
+    -- 3. 【テクスチャ・反射の移植】
+    -- パーツ自体が演出の色を反射するようにし、一体感を出します
     for _, v in pairs(workspace:GetDescendants()) do
         pcall(function()
             if v:IsA("BasePart") or v:IsA("MeshPart") then
-                -- Materialを変えると色が変わってしまうため、Reflectance（反射）のみ調整
                 v.CastShadow = true
-                -- 元の反射設定を少しだけ強化して質感を出す
-                if v.Reflectance < 0.1 then
-                    v.Reflectance = 0.1
+                if v.Reflectance < 0.15 then
+                    v.Reflectance = 0.22 
                 end
-            
-            -- エフェクト：周囲の光(夕焼け等)を完璧に受ける設定
-            elseif v:IsA("ParticleEmitter") then
-                v.LightInfluence = 1.0 -- 1.0にすることでゲーム本来の色に100%馴染む
-                v.LightEmission = 0.2  -- 白飛びを防ぐ
-                v.Rate = v.Rate * 1.5   -- 密度は維持
+                if v.Material == Enum.Material.SmoothPlastic or v.Material == Enum.Material.Glass then
+                    v.Reflectance = 0.35
+                end
             end
         end)
     end
 
-    Notify("RTX: 色彩完全連動モード適用完了")
+    -- 4. 【色固定バグを消すエフェクト処理】
+    -- 新しく作らず、今あるエフェクトの「質」だけをブースト。
+    -- 無い場合だけ透明なエフェクトを追加します。
+    local function Boost(v)
+        if v:IsA("BloomEffect") then
+            v.Intensity = 0.35
+            v.Size = 24
+            v.Threshold = 0.9
+        elseif v:IsA("SunRaysEffect") then
+            v.Intensity = 0.06
+        elseif v:IsA("Atmosphere") then
+            -- [重要] ColorとDecayを上書きせず、密度(Density)とハッキリ感だけ調整
+            v.Density = 0.28
+            v.Glare = 0.4
+            v.Haze = 0.8
+        end
+    end
+
+    for _, v in pairs(lighting:GetChildren()) do Boost(v) end
+    lighting.ChildAdded:Connect(Boost)
+
+    -- もしゲームにAtmosphereがない場合のみ、色のない大気を追加
+    if not lighting:FindFirstChildOfClass("Atmosphere") then
+        local a = Instance.new("Atmosphere", lighting)
+        a.Density = 0.28
+        a.Glare = 0.4
+        a.Haze = 0.8
+        -- Colorを指定しないことで、ゲームのデフォルト(空の色)に従わせます
+    end
+
+    -- 5. 【映画級モーションブラー】
+    local blur = lighting:FindFirstChild("ZenithBlurV2") or Instance.new("BlurEffect", lighting)
+    blur.Name = "ZenithBlurV2"
+    local lastCF = workspace.CurrentCamera.CFrame
+    
+    pcall(function() runService:UnbindFromRenderStep("ZenithDynamicBlur") end)
+    runService:BindToRenderStep("ZenithDynamicBlur", Enum.RenderPriority.Camera.Value + 1, function()
+        local cam = workspace.CurrentCamera
+        local speed = (cam.CFrame.Position - lastCF.Position).Magnitude
+        local rot = (cam.CFrame.LookVector - lastCF.LookVector).Magnitude
+        local target = math.min((speed * 2) + (rot * 40), 10)
+        blur.Size = blur.Size + (target - blur.Size) * 0.2
+        lastCF = cam.CFrame
+    end)
+
+    Notify("Zenith RTX Evolution: 色彩完全連動・適用完了")
 end
 
 -- ボタン登録
-CreateButton(MainTab, "RTX (色彩連動・極致)", function()
-    ApplyTrueColorSyncRTX()
+CreateButton(MainTab, "真・最高画質 (色彩演出対応)", function()
+    ApplyZenithRTX_V2()
 end)
 ---------------------------------
 -- 👁️ Mainタブ：詳細プレイヤーESP (色・見聞色指定版)
@@ -1759,7 +1788,7 @@ task.spawn(function()
     local FA_RE_RegisterHit = FA_Net["RE/RegisterHit"]
     local FA_Enabled = false
     local FA_ClickDelay = 0.01
-    local FA_Distance = 100
+    local FA_Distance = 1000
 
     --------------------------------------------------
     -- ターゲット取得関数 (FastAttack用)
@@ -2469,3 +2498,522 @@ end
 for _, p in pairs(Players:GetPlayers()) do createPlayerEntry(p) end
 Players.PlayerAdded:Connect(createPlayerEntry)
 Players.PlayerRemoving:Connect(function(p) if scrollFrame:FindFirstChild(p.Name) then scrollFrame[p.Name]:Destroy() end end)
+
+---------------------------------
+-- 🎨 VFXカラー タブ (全自動更新 & 複数表示版)
+---------------------------------
+local VFXTab = CreateTab("VFXカラー")
+
+local selectedVFX = nil
+local rainbowLoop = nil
+
+-- ボタンを入れるための「自動整列コンテナ」
+local vfxListFrame = Instance.new("Frame", VFXTab)
+vfxListFrame.Size = UDim2.new(1, 0, 0, 0)
+vfxListFrame.AutomaticSize = Enum.AutomaticSize.Y
+vfxListFrame.BackgroundTransparency = 1
+vfxListFrame.LayoutOrder = -10 -- 最上部固定
+
+local listLayout = Instance.new("UIListLayout", vfxListFrame)
+listLayout.SortOrder = Enum.SortOrder.LayoutOrder
+listLayout.Padding = UDim.new(0, 5)
+
+-- --- 元のロジック (applyColor) ---
+local function applyColor(targetColor)
+    if not selectedVFX then return end
+    local shifted = selectedVFX:FindFirstChild("Shifted")
+    if shifted then
+        for attrName, _ in pairs(shifted:GetAttributes()) do
+            if string.find(attrName:lower(), "shifted_color") then 
+                shifted:SetAttribute(attrName, targetColor) 
+            end
+        end
+        for _, child in pairs(shifted:GetChildren()) do
+            if string.find(child.Name:lower(), "shifted_color") and child:IsA("Color3Value") then 
+                child.Value = targetColor 
+            end
+        end
+    end
+end
+
+-- --- 【自動更新】VFXリスト作成関数 ---
+local function refreshVFXList()
+    -- 中身を全削除
+    for _, child in pairs(vfxListFrame:GetChildren()) do
+        if not child:IsA("UIListLayout") then child:Destroy() end
+    end
+    
+    local foundCount = 0
+    for _, vfx in pairs(game.Players.LocalPlayer:GetChildren()) do
+        if vfx.Name:find("VFXColor") then
+            foundCount = foundCount + 1
+            local vfxName = vfx.Name:gsub("VFXColor", "")
+            
+            -- ボタンを作成（CreateButtonをコンテナ内で実行）
+            local b = CreateButton(vfxListFrame, "👉 選択: " .. vfxName, function()
+                selectedVFX = vfx
+                Notify("Active: " .. vfxName)
+            end)
+        end
+    end
+end
+
+-- 最初の実行
+refreshVFXList()
+
+-- 【重要】プレイヤーの持ち物を監視して自動更新
+game.Players.LocalPlayer.ChildAdded:Connect(function(child)
+    if child.Name:find("VFXColor") then task.wait(0.1); refreshVFXList() end
+end)
+game.Players.LocalPlayer.ChildRemoved:Connect(function(child)
+    if child.Name:find("VFXColor") then task.wait(0.1); refreshVFXList() end
+end)
+
+-- -------------------------------
+-- 🌈 Rainbow & カラーパレット (これらは下に来る)
+-- -------------------------------
+CreateButton(VFXTab, "🌈 RAINBOW MODE (ON/OFF)", function()
+    if not selectedVFX then Notify("先にVFXを選択してください"); return end
+    if rainbowLoop then 
+        rainbowLoop:Disconnect(); rainbowLoop = nil; Notify("Rainbow OFF")
+    else
+        rainbowLoop = game:GetService("RunService").Heartbeat:Connect(function()
+            local h = (tick() % 5) / 5
+            applyColor(Color3.fromHSV(h, 1, 1))
+        end)
+        Notify("Rainbow ON")
+    end
+end)
+
+local palette = {
+    {"Red", Color3.new(1,0,0)}, {"Crimson", Color3.new(0.6,0,0)}, {"Orange", Color3.new(1,0.5,0)},
+    {"Gold", Color3.new(1,0.8,0)}, {"Yellow", Color3.new(1,1,0)}, {"Lime", Color3.new(0.5,1,0)},
+    {"Green", Color3.new(0,1,0)}, {"Forest", Color3.new(0,0.4,0)}, {"Mint", Color3.new(0.6,1,0.8)},
+    {"Cyan", Color3.new(0,1,1)}, {"Teal", Color3.new(0,0.5,0.5)}, {"Sky", Color3.new(0.5,0.7,1)},
+    {"Blue", Color3.new(0,0,1)}, {"Navy", Color3.new(0,0,0.5)}, {"Purple", Color3.new(0.5,0,1)},
+    {"Magenta", Color3.new(1,0,1)}, {"Pink", Color3.new(1,0.6,0.8)}, {"HotPink", Color3.new(1,0,0.5)},
+    {"White", Color3.new(1,1,1)}, {"Gray", Color3.new(0.5,0.5,0.5)}, {"Black", Color3.new(0,0,0)}
+}
+
+for _, d in pairs(palette) do
+    CreateButton(VFXTab, "Color: " .. d[1], function()
+        if rainbowLoop then rainbowLoop:Disconnect(); rainbowLoop = nil end
+        applyColor(d[2])
+    end)
+end
+---------------------------------
+-- 🌊 Sea Beast / Sea Event (SeaHunter Pro Ultimate 完全移植版)
+---------------------------------
+local SeaTab = CreateTab("Sea Beast / Sea Event")
+
+-- 元のスクリプトの全変数を保持
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Workspace = game:GetService("Workspace")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local player = Players.LocalPlayer
+local remote = ReplicatedStorage.Remotes.CommF_
+
+local SETTINGS = {
+    FixedY = 100,
+    MoveSpeed = 2.0,
+    HuntTweenSpeed = 350,
+    ReturnTweenSpeed = 250,
+    BoatsPath = Workspace:WaitForChild("Boats"),
+    SeaBeastsPath = Workspace:WaitForChild("SeaBeasts"),
+    EnemiesPath = Workspace:WaitForChild("Enemies")
+}
+
+local isAutoHunting, isAutoMoving = false, false
+local isTerrorSharkHunt, isSharkHunt, isPiranhaHunt, isBrigadeHunt = false, false, false, false
+local isProcessing = false 
+local lastBoatSeat = nil
+
+-- --- 共通ついーん関数 ---
+local function stableTween(targetPart, speed, offset)
+    if not targetPart then return end
+    local char = player.Character
+    local root = char and char:FindFirstChild("HumanoidRootPart")
+    if not root then return end
+    local off = offset or Vector3.new(0, 0, 0)
+    local connection
+    connection = RunService.RenderStepped:Connect(function(deltaTime)
+        if not targetPart or not targetPart.Parent or not root.Parent then connection:Disconnect() return end
+        local targetPos = targetPart.Position + off
+        local dist = (targetPos - root.Position).Magnitude
+        if dist < 4 then 
+            root.CFrame = CFrame.new(targetPos)
+            connection:Disconnect() 
+            return 
+        end
+        local direction = (targetPos - root.Position).Unit
+        root.CFrame = CFrame.new(root.Position + (direction * (speed * deltaTime)))
+        root.Velocity = Vector3.zero
+    end)
+    while connection.Connected do task.wait() end
+end
+
+-- --- 船を探して座る ---
+local function findAndSit(boatModel)
+    local char = player.Character
+    local hum = char and char:FindFirstChild("Humanoid")
+    local seat = boatModel:FindFirstChildWhichIsA("VehicleSeat", true)
+    if seat and hum then
+        lastBoatSeat = seat
+        stableTween(seat, SETTINGS.ReturnTweenSpeed, Vector3.new(0, 3, 0))
+        task.wait(0.2)
+        seat:Sit(hum)
+    end
+end
+
+-- --- 連続狩りプロセス ---
+local function isValid(model)
+    if not model or not model.Parent then return false end
+    local thum = model:FindFirstChildOfClass("Humanoid")
+    return model:FindFirstChild("HumanoidRootPart") and (not thum or thum.Health > 0)
+end
+
+local function startContinuousHunt()
+    if isProcessing then return end
+    isProcessing = true
+    local char = player.Character
+    local hum = char and char:FindFirstChild("Humanoid")
+    local root = char and char:FindFirstChild("HumanoidRootPart")
+    if hum and hum.Sit then hum.Sit = false end
+    task.wait(0.2)
+
+    while isAutoHunting or isTerrorSharkHunt or isSharkHunt or isPiranhaHunt or isBrigadeHunt do
+        local targetModel = nil
+        local isDirectTarget = false
+        local currentEnemies = SETTINGS.EnemiesPath:GetChildren()
+        
+        if isTerrorSharkHunt then for _, v in pairs(currentEnemies) do if v.Name == "Terrorshark" and isValid(v) then targetModel = v; isDirectTarget = true; break end end end
+        if not targetModel and isBrigadeHunt then for _, v in pairs(currentEnemies) do if v.Name:find("Brigade") and isValid(v) then targetModel = v; isDirectTarget = false; break end end end
+        if not targetModel and isPiranhaHunt then for _, v in pairs(currentEnemies) do if v.Name == "Piranha" and isValid(v) then targetModel = v; isDirectTarget = true; break end end end
+        if not targetModel and isSharkHunt then for _, v in pairs(currentEnemies) do if v.Name == "Sharks" and isValid(v) then targetModel = v; isDirectTarget = true; break end end end
+        if not targetModel and isAutoHunting then for _, v in pairs(SETTINGS.SeaBeastsPath:GetChildren()) do if isValid(v) then targetModel = v; isDirectTarget = false; break end end end
+
+        if not targetModel or not root then break end
+        local targetRP = targetModel:FindFirstChild("HumanoidRootPart")
+        if targetRP then
+            stableTween(targetRP, SETTINGS.HuntTweenSpeed, isDirectTarget and Vector3.new(0, 10, 0) or nil)
+            while isValid(targetModel) do
+                root.CFrame = isDirectTarget and targetRP.CFrame * CFrame.new(0, 15, 0) or CFrame.new(targetRP.Position.X, SETTINGS.FixedY, targetRP.Position.Z)
+                root.Velocity = Vector3.zero
+                RunService.RenderStepped:Wait()
+                if not (isAutoHunting or isTerrorSharkHunt or isSharkHunt or isPiranhaHunt or isBrigadeHunt) then break end
+            end
+        end
+        task.wait(0.3)
+    end
+    if lastBoatSeat and lastBoatSeat.Parent then findAndSit(lastBoatSeat.Parent) end
+    isProcessing = false
+end
+
+-- --- SHOP機能：ボート購入 ---
+local function buyAndRide(data, isLux)
+    local dealer = isLux and "Luxury Boat Dealer" or "Boat Dealer"
+    local team = (player.Team.Name == "Marines") and "Marine" or "Pirate"
+    local root = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+    if not root then return end
+
+    remote:InvokeServer("BuyBoat", "Speak"); task.wait(0.1)
+    local names = {data.n}
+    if data.t then table.insert(names, team..data.n); table.insert(names, team.." "..data.n); if data.n:find("Grand") then table.insert(names, "Grand "..team.." Brigade") end end
+    
+    for _, n in ipairs(names) do
+        if remote:InvokeServer("BuyBoat", n, dealer) ~= 0 then
+            task.wait(0.6)
+            local cb = nil; local md = math.huge
+            for _, b in pairs(SETTINGS.BoatsPath:GetChildren()) do
+                local br = b:FindFirstChild("Base") or b:FindFirstChildWhichIsA("BasePart", true)
+                if br then local d = (br.Position - root.Position).Magnitude; if d < md then md = d; cb = b end end
+            end
+            if cb then findAndSit(cb) end
+            return true
+        end
+    end
+end
+
+---------------------------------
+-- 🛠️ UI配置 (植松聖HUB スタイル)
+---------------------------------
+
+-- スピード調整 (ついーん速度)
+CreateSlider(SeaTab, "海狩り速度 (Hunt Speed)", 100, 500, SETTINGS.HuntTweenSpeed, function(v)
+    SETTINGS.HuntTweenSpeed = v
+end)
+
+-- HUNTER セクション
+CreateToggle(SeaTab, "AUTO MOVE (前進)", false, function(v) isAutoMoving = v end)
+CreateToggle(SeaTab, "SEA BEAST", false, function(v) isAutoHunting = v; if v then task.spawn(startContinuousHunt) end end)
+CreateToggle(SeaTab, "TERROR SHARK", false, function(v) isTerrorSharkHunt = v; if v then task.spawn(startContinuousHunt) end end)
+CreateToggle(SeaTab, "SHARKS", false, function(v) isSharkHunt = v; if v then task.spawn(startContinuousHunt) end end)
+CreateToggle(SeaTab, "PIRANHA", false, function(v) isPiranhaHunt = v; if v then task.spawn(startContinuousHunt) end end)
+CreateToggle(SeaTab, "PIRATE SHIPS", false, function(v) isBrigadeHunt = v; if v then task.spawn(startContinuousHunt) end end)
+
+CreateButton(SeaTab, "RETURN TO BOAT (船に戻る)", function()
+    if lastBoatSeat and lastBoatSeat.Parent then findAndSit(lastBoatSeat.Parent) end
+end)
+
+-- SHOP セクション (ボート購入)
+local boatData = {
+    Normal = {{n="Dinghy", t=false}, {n="Sloop", t=true}, {n="Brigade", t=true}, {n="Grand Brigade", t=true}},
+    Luxury = {{n="Miracle", t=false}, {n="The Sentinel", t=false}, {n="Guardian", t=false}, {n="Lantern", t=false}, {n="Sleigh", t=false}, {n="Beast Hunter", t=false}}
+}
+
+for _, v in ipairs(boatData.Normal) do 
+    CreateButton(SeaTab, "Buy: " .. v.n, function() buyAndRide(v, false) end)
+end
+for _, v in ipairs(boatData.Luxury) do 
+    CreateButton(SeaTab, "Buy Luxury: " .. v.n, function() buyAndRide(v, true) end)
+end
+
+-- --- 常駐ループ (Heartbeat) ---
+RunService.Heartbeat:Connect(function()
+    local char = player.Character
+    local root = char and char:FindFirstChild("HumanoidRootPart")
+    local hum = char and char:FindFirstChild("Humanoid")
+    if not root or not hum then return end
+
+    local seat = hum.SeatPart
+    if seat and seat:IsA("VehicleSeat") then
+        local cur = seat
+        while cur ~= Workspace and cur ~= nil do 
+            if cur.Parent == SETTINGS.BoatsPath then lastBoatSeat = seat; break end
+            cur = cur.Parent 
+        end
+    end
+    
+    if isAutoMoving and not isProcessing and lastBoatSeat and hum.Sit then
+        local fwd = Vector3.new(root.CFrame.LookVector.X, 0, root.CFrame.LookVector.Z).Unit
+        root.CFrame = CFrame.new(root.Position + (fwd * SETTINGS.MoveSpeed), root.Position + (fwd * SETTINGS.MoveSpeed) + root.CFrame.LookVector)
+        root.CFrame = CFrame.new(root.Position.X, SETTINGS.FixedY, root.Position.Z) * (root.CFrame - root.CFrame.Position)
+    end
+end)
+---------------------------------
+-- 📍 Teleport Locations (Blox Fruits)
+---------------------------------
+-- テレポート関数
+local function TP(pos)
+    local char = game.Players.LocalPlayer.Character
+    if char and char:FindFirstChild("HumanoidRootPart") then
+        char.HumanoidRootPart.CFrame = CFrame.new(pos)
+        Notify("Teleported to Location")
+    end
+end
+
+-- お前のHUBの「CreateButton」命令を使ってタブに追加
+CreateButton(BloxFruitsTab, "Mansion (マンション)", function()
+    TP(Vector3.new(-12455.86, 376.34, -7565.61))
+end)
+
+CreateButton(BloxFruitsTab, "Hydra Island (ヒドラ)", function()
+    TP(Vector3.new(5649.43, 1015.29, -341.05))
+end)
+
+CreateButton(BloxFruitsTab, "Sea Castle (海の城)", function()
+    TP(Vector3.new(-5029.62, 315.97, -3195.88))
+end)
+---------------------------------
+-- STATSタブ (リアルタイム更新版)
+---------------------------------
+local StatsTab = CreateTab("stats")
+
+-- ラベル作成用関数
+local function CreateStatLabel(text)
+    local Label = Instance.new("TextLabel", StatsTab)
+    Label.Size = UDim2.new(1, -10, 0, 35)
+    Label.BackgroundColor3 = Color3.fromRGB(20, 0, 0)
+    Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Label.Font = Enum.Font.SourceSansBold
+    Label.TextSize = 15
+    Label.TextXAlignment = Enum.TextXAlignment.Left
+    Instance.new("UICorner", Label)
+    local Padding = Instance.new("UIPadding", Label)
+    Padding.PaddingLeft = UDim.new(0, 10)
+    return Label
+end
+
+local JobIdLabel = CreateStatLabel("Server ID: Loading...")
+local PlayTimeLabel = CreateStatLabel("滞在時間: 00:00:00")
+local FPSLabel = CreateStatLabel("FPS: 0")
+local PingLabel = CreateStatLabel("Ping: 0 ms")
+
+-- サーバーIDをコピーするボタン
+CreateButton(StatsTab, "サーバーIDをコピー", function()
+    setclipboard(game.JobId)
+    Notify("サーバーIDをクリップボードにコピーしました")
+end)
+
+-- リアルタイム更新ロジック
+local RunService = game:GetService("RunService")
+local Stats = game:GetService("Stats")
+local startTime = os.time()
+
+task.spawn(function()
+    JobIdLabel.Text = "Server ID: " .. (game.JobId ~= "" and game.JobId or "Studio/Private")
+    
+    while task.wait(0.5) do
+        -- 滞在時間の計算
+        local diff = os.time() - startTime
+        local hours = math.floor(diff / 3600)
+        local mins = math.floor((diff % 3600) / 60)
+        local secs = diff % 60
+        PlayTimeLabel.Text = string.format("滞在時間: %02d:%02d:%02d", hours, mins, secs)
+        
+        -- FPSの計算
+        local fps = math.floor(1 / RunService.RenderStepped:Wait())
+        FPSLabel.Text = "FPS: " .. fps
+        
+        -- Pingの取得
+        local ping = math.floor(Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
+        PingLabel.Text = "Ping: " .. ping .. " ms"
+    end
+end)
+---------------------------------
+-- ボス追跡機能 (究極低負荷・プロ版)
+---------------------------------
+local BossLabelTitle = CreateStatLabel("--- 出現中のボス ---")
+BossLabelTitle.TextColor3 = Color3.fromRGB(255, 50, 0)
+
+local BossScroll = Instance.new("ScrollingFrame", StatsTab)
+BossScroll.Size = UDim2.new(1, -10, 0, 150)
+BossScroll.BackgroundTransparency = 1; BossScroll.BorderSizePixel = 0
+BossScroll.ScrollBarThickness = 3
+BossScroll.CanvasSize = UDim2.new(0, 0, 0, 0)
+BossScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+local BossListLabel = Instance.new("TextLabel", BossScroll)
+BossListLabel.Size = UDim2.new(1, 0, 0, 0); BossListLabel.AutomaticSize = Enum.AutomaticSize.Y
+BossListLabel.BackgroundTransparency = 1; BossListLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+BossListLabel.Font = Enum.Font.SourceSansBold; BossListLabel.TextSize = 15
+BossListLabel.TextXAlignment = Enum.TextXAlignment.Left; BossListLabel.TextYAlignment = Enum.TextYAlignment.Top
+BossListLabel.TextWrapped = true; BossListLabel.Text = "待機中..."
+
+-- 内部データ
+local targetBossNames = {} -- ボスの名前だけを記録
+local currentBossStates = {} -- [名前] = "📍" または "⚔️"
+local updatePending = false
+
+-- 名前を一度だけ綺麗にする
+local function Clean(name)
+    return name:gsub("%[Lv%. %d+%]%s*", ""):gsub("%[Boss%]", ""):match("^%s*(.-)%s*$")
+end
+
+-- 表示更新（デバウンス付き：短時間に何度も走らせない）
+local function SafeUpdateDisplay()
+    if updatePending then return end
+    updatePending = true
+    
+    task.delay(0.5, function() -- 0.5秒間隔でまとめて更新
+        local displayList = {}
+        for name, icon in pairs(currentBossStates) do
+            table.insert(displayList, icon .. " " .. name)
+        end
+        
+        local final = #displayList > 0 and table.concat(displayList, "\n") or "なし"
+        if BossListLabel.Text ~= final then
+            BossListLabel.Text = final
+        end
+        updatePending = false
+    end)
+end
+
+local function SetupUltraWatch()
+    local Spawns = game:GetService("Workspace"):FindFirstChild("_WorldOrigin")
+    if Spawns then Spawns = Spawns:FindFirstChild("EnemySpawns") end
+    local Enemies = game:GetService("Workspace"):FindFirstChild("Enemies")
+
+    -- 1. スポーンフォルダの監視
+    if Spawns then
+        local function onAdd(child)
+            if child.Name:find("%[Boss%]") then
+                local name = Clean(child.Name)
+                targetBossNames[name] = true
+                currentBossStates[name] = "📍"
+                SafeUpdateDisplay()
+            end
+        end
+        Spawns.ChildAdded:Connect(onAdd)
+        Spawns.ChildRemoved:Connect(function(child)
+            local name = Clean(child.Name)
+            if currentBossStates[name] == "📍" then
+                currentBossStates[name] = nil
+                SafeUpdateDisplay()
+            end
+        end)
+        for _, v in pairs(Spawns:GetChildren()) do onAdd(v) end
+    end
+
+    -- 2. 戦闘フォルダの監視 (ここが一番重いので最適化)
+    if Enemies then
+        local function onAdd(child)
+            -- 既にtargetBossNamesにある名前か、[Boss]タグがある場合のみ
+            local name = Clean(child.Name)
+            if targetBossNames[name] or child.Name:find("%[Boss%]") then
+                targetBossNames[name] = true
+                currentBossStates[name] = "⚔️"
+                SafeUpdateDisplay()
+            end
+        end
+        Enemies.ChildAdded:Connect(onAdd)
+        Enemies.ChildRemoved:Connect(function(child)
+            local name = Clean(child.Name)
+            if currentBossStates[name] == "⚔️" then
+                currentBossStates[name] = nil
+                SafeUpdateDisplay()
+            end
+        end)
+        for _, v in pairs(Enemies:GetChildren()) do onAdd(v) end
+    end
+end
+
+task.spawn(SetupUltraWatch)
+---------------------------------
+-- 特殊島 出現チェック (⭕/❌)
+---------------------------------
+local IslandTitle = CreateStatLabel("--- 特殊島 出現状況 ---")
+IslandTitle.TextColor3 = Color3.fromRGB(255, 50, 0)
+
+-- 島ごとの表示ラベルを作成
+local function CreateIslandLabel(name)
+    local Label = CreateStatLabel(name .. " : ❌")
+    Label.TextSize = 14
+    return Label
+end
+
+local MirageLabel = CreateIslandLabel("Mirage Island")
+local KitsuneLabel = CreateIslandLabel("Kitsune Island")
+local FrozenLabel = CreateIslandLabel("Frozen Dimension")
+local PrehistoricLabel = CreateIslandLabel("Prehistoric Island")
+
+local targetIslands = {
+    ["Mirage Island"] = MirageLabel,
+    ["Kitsune Island"] = KitsuneLabel,
+    ["Frozen Dimension"] = FrozenLabel,
+    ["Prehistoric Island"] = PrehistoricLabel
+}
+
+task.spawn(function()
+    local MapFolder = game:GetService("Workspace"):FindFirstChild("Map")
+    
+    while task.wait(3) do -- 島は頻繁に消えないから3秒おきで十分（超軽量）
+        if not MapFolder then continue end
+        
+        -- 全ての表示を一旦 ❌ にリセット
+        for name, label in pairs(targetIslands) do
+            label.Text = name .. " : ❌"
+            label.TextColor3 = Color3.fromRGB(150, 150, 150)
+        end
+        
+        -- Mapの中をスキャンして見つけたら ⭕ に変更
+        for _, obj in pairs(MapFolder:GetChildren()) do
+            if targetIslands[obj.Name] then
+                targetIslands[obj.Name].Text = obj.Name .. " : ⭕"
+                targetIslands[obj.Name].TextColor3 = Color3.fromRGB(0, 255, 0) -- 出現時は緑に光らせる
+            end
+        end
+    end
+end)
