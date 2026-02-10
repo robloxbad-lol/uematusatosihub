@@ -3017,3 +3017,318 @@ task.spawn(function()
         end
     end
 end)
+---------------------------------
+-- BloxFruitsタブへのFinal-Z統合
+---------------------------------
+-- 既存の変数設定
+local HIDE_Y = -199996.48
+local IsIsolating = false
+local FakeCharacter = nil
+local lastHealths = {}
+local sZAttackActive = false
+settings.FinalZ = settings.FinalZ or false
+
+-- [[ 復帰・リセット関数 ]]
+local function FinalZ_Reset()
+    IsIsolating = false
+    workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+    if player.Character and player.Character:FindFirstChild("Humanoid") then
+        workspace.CurrentCamera.CameraSubject = player.Character.Humanoid
+    end
+    if FakeCharacter then
+        local hrp = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+        if hrp and player.Character.Humanoid.Health > 0 then 
+            hrp.CFrame = FakeCharacter.HumanoidRootPart.CFrame 
+        end
+        FakeCharacter:Destroy()
+        FakeCharacter = nil
+    end
+end
+
+-- [[ クローン生成 & 本体隠蔽ロジック ]]
+local function StartCloneTP(targetPos)
+    if IsIsolating or not settings.FinalZ then return end
+    IsIsolating = true
+    local char = player.Character
+    local hrp = char and char:FindFirstChild("HumanoidRootPart")
+    if not hrp then return end
+
+    char.Archivable = true
+    FakeCharacter = char:Clone()
+    FakeCharacter.Parent = workspace
+    for _, v in ipairs(FakeCharacter:GetDescendants()) do 
+        if v:IsA("BasePart") then v.CanCollide = false end 
+    end
+    FakeCharacter.HumanoidRootPart.CFrame = CFrame.new(targetPos + Vector3.new(0, 3, 0))
+    workspace.CurrentCamera.CameraSubject = FakeCharacter.Humanoid
+
+    task.spawn(function()
+        local startTime = tick()
+        while IsIsolating and settings.FinalZ do
+            if (tick() - startTime > 1.5) or (char.Humanoid.Health <= 0) then break end
+            hrp.CFrame = CFrame.new(hrp.Position.X, HIDE_Y, hrp.Position.Z)
+            hrp.AssemblyLinearVelocity = Vector3.zero
+            game:GetService("RunService").Heartbeat:Wait()
+        end
+        FinalZ_Reset()
+    end)
+end
+
+-- [[ 命中検知ロジック ]]
+local function SetupFinalZ(char)
+    local hum = char:WaitForChild("Humanoid")
+    char.ChildAdded:Connect(function(child)
+        if child.Name == "TridentGrabZ" and settings.FinalZ then
+            task.wait()
+            local val = child.Value
+            local pos = (typeof(val) == "Vector3") and val or (val:IsA("Model") and val:FindFirstChild("HumanoidRootPart") and val.HumanoidRootPart.Position)
+            if pos then StartCloneTP(pos) end
+        end
+    end)
+    hum.AnimationPlayed:Connect(function(animTrack)
+        if animTrack.Name == "Saddi_Z_Attack" then
+            sZAttackActive = true
+            task.delay(1.0, function() sZAttackActive = false end)
+        end
+    end)
+    game:GetService("RunService").Heartbeat:Connect(function()
+        if not sZAttackActive or not settings.FinalZ then return end
+        local myRoot = char:FindFirstChild("HumanoidRootPart")
+        if not myRoot then return end
+        for _, p in ipairs(game.Players:GetPlayers()) do
+            if p ~= player and p.Character then
+                local eHum = p.Character:FindFirstChildOfClass("Humanoid")
+                local eRoot = p.Character:FindFirstChild("HumanoidRootPart")
+                if eHum and eRoot and eHum.Health > 0 then
+                    if lastHealths[p] and eHum.Health < lastHealths[p] then
+                        if (eRoot.Position - myRoot.Position).Magnitude < 120 then
+                            sZAttackActive = false 
+                            StartCloneTP(eRoot.Position)
+                        end
+                    end
+                    lastHealths[p] = eHum.Health
+                end
+            end
+        end
+    end)
+end
+
+-- 既存のキャラクタースポーン時にも適用
+if player.Character then SetupFinalZ(player.Character) end
+player.CharacterAdded:Connect(SetupFinalZ)
+
+-- 既存の「BloxFruitsTab」にトグルを追加 
+if BloxFruitsTab then
+    CreateToggle(BloxFruitsTab, "Final-Z (Trident/Saddi)", settings.FinalZ, function(v)
+        settings.FinalZ = v
+        if not v then FinalZ_Reset() end
+    end)
+end
+---------------------------------
+-- BloxFruitsタブ：Team Changer統合
+---------------------------------
+
+-- チーム変更実行関数
+local function ChangeTeam(teamName)
+    local Remotes = game:GetService("ReplicatedStorage"):WaitForChild("Remotes")
+    local targets = {"CommF", "CommF_", "CommE"}
+    for _, name in pairs(targets) do
+        local remote = Remotes:FindFirstChild(name)
+        if remote then
+            pcall(function()
+                if remote:IsA("RemoteFunction") then
+                    remote:InvokeServer("SetTeam", teamName)
+                else
+                    remote:FireServer("SetTeam", teamName)
+                end
+            end)
+        end
+    end
+    Notify("Team changed to: " .. teamName)
+end
+
+-- 既存の「BloxFruitsTab」にボタンを追加
+if BloxFruitsTab then
+    -- タイトル的なラベル（区切り用）
+    local TeamLabel = Instance.new("TextLabel", BloxFruitsTab)
+    TeamLabel.Size = UDim2.new(1, -10, 0, 30)
+    TeamLabel.BackgroundTransparency = 1
+    TeamLabel.Text = "--- Team Changer ---"
+    TeamLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TeamLabel.Font = Enum.Font.SourceSansBold
+    TeamLabel.TextSize = 16
+
+    -- Pirateボタン
+    CreateButton(BloxFruitsTab, "Pirate", function()
+        ChangeTeam("Pirates")
+    end)
+
+    -- Marineボタン
+    CreateButton(BloxFruitsTab, "Marine", function()
+        ChangeTeam("Marines")
+    end)
+end
+---------------------------------
+-- BloxFruitsタブ：gun m1 (モーション強制ループ版)
+---------------------------------
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+
+-- リモート
+local Net = ReplicatedStorage:WaitForChild("Modules"):WaitForChild("Net")
+local RE_Attack = Net["RE/RegisterAttack"]
+local RE_Hit = Net["RE/RegisterHit"]
+local RE_Gun = Net["RE/ShootGunEvent"]
+
+-- お前のSettingsをHUBのsettingsに統合
+settings.GunM1 = false
+local attackDist = 160
+local multiHit = 2
+
+-- [[ ターゲットサーチ ]]
+local function GetTarget()
+    local char = player.Character
+    local root = char and char:FindFirstChild("HumanoidRootPart")
+    if not root then return nil end
+    local nearest, minDist = nil, attackDist
+    for _, folder in pairs({workspace:FindFirstChild("Enemies"), workspace:FindFirstChild("Characters")}) do
+        if folder then
+            for _, v in pairs(folder:GetChildren()) do
+                if v ~= char and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                    local p = v:FindFirstChild("HumanoidRootPart")
+                    if p and (root.Position - p.Position).Magnitude < minDist then
+                        minDist = (root.Position - p.Position).Magnitude
+                        nearest = {v, p}
+                    end
+                end
+            end
+        end
+    end
+    return nearest
+end
+
+-- [[ 自動モーション・攻撃メイン ]]
+RunService.Stepped:Connect(function()
+    if not settings.GunM1 then return end
+    
+    local char = player.Character
+    local tool = char and char:FindFirstChildOfClass("Tool")
+    if not tool then return end
+
+    local target = GetTarget()
+    if not target then return end
+    local targetChar, targetPart = target[1], target[2]
+
+    pcall(function()
+        -- 1. 共通ダメージ判定（実のファスト攻撃）
+        for i = 1, multiHit do
+            RE_Attack:FireServer(0)
+            RE_Hit:FireServer(targetPart, {{targetChar, targetPart}})
+        end
+
+        -- 2. 銃(Gun)の処理
+        if tool.ToolTip == "Gun" then
+            -- 射撃リモート
+            RE_Gun:FireServer(targetPart.Position, {targetPart})
+            
+            -- 【重要】実際にツールを「使った」ことにする (これでモーションが出る)
+            tool:Activate() 
+            
+            -- 【強力】ツールの内部スクリプトを無視して、クリック信号を直接リモートに叩き込む
+            local remote = tool:FindFirstChild("RemoteEvent") or tool:FindFirstChildOfClass("RemoteEvent")
+            if remote then
+                remote:FireServer("Down", targetPart.Position)
+                -- Upを送らずDownを連打することで、撃ちっぱなしの状態を作る
+            end
+
+            -- 【モーション強制】アニメーションが止まらないように再生し続ける
+            local hum = char:FindFirstChildOfClass("Humanoid")
+            if hum then
+                for _, track in pairs(hum:GetPlayingAnimationTracks()) do
+                    -- 銃関連のアニメーションを高速再生させる
+                    if track.Name:lower():find("gun") or track.Name:lower():find("shoot") then
+                        track:AdjustSpeed(2) -- 2倍速で出し続ける
+                    end
+                end
+            end
+        end
+
+        -- 3. 実(Fruit)のクリック
+        if tool:FindFirstChild("LeftClickRemote") then
+            tool.LeftClickRemote:FireServer((targetPart.Position - char:GetPivot().Position).Unit, 1)
+        end
+    end)
+end)
+
+-- 既存の「BloxFruitsTab」にトグルを追加
+if BloxFruitsTab then
+    CreateToggle(BloxFruitsTab, "gun m1", settings.GunM1, function(v)
+        settings.GunM1 = v
+        if v then
+            Notify("gun m1 有効")
+        else
+            Notify("gun m1 無効")
+        end
+    end)
+end
+---------------------------------
+-- BloxFruitsタブ：大仏の範囲でかくなる (Hitbox)
+---------------------------------
+local runService = game:GetService("RunService")
+local superScale = 700
+local armParts = {"LeftUpperArm", "LeftLowerArm", "LeftHand", "RightUpperArm", "RightLowerArm", "RightHand"}
+
+-- 設定初期化
+settings.BigBuddha = false
+
+-- --- 腕の巨大化処理 ---
+local function updateHitbox()
+    if not settings.BigBuddha then return end
+    
+    local char = player.Character
+    if not char then return end
+    
+    for _, name in pairs(armParts) do
+        local part = char:FindFirstChild(name)
+        if part and part:IsA("BasePart") then
+            part.CanQuery = false 
+            -- メッシュで見た目だけ巨大化させる
+            local m = part:FindFirstChildOfClass("SpecialMesh") or Instance.new("SpecialMesh", part)
+            m.MeshType = Enum.MeshType.Brick
+            m.Scale = Vector3.new(superScale * 0.1, superScale, superScale * 0.1)
+            
+            part.Color = Color3.new(1, 1, 1)
+            part.Material = Enum.Material.Neon
+            part.Transparency = 0.5 -- 少し透明にして見やすくしたぜ
+            
+            -- 関節の位置調整（これが範囲拡大の肝だな）
+            local motor = part:FindFirstChildOfClass("Motor6D")
+            if motor then
+                motor.C0 = CFrame.new(motor.C0.Position.X, 0, motor.C0.Position.Z) * CFrame.new(0, superScale / 2, 0)
+            end
+        end
+    end
+    -- 視界を広くする
+    player.CameraMaxZoomDistance = 140
+end
+
+-- 毎フレーム実行
+runService.RenderStepped:Connect(function()
+    if settings.BigBuddha then
+        pcall(updateHitbox)
+    end
+end)
+
+-- 既存の「BloxFruitsTab」にトグルを追加
+if BloxFruitsTab then
+    CreateToggle(BloxFruitsTab, "大仏の範囲でかくなる", settings.BigBuddha, function(v)
+        settings.BigBuddha = v
+        if not v then
+            -- 無効時に戻す処理（リセットは再スポーン推奨だが、一応カメラだけ戻す）
+            player.CameraMaxZoomDistance = 128
+            Notify("大仏範囲: OFF (戻すには再スポーン推奨)")
+        else
+            Notify("大仏範囲: ON (腕がクソデカくなるぜ)")
+        end
+    end)
+end
