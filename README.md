@@ -1583,141 +1583,7 @@ if MainTab then
         end)
     end)
 end
--- ==================================================
--- Blox Fruits: FINAL-Z (アンチコンボ完全統合版)
--- ==================================================
-task.spawn(function()
-    -- タブの特定（エラー回避ロジック継承）
-    local BF = (typeof(BloxFruitsTab) == "Instance" or typeof(BloxFruitsTab) == "userdata") and BloxFruitsTab or MainTab 
-    if not BF then return end
 
-    local Players = game:GetService("Players")
-    local RunService = game:GetService("RunService")
-    local UIS = game:GetService("UserInputService")
-    local LocalPlayer = Players.LocalPlayer
-
-    -- [[ FINAL-Z 設定値 ]]
-    local HIDE_Y = -199996.48
-    local FLY_SPEED = 100
-    local Toggled = false
-    local IsIsolating = false
-    local LastUsed = 0 
-    local COOLDOWN_TIME = 3.5 
-
-    local FakeCharacter = nil
-    local MoveConnection = nil
-
-    -- 復帰関数
-    local function Reset()
-        IsIsolating = false
-        if MoveConnection then MoveConnection:Disconnect() end
-        MoveConnection = nil
-        workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
-        if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") then
-            workspace.CurrentCamera.CameraSubject = LocalPlayer.Character.Humanoid
-        end
-        if FakeCharacter then
-            local hrp = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-            if hrp and LocalPlayer.Character.Humanoid.Health > 0 then hrp.CFrame = FakeCharacter.HumanoidRootPart.CFrame end
-            FakeCharacter:Destroy()
-            FakeCharacter = nil
-        end
-    end
-
-    -- 隔離開始
-    local function Start(targetHum)
-        if IsIsolating or not Toggled then return end
-        IsIsolating = true
-        local char = LocalPlayer.Character
-        local hrp = char:FindFirstChild("HumanoidRootPart")
-        local hum = char:FindFirstChild("Humanoid")
-        local freezePos = hrp.Position
-        
-        char.Archivable = true
-        FakeCharacter = char:Clone()
-        FakeCharacter.Parent = workspace
-        for _, v in ipairs(FakeCharacter:GetDescendants()) do if v:IsA("BasePart") then v.CanCollide = false end end
-        workspace.CurrentCamera.CameraSubject = FakeCharacter.Humanoid
-        
-        task.spawn(function()
-            local s = tick()
-            while IsIsolating and Toggled do
-                if (tick()-s > 1.5) or (not targetHum or targetHum.Health <= 0) or (not hum or hum.Health <= 0) then break end
-                hrp.CFrame = CFrame.new(freezePos.X, HIDE_Y, freezePos.Z)
-                hrp.AssemblyLinearVelocity = Vector3.zero
-                RunService.Heartbeat:Wait()
-            end
-            Reset()
-        end)
-
-        local bv = Instance.new("BodyVelocity", FakeCharacter.HumanoidRootPart)
-        bv.MaxForce = Vector3.new(1,1,1)*math.huge
-        local bg = Instance.new("BodyGyro", FakeCharacter.HumanoidRootPart)
-        bg.MaxTorque = Vector3.new(1,1,1)*math.huge
-
-        MoveConnection = RunService.RenderStepped:Connect(function()
-            if not FakeCharacter then return end
-            local cam = workspace.CurrentCamera
-            local moveDir = hum.MoveDirection
-            local velocity = (cam.CFrame.LookVector * -moveDir.Z) + (cam.CFrame.RightVector * moveDir.X)
-            if UIS:IsKeyDown(Enum.KeyCode.Space) then velocity += Vector3.new(0, 1, 0)
-            elseif UIS:IsKeyDown(Enum.KeyCode.LeftShift) then velocity += Vector3.new(0, -1, 0) end
-            bv.Velocity = velocity.Magnitude > 0 and velocity.Unit * FLY_SPEED or Vector3.zero
-            bg.CFrame = cam.CFrame
-        end)
-    end
-
-    -- Z実行ロジック
-    local function DoZ()
-        if IsIsolating or (tick() - LastUsed < COOLDOWN_TIME) then return end
-        local char = LocalPlayer.Character
-        local tool = char and char:FindFirstChildOfClass("Tool")
-        if not tool or not (tool.Name:lower():find("saishi") or tool.Name:lower():find("saddi") or tool.Name:lower():find("trident")) then return end
-
-        LastUsed = tick()
-        task.wait(0.2)
-        
-        local cam = workspace.CurrentCamera
-        local found = false
-        local scanEnd = tick() + 0.6
-        while tick() < scanEnd and not found do
-            for _, p in ipairs(Players:GetPlayers()) do
-                if p ~= LocalPlayer and p.Character then
-                    local eHrp = p.Character:FindFirstChild("HumanoidRootPart")
-                    if eHrp and (eHrp.Position - cam.CFrame.Position).Magnitude < 50 then
-                        if cam.CFrame.LookVector:Dot((eHrp.Position - cam.CFrame.Position).Unit) > 0.3 then
-                            Start(p.Character:FindFirstChild("Humanoid"))
-                            found = true break
-                        end
-                    end
-                end
-            end
-            RunService.Heartbeat:Wait()
-        end
-    end
-
-    -- 入力監視
-    UIS.InputBegan:Connect(function(input)
-        if input.KeyCode == Enum.KeyCode.Z and Toggled then
-            task.spawn(DoZ)
-        end
-    end)
-
-    -- 死亡対策
-    LocalPlayer.CharacterAdded:Connect(function(c)
-        task.wait(0.5)
-        Reset()
-        c:WaitForChild("Humanoid").Died:Connect(Reset)
-    end)
-
-    --------------------------------------------------
-    -- HUBへの本物のUI登録
-    --------------------------------------------------
-    CreateToggle(BF, "FINAL-Z (Anti-Combo)", false, function(state)
-        Toggled = state
-        if not state then Reset() end
-    end)
-end)
 -- ==================================================
 -- Blox Fruits: Buso & Energy (Z-Delayと同じ形式)
 -- ==================================================
@@ -1756,26 +1622,8 @@ task.spawn(function()
             end
         end
     end)
-
-    --------------------------------------------------
-    -- 2. Infinite Energy (無限エネルギー)
-    --------------------------------------------------
-    _G.InfiniteEnergy = false
-    CreateToggle(BF, "Infinite Energy", false, function(state)
-        _G.InfiniteEnergy = state
-    end)
-
-    RS.Heartbeat:Connect(function()
-        if _G.InfiniteEnergy then
-            local char = LP.Character
-            if char and char:FindFirstChild("Energy") then
-                char.Energy.Value = char.Energy.MaxValue
-            end
-        end
-    end)
-end)
 -- ==================================================
--- Blox Fruits 機能まとめ (FastAttack統合 & エラー修正版)
+-- Blox Fruits 機能まとめ (FastAttack常時動作型)
 -- ==================================================
 task.spawn(function()
     local BF = BloxFruitsTab -- タブ変数名
@@ -1822,7 +1670,7 @@ task.spawn(function()
     end
 
     --------------------------------------------------
-    -- 1. Fast Attack (高速攻撃)
+    -- 1. Fast Attack (高速攻撃) - トグル統合
     --------------------------------------------------
     CreateToggle(BF, "Fast Attack", false, function(v)
         FA_Enabled = v
@@ -1831,25 +1679,67 @@ task.spawn(function()
     local function ExecuteFA()
         local char = LP.Character
         local tool = char and char:FindFirstChildOfClass("Tool")
+        -- 武器チェック
         if not tool or not (tool.ToolTip == "Melee" or tool.ToolTip == "Sword" or tool.ToolTip == "Blox Fruit") then return end
 
         local targetPart, enemies = GetFATargets()
-        if not targetPart or #enemies == 0 then return end
 
+        -- 【修正点】敵がいなくてもRegisterAttackは常に送る
         FA_RE_RegisterAttack:FireServer(FA_ClickDelay)
-        FA_RE_RegisterHit:FireServer(targetPart, enemies)
+
+        -- 敵がいる時だけヒット判定を送信
+        if targetPart and #enemies > 0 then
+            FA_RE_RegisterHit:FireServer(targetPart, enemies)
+        end
         
+        -- 【修正点】LeftClickRemoteも常に送る (敵がいなければ正面を向いて空振り)
         if tool:FindFirstChild("LeftClickRemote") then
-            tool.LeftClickRemote:FireServer((targetPart.Position - char:GetPivot().Position).Unit, 1)
+            local direction
+            if targetPart then
+                direction = (targetPart.Position - char:GetPivot().Position).Unit
+            else
+                direction = char.HumanoidRootPart.CFrame.LookVector
+            end
+            tool.LeftClickRemote:FireServer(direction, 1)
         end
     end
 
+    -- メインループ
     task.spawn(function()
         while true do
-            if FA_Enabled then pcall(ExecuteFA) end
+            if FA_Enabled then 
+                pcall(ExecuteFA) 
+            end
             task.wait(FA_ClickDelay)
         end
     end)
+end)
+    --------------------------------------------------
+    -- 2. Infinite Energy (無限エネルギー)
+    --------------------------------------------------
+    _G.InfiniteEnergy = false
+    CreateToggle(BF, "Infinite Energy", false, function(state)
+        _G.InfiniteEnergy = state
+    end)
+
+    RS.Heartbeat:Connect(function()
+        if _G.InfiniteEnergy then
+            local char = LP.Character
+            if char and char:FindFirstChild("Energy") then
+                char.Energy.Value = char.Energy.MaxValue
+            end
+        end
+    end)
+end)
+-- ==================================================
+-- Blox Fruits 機能まとめ (FastAttack統合 & エラー修正版)
+-- ==================================================
+task.spawn(function()
+    local BF = BloxFruitsTab -- タブ変数名
+    local LP = game:GetService("Players").LocalPlayer
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+
 
     --------------------------------------------------
     -- 2. Fruit Sniper (実の自動回収)
