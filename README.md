@@ -2602,22 +2602,23 @@ for _, d in pairs(palette) do
     end)
 end
 ---------------------------------
--- 🌊 Sea Beast / Sea Event (SeaHunter Pro Ultimate 完全移植版)
+-- 🌊 Sea Beast / Sea Event (Ultimate Final)
 ---------------------------------
 local SeaTab = CreateTab("Sea Beast / Sea Event")
 
--- 元のスクリプトの全変数を保持
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local Workspace = game:GetService("Workspace")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
+local VirtualInputManager = game:GetService("VirtualInputManager")
 local player = Players.LocalPlayer
 local remote = ReplicatedStorage.Remotes.CommF_
 
+-- 設定
 local SETTINGS = {
-    FixedY = 100,
-    MoveSpeed = 2.0,
+    DefaultY = 200,
+    SeaBeastY = 50, -- 海王用の高度
+    MoveSpeed = 3.0,
     HuntTweenSpeed = 350,
     ReturnTweenSpeed = 250,
     BoatsPath = Workspace:WaitForChild("Boats"),
@@ -2625,171 +2626,194 @@ local SETTINGS = {
     EnemiesPath = Workspace:WaitForChild("Enemies")
 }
 
-local isAutoHunting, isAutoMoving = false, false
-local isTerrorSharkHunt, isSharkHunt, isPiranhaHunt, isBrigadeHunt = false, false, false, false
-local isProcessing = false 
-local lastBoatSeat = nil
+-- 状態管理（レジスタ節約のためテーブル化）
+local State = {
+    Hunting = false, Moving = false,
+    Terror = false, Shark = false, 
+    Piranha = false, Brigade = false,
+    Processing = false, LastSeat = nil
+}
+
+-- --- 強制離席 (2キー装備) ---
+local function forceUnsit()
+    local hum = player.Character and player.Character:FindFirstChild("Humanoid")
+    if hum then
+        hum.Sit = false
+        task.wait(0.1)
+        VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Two, false, game)
+        task.wait(0.05)
+        VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Two, false, game)
+    end
+end
+
+-- --- スキル連打 (Z,X,C,F) ---
+local function spamSkills()
+    for _, key in ipairs({Enum.KeyCode.Z, Enum.KeyCode.X, Enum.KeyCode.C, Enum.KeyCode.F}) do
+        VirtualInputManager:SendKeyEvent(true, key, false, game)
+        task.wait(0.01)
+        VirtualInputManager:SendKeyEvent(false, key, false, game)
+    end
+end
 
 -- --- 共通ついーん関数 ---
 local function stableTween(targetPart, speed, offset)
     if not targetPart then return end
-    local char = player.Character
-    local root = char and char:FindFirstChild("HumanoidRootPart")
+    local root = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
     if not root then return end
-    local off = offset or Vector3.new(0, 0, 0)
+    
     local connection
-    connection = RunService.RenderStepped:Connect(function(deltaTime)
-        if not targetPart or not targetPart.Parent or not root.Parent then connection:Disconnect() return end
-        local targetPos = targetPart.Position + off
-        local dist = (targetPos - root.Position).Magnitude
-        if dist < 4 then 
-            root.CFrame = CFrame.new(targetPos)
-            connection:Disconnect() 
-            return 
+    connection = RunService.RenderStepped:Connect(function(dt)
+        if not (targetPart and targetPart.Parent and root.Parent) then 
+            connection:Disconnect() return 
         end
-        local direction = (targetPos - root.Position).Unit
-        root.CFrame = CFrame.new(root.Position + (direction * (speed * deltaTime)))
+        local tPos = targetPart.Position + (offset or Vector3.new(0,0,0))
+        local dist = (tPos - root.Position).Magnitude
+        if dist < 4 then 
+            root.CFrame = CFrame.new(tPos)
+            connection:Disconnect() return 
+        end
+        root.CFrame = CFrame.new(root.Position + ((tPos - root.Position).Unit * (speed * dt)))
         root.Velocity = Vector3.zero
     end)
     while connection.Connected do task.wait() end
 end
 
--- --- 船を探して座る ---
-local function findAndSit(boatModel)
-    local char = player.Character
-    local hum = char and char:FindFirstChild("Humanoid")
-    local seat = boatModel:FindFirstChildWhichIsA("VehicleSeat", true)
-    if seat and hum then
-        lastBoatSeat = seat
-        stableTween(seat, SETTINGS.ReturnTweenSpeed, Vector3.new(0, 3, 0))
-        task.wait(0.2)
-        seat:Sit(hum)
-    end
+-- --- ターゲット有効判定 (HP0以下は即除外) ---
+local function isValid(m)
+    if not (m and m.Parent and m:FindFirstChild("HumanoidRootPart")) then return false end
+    local thum = m:FindFirstChildOfClass("Humanoid")
+    return not (thum and thum.Health <= 0)
 end
 
--- --- 連続狩りプロセス ---
-local function isValid(model)
-    if not model or not model.Parent then return false end
-    local thum = model:FindFirstChildOfClass("Humanoid")
-    return model:FindFirstChild("HumanoidRootPart") and (not thum or thum.Health > 0)
-end
-
+-- --- 狩りメインプロセス ---
 local function startContinuousHunt()
-    if isProcessing then return end
-    isProcessing = true
-    local char = player.Character
-    local hum = char and char:FindFirstChild("Humanoid")
-    local root = char and char:FindFirstChild("HumanoidRootPart")
-    if hum and hum.Sit then hum.Sit = false end
+    if State.Processing then return end
+    State.Processing = true
+    
+    forceUnsit()
     task.wait(0.2)
 
-    while isAutoHunting or isTerrorSharkHunt or isSharkHunt or isPiranhaHunt or isBrigadeHunt do
-        local targetModel = nil
-        local isDirectTarget = false
-        local currentEnemies = SETTINGS.EnemiesPath:GetChildren()
-        
-        if isTerrorSharkHunt then for _, v in pairs(currentEnemies) do if v.Name == "Terrorshark" and isValid(v) then targetModel = v; isDirectTarget = true; break end end end
-        if not targetModel and isBrigadeHunt then for _, v in pairs(currentEnemies) do if v.Name:find("Brigade") and isValid(v) then targetModel = v; isDirectTarget = false; break end end end
-        if not targetModel and isPiranhaHunt then for _, v in pairs(currentEnemies) do if v.Name == "Piranha" and isValid(v) then targetModel = v; isDirectTarget = true; break end end end
-        if not targetModel and isSharkHunt then for _, v in pairs(currentEnemies) do if v.Name == "Sharks" and isValid(v) then targetModel = v; isDirectTarget = true; break end end end
-        if not targetModel and isAutoHunting then for _, v in pairs(SETTINGS.SeaBeastsPath:GetChildren()) do if isValid(v) then targetModel = v; isDirectTarget = false; break end end end
-
-        if not targetModel or not root then break end
-        local targetRP = targetModel:FindFirstChild("HumanoidRootPart")
-        if targetRP then
-            stableTween(targetRP, SETTINGS.HuntTweenSpeed, isDirectTarget and Vector3.new(0, 10, 0) or nil)
-            while isValid(targetModel) do
-                root.CFrame = isDirectTarget and targetRP.CFrame * CFrame.new(0, 15, 0) or CFrame.new(targetRP.Position.X, SETTINGS.FixedY, targetRP.Position.Z)
-                root.Velocity = Vector3.zero
-                RunService.RenderStepped:Wait()
-                if not (isAutoHunting or isTerrorSharkHunt or isSharkHunt or isPiranhaHunt or isBrigadeHunt) then break end
-            end
-        end
-        task.wait(0.3)
-    end
-    if lastBoatSeat and lastBoatSeat.Parent then findAndSit(lastBoatSeat.Parent) end
-    isProcessing = false
-end
-
--- --- SHOP機能：ボート購入 ---
-local function buyAndRide(data, isLux)
-    local dealer = isLux and "Luxury Boat Dealer" or "Boat Dealer"
-    local team = (player.Team.Name == "Marines") and "Marine" or "Pirate"
     local root = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
-    if not root then return end
 
-    remote:InvokeServer("BuyBoat", "Speak"); task.wait(0.1)
-    local names = {data.n}
-    if data.t then table.insert(names, team..data.n); table.insert(names, team.." "..data.n); if data.n:find("Grand") then table.insert(names, "Grand "..team.." Brigade") end end
-    
-    for _, n in ipairs(names) do
-        if remote:InvokeServer("BuyBoat", n, dealer) ~= 0 then
-            task.wait(0.6)
-            local cb = nil; local md = math.huge
-            for _, b in pairs(SETTINGS.BoatsPath:GetChildren()) do
-                local br = b:FindFirstChild("Base") or b:FindFirstChildWhichIsA("BasePart", true)
-                if br then local d = (br.Position - root.Position).Magnitude; if d < md then md = d; cb = b end end
-            end
-            if cb then findAndSit(cb) end
-            return true
+    while (State.Hunting or State.Terror or State.Shark or State.Piranha or State.Brigade) do
+        local target, isDirect, currentY = nil, false, SETTINGS.DefaultY
+        local enm = SETTINGS.EnemiesPath:GetChildren()
+        
+        -- ターゲット選定
+        if State.Terror then for _,v in pairs(enm) do if v.Name == "Terrorshark" and isValid(v) then target, isDirect = v, true break end end end
+        if not target and State.Brigade then for _,v in pairs(enm) do if v.Name:find("Brigade") and isValid(v) then target = v break end end end
+        if not target and State.Piranha then for _,v in pairs(enm) do if v.Name == "Piranha" and isValid(v) then target, isDirect = v, true break end end end
+        if not target and State.Shark then for _,v in pairs(enm) do if v.Name == "Sharks" and isValid(v) then target, isDirect = v, true break end end end
+        if not target and State.Hunting then 
+            for _,v in pairs(SETTINGS.SeaBeastsPath:GetChildren()) do 
+                if isValid(v) then 
+                    target, currentY = v, SETTINGS.SeaBeastY -- 海王の時だけY=50
+                    break 
+                end 
+            end 
         end
+
+        if not (target and root) then break end
+        local trp = target.HumanoidRootPart
+        
+        -- 敵までついーん
+        stableTween(trp, SETTINGS.HuntTweenSpeed, isDirect and Vector3.new(0, 10, 0) or Vector3.new(0, currentY - trp.Position.Y, 0))
+        
+        -- 追従 & スキル攻撃
+        while isValid(target) and (State.Hunting or State.Terror or State.Shark or State.Piranha or State.Brigade) do
+            if isDirect then
+                root.CFrame = trp.CFrame * CFrame.new(0, 15, 0)
+            else
+                root.CFrame = CFrame.new(trp.Position.X, currentY, trp.Position.Z)
+            end
+            root.Velocity = Vector3.zero
+            spamSkills() -- Z,X,C,F
+            RunService.RenderStepped:Wait()
+        end
+        task.wait(0.1) -- ターゲット消失後すぐに次へ
+    end
+    
+    -- 船に戻る
+    if State.LastSeat and State.LastSeat.Parent then 
+        stableTween(State.LastSeat, SETTINGS.ReturnTweenSpeed, Vector3.new(0, 3, 0))
+        task.wait(0.2)
+        State.LastSeat:Sit(player.Character.Humanoid)
+    end
+    State.Processing = false
+end
+
+-- --- 自動監視 ---
+SETTINGS.SeaBeastsPath.ChildAdded:Connect(function() if State.Hunting then task.spawn(startContinuousHunt) end end)
+SETTINGS.EnemiesPath.ChildAdded:Connect(function(c)
+    task.wait(0.5)
+    local n = c.Name
+    if (State.Terror and n=="Terrorshark") or (State.Shark and n=="Sharks") or (State.Piranha and n=="Piranha") or (State.Brigade and n:find("Brigade")) then
+        task.spawn(startContinuousHunt)
+    end
+end)
+
+-- --- UI ---
+CreateSlider(SeaTab, "Hunt Speed", 100, 500, 350, function(v) SETTINGS.HuntTweenSpeed = v end)
+CreateToggle(SeaTab, "AUTO MOVE", false, function(v) State.Moving = v end)
+CreateToggle(SeaTab, "SEA BEAST", false, function(v) State.Hunting = v if v then task.spawn(startContinuousHunt) end end)
+CreateToggle(SeaTab, "TERROR SHARK", false, function(v) State.Terror = v if v then task.spawn(startContinuousHunt) end end)
+CreateToggle(SeaTab, "SHARKS", false, function(v) State.Shark = v if v then task.spawn(startContinuousHunt) end end)
+CreateToggle(SeaTab, "PIRANHA", false, function(v) State.Piranha = v if v then task.spawn(startContinuousHunt) end end)
+CreateToggle(SeaTab, "PIRATE SHIPS", false, function(v) State.Brigade = v if v then task.spawn(startContinuousHunt) end end)
+CreateButton(SeaTab, "RETURN TO BOAT", function() if State.LastSeat and State.LastSeat.Parent then startContinuousHunt() end end)
+
+-- --- SHOP (隔離ブロック) ---
+do
+    local boats = {
+        {"Dinghy", false}, {"Sloop", true}, {"Brigade", true}, {"Grand Brigade", true},
+        {"Miracle", false, true}, {"The Sentinel", false, true}, {"Guardian", false, true}, {"Lantern", false, true}, {"Sleigh", false, true}, {"Beast Hunter", false, true}
+    }
+    for _, info in ipairs(boats) do
+        CreateButton(SeaTab, "Buy: "..info[1], function()
+            local d = info[3] and "Luxury Boat Dealer" or "Boat Dealer"
+            local t = (player.Team.Name == "Marines") and "Marine" or "Pirate"
+            remote:InvokeServer("BuyBoat", "Speak")
+            local names = {info[1]}
+            if info[2] then table.insert(names, t..info[1]) table.insert(names, t.." "..info[1]) end
+            for _, n in ipairs(names) do
+                if remote:InvokeServer("BuyBoat", n, d) ~= 0 then
+                    task.wait(0.7)
+                    local root = player.Character.HumanoidRootPart
+                    local targetBoat = nil; local dist = 999
+                    for _, b in pairs(SETTINGS.BoatsPath:GetChildren()) do
+                        local m = b:FindFirstChildWhichIsA("BasePart", true)
+                        if m and (m.Position - root.Position).Magnitude < dist then
+                            dist = (m.Position - root.Position).Magnitude; targetBoat = b
+                        end
+                    end
+                    if targetBoat then 
+                        local seat = targetBoat:FindFirstChildWhichIsA("VehicleSeat", true)
+                        if seat then State.LastSeat = seat; stableTween(seat, 250, Vector3.new(0,3,0)); task.wait(0.2); seat:Sit(player.Character.Humanoid) end
+                    end
+                    break
+                end
+            end
+        end)
     end
 end
 
----------------------------------
--- 🛠️ UI配置 (植松聖HUB スタイル)
----------------------------------
-
--- スピード調整 (ついーん速度)
-CreateSlider(SeaTab, "海狩り速度 (Hunt Speed)", 100, 500, SETTINGS.HuntTweenSpeed, function(v)
-    SETTINGS.HuntTweenSpeed = v
-end)
-
--- HUNTER セクション
-CreateToggle(SeaTab, "AUTO MOVE (前進)", false, function(v) isAutoMoving = v end)
-CreateToggle(SeaTab, "SEA BEAST", false, function(v) isAutoHunting = v; if v then task.spawn(startContinuousHunt) end end)
-CreateToggle(SeaTab, "TERROR SHARK", false, function(v) isTerrorSharkHunt = v; if v then task.spawn(startContinuousHunt) end end)
-CreateToggle(SeaTab, "SHARKS", false, function(v) isSharkHunt = v; if v then task.spawn(startContinuousHunt) end end)
-CreateToggle(SeaTab, "PIRANHA", false, function(v) isPiranhaHunt = v; if v then task.spawn(startContinuousHunt) end end)
-CreateToggle(SeaTab, "PIRATE SHIPS", false, function(v) isBrigadeHunt = v; if v then task.spawn(startContinuousHunt) end end)
-
-CreateButton(SeaTab, "RETURN TO BOAT (船に戻る)", function()
-    if lastBoatSeat and lastBoatSeat.Parent then findAndSit(lastBoatSeat.Parent) end
-end)
-
--- SHOP セクション (ボート購入)
-local boatData = {
-    Normal = {{n="Dinghy", t=false}, {n="Sloop", t=true}, {n="Brigade", t=true}, {n="Grand Brigade", t=true}},
-    Luxury = {{n="Miracle", t=false}, {n="The Sentinel", t=false}, {n="Guardian", t=false}, {n="Lantern", t=false}, {n="Sleigh", t=false}, {n="Beast Hunter", t=false}}
-}
-
-for _, v in ipairs(boatData.Normal) do 
-    CreateButton(SeaTab, "Buy: " .. v.n, function() buyAndRide(v, false) end)
-end
-for _, v in ipairs(boatData.Luxury) do 
-    CreateButton(SeaTab, "Buy Luxury: " .. v.n, function() buyAndRide(v, true) end)
-end
-
--- --- 常駐ループ (Heartbeat) ---
+-- --- 常駐ループ ---
 RunService.Heartbeat:Connect(function()
     local char = player.Character
     local root = char and char:FindFirstChild("HumanoidRootPart")
     local hum = char and char:FindFirstChild("Humanoid")
-    if not root or not hum then return end
-
-    local seat = hum.SeatPart
-    if seat and seat:IsA("VehicleSeat") then
-        local cur = seat
+    if not (root and hum) then return end
+    if hum.SeatPart and hum.SeatPart:IsA("VehicleSeat") then
+        local cur = hum.SeatPart
         while cur ~= Workspace and cur ~= nil do 
-            if cur.Parent == SETTINGS.BoatsPath then lastBoatSeat = seat; break end
+            if cur.Parent == SETTINGS.BoatsPath then State.LastSeat = hum.SeatPart break end
             cur = cur.Parent 
         end
     end
-    
-    if isAutoMoving and not isProcessing and lastBoatSeat and hum.Sit then
+    if State.Moving and not State.Processing and State.LastSeat and hum.Sit then
         local fwd = Vector3.new(root.CFrame.LookVector.X, 0, root.CFrame.LookVector.Z).Unit
         root.CFrame = CFrame.new(root.Position + (fwd * SETTINGS.MoveSpeed), root.Position + (fwd * SETTINGS.MoveSpeed) + root.CFrame.LookVector)
-        root.CFrame = CFrame.new(root.Position.X, SETTINGS.FixedY, root.Position.Z) * (root.CFrame - root.CFrame.Position)
+        root.CFrame = CFrame.new(root.Position.X, SETTINGS.DefaultY, root.Position.Z) * (root.CFrame - root.CFrame.Position)
     end
 end)
 ---------------------------------
