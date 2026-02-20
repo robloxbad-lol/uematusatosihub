@@ -2492,7 +2492,7 @@ for _, d in pairs(palette) do
     end)
 end
 ---------------------------------
--- 🌊 Sea Beast / Sea Event (Ultimate Final)
+-- 🌊 Sea Beast / Sea Event (Target Fix)
 ---------------------------------
 local SeaTab = CreateTab("Sea Beast / Sea Event")
 
@@ -2507,7 +2507,8 @@ local remote = ReplicatedStorage.Remotes.CommF_
 -- 設定
 local SETTINGS = {
     DefaultY = 200,
-    SeaBeastY = 50, -- 海王用の高度
+    SeaBeastY = 50, 
+    ShipY = 20, -- 船用高度
     MoveSpeed = 3.0,
     HuntTweenSpeed = 350,
     ReturnTweenSpeed = 250,
@@ -2516,18 +2517,30 @@ local SETTINGS = {
     EnemiesPath = Workspace:WaitForChild("Enemies")
 }
 
--- 状態管理（レジスタ節約のためテーブル化）
 local State = {
     Hunting = false, Moving = false,
     Terror = false, Shark = false, 
     Piranha = false, Brigade = false,
+    Fishman = false, -- 追加
     Processing = false, LastSeat = nil
 }
 
--- --- 強制離席 (2キー装備) ---
+-- --- ターゲット有効判定 ---
+local function isValid(m)
+    if not (m and m.Parent) then return false end
+    -- Humanoidがある場合
+    local hum = m:FindFirstChildOfClass("Humanoid")
+    if hum then return hum.Health > 0 end
+    -- 船などの場合（Health属性かパーツの存在で判定）
+    local h = m:FindFirstChild("Health")
+    if h and h:IsA("ValueBase") then return h.Value > 0 end
+    return m:FindFirstChild("HumanoidRootPart") or m:FindFirstChildWhichIsA("BasePart", true)
+end
+
+-- --- 強制離席 ---
 local function forceUnsit()
     local hum = player.Character and player.Character:FindFirstChild("Humanoid")
-    if hum then
+    if hum and hum.Sit then
         hum.Sit = false
         task.wait(0.1)
         VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Two, false, game)
@@ -2536,7 +2549,7 @@ local function forceUnsit()
     end
 end
 
--- --- スキル連打 (Z,X,C,F) ---
+-- --- スキル連打 ---
 local function spamSkills()
     for _, key in ipairs({Enum.KeyCode.Z, Enum.KeyCode.X, Enum.KeyCode.C, Enum.KeyCode.F}) do
         VirtualInputManager:SendKeyEvent(true, key, false, game)
@@ -2545,9 +2558,9 @@ local function spamSkills()
     end
 end
 
--- --- 共通ついーん関数 ---
+-- --- 移動関数 ---
 local function stableTween(targetPart, speed, offset)
-    if not targetPart then return end
+    if not (targetPart and targetPart.Parent) then return end
     local root = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
     if not root then return end
     
@@ -2568,79 +2581,81 @@ local function stableTween(targetPart, speed, offset)
     while connection.Connected do task.wait() end
 end
 
--- --- ターゲット有効判定 (HP0以下は即除外) ---
-local function isValid(m)
-    if not (m and m.Parent and m:FindFirstChild("HumanoidRootPart")) then return false end
-    local thum = m:FindFirstChildOfClass("Humanoid")
-    return not (thum and thum.Health <= 0)
-end
-
--- --- 狩りメインプロセス ---
+-- --- メインプロセス ---
 local function startContinuousHunt()
     if State.Processing then return end
-    State.Processing = true
     
+    State.Processing = true
     forceUnsit()
     task.wait(0.2)
 
     local root = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
 
-    while (State.Hunting or State.Terror or State.Shark or State.Piranha or State.Brigade) do
+    while (State.Hunting or State.Terror or State.Shark or State.Piranha or State.Brigade or State.Fishman) do
         local target, isDirect, currentY = nil, false, SETTINGS.DefaultY
-        local enm = SETTINGS.EnemiesPath:GetChildren()
-        
-        -- ターゲット選定
-        if State.Terror then for _,v in pairs(enm) do if v.Name == "Terrorshark" and isValid(v) then target, isDirect = v, true break end end end
-        if not target and State.Brigade then for _,v in pairs(enm) do if v.Name:find("Brigade") and isValid(v) then target = v break end end end
-        if not target and State.Piranha then for _,v in pairs(enm) do if v.Name == "Piranha" and isValid(v) then target, isDirect = v, true break end end end
-        if not target and State.Shark then for _,v in pairs(enm) do if v.Name == "Sharks" and isValid(v) then target, isDirect = v, true break end end end
-        if not target and State.Hunting then 
-            for _,v in pairs(SETTINGS.SeaBeastsPath:GetChildren()) do 
-                if isValid(v) then 
-                    target, currentY = v, SETTINGS.SeaBeastY -- 海王の時だけY=50
-                    break 
-                end 
+        local currentEnemies = SETTINGS.EnemiesPath:GetChildren()
+
+        -- ターゲット選定 (ここですべてに isValid 判定を追加)
+        if State.Terror then for _,v in pairs(currentEnemies) do if v.Name == "Terrorshark" and isValid(v) then target, isDirect = v, true break end end end
+        if not target and State.Brigade then 
+            for _,v in pairs(currentEnemies) do 
+                -- Brigade, Ship に加え Boat を判定に追加
+                if (v.Name:find("Brigade") or v.Name:find("Ship") or v.Name:find("Boat")) and isValid(v) then target, currentY = v, SETTINGS.ShipY break end 
             end 
         end
+        if not target and State.Fishman then
+            for _,v in pairs(currentEnemies) do
+                if (v.Name:find("Fish") or v.Name:find("Crew")) and isValid(v) then 
+                    target = v
+                    if v.Name:find("Boat") then currentY = SETTINGS.ShipY else isDirect = true end
+                    break 
+                end
+            end
+        end
+        if not target and State.Piranha then for _,v in pairs(currentEnemies) do if v.Name == "Piranha" and isValid(v) then target, isDirect = v, true break end end end
+        if not target and State.Shark then 
+            for _,v in pairs(currentEnemies) do 
+                -- Sharks に加え find("Shark") を判定に追加
+                if (v.Name:find("Shark") or v.Name == "Sharks") and v.Name ~= "Terrorshark" and isValid(v) then target, isDirect = v, true break end 
+            end 
+        end
+        if not target and State.Hunting then 
+            -- SeaBeast に isValid を追加
+            for _,v in pairs(SETTINGS.SeaBeastsPath:GetChildren()) do if isValid(v) then target, currentY = v, SETTINGS.SeaBeastY break end end
+        end
 
-        if not (target and root) then break end
-        local trp = target.HumanoidRootPart
+        if not (target and root and isValid(target)) then break end
+        local trp = target:FindFirstChild("HumanoidRootPart") or target:FindFirstChildWhichIsA("BasePart", true)
         
-        -- 敵までついーん
-        stableTween(trp, SETTINGS.HuntTweenSpeed, isDirect and Vector3.new(0, 10, 0) or Vector3.new(0, currentY - trp.Position.Y, 0))
+        -- 移動
+        stableTween(trp, SETTINGS.HuntTweenSpeed, isDirect and Vector3.new(0, 15, 0) or Vector3.new(0, currentY - trp.Position.Y, 0))
         
-        -- 追従 & スキル攻撃
-        while isValid(target) and (State.Hunting or State.Terror or State.Shark or State.Piranha or State.Brigade) do
+        -- 攻撃
+        while isValid(target) and (State.Hunting or State.Terror or State.Shark or State.Piranha or State.Brigade or State.Fishman) do
             if isDirect then
-                root.CFrame = trp.CFrame * CFrame.new(0, 15, 0)
+                root.CFrame = trp.CFrame * CFrame.new(0, 20, 0)
             else
                 root.CFrame = CFrame.new(trp.Position.X, currentY, trp.Position.Z)
             end
             root.Velocity = Vector3.zero
-            spamSkills() -- Z,X,C,F
+            spamSkills()
             RunService.RenderStepped:Wait()
         end
-        task.wait(0.1) -- ターゲット消失後すぐに次へ
+        task.wait(0.1)
     end
     
-    -- 船に戻る
+    -- 帰還
     if State.LastSeat and State.LastSeat.Parent then 
         stableTween(State.LastSeat, SETTINGS.ReturnTweenSpeed, Vector3.new(0, 3, 0))
         task.wait(0.2)
-        State.LastSeat:Sit(player.Character.Humanoid)
+        pcall(function() State.LastSeat:Sit(player.Character.Humanoid) end)
     end
     State.Processing = false
 end
 
--- --- 自動監視 ---
+-- --- 監視 ---
 SETTINGS.SeaBeastsPath.ChildAdded:Connect(function() if State.Hunting then task.spawn(startContinuousHunt) end end)
-SETTINGS.EnemiesPath.ChildAdded:Connect(function(c)
-    task.wait(0.5)
-    local n = c.Name
-    if (State.Terror and n=="Terrorshark") or (State.Shark and n=="Sharks") or (State.Piranha and n=="Piranha") or (State.Brigade and n:find("Brigade")) then
-        task.spawn(startContinuousHunt)
-    end
-end)
+SETTINGS.EnemiesPath.ChildAdded:Connect(function() task.spawn(startContinuousHunt) end)
 
 -- --- UI ---
 CreateSlider(SeaTab, "Hunt Speed", 100, 500, 350, function(v) SETTINGS.HuntTweenSpeed = v end)
@@ -2650,9 +2665,10 @@ CreateToggle(SeaTab, "TERROR SHARK", false, function(v) State.Terror = v if v th
 CreateToggle(SeaTab, "SHARKS", false, function(v) State.Shark = v if v then task.spawn(startContinuousHunt) end end)
 CreateToggle(SeaTab, "PIRANHA", false, function(v) State.Piranha = v if v then task.spawn(startContinuousHunt) end end)
 CreateToggle(SeaTab, "PIRATE SHIPS", false, function(v) State.Brigade = v if v then task.spawn(startContinuousHunt) end end)
-CreateButton(SeaTab, "RETURN TO BOAT", function() if State.LastSeat and State.LastSeat.Parent then startContinuousHunt() end end)
+CreateToggle(SeaTab, "FISHMAN / BOAT", false, function(v) State.Fishman = v if v then task.spawn(startContinuousHunt) end end)
+CreateButton(SeaTab, "RETURN TO BOAT", function() if State.LastSeat and State.LastSeat.Parent then task.spawn(startContinuousHunt) end end)
 
--- --- SHOP (隔離ブロック) ---
+-- SHOP(省略)
 do
     local boats = {
         {"Dinghy", false}, {"Sloop", true}, {"Brigade", true}, {"Grand Brigade", true},
@@ -2687,7 +2703,7 @@ do
     end
 end
 
--- --- 常駐ループ ---
+-- 常駐
 RunService.Heartbeat:Connect(function()
     local char = player.Character
     local root = char and char:FindFirstChild("HumanoidRootPart")
