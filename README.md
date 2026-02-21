@@ -2388,36 +2388,32 @@ end
 for _, p in pairs(Players:GetPlayers()) do createPlayerEntry(p) end
 Players.PlayerAdded:Connect(createPlayerEntry)
 Players.PlayerRemoving:Connect(function(p) if scrollFrame:FindFirstChild(p.Name) then scrollFrame[p.Name]:Destroy() end end)
-
 ---------------------------------
--- 🎨 VFXカラー タブ (全自動更新 & 複数表示版)
+-- 🎨 VFXカラー タブ (リスポーン完全対応 & 0.2s爆速レインボー)
 ---------------------------------
 local VFXTab = CreateTab("VFXカラー")
 
-local selectedVFX = nil
+-- 内部変数
+local selectedVFXName = nil -- オブジェクトではなく「名前」で覚える
+local currentVFXObj = nil
 local rainbowLoop = nil
+local lastSelectedColor = Color3.new(1, 1, 1)
+local isRainbowEnabled = false
 
--- ボタンを入れるための「自動整列コンテナ」
-local vfxListFrame = Instance.new("Frame", VFXTab)
-vfxListFrame.Size = UDim2.new(1, 0, 0, 0)
-vfxListFrame.AutomaticSize = Enum.AutomaticSize.Y
-vfxListFrame.BackgroundTransparency = 1
-vfxListFrame.LayoutOrder = -10 -- 最上部固定
-
-local listLayout = Instance.new("UIListLayout", vfxListFrame)
-listLayout.SortOrder = Enum.SortOrder.LayoutOrder
-listLayout.Padding = UDim.new(0, 5)
-
--- --- 元のロジック (applyColor) ---
+-- --- 【コアロジック】仕組みはそのまま、より確実に ---
 local function applyColor(targetColor)
-    if not selectedVFX then return end
-    local shifted = selectedVFX:FindFirstChild("Shifted")
+    -- 現在有効なVFXオブジェクトがない場合は何もしない
+    if not currentVFXObj then return end
+    
+    local shifted = currentVFXObj:FindFirstChild("Shifted")
     if shifted then
+        -- 属性（Attributes）を更新
         for attrName, _ in pairs(shifted:GetAttributes()) do
             if string.find(attrName:lower(), "shifted_color") then 
                 shifted:SetAttribute(attrName, targetColor) 
             end
         end
+        -- 子要素（Color3Value）を更新
         for _, child in pairs(shifted:GetChildren()) do
             if string.find(child.Name:lower(), "shifted_color") and child:IsA("Color3Value") then 
                 child.Value = targetColor 
@@ -2426,73 +2422,100 @@ local function applyColor(targetColor)
     end
 end
 
--- --- 【自動更新】VFXリスト作成関数 ---
+-- --- 【自動更新】VFXリスト作成 ---
+local vfxListFrame = Instance.new("Frame", VFXTab)
+vfxListFrame.Size = UDim2.new(1, 0, 0, 0)
+vfxListFrame.AutomaticSize = Enum.AutomaticSize.Y
+vfxListFrame.BackgroundTransparency = 1
+vfxListFrame.LayoutOrder = -10
+
+local listLayout = Instance.new("UIListLayout", vfxListFrame)
+listLayout.Padding = UDim.new(0, 5)
+
 local function refreshVFXList()
-    -- 中身を全削除
     for _, child in pairs(vfxListFrame:GetChildren()) do
         if not child:IsA("UIListLayout") then child:Destroy() end
     end
     
-    local foundCount = 0
     for _, vfx in pairs(game.Players.LocalPlayer:GetChildren()) do
         if vfx.Name:find("VFXColor") then
-            foundCount = foundCount + 1
             local vfxName = vfx.Name:gsub("VFXColor", "")
-            
-            -- ボタンを作成（CreateButtonをコンテナ内で実行）
-            local b = CreateButton(vfxListFrame, "👉 選択: " .. vfxName, function()
-                selectedVFX = vfx
+            CreateButton(vfxListFrame, "👉 選択: " .. vfxName, function()
+                currentVFXObj = vfx
+                selectedVFXName = vfx.Name -- 名前を保存しておく（重要！）
                 Notify("Active: " .. vfxName)
+                if not isRainbowEnabled then applyColor(lastSelectedColor) end
             end)
         end
     end
 end
 
--- 最初の実行
-refreshVFXList()
-
--- 【重要】プレイヤーの持ち物を監視して自動更新
-game.Players.LocalPlayer.ChildAdded:Connect(function(child)
-    if child.Name:find("VFXColor") then task.wait(0.1); refreshVFXList() end
-end)
-game.Players.LocalPlayer.ChildRemoved:Connect(function(child)
-    if child.Name:find("VFXColor") then task.wait(0.1); refreshVFXList() end
-end)
-
--- -------------------------------
--- 🌈 Rainbow & カラーパレット (これらは下に来る)
--- -------------------------------
-CreateButton(VFXTab, "🌈 RAINBOW MODE (ON/OFF)", function()
-    if not selectedVFX then Notify("先にVFXを選択してください"); return end
-    if rainbowLoop then 
-        rainbowLoop:Disconnect(); rainbowLoop = nil; Notify("Rainbow OFF")
-    else
-        rainbowLoop = game:GetService("RunService").Heartbeat:Connect(function()
-            local h = (tick() % 5) / 5
-            applyColor(Color3.fromHSV(h, 1, 1))
-        end)
-        Notify("Rainbow ON")
+-- --- 【リスポーン対策】生き返ったら自動で再適用 ---
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+    task.wait(1.5) -- VFXが生成されるまで待機
+    refreshVFXList()
+    
+    -- 死ぬ前に選んでいたVFXがあれば、新しい方を自動でターゲットにする
+    if selectedVFXName then
+        local newVfx = game.Players.LocalPlayer:FindFirstChild(selectedVFXName)
+        if newVfx then
+            currentVFXObj = newVfx
+            if isRainbowEnabled then
+                -- レインボー継続（ループは切れていないので自動で適用され続ける）
+            else
+                applyColor(lastSelectedColor)
+            end
+        end
     end
 end)
 
+-- アイテム増減監視
+game.Players.LocalPlayer.ChildAdded:Connect(function(c) if c.Name:find("VFXColor") then task.wait(0.1); refreshVFXList() end end)
+game.Players.LocalPlayer.ChildRemoved:Connect(function(c) if c.Name:find("VFXColor") then task.wait(0.1); refreshVFXList() end end)
+
+-- --- 🌈 超高速レインボー (0.2秒周期) ---
+CreateButton(VFXTab, "🔥 GAMING RAINBOW (0.2s)", function()
+    if not currentVFXObj then Notify("先にVFXを選択してください"); return end
+    
+    isRainbowEnabled = not isRainbowEnabled
+    if rainbowLoop then rainbowLoop:Disconnect(); rainbowLoop = nil end
+    
+    if isRainbowEnabled then
+        rainbowLoop = game:GetService("RunService").Heartbeat:Connect(function()
+            local speed = 0.2 -- ここを0.2に固定
+            local h = (tick() % speed) / speed
+            applyColor(Color3.fromHSV(h, 1, 1))
+        end)
+        Notify("Rainbow ON")
+    else
+        applyColor(lastSelectedColor)
+        Notify("Rainbow OFF")
+    end
+end)
+
+-- --- 🎨 被りなし！厳選カラーパレット ---
 local palette = {
-    {"Red", Color3.new(1,0,0)}, {"Crimson", Color3.new(0.6,0,0)}, {"Orange", Color3.new(1,0.5,0)},
-    {"Gold", Color3.new(1,0.8,0)}, {"Yellow", Color3.new(1,1,0)}, {"Lime", Color3.new(0.5,1,0)},
-    {"Green", Color3.new(0,1,0)}, {"Forest", Color3.new(0,0.4,0)}, {"Mint", Color3.new(0.6,1,0.8)},
-    {"Cyan", Color3.new(0,1,1)}, {"Teal", Color3.new(0,0.5,0.5)}, {"Sky", Color3.new(0.5,0.7,1)},
-    {"Blue", Color3.new(0,0,1)}, {"Navy", Color3.new(0,0,0.5)}, {"Purple", Color3.new(0.5,0,1)},
-    {"Magenta", Color3.new(1,0,1)}, {"Pink", Color3.new(1,0.6,0.8)}, {"HotPink", Color3.new(1,0,0.5)},
-    {"White", Color3.new(1,1,1)}, {"Gray", Color3.new(0.5,0.5,0.5)}, {"Black", Color3.new(0,0,0)}
+    {"Red", Color3.new(1,0,0)}, {"Orange", Color3.new(1,0.5,0)}, {"Yellow", Color3.new(1,1,0)},
+    {"Lime", Color3.new(0.5,1,0)}, {"Green", Color3.new(0,1,0)}, {"Mint", Color3.new(0.4,1,0.6)},
+    {"Aqua", Color3.new(0,1,0.8)}, {"Cyan", Color3.new(0,1,1)}, {"Sky", Color3.new(0.2,0.6,1)},
+    {"Blue", Color3.new(0,0,1)}, {"Purple", Color3.new(0.6,0,1)}, {"Magenta", Color3.new(1,0,1)},
+    {"Pink", Color3.new(1,0.4,0.7)}, {"White", Color3.new(1,1,1)}, {"Gold", Color3.new(1,0.8,0)},
+    {"Crimson", Color3.new(0.6,0,0)}, {"Forest", Color3.new(0,0.4,0)}, {"Navy", Color3.new(0,0,0.5)},
+    {"Silver", Color3.new(0.7,0.7,0.7)}, {"Ghost", Color3.new(0.9,0.9,1)}
 }
 
 for _, d in pairs(palette) do
     CreateButton(VFXTab, "Color: " .. d[1], function()
+        isRainbowEnabled = false
         if rainbowLoop then rainbowLoop:Disconnect(); rainbowLoop = nil end
+        lastSelectedColor = d[2]
         applyColor(d[2])
     end)
 end
+
+refreshVFXList()
 ---------------------------------
--- 🌊 Sea Beast / Sea Event (武器装備 徹底強化版)
+-- 🌊 Sea Beast / Sea Event (連続撃破・帰還バグ修正版)
 ---------------------------------
 local SeaTab = CreateTab("Sea Beast / Sea Event")
 
@@ -2533,31 +2556,19 @@ local function isValid(m)
     return m:FindFirstChild("HumanoidRootPart") or m:FindFirstChildWhichIsA("BasePart", true)
 end
 
--- --- 【2キー固定】武器装備関数 ---
+-- --- 2キー装備 ---
 local function forceEquipWeapon()
     local char = player.Character
     local hum = char and char:FindFirstChild("Humanoid")
-    local backpack = player:FindFirstChild("Backpack")
-    
     if hum then
-        hum.Sit = false -- 椅子から降りる
+        hum.Sit = false
         task.wait(0.3)
-        
-        -- 2キーの入力（VirtualInput）を5回送る
         for i = 1, 5 do
-            if char:FindFirstChildOfClass("Tool") then break end -- 何か持ったら終了
+            if char:FindFirstChildOfClass("Tool") then break end
             VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Two, false, game)
             task.wait(0.05)
             VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Two, false, game)
             task.wait(0.1)
-        end
-        
-        -- もしキー入力が効かなかった時のために、バックパックの2番目を強制装備
-        if not char:FindFirstChildOfClass("Tool") and backpack then
-            local tools = backpack:GetChildren()
-            if tools[2] and tools[2]:IsA("Tool") then
-                hum:EquipTool(tools[2])
-            end
         end
     end
 end
@@ -2594,66 +2605,69 @@ local function stableTween(targetPart, speed, offset)
     while connection.Connected do task.wait() end
 end
 
--- --- 狩りプロセス ---
-local function startContinuousHunt()
+-- --- ターゲット検索 (複数対応) ---
+local function findNextTarget()
+    local enm = SETTINGS.EnemiesPath:GetChildren()
+    if State.Terror then for _,v in pairs(enm) do if v.Name == "Terrorshark" and isValid(v) then return v, true, SETTINGS.DefaultY end end end
+    if State.Brigade then for _,v in pairs(enm) do if (v.Name:find("Brigade") or v.Name:find("Ship") or v.Name:find("Boat")) and isValid(v) then return v, false, SETTINGS.ShipY end end end
+    if State.Fishman then for _,v in pairs(enm) do if (v.Name:find("Fish") or v.Name:find("Crew")) and isValid(v) then local isD = not v.Name:find("Boat") return v, isD, (isD and SETTINGS.DefaultY or SETTINGS.ShipY) end end end
+    if State.Piranha then for _,v in pairs(enm) do if v.Name == "Piranha" and isValid(v) then return v, true, SETTINGS.DefaultY end end end
+    if State.Shark then for _,v in pairs(enm) do if (v.Name:find("Shark") or v.Name == "Sharks") and v.Name ~= "Terrorshark" and isValid(v) then return v, true, SETTINGS.DefaultY end end end
+    if State.Hunting then for _,v in pairs(SETTINGS.SeaBeastsPath:GetChildren()) do if isValid(v) then return v, false, SETTINGS.SeaBeastY end end end
+    return nil
+end
+
+-- --- メインプロセス (バグ修正版) ---
+local function startHunt()
     if State.Processing then return end
     
-    local target, isDirect, currentY = nil, false, SETTINGS.DefaultY
-    local enm = SETTINGS.EnemiesPath:GetChildren()
-    
-    for _, v in pairs(enm) do
-        if isValid(v) then
-            local n = v.Name
-            if State.Terror and n == "Terrorshark" then target, isDirect = v, true break
-            elseif State.Brigade and (n:find("Brigade") or n:find("Ship") or n:find("Boat")) then target, currentY = v, SETTINGS.ShipY break
-            elseif State.Fishman and (n:find("Fish") or n:find("Crew")) then 
-                target = v
-                if n:find("Boat") then currentY = SETTINGS.ShipY else isDirect = true end
-                break
-            elseif State.Piranha and n == "Piranha" then target, isDirect = v, true break
-            elseif State.Shark and (n:find("Shark") or n == "Sharks") and n ~= "Terrorshark" then target, isDirect = v, true break
-            end
-        end
-    end
-
-    if not target and State.Hunting then
-        for _, v in pairs(SETTINGS.SeaBeastsPath:GetChildren()) do
-            if isValid(v) then target, currentY = v, SETTINGS.SeaBeastY break end
-        end
-    end
-
+    local target, isDirect, currentY = findNextTarget()
     if not target then return end
 
     State.Processing = true
-    forceEquipWeapon() -- ここで確実に装備
-    task.wait(0.2)
+    forceEquipWeapon()
 
-    local root = player.Character:FindFirstChild("HumanoidRootPart")
-    while isValid(target) and (State.Hunting or State.Terror or State.Shark or State.Piranha or State.Brigade or State.Fishman) do
+    -- 敵がいなくなるまでこのループから出ない
+    while true do
+        target, isDirect, currentY = findNextTarget()
+        if not target then break end -- 全員倒したらループ終了
+
+        local root = player.Character:FindFirstChild("HumanoidRootPart")
         local trp = target:FindFirstChild("HumanoidRootPart") or target:FindFirstChildWhichIsA("BasePart", true)
-        if not trp then break end
 
-        if isDirect then
-            root.CFrame = trp.CFrame * CFrame.new(0, 20, 0)
-        else
-            root.CFrame = CFrame.new(trp.Position.X, currentY, trp.Position.Z)
+        if trp then
+            -- 攻撃位置へ移動
+            stableTween(trp, SETTINGS.HuntTweenSpeed, isDirect and Vector3.new(0, 15, 0) or Vector3.new(0, currentY - trp.Position.Y, 0))
+            
+            -- 個別の敵を倒すまでループ
+            while isValid(target) and (State.Hunting or State.Terror or State.Shark or State.Piranha or State.Brigade or State.Fishman) do
+                if isDirect then
+                    root.CFrame = trp.CFrame * CFrame.new(0, 20, 0)
+                else
+                    root.CFrame = CFrame.new(trp.Position.X, currentY, trp.Position.Z)
+                end
+                root.Velocity = Vector3.zero
+                spamSkills()
+                RunService.Heartbeat:Wait()
+                -- 途中で設定がオフになったら即座に終了
+                if not (State.Hunting or State.Terror or State.Shark or State.Piranha or State.Brigade or State.Fishman) then break end
+            end
         end
-        root.Velocity = Vector3.zero
-        spamSkills()
-        RunService.Heartbeat:Wait()
+        task.wait(0.2) -- ちょっとだけ待って次の敵をスキャン
     end
     
+    -- 全ての敵が消えてから、初めて船に戻る
     if State.LastSeat and State.LastSeat.Parent then 
         stableTween(State.LastSeat, SETTINGS.ReturnTweenSpeed, Vector3.new(0, 3, 0))
-        task.wait(0.2)
+        task.wait(0.3)
         pcall(function() State.LastSeat:Sit(player.Character.Humanoid) end)
     end
     State.Processing = false
 end
 
 -- --- 監視 ---
-SETTINGS.SeaBeastsPath.ChildAdded:Connect(function() task.delay(0.5, startContinuousHunt) end)
-SETTINGS.EnemiesPath.ChildAdded:Connect(function() task.delay(0.5, startContinuousHunt) end)
+SETTINGS.SeaBeastsPath.ChildAdded:Connect(function() task.spawn(startHunt) end)
+SETTINGS.EnemiesPath.ChildAdded:Connect(function() task.spawn(startHunt) end)
 
 -- --- UI ---
 CreateSlider(SeaTab, "Hunt Speed", 100, 500, 350, function(v) SETTINGS.HuntTweenSpeed = v end)
@@ -2735,12 +2749,8 @@ RunService.Heartbeat:Connect(function()
     end
 
     if not State.Processing then
-        local targetFound = false
-        for _, v in pairs(SETTINGS.EnemiesPath:GetChildren()) do
-            if isValid(v) then targetFound = true break end
-        end
-        if targetFound or (State.Hunting and #SETTINGS.SeaBeastsPath:GetChildren() > 0) then
-            task.spawn(startContinuousHunt)
+        if findNextTarget() then
+            task.spawn(startHunt)
         end
     end
 end)
