@@ -9,4 +9,5693 @@
 
 ]]--
 
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v362,v363) local v364={};for v841=1, #v362 do v6(v364,v0(v4(v1(v2(v362,v841,v841 + 1 )),v1(v2(v363,1 + (v841% #v363) ,1 + (v841% #v363) + 1 )))%256 ));end return v5(v364);end local v8=game.CoreGui:FindFirstChild("植松聖HUB");if v8 then v8:Destroy();end local v9=game.Players.LocalPlayer;local v10=game:GetService(v7("\228\208\222\55\207\181\215\11\197\240\222\55\240\178\196\27","\126\177\163\187\69\134\219\167"));local v11=Instance.new(v7("\16\206\56\192\249\45\234\63\204","\156\67\173\74\165"));v11.Name="植松聖HUB";v11.Parent=game.CoreGui;v11.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;_G.NebulaSettings=_G.NebulaSettings or {[v7("\3\182\69\29\143\54\67\49\179","\38\84\215\41\118\220\70")]=5 + 11 ,[v7("\121\24\36\27\240\89\2\39\56\235\93\6","\158\48\118\66\114")]=false,[v7("\152\37\6\51\119\149\244\184","\155\203\68\112\86\19\197")]=nil,[v7("\103\200\34\243\97\113\232","\152\38\189\86\156\32\24\133")]=false,[v7("\218\88\177\103\245\90","\38\156\55\199")]=false} ;local v17=_G.NebulaSettings;local v18=false;local function v19(v365) local v366=0;local v367;local v368;local v369;while true do if (v366==(0 -0)) then v367=0 + 0 ;v368=nil;v366=3 -2 ;end if ((77 -(73 + 3))==v366) then v369=nil;while true do if (0==v367) then v368=(0 -0) -(0 -0) ;v369=nil;v367=1;end if (v367==(2 -1)) then while true do if (v368==((1758 -(1668 + 87)) -(1 + 1))) then local v1563=0;while true do if (v1563==(1900 -(296 + 1603))) then v368=(468 -(79 + 27)) -(121 + 30 + 209) ;break;end if (v1563==(1007 -(700 + 307))) then v369.Volume=6 -(3 + 1) ;v369.Parent=game:GetService(v7("\155\114\105\38\23\71\255\81\190\116\127\45","\35\200\29\28\72\115\20\154"));v1563=1;end end end if (v368==((1799 -(1477 + 322)) + 0 + 0)) then local v1564=0 -0 ;while true do if (v1564==(1 + 0)) then v368=(4801 -3320) -(485 + 156 + (3415 -2576)) ;break;end if (v1564==(0 -0)) then v369=Instance.new(v7("\42\176\196\209\137","\84\121\223\177\191\237\76"));v369.SoundId=v7("\169\84\209\161\41\67\53\213\178\82\147\239\117","\161\219\54\169\192\90\48\80")   .. v365 ;v1564=1;end end end if (v368==((436 + 479) -(910 + (6 -3)))) then v369.PlayOnRemove=true;v369:Destroy();break;end end break;end end break;end end end local function v20(v370) local v371=(0 -0) -(0 -0) ;local v372;local v373;while true do if (v371==((3471 -(20 + 1766)) -((2834 -1368) + 218))) then v372.BackgroundColor3=Color3.fromRGB((823 -(88 + 721)) + 16 + 0 ,0 + 0 ,(491 + 657) -(556 + 201 + 391) );Instance.new(v7("\124\107\35\42\91\76\5\55","\69\41\34\96"),v372);Instance.new(v7("\137\234\228\30\16\36\183\198","\75\220\163\183\106\98"),v372).Color=Color3.fromRGB(91 + 164 ,0 -0 ,808 -((641 -312) + 479) );v371=856 -((611 -(93 + 344)) + 680) ;end if (v371==(1215 -(960 + 253))) then v373=Instance.new(v7("\54\191\147\35\245\3\184\142\59","\185\98\218\235\87"),v372);v373.Size=UDim2.new((1 + 2) -2 ,0,(2 -1) -0 ,0 + 0 );v373.Text=v370;v371=(2178 -1436) -((1812 -(74 + 1342)) + 88 + 255) ;end if ((0 + (474 -(33 + 441)))==v371) then local v1027=0 -0 ;local v1028;while true do if (0==v1027) then v1028=(2896 -(64 + 1355)) -(29 + 1448) ;while true do if (v1028==((2030 -640) -((146 -(5 + 6)) + 1254))) then v372.Position=UDim2.new(1.1 + 0 ,0 + 0 ,(446.9 -(369 + 77)) -(0 + 0) ,(738 -(438 + 300)) -(294 -(50 + 244)) );v371=1 + 0 ;break;end if (v1028==((2728 -(95 + 1106)) -((733 -344) + (5640 -4502)))) then local v1567=0;local v1568;while true do if (v1567==(1896 -(1741 + 155))) then v1568=0;while true do if (v1568==(0 -0)) then v372=Instance.new(v7("\237\46\38\235\219","\202\171\92\71\134\190"),v11);v372.Size=UDim2.new((860 -286) -((213 -111) + 472) ,208 + 12 ,0 + 0 + 0 ,22 + 25 + 2 + 1 );v1568=1;end if (1==v1568) then v1028=1;break;end end break;end end end end break;end end end if (v371==((3727 -2177) -(320 + (3067 -1842)))) then task.delay((1779 -(1263 + 514)) -0 ,function() if (v372 and v372.Parent) then local v1288=497 -(73 + 424) ;local v1289;local v1290;while true do if (v1288==(2 -1)) then while true do if (v1289==(1464 -((465 -(93 + 215)) + (4562 -3255)))) then v1290=(3794 -(1756 + 179)) -(821 + 1038) ;while true do if (v1290==(0 -(1679 -(550 + 1129)))) then local v1975=107 -(57 + 50) ;local v1976;while true do if (0==v1975) then v1976=0;while true do if (v1976==(629 -(30 + 599))) then v372:TweenPosition(UDim2.new(1.1,0 + 0 ,0.9,(0 -0) + (918 -(794 + 124)) ),v7("\0\207","\232\73\161\76"),v7("\138\204\67\79\10","\126\219\185\34\61"),0.3);task.wait(0.4 -0 );v1976=1;end if (v1976==1) then v1290=1 + 0 + 0 ;break;end end break;end end end if (v1290==(2 -(1 + 0))) then v372:Destroy();break;end end break;end end break;end if (v1288==(0 -0)) then local v1569=1927 -(1299 + 628) ;while true do if (v1569==(0 -0)) then v1289=0 + 0 ;v1290=nil;v1569=2 -1 ;end if ((1 + 0)==v1569) then v1288=1;break;end end end end end end);break;end if (v371==(8 -5)) then local v1029=1445 -(335 + 1110) ;while true do if (v1029==(0 + 0)) then v373.TextColor3=Color3.fromRGB((4218 -2937) -(834 + 192) ,17 + (424 -186) ,587 -(268 + 64) );v373.Font=Enum.Font.SourceSansBold;v1029=1 + 0 ;end if (v1029==1) then v373.TextSize=1292 -(243 + 1035) ;v371=4;break;end end end if (v371==((4 -2) + 2)) then local v1030=0;local v1031;while true do if (v1030==(0 -0)) then v1031=0;while true do if (v1031==0) then v373.BackgroundTransparency=(4 -3) + 0 ;v19(v7("\90\155\15\42\38\38\162\176\92\156","\135\108\174\62\18\30\23\147"));v1031=1 + 0 ;end if (v1031==(1 + 0)) then v372:TweenPosition(UDim2.new((1 -0) -(100 -(90 + 10)) , -(534 -((1104 -(209 + 595)) + 4)),0.9,805 -(603 + 202) ),v7("\153\252\62","\167\214\137\74\171\120\206\83"),v7("\186\229\51\79\236","\199\235\144\82\61\152"),0.3 + 0 + 0 );v371=(42 -29) -8 ;break;end end break;end end end end end local v21=v10.JumpRequest:Connect(function() if v17.InfiniteJump then local v952=0 + 0 ;local v953;local v954;local v955;local v956;while true do if (v952==(5 -3)) then while true do if (v953==(1 + 0 + (0 -0))) then v956=nil;while true do if (((8 -6) -(280 -(174 + 105)))==v954) then if v956 then v956:ChangeState(Enum.HumanoidStateType.Jumping);end break;end if (0==v954) then v955=v9.Character;v956=v955 and v955:FindFirstChildOfClass(v7("\47\3\180\42\9\25\176\47","\75\103\118\217")) ;v954=3 -2 ;end end break;end if (((913 -(532 + 381)) + 0 + 0)==v953) then local v1492=839 -(137 + 702) ;while true do if (v1492==1) then v953=(2 -1) + 0 + 0 ;break;end if (v1492==(0 -0)) then v954=(1886 -(1819 + 67)) + 0 ;v955=nil;v1492=1;end end end end break;end if (v952==(0 + 0)) then v953=(116 + 246) -(112 + 250) ;v954=nil;v952=1358 -(259 + 1098) ;end if ((1 + 0)==v952) then v955=nil;v956=nil;v952=1 + 1 ;end end end end);task.spawn(function() while task.wait(1 + 0 + (0 -0) ) do local v842=0 + 0 ;local v843;local v844;while true do if (v842==(0 + 0)) then v843=(0 -0) + (1706 -(667 + 1039)) ;v844=nil;v842=1020 -(274 + 745) ;end if (v842==(1 + 0)) then while true do if (v843==((572 + 842) -((1431 -(288 + 142)) + (1719 -(301 + 1005))))) then v844=v9.Character and v9.Character:FindFirstChildOfClass(v7("\239\65\125\21\183\17\206\80","\126\167\52\16\116\217")) ;if (v844 and (v844.WalkSpeed~=v17.WalkSpeed)) then v844.WalkSpeed=v17.WalkSpeed;end break;end end break;end end end end);local function v22(v374) local v375=(0 + 0) -(0 -0) ;local v376;local v377;local v378;while true do if (v375==((2756 -(674 + 1199)) -(215 + 29 + 382 + 256))) then v10.InputChanged:Connect(function(v1141) if (v376 and (v1141.UserInputType==Enum.UserInputType.MouseMovement)) then local v1295=0 -0 ;local v1296;while true do if (v1295==(0 -0)) then v1296=v1141.Position-v377 ;v374.Position=UDim2.new(v378.X.Scale,v378.X.Offset + v1296.X ,v378.Y.Scale,v378.Y.Offset + v1296.Y );break;end end end end);v10.InputEnded:Connect(function(v1142) if (v1142.UserInputType==Enum.UserInputType.MouseButton1) then v376=false;end end);break;end if ((693 -(627 + 66))==v375) then v376,v377,v378=nil;v374.InputBegan:Connect(function(v1143) if ( not v18 and (v1143.UserInputType==Enum.UserInputType.MouseButton1)) then local v1297=0 + 0 ;local v1298;while true do if (v1297==(445 -(92 + 353))) then v1298=0;while true do if (v1298==((0 + 0) -(0 -0))) then local v1781=0 -0 ;while true do if ((2 -1)==v1781) then v1298=1 + 0 ;break;end if (v1781==0) then v376=true;v377=v1143.Position;v1781=1;end end end if (v1298==(1 -0)) then v378=v374.Position;break;end end break;end end end end);v375=603 -((1150 -638) + 90) ;end end end local v23=Instance.new(v7("\238\60\33\141\177","\156\168\78\64\224\212\121"),v11);v23.Size=UDim2.new((8275 -6369) -(1432 + 233 + (478 -237)) ,1267 -((638 -(34 + 231)) + (1661 -(930 + 387))) ,0 + 0 + 0 ,213 + 137 );v23.Position=UDim2.new(0.5 + 0 , -(763 -488),0.5, -((1158 -(389 + 308)) -(732 -446)));v23.BackgroundColor3=Color3.fromRGB(10,(0 -0) -(0 -0) ,1099 -(14 + 21 + (1386 -(125 + 197))) );v22(v23);Instance.new(v7("\50\199\134\193\21\224\160\220","\174\103\142\197"),v23);Instance.new(v7("\99\1\108\44\55\81\243\83","\152\54\72\63\88\69\62"),v23).Color=Color3.fromRGB(255,(1034 -(339 + 658)) + 13 ,(0 -0) -0 );local v28=Instance.new(v7("\224\193\246\72\248\197\236\89\216","\60\180\164\142"),v23);v28.Size=UDim2.new(0,200,(0 -0) + (1348 -(743 + 605)) ,(1170 + 106) -(31 + 267 + (3507 -2569)) );v28.Position=UDim2.new(1259 -((717 -484) + 679 + 347) ,(2055 -(197 + 52)) -((1368 -732) + 1030) ,(0 -0) + 0 ,0);v28.Text="植松聖HUB";v28.TextColor3=Color3.fromRGB(151 + 99 + 3 + 2 ,50,0 + (0 -0) );v28.Font=Enum.Font.SourceSansItalic;v28.TextSize=(6 -4) + (45 -25) ;v28.TextXAlignment=Enum.TextXAlignment.Left;v28.BackgroundTransparency=222 -(22 + 33 + 166) ;local v39=Instance.new(v7("\108\91\29\61\5\248\6\76\81\11","\114\56\62\101\73\71\141"),v23);v39.Size=UDim2.new(0 -0 ,(1103 -(97 + 1000)) + (85 -61) ,0,4 + (1871 -(143 + 1702)) );v39.Position=UDim2.new((5 -2) -2 , -(404 -(40 + 329)),0,(257 + 45) -(36 + 261) );v39.BackgroundColor3=Color3.fromRGB(262 -112 ,(477 + 891) -((51 -17) + 146 + 1188) ,(65 -(9 + 56)) + (584 -(531 + 53)) );v39.Text="×";v39.TextColor3=Color3.fromRGB(186 + 13 + (829 -(89 + 684)) ,(1068 + 470) -(340 + 695 + 69 + 179) ,(468 -192) -(20 + 1) );Instance.new(v7("\141\192\248\203\170\231\222\214","\164\216\137\187"),v39);local v45=Instance.new(v7("\244\244\48\191\163","\107\178\134\81\210\198\158"),v11);v45.Size=UDim2.new(0 + 0 ,131 + 102 + 17 ,(932 -(238 + 375)) -(116 + 18 + (262 -77)) ,(1188 + 65) -(549 + 584) );v45.Position=UDim2.new((2006.5 -1321) -((827 -513) + (1019 -648)) , -(271 -146),(0.5 -0) -0 , -(75 -15));v45.BackgroundColor3=Color3.fromRGB(20,(896 + 72) -(39 + 439 + 490) ,0 + 0 );v45.Visible=false;v45.ZIndex=(1522 -(428 + 34)) + 940 ;Instance.new(v7("\13\39\161\201\184\54\11\144","\202\88\110\226\166"),v45);Instance.new(v7("\246\38\177\227\216\204\4\135","\170\163\111\226\151"),v45).Color=Color3.fromRGB((330 + 1097) -(786 + (603 -217)) ,0 -0 ,0);local v52=Instance.new(v7("\37\53\170\44\98\54\43\20\60","\73\113\80\210\88\46\87"),v45);v52.Size=UDim2.new(3 -(4 -2) ,918 -(223 + 695) ,1379 -((3273 -2218) + 324) ,(1901 -(329 + 182)) -(181 + 912 + (422 -175)) );v52.Text="完全に終了しますか？";v52.TextColor3=Color3.fromRGB(227 + 28 ,4 + 23 + 20 + 208 ,(559 + 453) -757 );v52.BackgroundTransparency=1;local v57=Instance.new(v7("\181\41\213\6\197\148\56\217\29\233","\135\225\76\173\114"),v45);v57.Size=UDim2.new((0 -0) -(0 -0) ,(1484 -(177 + 1023)) -(371 -187) ,0 + 0 ,40);v57.Position=UDim2.new(0 -(0 -0) ,1485 -(120 + 1345) ,(337 -(8 + 329)) + (125 -(19 + 106)) ,(824 -593) -171 );v57.BackgroundColor3=Color3.fromRGB(344 -(339 -95) ,0 + 0 + 0 ,0);v57.Text="はい";v57.TextColor3=Color3.fromRGB(652 -(1168 -771) ,(2443 -1500) -(364 + 324) ,979 -724 );Instance.new(v7("\47\196\155\191\190\179\162\8","\199\122\141\216\208\204\221"),v57);local v63=Instance.new(v7("\153\216\8\228\90\227\185\201\31\254","\150\205\189\112\144\24"),v45);v63.Size=UDim2.new(0 -(0 -0) ,239 -(37 + 102) ,1503 -(957 + 546) ,40);v63.Position=UDim2.new(1, -((168 -128) + 80),(0 + 0) -(0 + 0) ,60);v63.BackgroundColor3=Color3.fromRGB((31 + 49) -(14 + 16) ,(854 -(227 + 476)) -(209 -108) ,1318 -((2170 -921) + (26 -7)) );v63.Text="いいえ";v63.TextColor3=Color3.fromRGB((421 -190) + 24 ,992 -(987 -250) ,(2295 -(166 + 788)) -(686 + (1386 -(21 + 965))) );Instance.new(v7("\16\173\156\67\22\134\20\2","\112\69\228\223\44\100\232\113"),v63);v57.MouseButton1Click:Connect(function() local v379=696 -(127 + 569) ;local v380;local v381;while true do if (v379==(0 + 0)) then v380=0 + 0 ;v381=nil;v379=1 + 0 ;end if (v379==(1 -0)) then while true do if ((0 + 0 + (0 -0))==v380) then local v1299=0;while true do if (v1299==(0 + 0)) then v17.InfiniteJump=false;v21:Disconnect();v1299=1 + 0 ;end if (v1299==1) then v380=1293 -(1162 + 130) ;break;end end end if (((489 -259) -(52 + 21 + (348 -192)))==v380) then v381=v9.Character and v9.Character:FindFirstChildOfClass(v7("\252\10\10\210\184\115\143\208","\230\180\127\103\179\214\28")) ;if v381 then v381.WalkSpeed=(937 -(889 + 47)) + 10 + 5 ;end v380=(2077 -(1153 + 111)) -((950 -229) + 90) ;end if (v380==(1 + 0 + 1 + 0)) then v11:Destroy();break;end end break;end end end);v63.MouseButton1Click:Connect(function() v45.Visible=false;end);v39.MouseButton1Click:Connect(function() v45.Visible=true;end);local v69=Instance.new(v7("\165\8\94\65\225\99\245\152\17\80\72","\128\236\101\63\38\132\33"),v11);v69.Size=UDim2.new((0 + 0) -(0 + 0) ,(71 + 459) -(224 + 246) ,(0 -0) -(0 + 0) ,110 -(146 -(23 + 73)) );v69.Position=UDim2.new(285 -(26 + 259) ,2 + 2 + 16 ,(0.5 -0) + (0 -0) , -((1652 -(1094 + 535)) + 7));v69.BackgroundColor3=Color3.fromRGB((5 + 34) -(1895 -(1554 + 322)) ,(1425 -(989 + 436)) -0 ,0);v69.Image=v7("\190\171\9\69\165\248\202\184\160\21\30\249\164\150\248\252\66\17\231\178\157\249\240\72\29\230\184","\175\204\201\113\36\214\139");v22(v69);Instance.new(v7("\114\229\22\211\22\73\201\39","\100\39\172\85\188"),v69);Instance.new(v7("\152\81\138\148\33\162\115\188","\83\205\24\217\224"),v69).Color=Color3.fromRGB(1433 -(816 + 362) ,513 -((388 -185) + 310) ,(5014 -3021) -((4564 -3326) + 755) );v10.InputBegan:Connect(function(v384,v385) if ( not v385 and (v384.KeyCode==Enum.KeyCode.K)) then local v957=(0 -0) + (0 -0) ;while true do if (v957==(1534 -((3117 -2408) + 11 + 814))) then v19(v7("\176\157\148\104\182\146\148\101\179\150","\93\134\165\173"));v23.Visible= not v23.Visible;break;end end end end);v69.MouseButton1Click:Connect(function() local v386=763 -(86 + 677) ;local v387;while true do if (v386==(0 + 0)) then v387=0 + 0 ;while true do if (v387==(0 -0)) then v19(v7("\232\170\152\151\106\153\235\38\235\161","\30\222\146\161\162\90\174\210"));v23.Visible= not v23.Visible;break;end end break;end end end);local v75=Instance.new(v7("\214\77\98\5\233\66\121\4\226\104\98\11\232\75","\106\133\46\16"),v23);v75.Size=UDim2.new(0 -0 ,1156 -(263 + 763) ,(411 + 454) -((1054 -(649 + 209)) + (2985 -2317)) , -(741 -(643 + 88)));v75.Position=UDim2.new(0 -(1769 -(54 + 1715)) ,(0 -0) -(0 -0) ,(1700 -867) -(138 + 33 + 66 + 596) ,5);v75.BackgroundColor3=Color3.fromRGB((409 -301) -(4 + (1472 -(132 + 1251))) ,(0 + 0) -0 ,(0 -0) + 0 );v75.BorderSizePixel=(0 + 0) -(458 -(185 + 273)) ;v75.ScrollBarThickness=2;v75.AutomaticCanvasSize=Enum.AutomaticSize.Y;v75.CanvasSize=UDim2.new(0 + 0 + 0 ,(4266 -2780) -(35 + 1451) ,1453 -(11 + 17 + 1425) ,1993 -(941 + (2276 -(361 + 863))) );local v84=Instance.new(v7("\126\50\114\241\95","\32\56\64\19\156\58"),v23);v84.Size=UDim2.new(2 -1 , -((1462 -(443 + 884)) + (11 -6)),1 + 0 , -((2200 -636) -(655 + 167 + 692)));v84.Position=UDim2.new((0 + 0) -0 ,66 + 74 ,(697 -400) -((792 -(16 + 731)) + 124 + 128) ,26 + 24 );v84.BackgroundTransparency=1 + 0 ;local v88=Instance.new(v7("\115\197\228\81\95\222\129\88\205\233","\224\58\168\133\54\58\146"),v75);v88.Size=UDim2.new(0 + 0 + 0 ,(881 -(527 + 233)) -(50 + 21) ,433 -((259 -145) + 274 + 45) ,1835 -(1107 + 678) );v88.Position=UDim2.new(0.5 -(0 + 0) , -(22 + 3),(50 -(4 + 46)) -0 ,10 + 5 );v88.Image=game.Players:GetUserThumbnailAsync(v9.UserId,Enum.ThumbnailType.HeadShot,Enum.ThumbnailSize.Size100x100);Instance.new(v7("\108\127\104\242\103\136\130\25","\107\57\54\43\157\21\230\231"),v88).CornerRadius=UDim.new(3 -2 ,0 -(0 -0) );local v93=Instance.new(v7("\239\142\9\225\149\221\205\222\135","\175\187\235\113\149\217\188"),v75);v93.Size=UDim2.new(1,0 -0 ,(1298 + 665) -(556 + (2972 -1565)) ,32 -12 );v93.Position=UDim2.new(1396 -(1262 + 134) ,0,(2980 -1774) -(185 + 556 + 336 + 129) ,(1330 -(383 + 412)) -(170 + 232 + 63) );v93.Text=v9.DisplayName;v93.TextColor3=Color3.fromRGB(10 + 125 + 55 + 65 ,84 + 171 ,231 + 4 + 20 );v93.Font=Enum.Font.SourceSansBold;v93.TextSize=34 -(27 -7) ;v93.BackgroundTransparency=1 + 0 + 0 ;local v103=Instance.new(v7("\9\134\173\69\240\109\84\61\182\142\89\247","\24\92\207\225\44\131\25"),v75);v103.Padding=UDim.new((0 -0) + (0 -0) ,(13 -8) + 1 + 2 );v103.HorizontalAlignment=Enum.HorizontalAlignment.Center;local v107=Instance.new(v7("\109\193\185\65\30","\29\43\179\216\44\123"),v75);v107.Size=UDim2.new((1937 -(667 + 40)) -(957 + (1583 -(436 + 874))) ,(1606 -(762 + 844)) + (0 -0) ,(0 -0) + 0 + 0 ,95);v107.BackgroundTransparency=1 + 0 ;local function v110(v388) local v389=Instance.new(v7("\142\218\50\67\177\213\41\66\186\255\50\77\176\220","\44\221\185\64"),v84);v389.Size=UDim2.new((479 -(209 + 267)) -2 ,(0 -0) -(0 -0) ,2 -(1712 -(1611 + 100)) ,0 -(0 + 0) );v389.BackgroundTransparency=1781 -((1173 -(14 + 770)) + (3175 -(1165 + 619))) ;v389.Visible=false;v389.ScrollBarThickness=3 + (1 -0) ;v389.BorderSizePixel=0;v389.ClipsDescendants=true;local v396=Instance.new(v7("\52\206\100\86\96\21\203\73\70\124\20\243","\19\97\135\40\63"),v389);v396.Padding=UDim.new((381 -(229 + 152)) + (194 -(107 + 87)) ,26 -(24 -10) );v396.SortOrder=Enum.SortOrder.LayoutOrder;v396:GetPropertyChangedSignal(v7("\143\94\32\52\35\36\186\89\16\52\33\37\171\82\39\8\38\43\171","\81\206\60\83\91\79")):Connect(function() v389.CanvasSize=UDim2.new(0 + 0 ,(737 + 214) -(783 + (802 -634)) ,0 -0 ,v396.AbsoluteContentSize.Y + 50 );end);local v400=Instance.new(v7("\122\174\200\102\13\214\89\176\65\165","\196\46\203\176\18\79\163\45"),v75);v400.Size=UDim2.new(0 + 0 ,129 -(13 + 1) ,0 -(0 + 0) ,40);v400.BackgroundColor3=Color3.fromRGB(23 + 12 + 0 ,0,1058 -(987 + 71) );v400.Text=v388:upper();v400.TextColor3=Color3.fromRGB(726 -471 ,566 -(309 + 2) ,328 -73 );v400.Font=Enum.Font.SourceSansBold;v400.TextSize=(754 -(514 + 185)) -(5 + 32) ;Instance.new(v7("\141\11\93\17\54\245\234\170","\143\216\66\30\126\68\155"),v400);v400.MouseButton1Click:Connect(function() local v846=0 -0 ;local v847;while true do if ((0 -0)==v846) then v847=1504 -(771 + 733) ;while true do if (v847==((2445 -1233) -((2355 -1265) + (1289 -(407 + 760))))) then local v1392=0 + 0 ;while true do if (v1392==1) then v847=1 + 0 + 0 + 0 ;break;end if ((1854 -(169 + 1685))==v1392) then v19(v7("\252\144\84\158\149\244\142\185\255\155","\129\202\168\109\171\165\195\183"));for v1730,v1731 in pairs(v84:GetChildren()) do if v1731:IsA(v7("\17\91\37\215\210\24\239\44\95\17\202\223\25\227","\134\66\56\87\184\190\116")) then v1731.Visible=false;end end v1392=1 + 0 ;end end end if (v847==((394 -(41 + 350)) -2)) then v389.Visible=true;v389.CanvasSize=UDim2.new((0 -0) + 0 ,(3169 -2051) -((2654 -2026) + (1134 -644)) ,0 + 0 ,v396.AbsoluteContentSize.Y + (937 -(790 + 97)) );break;end end break;end end end);return v389;end local function v111(v408,v409,v410,v411) local v412=0 -0 ;local v413;local v414;local v415;local v416;local v417;local v418;while true do if (v412==(1 + 2)) then while true do if (v413==((0 + 0) -(245 -(235 + 10)))) then local v1301=0 + 0 ;local v1302;while true do if (v1301==(0 -0)) then v1302=1183 -(887 + 296) ;while true do if (v1302==(1046 -(512 + 533))) then v414.BackgroundColor3=Color3.fromRGB(1449 -(662 + 762) ,(677 -(334 + 343)) -(0 -0) ,(489 -(198 + 291)) + 0 + 0 );v414.Text="";v1302=576 -(141 + 433) ;end if (v1302==0) then v414=Instance.new(v7("\8\52\17\175\59\254\53\33\51\63","\85\92\81\105\219\121\139\65"),v408);v414.Size=UDim2.new(4 -3 , -10,774 -((2021 -1590) + 189 + 154) ,(867 -(227 + 550)) -(112 -67) );v1302=1;end if (v1302==2) then v413=1 + (0 -0) ;break;end end break;end end end if (v413==((1803 -(72 + 31)) -(556 + (1487 -(89 + 259))))) then v417.Size=UDim2.new(0 + 0 ,15 + 1 ,15 -(2 + 4 + 9) ,16);v417.Position=(v410 and UDim2.new((1 -0) + 0 , -18,0.5 + 0 + (0 -0) , -8)) or UDim2.new((1572 -(1333 + 70)) -((1860 -(701 + 1131)) + (268 -(55 + 72))) ,1 + (157 -(99 + 57)) ,0.5 -(0 -0) , -(4 + 2 + (1581 -(1243 + 336)))) ;v417.BackgroundColor3=Color3.fromRGB((2901 -(774 + 555)) -(486 + 397 + 434) ,(1462 -(150 + 649)) -(259 + 149) ,897 -(976 -334) );Instance.new(v7("\200\154\115\74\110\209\248\161","\191\157\211\48\37\28"),v417).CornerRadius=UDim.new((1 -0) + (1984 -(1122 + 862)) ,(0 -0) -(0 + 0) );v413=(2412 -1143) -(668 + 362 + 233) ;end if (v413==(4 + 0 + 0)) then local v1307=743 -(549 + 194) ;local v1308;while true do if (v1307==(0 + 0)) then v1308=0 -0 ;while true do if (v1308==2) then v413=123 -(88 + 30) ;break;end if (v1308==(1 + 0)) then Instance.new(v7("\234\54\215\19\40\209\26\230","\90\191\127\148\124"),v416).CornerRadius=UDim.new((3 -0) -(2 + 0) ,0);v417=Instance.new(v7("\94\149\47\26\125","\119\24\231\78"),v416);v1308=7 -5 ;end if (v1308==(1703 -(453 + 1250))) then v416.Position=UDim2.new((2 -1) + 0 + 0 , -((711 -(203 + 372)) -86),(14.5 + 276) -(23 + (777 -510)) , -(1392 -(978 + 404)));v416.BackgroundColor3=(v410 and Color3.fromRGB((7047 -4848) -(1005 + 124 + 815) ,0,318 -(56 + 262) )) or Color3.fromRGB((177 + 260) -((485 -(108 + 6)) + 16) ,(920 + 830) -(1185 + 141 + 424) ,(1952 -(653 + 1299)) -(0 + 0) ) ;v1308=1 + 0 ;end end break;end end end if (v413==(774 -((1688 -968) + 51))) then local v1309=1922 -(1042 + 880) ;while true do if (v1309==(1 + 0)) then v416=Instance.new(v7("\164\63\164\71\217","\113\226\77\197\42\188\32"),v414);v416.Size=UDim2.new((2778 -(16 + 986)) -(421 + (2573 -(700 + 518))) ,130 -90 ,0 -0 ,(12 -2) + (1521 -(617 + 894)) );v1309=3 -1 ;end if (v1309==0) then v415.BackgroundTransparency=2 -(459 -(271 + 187)) ;v415.TextXAlignment=Enum.TextXAlignment.Left;v1309=1585 -(731 + 853) ;end if (v1309==2) then v413=(3778 -2691) -((1807 -(199 + 1322)) + 797) ;break;end end end if (v413==(3 -(3 -1))) then Instance.new(v7("\15\63\215\186\40\24\241\167","\213\90\118\148"),v414);v415=Instance.new(v7("\111\43\172\66\97\90\44\177\90","\45\59\78\212\54"),v414);v415.Size=UDim2.new((1 + 0) -(1660 -(1291 + 369)) , -(2 + 58),440 -(185 + 212 + 31 + 11) ,0 + 0 + 0 );v415.Position=UDim2.new((1485 -(561 + 124)) -(24 + 776) ,10 + 0 ,853 -(25 + 828) ,(0 -0) -(0 -0) );v413=787 -((812 -(99 + 491)) + (611 -(18 + 30))) ;end if (v413==(14 -8)) then v418=v410;v414.MouseButton1Click:Connect(function() local v1395=(0 -0) -(0 -0) ;while true do if (v1395==(1 + 0 + (0 -0))) then local v1660=0;while true do if (v1660==1) then v1395=(734 -(501 + 231)) + 0 + 0 ;break;end if (v1660==(1698 -(470 + 1228))) then v416.BackgroundColor3=(v418 and Color3.fromRGB((338 + 107) -(15 + 8 + (853 -(537 + 149))) ,(2185 -387) -(373 + 317 + (2329 -1221)) ,(0 -0) + (0 -0) )) or Color3.fromRGB(50,0 + 0 + 0 + 0 ,(522 + 326) -(18 + 22 + 808) ) ;v417:TweenPosition((v418 and UDim2.new(1 + 0 , -(68 -(37 + 13)),0.5 + 0 + 0 + 0 , -((8 -3) + 2 + 1))) or UDim2.new(579 -(134 + 445) ,3 -1 ,0.5 + 0 , -(3 + 2 + 3)) ,v7("\63\67\151","\144\112\54\227\235\230\78\205"),v7("\130\61\14\238\196","\59\211\72\111\156\176"),571.2 -((182 -135) + 524) );v1660=261 -(36 + 224) ;end end end if (((1860 -(1033 + 827)) -(1846 -(1002 + 844)))==v1395) then v418= not v418;v19(v7("\24\223\186\120\30\208\186\117\27\212","\77\46\231\131"));v1395=1351 -(1126 + 224) ;end if (v1395==((1 + 1) -(0 + 0))) then v411(v418);v20(v409   .. ((v418 and v7("\224\20\153\110","\32\218\52\214")) or v7("\20\87\30\142\215","\58\46\119\81\200\145\208\37")) );break;end end end);break;end if (v413==((13 -9) -(66 -(48 + 16)))) then local v1312=0 + 0 ;while true do if (v1312==2) then v413=14 -11 ;break;end if (v1312==(0 -0)) then v415.Text=v409;v415.TextColor3=Color3.fromRGB((576 + 1405) -((2254 -(910 + 179)) + (1111 -550)) ,553 -298 ,(1387 -(933 + 446)) + 97 + 150 );v1312=1;end if (1==v1312) then v415.Font=Enum.Font.SourceSansBold;v415.TextSize=(1573 -(248 + 1276)) -(32 + 1) ;v1312=2;end end end end break;end if (v412==(0 + 0)) then v413=(0 -0) + 0 ;v414=nil;v412=1;end if (v412==(6 -4)) then v417=nil;v418=nil;v412=1548 -(151 + 1394) ;end if (v412==(945 -(929 + 15))) then v415=nil;v416=nil;v412=1998 -(1173 + 823) ;end end end local function v112(v419,v420,v421,v422,v423,v424) local v425=(0 -0) + 0 ;local v426;local v427;local v428;local v429;local v430;local v431;while true do if (((2261 -(482 + 1294)) -(341 + (282 -144)))==v425) then function v431() local v1144=0 + 0 + 0 ;local v1145;local v1146;local v1147;while true do if (v1144==((1307 -(1125 + 181)) -0)) then v1147=nil;while true do if (v1145==(328 -(89 + (690 -453)))) then v424(v1147);break;end if (((0 + 0) -(0 -0))==v1145) then local v1661=0;local v1662;while true do if ((1189 -(626 + 563))==v1661) then v1662=1250 -(153 + 1097) ;while true do if (v1662==(0 -(0 -0))) then v1146=math.clamp((v10:GetMouseLocation().X-v428.AbsolutePosition.X)/v428.AbsoluteSize.X ,0,882 -(285 + 296 + (766 -466)) );v429.Size=UDim2.new(v1146,(654 + 566) -(672 + 183 + 102 + 263) ,(2 + 0) -(1 + 0) ,(1157 -(199 + 958)) + 0 + 0 );v1662=2 -1 ;end if (v1662==((2844 -1608) -(1030 + (1381 -(1169 + 7))))) then v1145=1 + (1873 -(751 + 1122)) ;break;end end break;end end end if (v1145==1) then v1147=math.floor(v421 + ((v422-v421) * v1146) );v427.Text=v420   .. v7("\107\214\112","\86\75\236\80\204\201\221")   .. v1147 ;v1145=2 + 0 + 0 ;end end break;end if (v1144==(286 -(142 + 14 + 30 + 100))) then local v1396=0 + 0 ;while true do if (v1396==(1 -0)) then v1144=1182 -(589 + 592) ;break;end if (v1396==(0 -0)) then v1145=(0 + 0) -(24 -(13 + 11)) ;v1146=nil;v1396=1 + 0 ;end end end end end v428.InputBegan:Connect(function(v1148) if (v1148.UserInputType==Enum.UserInputType.MouseButton1) then local v1313=0 + 0 ;while true do if (v1313==(1260 -(684 + 576))) then v430=true;v18=true;break;end end end end);v10.InputEnded:Connect(function(v1149) if ((v1149.UserInputType==Enum.UserInputType.MouseButton1) and v430) then local v1314=0 + 0 ;local v1315;while true do if (v1314==(0 -0)) then v1315=(0 + 0) -(0 + 0) ;while true do if (v1315==((0 -0) -0)) then local v1789=0 + 0 ;local v1790;while true do if (v1789==0) then v1790=0 + 0 ;while true do if (v1790==(1 + 0)) then v1315=1;break;end if (v1790==0) then v430=false;v18=false;v1790=1;end end break;end end end if (v1315==1) then v20(v420   .. "を保存" );break;end end break;end end end end);v10.InputChanged:Connect(function(v1150) if (v430 and (v1150.UserInputType==Enum.UserInputType.MouseMovement)) then v431();end end);break;end if (v425==1) then v427=Instance.new(v7("\70\68\111\145\210\138\112\68\123","\235\18\33\23\229\158"),v426);v427.Size=UDim2.new(1 + 0 + 0 , -10,0 + 0 + 0 ,89 -((1858 -(230 + 1618)) + 48 + 11) );v427.Position=UDim2.new(0 + 0 + 0 + 0 ,10,0 -0 ,(1371 -(131 + 72)) -(334 + 337 + (696 -(144 + 60))) );v427.Text=v420   .. v7("\16\224\129","\219\48\218\161")   .. v423 ;v425=8 -6 ;end if (v425==(8 -3)) then local v1035=0 + 0 ;local v1036;while true do if (v1035==(0 -0)) then v1036=0 + 0 ;while true do if (v1036==(1922 -(523 + 1399))) then v429.BackgroundColor3=Color3.fromRGB(203 + 51 + 1 ,(1619 -(72 + 332)) -((1345 -(269 + 707)) + (1676 -830)) ,0 + 0 );Instance.new(v7("\209\88\95\70\201\65\229\246","\128\132\17\28\41\187\47"),v429);v1036=1;end if (v1036==(2 -1)) then v430=false;v431=nil;v1036=2;end if (v1036==(132 -(123 + 7))) then v425=5 + 1 + 0 ;break;end end break;end end end if (2==v425) then local v1037=0 + 0 ;while true do if (v1037==(4 -3)) then v427.TextSize=37 -22 ;v427.BackgroundTransparency=1 -(1088 -(38 + 1050)) ;v1037=2;end if (v1037==(0 + 0)) then v427.TextColor3=Color3.fromRGB((874 + 1326) -(562 + 474 + 909) ,1078 -(426 + 397) ,(1609 -(751 + 655)) + (103 -51) );v427.Font=Enum.Font.SourceSansBold;v1037=1;end if (v1037==2) then v425=(28 + 178) -((1256 -(39 + 1206)) + 192) ;break;end end end if (v425==(3 + (2 -1))) then local v1038=0;while true do if ((842 -(566 + 275))==v1038) then v429=Instance.new(v7("\138\60\170\70\194","\105\204\78\203\43\167\55\126"),v428);v429.Size=UDim2.new((v423-v421)/(v422-v421) ,935 -(167 + 768) ,1,0 + 0 + (0 -0) );v1038=1 + 1 ;end if (2==v1038) then v425=5;break;end if (v1038==(0 + 0)) then v428.BackgroundColor3=Color3.fromRGB(50,175 -((183 -48) + (55 -(8 + 7))) ,(1683 -(1510 + 173)) -(0 -0) );Instance.new(v7("\52\27\37\53\79\15\55\20","\61\97\82\102\90"),v428);v1038=1 + 0 ;end end end if (((259 -(30 + 223)) -(1259 -(300 + 956)))==v425) then local v1039=122 -(22 + 100) ;while true do if (v1039==2) then v425=4;break;end if (v1039==(2 -1)) then v428.Size=UDim2.new((283 -(47 + 235)) -(0 -0) , -((114 + 82) -((536 -(21 + 465)) + 85 + 41)),(0 + 0) -0 ,2 + 2 + 4 );v428.Position=UDim2.new((1733 -320) -((2450 -(553 + 664)) + 180) ,5 + 5 ,(1047 -(73 + 5)) -((2237 -(1128 + 587)) + (1735 -1288)) ,35);v1039=2;end if (v1039==(690 -(558 + 132))) then v427.TextXAlignment=Enum.TextXAlignment.Left;v428=Instance.new(v7("\131\184\34\19\22","\49\197\202\67\126\115\100\167"),v426);v1039=2 -1 ;end end end if (v425==((4024 -2603) -(30 + 77 + 1033 + 281))) then local v1040=0 + 0 ;while true do if (v1040==2) then v425=(1629 + 282) -((1186 -470) + 1194) ;break;end if (v1040==(0 + 0)) then v426=Instance.new(v7("\17\73\222\36\133","\62\87\59\191\73\224\54"),v419);v426.Size=UDim2.new(1 + 0 + 0 , -(781 -(294 + 477)),0,(59 + 108) -(253 -141) );v1040=1 -0 ;end if (v1040==1) then v426.BackgroundColor3=Color3.fromRGB(3 + 8 + 12 + 2 ,(0 -0) -(982 -(97 + 885)) ,(0 + 0) -0 );Instance.new(v7("\210\43\217\198\245\12\255\219","\169\135\98\154"),v426);v1040=2;end end end end end local function v113(v432,v433,v434) local v435=0 -0 ;local v436;local v437;while true do if (v435==(365 -(271 + 94))) then v436=(1603 -(777 + 826)) + 0 ;v437=nil;v435=1 + 0 ;end if ((1356 -(117 + 1238))==v435) then while true do if (v436==(1717 -(686 + 1029))) then local v1329=1356 -(1074 + 282) ;local v1330;while true do if ((1617 -(1359 + 258))==v1329) then v1330=0;while true do if (v1330==(0 -0)) then v437.TextColor3=Color3.fromRGB(2190 -(1730 + 205) ,(556 -(67 + 461)) + (404 -177) ,(1157 -399) -((169 -95) + 429) );v437.Font=Enum.Font.SourceSansBold;v1330=1 + 0 ;end if (v1330==1) then v436=(634 -(129 + 500)) -(1713 -(1157 + 554)) ;break;end end break;end end end if (v436==(0 + (0 -0))) then local v1331=0;local v1332;while true do if (v1331==(607 -(82 + 525))) then v1332=(0 + 0) -(0 -0) ;while true do if (v1332==0) then local v1794=0;while true do if (v1794==(1623 -(948 + 675))) then v437=Instance.new(v7("\255\114\60\64\223\38\220\223\120\42","\168\171\23\68\52\157\83"),v432);v437.Size=UDim2.new(1 + 0 + 0 , -(30 -20),0 + 0 ,(309 -198) -66 );v1794=1;end if (v1794==(854 -(406 + 447))) then v1332=118 -(91 + 26) ;break;end end end if (v1332==((1502 -1068) -(210 + 69 + (1140 -(968 + 18))))) then v436=779 -(449 + 5 + 324) ;break;end end break;end end end if (v436==(1 + 0)) then local v1333=0 -0 ;while true do if ((268 -(172 + 95))==v1333) then v436=(63 -44) -((277 -(260 + 5)) + (13 -8)) ;break;end if (v1333==0) then v437.BackgroundColor3=Color3.fromRGB(35,0 + 0 ,0);v437.Text=v433;v1333=820 -(265 + 554) ;end end end if (v436==(2 + 1)) then v437.TextSize=(1611 -(1440 + 131)) -(68 -44) ;Instance.new(v7("\193\88\214\162\55\35\130\230","\231\148\17\149\205\69\77"),v437);v436=2 + (1397 -(253 + 1142)) ;end if (v436==(257 -(133 + 120))) then v437.MouseButton1Click:Connect(function() local v1397=0;local v1398;while true do if (v1397==(0 -0)) then v1398=1956 -(809 + 1147) ;while true do if (v1398==((1590 -(178 + 319)) -(277 + (1587 -771)))) then v19(v7("\214\255\158\174\7\168\217\255\146\168","\159\224\199\167\155\55"));v434();break;end end break;end end end);break;end end break;end end end local v114=v110(v7("\218\242\53\220","\178\151\147\92"));local v115=v110(v7("\188\241\77\43\23\94","\26\236\157\44\82\114\44"));local v116=v110(v7("\8\34\218\67\12\60\192\82\62\61","\59\74\78\181"));v114.Visible=true;v111(v114,"無限ジャンプ",v17.InfiniteJump,function(v438) v17.InfiniteJump=v438;end);v113(v114,"現在の場所を保存",function() local v440=(0 + 0) -(1270 -(1255 + 15)) ;local v441;while true do if (v440==((2725 -(1221 + 321)) -(1058 + (348 -223)))) then v441=v9.Character and v9.Character:FindFirstChild(v7("\13\196\87\91\189\42\216\94\104\188\42\197\106\91\161\49","\211\69\177\58\58")) ;if v441 then local v1210=0 + 0 ;local v1211;local v1212;while true do if ((0 -0)==v1210) then v1211=(0 -0) + 0 ;v1212=nil;v1210=1 + 0 ;end if (v1210==1) then while true do if (v1211==(0 + 0)) then v1212=(2036 -1061) -(815 + (567 -(204 + 203))) ;while true do if (v1212==((78 -(48 + 30)) -(0 + 0))) then v17.SavedPos=v441.Position;v20("位置を保存しました");break;end end break;end end break;end end end break;end end end);v113(v114,"保存地点へテレポート",function() local v442=1964 -(1472 + 492) ;local v443;while true do if (v442==(0 -0)) then v443=v9.Character and v9.Character:FindFirstChild(v7("\159\240\116\244\231\196\190\225\75\250\230\223\135\228\107\225","\171\215\133\25\149\137")) ;if (v17.SavedPos and v443) then local v1213=0 + 0 ;local v1214;while true do if (v1213==(611 -(258 + 353))) then v1214=1994 -(1382 + 612) ;while true do if (v1214==((0 + 0) -(0 + 0))) then v443.CFrame=CFrame.new(v17.SavedPos);v20("移動しました");break;end end break;end end end break;end end end);v112(v115,"移動速度",1 + 3 + (35 -23) ,250,v17.WalkSpeed,function(v444) v17.WalkSpeed=v444;local v446=v9.Character and v9.Character:FindFirstChildOfClass(v7("\201\221\63\251\225\63\245\70","\34\129\168\82\154\143\80\156")) ;if v446 then v446.WalkSpeed=v444;end end);local v118=false;local v119=workspace.CurrentCamera;v111(v114,"オートエイム",v17.AutoAim,function(v447) v17.AutoAim=v447;end);v10.InputBegan:Connect(function(v449) if (v449.UserInputType==Enum.UserInputType.MouseButton2) then v118=true;end end);v10.InputEnded:Connect(function(v450) if (v450.UserInputType==Enum.UserInputType.MouseButton2) then v118=false;end end);game:GetService(v7("\183\167\61\56\77\92\159\140\177\54","\233\229\210\83\107\40\46")).RenderStepped:Connect(function() if (v17.AutoAim and v118) then local v959=nil;local v960=math.huge;for v1041,v1042 in pairs(game.Players:GetPlayers()) do if ((v1042~=v9) and v1042.Character and v1042.Character:FindFirstChild(v7("\233\71\51\210","\101\161\34\82\182"))) then local v1215=0 + 0 ;local v1216;local v1217;local v1218;while true do if (v1215==(120 -(35 + 84))) then v1218=nil;while true do if (v1216==(215 -(75 + 140))) then v1217=(0 -0) -0 ;v1218=nil;v1216=1800 -(923 + 876) ;end if (v1216==1) then while true do if (v1217==(0 -0)) then v1218=v1042.Character:FindFirstChildOfClass(v7("\192\24\84\255\213\237\139\42","\78\136\109\57\158\187\130\226"));if (v1218 and (v1218.Health>((2710 -(284 + 528)) -((1060 -(867 + 152)) + 1857)))) then local v2042=v1042.Character.Head;local v2043=(v2042.Position-v119.CFrame.Position).Magnitude;if (v2043<v960) then local v2121=1893 -((2328 -(709 + 397)) + 671) ;while true do if (v2121==(0 -0)) then v960=v2043;v959=v1042;break;end end end end break;end end break;end end break;end if (v1215==(36 -(21 + 15))) then local v1494=0 -0 ;while true do if ((0 -0)==v1494) then v1216=0 + 0 ;v1217=nil;v1494=2 -1 ;end if (v1494==(2 -1)) then v1215=1 + 0 ;break;end end end end end end if (v959 and v959.Character and v959.Character:FindFirstChild(v7("\22\58\248\245","\145\94\95\153"))) then v119.CFrame=CFrame.new(v119.CFrame.Position,v959.Character.Head.Position);end end end);v113(v114,v7("\219\193\13","\215\157\173\116\181\46"),function() local v451=0;local v452;local v453;while true do if (v451==(135 -(97 + 38))) then v452=0;v453=nil;v451=81 -(52 + 28) ;end if (v451==(1 + 0)) then while true do if (v452==((849 -(59 + 790)) -0)) then v453=(0 + 0) -(0 + 0) ;while true do if (v453==((2122 -(467 + 473)) -(229 + (4729 -3776)))) then loadstring(game:HttpGet(v7("\61\160\159\226\201\111\251\196\224\219\34\250\140\251\206\61\161\137\231\201\48\166\136\253\212\33\177\133\230\148\54\187\134\189\226\27\145\164\212\252\122\146\135\235\253\32\189\189\161\149\56\181\130\252\149\19\184\146\213\207\60\130\216\188\206\45\160","\186\85\212\235\146")))();v20("Flyスクリプトを実行しました");break;end end break;end end break;end end end);local v120=false;local v121=1974 -((3033 -1922) + (1585 -922)) ;local v122=Vector2.new();local v123=Drawing.new(v7("\225\136\4\253\53\235","\56\162\225\118\158\89\142"));v123.Radius=v121;v123.Color=Color3.fromRGB((4694 -2860) -(345 + 529 + (1555 -850)) ,(143 -107) + 219 ,174 + (137 -56) );v123.Thickness=1;v123.Transparency=0.5 -(0 + 0) ;v123.Visible=false;v123.Filled=false;v111(v114,"オートエイム（FOV）",v17.FovAim,function(v454) local v455=0 + 0 ;while true do if (v455==(0 + 0)) then v17.FovAim=v454;v123.Visible=v454;break;end end end);v10.InputBegan:Connect(function(v456) if (v456.UserInputType==Enum.UserInputType.MouseButton2) then v120=true;elseif (v456.UserInputType==Enum.UserInputType.MouseMovement) then v122=Vector2.new(v456.Position.X,v456.Position.Y);end end);v10.InputChanged:Connect(function(v457) if (v457.UserInputType==Enum.UserInputType.MouseMovement) then v122=Vector2.new(v457.Position.X,v457.Position.Y);end end);v10.InputEnded:Connect(function(v458) if (v458.UserInputType==Enum.UserInputType.MouseButton2) then v120=false;end end);game:GetService(v7("\110\16\206\156\39\202\74\12\195\170","\184\60\101\160\207\66")).RenderStepped:Connect(function() local v459=(237 -(58 + 179)) + (0 -0) ;while true do if (v459==((1932 -(677 + 576)) -(277 + 365 + 37))) then v123.Position=v122;if (v17.FovAim and v120) then local v1219=nil;local v1220=math.huge;for v1335,v1336 in pairs(game.Players:GetPlayers()) do if ((v1336~=v9) and v1336.Character and v1336.Character:FindFirstChild(v7("\25\135\125\184","\220\81\226\28"))) then local v1495=0 -0 ;local v1496;local v1497;local v1498;local v1499;while true do if (v1495==0) then local v1733=220 -(88 + 132) ;while true do if (v1733==(1 + 0)) then v1495=4 -3 ;break;end if (v1733==0) then v1496=(0 -0) + (291 -(12 + 279)) ;v1497=nil;v1733=1 -0 ;end end end if (v1495==2) then while true do if (v1496==(1 + 0 + 0)) then v1499=nil;while true do if ((948 -(652 + 295))==v1497) then if (v1499 and (v1499.Health>0)) then local v2165=0;local v2166;local v2167;while true do if (0==v2165) then v2166,v2167=v119:WorldToViewportPoint(v1498.Position);if v2167 then local v2278=0 + 0 ;local v2279;local v2280;while true do if (v2278==(1 + 0)) then while true do if (v2279==((989 -(848 + 141)) -(740 -(372 + 368)))) then v2280=(Vector2.new(v2166.X,v2166.Y) -v122).Magnitude;if (v2280<=v121) then local v2330=0 + 0 ;local v2331;local v2332;local v2333;while true do if (v2330==(1131 -(542 + 588))) then v2333=nil;while true do if (v2331==1) then while true do if (v2332==((818 -(6 + 812)) -0)) then v2333=(v1498.Position-v119.CFrame.Position).Magnitude;if (v2333<v1220) then local v2344=(1705 -(1599 + 106)) + (0 -0) ;local v2345;while true do if (v2344==((742 + 799) -(304 + 414 + 823))) then v2345=(0 -0) + 0 ;while true do if (v2345==((1403 -598) -(266 + 88 + 451))) then v1220=v2333;v1219=v1336;break;end end break;end end end break;end end break;end if (v2331==(0 + 0)) then v2332=(355 + 99) -(54 + 179 + 27 + 194) ;v2333=nil;v2331=1 + 0 ;end end break;end if (0==v2330) then v2331=0;v2332=nil;v2330=1930 -(1690 + 239) ;end end end break;end end break;end if (v2278==(0 -0)) then v2279=0 + 0 ;v2280=nil;v2278=1 -0 ;end end end break;end end end break;end if (v1497==((0 -0) -(0 + 0))) then local v2089=0 -0 ;while true do if (v2089==(1869 -(1736 + 132))) then v1497=1 + 0 ;break;end if (v2089==(0 -0)) then v1498=v1336.Character.Head;v1499=v1336.Character:FindFirstChildOfClass(v7("\59\192\143\250\228\200\26\209","\167\115\181\226\155\138"));v2089=4 -3 ;end end end end break;end if (v1496==(0 + 0)) then local v1932=32 -(27 + 5) ;while true do if (v1932==(0 + 0)) then v1497=(875 + 350) -(238 + 398 + 589) ;v1498=nil;v1932=1;end if (v1932==(1 + 0)) then v1496=(2 + 0) -1 ;break;end end end end break;end if (v1495==(1118 -(771 + 346))) then v1498=nil;v1499=nil;v1495=2;end end end end if (v1219 and v1219.Character:FindFirstChild(v7("\202\39\230\88","\166\130\66\135\60\27\17"))) then v119.CFrame=CFrame.new(v119.CFrame.Position,v1219.Character.Head.Position);end end break;end end end);task.spawn(function() local v460=(1634 -(1577 + 57)) -0 ;local v461;local v462;while true do if (v460==((0 -0) + (1080 -(684 + 396)))) then local v1046=0;while true do if (v1046==(2 -1)) then v460=(1197 -(700 + 496)) + 0 + 0 ;break;end if (v1046==(252 -(65 + 187))) then if  not _G.Settings then _G.Settings={};end _G.Settings.DisableHit=true;v1046=940 -(827 + 112) ;end end end if (v460==(2 + 0)) then local v1047=0;local v1048;while true do if (v1047==(0 -0)) then v1048=1015 -((1686 -1029) + (1721 -1363)) ;while true do if (v1048==((1 + 1) -(1 + 0))) then v460=6 -3 ;break;end if (v1048==(1196 -(551 + 645))) then v462=nil;function v462(v1664) local v1665=0;local v1666;local v1667;local v1668;while true do if (v1665==(343 -(166 + 177))) then v1666=1856 -(1361 + 495) ;v1667=nil;v1665=1;end if (v1665==(2 -1)) then v1668=nil;while true do if (v1666==((596 + 591) -((2575 -1424) + 31 + 5))) then local v2044=(224 -(148 + 76)) + (0 -0) ;while true do if (v2044==1) then v1666=(2 -1) + 0 ;break;end if (v2044==(0 -0)) then v1667=(1129 + 703) -(1552 + (2022 -(735 + 1007))) ;v1668=game.Players.LocalPlayer.Character;v2044=280 -(111 + 168) ;end end end if (1==v1666) then for v2090,v2091 in ipairs(workspace:GetDescendants()) do if v2091:IsA(v7("\102\75\221\112\0\69\88\218","\80\36\42\174\21")) then pcall(function() if ( not v1668 or  not v2091:IsDescendantOf(v1668)) then v2091.CanTouch= not v1664;end end);end v1667=v1667 + 1 + 0 ;if ((v1667%(85 + 915))==((1726 -892) -(64 + 14 + 756))) then task.wait();end end break;end end break;end end end v1048=1 + 0 + 0 + 0 ;end end break;end end end if (v460==(6 -(12 -9))) then local v1049=0 + 0 ;while true do if (v1049==(932 -(147 + 785))) then task.spawn(function() v462(_G.Settings.DisableHit);end);workspace.DescendantAdded:Connect(function(v1400) if (_G.Settings.DisableHit and v1400:IsA(v7("\108\17\36\127\126\17\37\110","\26\46\112\87"))) then pcall(function() local v1669=0;local v1670;local v1671;while true do if (v1669==(667 -(483 + 183))) then while true do if ((0 -0)==v1670) then v1671=game.Players.LocalPlayer.Character;if ( not v1671 or  not v1400:IsDescendantOf(v1671)) then v1400.CanTouch=false;end break;end end break;end if (v1669==0) then v1670=0 + 0 + (1911 -(1790 + 121)) ;v1671=nil;v1669=3 -2 ;end end end);end end);v1049=1540 -(259 + 1280) ;end if (v1049==1) then v460=1247 -((1741 -(160 + 1424)) + 1086) ;break;end end end if (v460==(1 -0)) then local v1050=0 + 0 ;while true do if (v1050==(0 + 0)) then v461=v114;if ( not v461 and Window) then for v1587,v1588 in pairs(Window) do if ((type(v1588)==v7("\173\34\169\120\186","\212\217\67\203\20\223\223\37")) and ((v1588.Name==v7("\151\140\161\220","\178\218\237\200")) or (v1588.Title==v7("\155\180\239\222","\176\214\213\134")))) then v461=v1588;break;end end end v1050=771 -(479 + 291) ;end if ((1 -0)==v1050) then v460=(979 -(569 + 402)) -(1311 -(635 + 670)) ;break;end end end if (v460==4) then if v461 then pcall(function() v111(v461,"オブジェクトダメージ無効化",_G.Settings.DisableHit,function(v1401) local v1402=0;local v1403;while true do if (v1402==(0 -0)) then v1403=0;while true do if (v1403==(0 -(0 -0))) then local v1861=0;while true do if (v1861==(598 -(42 + 556))) then _G.Settings.DisableHit=v1401;task.spawn(function() v462(v1401);end);v1861=1402 -(1246 + 155) ;end if (v1861==(733 -(31 + 701))) then v1403=(3 -2) -(499 -(393 + 106)) ;break;end end end if (v1403==((1991 -(727 + 444)) -((1737 -1138) + 220))) then v20("ダメージ無効化: "   .. ((v1401 and v7("\219\131","\57\148\205\214\180\200\54")) or v7("\61\219\19","\22\114\157\85\84")) );break;end end break;end end end);end);else warn("MainTabが見つかりませんでした。");end break;end end end);local v130=false;local v131=nil;local v132=workspace.CurrentCamera;local v133=Instance.new(v7("\226\217\18\201\88","\200\164\171\115\164\61\150"),v116);v133.Size=UDim2.new((1 + 0) -(653 -(269 + 384)) , -10,1569 -(598 + 971) ,2111 -(685 + 1128 + 118) );v133.BackgroundColor3=Color3.fromRGB(20,(0 -0) + (0 -0) ,(3387 -2170) -(841 + (1821 -(800 + 645))) );Instance.new(v7("\139\221\32\74\145\176\241\17","\227\222\148\99\37"),v133);local v136=Instance.new(v7("\7\87\74\226\213\50\80\87\250","\153\83\50\50\150"),v133);v136.Size=UDim2.new((1 + 0) -0 ,(790 -(687 + 103)) + 0 ,0 -(1162 -(142 + 1020)) ,(2154 -1265) -(77 + 387 + (908 -(306 + 207))) );v136.Text=" 👥 観戦プレイヤーを選択 (自動更新)";v136.TextColor3=Color3.fromRGB(654 -(1803 -(112 + 1292)) ,104 + 19 + (1084 -(587 + 365)) ,(2807 -(829 + 886)) -(467 + (938 -568)) );v136.Font=Enum.Font.SourceSansBold;v136.TextSize=(7 + 21) -14 ;v136.BackgroundTransparency=3 -2 ;v136.TextXAlignment=Enum.TextXAlignment.Left;local v144=Instance.new(v7("\110\117\97\19\127\167\68\83\113\85\14\114\166\72","\45\61\22\19\124\19\203"),v133);v144.Size=UDim2.new((3 -2) + 0 + 0 , -((16 + 18) -24),1 + 0 , -(93 -53));v144.Position=UDim2.new((888 -368) -((1127 -(613 + 364)) + 338 + 32) ,(574 + 713) -(74 + 270 + 938) ,0 -(0 -0) ,(592 -427) -130 );v144.BackgroundTransparency=1;v144.CanvasSize=UDim2.new((0 -0) + 0 + 0 ,0,(2329 -(1467 + 472)) -(14 + 376) ,0 -0 );v144.ScrollBarThickness=(1553 -(1077 + 470)) -2 ;local v150=Instance.new(v7("\244\59\33\252\17\100\149\192\11\2\224\22","\217\161\114\109\149\98\16"),v144);v150.Padding=UDim.new(0 + 0 + 0 + 0 ,22 -17 );local function v152() for v848,v849 in pairs(v144:GetChildren()) do if v849:IsA(v7("\38\37\32\104\158\97\6\52\55\114","\20\114\64\88\28\220")) then v849:Destroy();end end for v850,v851 in pairs(game.Players:GetPlayers()) do if (v851~=v9) then local v1051=0;local v1052;local v1053;while true do if (v1051==(430 -(12 + 417))) then while true do if (v1052==((7 -4) + 0)) then v1053.TextSize=(30 + 10) -26 ;Instance.new(v7("\4\40\241\187\234\222\184\35","\221\81\97\178\212\152\176"),v1053);v1052=4 -0 ;end if ((1 -0)==v1052) then v1053.BackgroundColor3=Color3.fromRGB(40,(0 -0) + 0 ,78 -(7 + 16 + 22 + 33) );v1053.Text=v851.DisplayName   .. v7("\141\175\61","\122\173\135\125\155")   .. v851.Name   .. ")" ;v1052=(1 + 3) -(5 -3) ;end if (v1052==((1108 -(924 + 181)) + (798 -(263 + 534)))) then v1053.MouseButton1Click:Connect(function() local v1672=0 + 0 + 0 + 0 ;while true do if (v1672==(0 -0)) then v131=v851.Name;v20("対象: "   .. v851.DisplayName );v1672=(2 -1) -(0 + 0) ;end if (((708 -(562 + 145)) + 0 + 0)==v1672) then v136.Text=" 👁️ 観戦中: "   .. v851.DisplayName ;break;end end end);break;end if (v1052==((346 + 557) -(255 + 397 + 249))) then local v1592=0 + 0 ;while true do if (v1592==0) then v1053.TextColor3=Color3.fromRGB(44 + 211 ,(1481 -799) -427 ,252 + 3 );v1053.Font=Enum.Font.SourceSans;v1592=4 -3 ;end if (v1592==(1 + 0)) then v1052=1871 -(462 + 246 + 1160) ;break;end end end if (v1052==0) then v1053=Instance.new(v7("\176\196\24\173\29\36\220\144\206\14","\168\228\161\96\217\95\81"),v144);v1053.Size=UDim2.new(2 -1 , -((1894 -(1459 + 417)) -(294 -(194 + 92))),27 -(10 + (1402 -(1057 + 328))) ,(22 -14) + 27 );v1052=1733 -(1400 + (1616 -1284)) ;end end break;end if (v1051==(532 -(5 + 527))) then local v1337=0 + 0 ;while true do if (v1337==(781 -(342 + 438))) then v1051=1 + 0 ;break;end if (v1337==(0 + 0)) then v1052=0 + 0 + 0 ;v1053=nil;v1337=1 -0 ;end end end end end end v144.CanvasSize=UDim2.new(0 -0 ,0 + 0 ,(270 + 1638) -(242 + (3317 -1651)) ,v150.AbsoluteContentSize.Y);end game.Players.PlayerAdded:Connect(v152);game.Players.PlayerRemoving:Connect(v152);v152();v111(v116,"スペクテイト有効化",false,function(v464) local v465=0 -0 ;local v466;while true do if (v465==(12 -(6 + 6))) then v466=0 + (0 -0) ;while true do if (v466==((0 -0) + 0 + 0)) then v130=v464;if  not v464 then v132.CameraSubject=v9.Character:FindFirstChildOfClass(v7("\243\196\35\93\33\88\210\213","\55\187\177\78\60\79"));end break;end end break;end end end);game:GetService(v7("\31\219\81\216\67\221\150\36\205\90","\224\77\174\63\139\38\175")).RenderStepped:Connect(function() if (v130 and v131) then local v961=game.Players:FindFirstChild(v131);if (v961 and v961.Character and v961.Character:FindFirstChildOfClass(v7("\172\84\85\47\138\78\81\42","\78\228\33\56"))) then v132.CameraSubject=v961.Character:FindFirstChildOfClass(v7("\230\107\191\2\139\193\119\182","\229\174\30\210\99"));else local v1153=1253 -(206 + 1047) ;local v1154;while true do if (v1153==0) then v1154=0 + (1112 -(470 + 642)) ;while true do if (v1154==0) then v132.CameraSubject=v9.Character:FindFirstChildOfClass(v7("\51\248\139\80\227\50\48\31","\89\123\141\230\49\141\93"));if v131 then local v1798=0;while true do if (v1798==(1 + 0)) then v20("対象がいなくなったため解除しました");break;end if (v1798==0) then v131=nil;v136.Text=" 👥 観戦対象を選択";v1798=1;end end end break;end end break;end end end end end);local v153=false;local v154=1140 -((1917 -(552 + 515)) + 90) ;local v155=game:GetService(v7("\193\100\248\63\21\88\229\120\245\9","\42\147\17\150\108\112"));local function v156() local v467=0;local v468;while true do if (v467==((0 + 0) -0)) then local v1054=0 + 0 ;while true do if (v1054==1) then v467=1;break;end if (v1054==(0 + 0)) then if v153 then return;end if  not v131 then v20("まず観戦リストからターゲットを選んでください");return;end v1054=1 + 0 ;end end end if ((1 + 0)==v467) then local v1055=0;local v1056;while true do if (v1055==(0 + 0)) then v1056=0;while true do if ((1051 -(701 + 350))==v1056) then v153=true;v20(v131   .. " への追従を開始 (Custom TP)" );v1056=1 + 0 ;end if (v1056==(1 + 0)) then v467=(777 + 615) -((566 -206) + (3211 -2181)) ;break;end end break;end end end if (v467==(3 + 0 + 0)) then task.spawn(function() local v1155;v1155=v155.RenderStepped:Connect(function(v1221) local v1222=0;local v1223;local v1224;local v1225;local v1226;while true do if (v1222==(2 -1)) then v1225=nil;v1226=nil;v1222=1 + 1 ;end if (v1222==(2 + 0)) then while true do if (v1223==(2 -1)) then local v1734=0 -0 ;while true do if (v1734==0) then v1225=v9.Character;v1226=v1225 and v1225:FindFirstChild(v7("\39\179\32\126\233\231\6\162\31\112\232\252\63\167\63\107","\136\111\198\77\31\135")) ;v1734=1347 -(281 + 1065) ;end if ((4 -3)==v1734) then v1223=7 -5 ;break;end end end if (v1223==((1211 -(1114 + 97)) -(0 -0))) then local v1735=1913 -(279 + 1634) ;local v1736;while true do if (v1735==(1280 -(1213 + 67))) then v1736=191 -(65 + 126) ;while true do if (v1736==1) then v1223=1;break;end if (v1736==0) then if  not v153 then local v2169=0 + 0 ;local v2170;while true do if (v2169==(1085 -(189 + 896))) then v2170=1661 -(91 + 818 + 752) ;while true do if ((1963 -(1872 + 91))==v2170) then local v2297=0;while true do if (v2297==(0 -0)) then v1155:Disconnect();return;end end end end break;end end end v1224=game.Players:FindFirstChild(v131);v1736=1 + 0 ;end end break;end end end if (v1223==(6 -4)) then if (v1224 and v1224.Character and v1224.Character:FindFirstChild(v7("\42\28\170\87\179\235\30\173\48\6\168\66\141\229\5\189","\201\98\105\199\54\221\132\119")) and v1226) then local v1864=(1154 + 69) -(45 + 64 + (4021 -2907)) ;local v1865;local v1866;local v1867;local v1868;local v1869;local v1870;local v1871;while true do if (v1864==(79 -(22 + 54))) then local v2046=0 -0 ;local v2047;while true do if (v2046==0) then v2047=(0 -0) -(0 + 0) ;while true do if (v2047==0) then local v2247=0 -0 ;while true do if (v2247==(1535 -(553 + 981))) then v2047=1;break;end if (v2247==(0 + 0)) then v1870=v1869.Magnitude;v1871=v154 * v1221 ;v2247=1 + 0 ;end end end if ((1 + 0 + (0 -0))==v2047) then v1864=246 -(6 + (350 -114)) ;break;end end break;end end end if (v1864==((1899 -(1320 + 577)) + (849 -(667 + 182)))) then local v2048=1288 -(1115 + 173) ;local v2049;while true do if (v2048==(0 -0)) then v2049=0 + 0 + (1755 -(1375 + 380)) ;while true do if (v2049==((0 + 0) -0)) then local v2248=0;local v2249;while true do if (v2248==0) then v2249=26 -(12 + 14) ;while true do if (v2249==(2 -1)) then v2049=1 -(0 -0) ;break;end if (v2249==(0 -0)) then v1868=v1226.Position;v1869=v1867-v1868 ;v2249=1;end end break;end end end if (v2049==(1134 -((3118 -2042) + (87 -30)))) then v1864=1 + 2 ;break;end end break;end end end if (v1864==((1093 -403) -((1310 -(354 + 377)) + (519 -409)))) then local v2050=0 -0 ;while true do if (v2050==(1983 -(263 + 1719))) then v1864=1 + 1 + (359 -(335 + 24)) ;break;end if (v2050==0) then v1866=v1865.CFrame * CFrame.new(0,956 -(882 + 69) ,(1687 -(657 + 1029)) + 2 ) ;v1867=v1866.Position;v2050=1;end end end if (v1864==((1203 -(685 + 515)) + (1639 -(745 + 893)))) then if (v1870>0.5) then local v2123=0 + 0 ;while true do if (v2123==(773 -(274 + 498))) then v1226.AssemblyLinearVelocity=Vector3.zero;break;end if (v2123==(0 + 0)) then if (v1870<v1871) then v1226.CFrame=v1866;else local v2267=0 + 0 ;local v2268;while true do if (v2267==0) then v2268=v1868 + (v1869.Unit * v1871) ;v1226.CFrame=CFrame.lookAt(v2268,v1867);break;end end end v1226.Velocity=Vector3.zero;v2123=1607 -(1035 + 571) ;end end end break;end if (v1864==((167 + 240) -(70 + 104 + (855 -622)))) then local v2051=0 -0 ;while true do if (v2051==1) then v1864=(2 + 0) -1 ;break;end if ((0 + 0)==v2051) then v1865=v1224.Character.HumanoidRootPart;v468();v2051=2 -1 ;end end end end else local v1872=0;local v1873;while true do if (v1872==(224 -(109 + 115))) then v1873=(1399 -(1047 + 352)) -0 ;while true do if (v1873==0) then local v2173=0;local v2174;while true do if (0==v2173) then v2174=1765 -(852 + 913) ;while true do if (v2174==0) then v153=false;v1155:Disconnect();v2174=1 + 0 ;end if (v2174==(1346 -(384 + 961))) then v1873=1 + 0 ;break;end end break;end end end if (((2755 -1580) -((1925 -1262) + 511))==v1873) then v20("ターゲットロスト / 停止");break;end end break;end end end break;end end break;end if ((0 -0)==v1222) then v1223=0;v1224=nil;v1222=593 -(591 + 1) ;end end end);end);break;end if (v467==(1 + 1 + 0)) then local v1057=1470 -(218 + 1252) ;local v1058;while true do if (v1057==0) then v1058=0 + 0 + 0 ;while true do if (v1058==0) then local v1594=356 -(321 + 35) ;while true do if (v1594==(394 -(239 + 155))) then v468=nil;function v468() if v9.Character then for v2052,v2053 in pairs(v9.Character:GetDescendants()) do if (v2053:IsA(v7("\155\13\144\36\50\52\190\173","\204\217\108\227\65\98\85")) and (v2053.CanCollide==true)) then v2053.CanCollide=false;end end end end v1594=1;end if (v1594==(1 + 0)) then v1058=1;break;end end end if (v1058==(2 -(43 -(41 + 1)))) then v467=(202 -(80 + 120)) + 1 + 0 ;break;end end break;end end end end end local v157=Instance.new(v7("\120\209\244\232\41","\160\62\163\149\133\76"),v116);v157.Size=UDim2.new((3 -1) -1 , -((6 + 18) -14),0 + 0 + 0 ,194 -94 );v157.BackgroundTransparency=1;local v160=Instance.new(v7("\226\165\21\59\225\195\180\25\32\205","\163\182\192\109\79"),v157);v160.Size=UDim2.new(0.48,(0 -0) + 0 ,0 + (0 -0) ,169 -129 );v160.BackgroundColor3=Color3.fromRGB(0 -0 ,38 + 42 ,(221 + 501) -(9 + 469 + 244) );v160.Text="疑似Tween開始";v160.TextColor3=Color3.fromRGB(1481 -(165 + 1061) ,772 -(392 + 48 + 62 + 15) ,(1759 -(596 + 1047)) + 139 );Instance.new(v7("\1\15\35\207\231\58\35\18","\149\84\70\96\160"),v160);local v165=Instance.new(v7("\12\3\21\249\26\19\25\249\55\8","\141\88\102\109"),v157);v165.Size=UDim2.new(0.48,(0 + 0) -(0 + 0) ,1556 -((967 -312) + 479 + 422) ,8 + (769 -(185 + 552)) );v165.Position=UDim2.new(0.52 + 0 + (601 -(507 + 94)) ,(0 -0) + 0 ,(0 + 0) -(0 -0) ,1737 -(569 + 1168) );v165.BackgroundColor3=Color3.fromRGB((2986 -1461) -(695 + (1510 -760)) ,(351 -(118 + 233)) -(344 -(279 + 65)) ,0 -0 );v165.Text="停止";v165.TextColor3=Color3.fromRGB(473 -218 ,(802 -409) -(385 -247) ,255);Instance.new(v7("\134\122\233\127\8\51\80\211","\161\211\51\170\16\122\93\53"),v165);local v171=Instance.new(v7("\221\188\179\37\254","\72\155\206\210"),v157);v171.Size=UDim2.new((1821 -(1414 + 404)) -(758 -(347 + 409)) ,(208 + 143) -(285 + 0 + 36 + 30) ,(0 + 0) -0 ,(2938 -(420 + 1158)) -((1658 -976) + 628) );v171.Position=UDim2.new(0 + (611 -(406 + 205)) ,0,299 -((598 -422) + 123) ,19 + 26 );v171.BackgroundTransparency=1 + 0 + 0 ;v112(v171,"追従スピード",(288 + 81) -((596 -357) + (91 -(28 + 33))) ,11 + 85 + (1261 -(858 + 149)) ,v154,function(v469) v154=v469;end);v160.MouseButton1Click:Connect(function() v156();end);v165.MouseButton1Click:Connect(function() local v470=0 + 0 ;while true do if (v470==(0 -0)) then v153=false;v20("追従を停止しました");break;end end end);v17.SpeedMultiplier=(1508 -(829 + 678)) + 0 + 0 ;game:GetService(v7("\116\111\90\61\54\84\108\93\13\54","\83\38\26\52\110")).Heartbeat:Connect(function() local v471=0 -0 ;local v472;while true do if (((1216 -(143 + 1073)) -(1815 -(898 + 917)))==v471) then v472=v9.Character;if v472 then v472:SetAttribute(v7("\107\7\34\67\92\58\50\74\76\30\55\74\81\18\53","\38\56\119\71"),v17.SpeedMultiplier);end break;end end end);v112(v116,"スピード",(618 -302) -(146 + 160 + 9) ,(4958 -(882 + 587)) -(1895 + 594) ,v17.SpeedMultiplier,function(v473) local v474=0 + 0 ;local v475;local v476;local v477;while true do if (v474==(264 -(140 + 124))) then v475=0 + 0 ;v476=nil;v474=1536 -(1105 + 430) ;end if (v474==(2 -1)) then v477=nil;while true do if (v475==(0 -0)) then v476=(0 -0) + (0 -0) ;v477=nil;v475=1 + 0 ;end if (v475==(1 + 0)) then while true do if (v476==(1 + 0 + 0)) then if v477 then v477:SetAttribute(v7("\192\255\93\211\33\123\230\227\76\223\53\90\250\234\74","\54\147\143\56\182\69"),v473);end break;end if (v476==(0 + 0)) then local v1595=0 + 0 ;local v1596;while true do if (v1595==(1991 -(1047 + 944))) then v1596=1302 -(206 + 1096) ;while true do if (v1596==(195 -(30 + 164))) then v476=2 -(4 -3) ;break;end if (v1596==0) then v17.SpeedMultiplier=v473;v477=v9.Character;v1596=1;end end break;end end end end break;end end break;end end end);v17.DashLength=3 + 7 ;game:GetService(v7("\228\148\241\122\218\196\151\246\74\218","\191\182\225\159\41")).Heartbeat:Connect(function() local v478=1474 -(1383 + 91) ;local v479;while true do if (v478==0) then v479=v9.Character;if v479 then v479:SetAttribute(v7("\15\19\59\93\167\130\204\44\6\32","\162\75\114\72\53\235\231"),v17.DashLength);end break;end end end);v112(v116,"ダッシュ",38 -28 ,1984 -984 ,v17.DashLength,function(v480) local v481=1660 -(1174 + 486) ;local v482;while true do if (((1802 -(172 + 255)) -((3563 -2423) + (561 -326)))==v481) then local v1061=1528 -(594 + 934) ;while true do if (v1061==0) then v17.DashLength=v480;v482=v9.Character;v1061=569 -(211 + 357) ;end if (v1061==(1 + 0)) then v481=1 + 0 ;break;end end end if (v481==1) then if v482 then v482:SetAttribute(v7("\168\61\87\234\127\7\130\59\80\234","\98\236\92\36\130\51"),v480);end break;end end end);_G.JumpHeightValue=32 + (29 -11) ;_G.AutoJumpEnabled=true;game:GetService(v7("\150\12\2\137\64\186\163\57\167\28","\80\196\121\108\218\37\200\213")).Heartbeat:Connect(function() if _G.AutoJumpEnabled then pcall(function() local v1062=0 + 0 ;local v1063;local v1064;while true do if (v1062==(1414 -(159 + 1255))) then v1063=game.Players.LocalPlayer.Character;v1064=v1063 and v1063:FindFirstChildOfClass(v7("\40\102\15\126\69\1\131\4","\234\96\19\98\31\43\110")) ;v1062=1;end if (v1062==1) then if v1064 then local v1501=0 + 0 ;while true do if ((777 -(24 + 753))==v1501) then v1064.UseJumpPower=true;v1064.JumpPower=_G.JumpHeightValue;break;end end end break;end end end);end end);v112(v116,"ジャンプ力",46 + 2 + 2 ,(165 -36) + (1503 -(898 + 234)) ,_G.JumpHeightValue,function(v483) local v484=535 -(333 + 202) ;while true do if (v484==((23 + 30) -(12 + 21 + (38 -19)))) then pcall(function() local v1156=1279 -(1018 + 261) ;local v1157;local v1158;local v1159;while true do if (v1156==(2 -1)) then v1159=nil;while true do if (v1157==1) then while true do if (v1158==(0 -(131 -(93 + 38)))) then v1159=game.Players.LocalPlayer.Character:FindFirstChildOfClass(v7("\46\10\95\198\162\125\130\2","\235\102\127\50\167\204\18"));if v1159 then local v1982=0 + 0 ;local v1983;local v1984;while true do if (v1982==(0 + 0)) then v1983=0 + 0 + 0 + 0 ;v1984=nil;v1982=2 -1 ;end if (v1982==(3 -2)) then while true do if (v1983==((0 -0) -(0 -0))) then v1984=0 + (0 -0) ;while true do if (v1984==(689 -(123 + 463 + 103))) then v1159.UseJumpPower=true;v1159.JumpPower=v483;break;end end break;end end break;end end end break;end end break;end if ((0 -0)==v1157) then v1158=0 + 0 + (420 -(14 + 406)) ;v1159=nil;v1157=1;end end break;end if (v1156==(0 -0)) then v1157=0 -0 ;v1158=nil;v1156=1;end end end);break;end if (v484==(0 + (1630 -(20 + 1610)))) then local v1065=0;while true do if (v1065==0) then _G.JumpHeightValue=v483;_G.AutoJumpEnabled=true;v1065=1 + 0 ;end if (v1065==1) then v484=2 -(2 -1) ;break;end end end end end);v17.BangKey="G";v17.TpKey="U";v17.BangEnabled=false;v17.TpEnabled=false;local v181=false;local v182=tick();local v183=nil;local v132=workspace.CurrentCamera;local v184=v9:GetMouse();local function v185(v485) local v486=0 -0 ;local v487;local v488;while true do if (v486==0) then v487,v488=pcall(function() return Enum.KeyCode[v485:upper()];end);return (v487 and v488) or nil ;end end end local function v186(v489,v490,v491,v492) local v493=517 -(243 + 274) ;local v494;local v495;local v496;while true do if (v493==(1622 -(1437 + 185))) then v494=Instance.new(v7("\118\179\244\46\65","\78\48\193\149\67\36"),v489);v494.Size=UDim2.new(2 -1 , -(5 + 5),(5725 -4237) -(1309 + 162 + 17) ,1 + 44 );v494.BackgroundColor3=Color3.fromRGB(841 -(326 + 490) ,0 -0 ,0 + 0 + (203 -(181 + 22)) );Instance.new(v7("\5\55\163\23\83\62\27\146","\33\80\126\224\120"),v494);v493=76 -(35 + 40) ;end if (v493==3) then v495.TextXAlignment=Enum.TextXAlignment.Left;v496=Instance.new(v7("\179\241\28\50\128\136\236","\194\231\148\100\70"),v494);v496.Size=UDim2.new(0,1455 -((3414 -2563) + (730 -176)) ,0 + 0 ,(905 -(297 + 581)) + 1 + 2 );v496.Position=UDim2.new(2 -(1 -0) , -((421 -291) -(26 + 44)),(1216.5 -914) -((509 -394) + 187) , -(1752 -(1505 + 232)));v493=4;end if (v493==(1322 -(415 + 903))) then v496.BackgroundColor3=Color3.fromRGB(108 -68 ,0 -0 ,0 + 0 );v496.Text=v491;v496.TextColor3=Color3.fromRGB((959 -(155 + 562)) + 13 ,(470 + 534) -(866 -(71 + 46)) ,(2198 -782) -(160 + (1686 -(436 + 249))) );v496.Font=Enum.Font.SourceSansBold;v493=1626 -(56 + 1565) ;end if (v493==(1 + 0)) then v495=Instance.new(v7("\216\173\27\208\112\237\170\6\200","\60\140\200\99\164"),v494);v495.Size=UDim2.new((984 -(80 + 904)) -(0 + 0) ,(914 -(595 + 205)) + (86 -50) ,(2 -1) -(0 + 0) ,(0 + 0) -(0 -0) );v495.Position=UDim2.new((267 + 342) -((960 -(400 + 265)) + (606 -292)) ,3 + 7 ,0 -(0 -0) ,(753 + 1209) -((2971 -(962 + 709)) + 521 + 141) );v495.Text=v490;v493=2;end if (v493==(4 + 1)) then v496.TextSize=12 + 4 ;Instance.new(v7("\115\101\226\172\228\198\67\94","\168\38\44\161\195\150"),v496);v496.FocusLost:Connect(function() local v1160=0 -0 ;local v1161;while true do if (v1160==0) then v1161=(0 -0) + (781 -(636 + 145)) ;while true do if (((295 -(282 + 13)) + (1148 -(366 + 782)))==v1161) then v492(v496.Text);v20(v490   .. "を ["   .. v496.Text:upper()   .. "] に設定" );break;end end break;end end end);break;end if (v493==(91 -(10 + 79))) then v495.TextColor3=Color3.fromRGB((2507 -(1297 + 410)) -(1912 -1367) ,2010 -(1178 + 577) ,117 + 16 + (400 -(262 + 16)) );v495.Font=Enum.Font.SourceSansBold;v495.TextSize=33 -17 ;v495.BackgroundTransparency=(2 + 0) -(1 + 0) ;v493=3;end end end v186(v114,"BANG起動キー設定",v17.BangKey,function(v497) v17.BangKey=v497:upper();end);v186(v114,"クリックTPキー設定",v17.TpKey,function(v499) v17.TpKey=v499:upper();end);v111(v114,"BANG機能 有効化",false,function(v501) local v502=1850 -(1056 + 794) ;local v503;while true do if (0==v502) then v503=(1348 -(741 + 607)) -0 ;while true do if (v503==0) then v17.BangEnabled=v501;if  not v501 then v181=false;end break;end end break;end end end);v10.InputBegan:Connect(function(v504,v505) if v505 then return;end if ((v504.UserInputType==Enum.UserInputType.MouseButton1) and v10:IsKeyDown(Enum.KeyCode.LeftControl)) then local v962=0;local v963;local v964;local v965;local v966;while true do if (v962==(1758 -(730 + 1026))) then while true do if (v963==((2691 -(248 + 1545)) -((1517 -(191 + 801)) + (1845 -1473)))) then for v1597,v1598 in pairs(game.Players:GetPlayers()) do if ((v1598~=v9) and v1598.Character and v1598.Character:FindFirstChild(v7("\168\233\143\119\62\231\191\18\178\243\141\98\0\233\164\2","\118\224\156\226\22\80\136\214"))) then local v1739,v1740=v132:WorldToViewportPoint(v1598.Character.HumanoidRootPart.Position);if v1740 then local v1874=560 -(478 + 82) ;local v1875;local v1876;while true do if (v1874==(1707 -(434 + 1273))) then v1875=0 -0 ;v1876=nil;v1874=1 + 0 ;end if (v1874==1) then while true do if (v1875==(0 -0)) then v1876=(Vector2.new(v1739.X,v1739.Y) -v964).Magnitude;if (v1876<v966) then local v2220=0 -0 ;local v2221;while true do if (v2220==(573 -(349 + 224))) then v2221=864 -(275 + 589) ;while true do if (((0 -0) -0)==v2221) then v966=v1876;v965=v1598;break;end end break;end end end break;end end break;end end end end end if v965 then local v1674=0 -0 ;local v1675;while true do if (v1674==((1674 -(1064 + 468)) -(96 + 34 + 12))) then v1675=0 + 0 ;while true do if ((777 -(643 + (574 -440)))==v1675) then v183=v965;v20("ターゲット確定: "   .. v965.DisplayName );break;end end break;end end else v20("近くにプレイヤーがいません");end break;end if (v963==(0 + (703 -(676 + 27)))) then local v1502=0 -0 ;while true do if (v1502==0) then v964=v10:GetMouseLocation();v965,v966=nil,1677 -(48 + 1379) ;v1502=1;end if (v1502==1) then v963=2 -(1 + 0) ;break;end end end end break;end if (v962==1) then v965=nil;v966=nil;v962=1 + 1 ;end if (v962==(0 -0)) then v963=358 -(177 + 60 + (236 -(79 + 36))) ;v964=nil;v962=3 -2 ;end end end local v506=v185(v17.BangKey);local v507=v185(v17.TpKey);if (v506 and (v504.KeyCode==v506)) then local v967=0 + 0 ;local v968;while true do if (v967==0) then v968=0 + 0 ;while true do if (v968==((0 + 0) -(0 + 0))) then v17.BangEnabled= not v17.BangEnabled;v20(v7("\96\207\119\167\24\174","\224\34\142\57")   .. ((v17.BangEnabled and v7("\241\137","\110\190\199\165\189\19\145\61")) or v7("\245\205\81","\167\186\139\23\136\235")) );break;end end break;end end elseif (v507 and (v504.KeyCode==v507)) then local v1162=0 -0 ;local v1163;while true do if (v1162==0) then v1163=0 + 0 + 0 ;while true do if ((0 -0)==v1163) then v17.TpEnabled= not v17.TpEnabled;v20("クリックTP: "   .. ((v17.TpEnabled and v7("\53\155","\109\122\213\232")) or v7("\193\209\132","\80\142\151\194")) );break;end end break;end end end end);game:GetService(v7("\49\211\121\127\6\212\97\69\0\195","\44\99\166\23")).Heartbeat:Connect(function() if (v17.BangEnabled and v183 and v183.Character) then local v969=0 + 0 ;local v970;local v971;local v972;local v973;while true do if (v969==0) then local v1227=0;while true do if (v1227==0) then v970=(1014 -(631 + 383)) -0 ;v971=nil;v1227=1;end if (v1227==(1636 -(445 + 1190))) then v969=1;break;end end end if (v969==1) then v972=nil;v973=nil;v969=1427 -(810 + 615) ;end if (v969==(1296 -(819 + 475))) then while true do if ((1336 -(243 + 1092))==v970) then v973=nil;while true do if (v971==(720 -((942 -626) + 251 + 152))) then if (v972 and v973 and ((tick() -v182)>=(0.2 + 0))) then v972.CFrame=v973.CFrame * CFrame.new(0 + 0 + 0 ,(0 + 0) -(0 -0) ,8 -5 ) ;end break;end if (v971==(0 + (524 -(119 + 405)))) then local v1741=0 -0 ;while true do if (v1741==(3 -2)) then v971=2 -1 ;break;end if (v1741==(609 -(352 + 257))) then v972=v9.Character and v9.Character:FindFirstChild(v7("\84\226\36\55\61\171\117\243\27\57\60\176\76\246\59\34","\196\28\151\73\86\83")) ;v973=v183.Character:FindFirstChild(v7("\219\22\36\17\140\87\17\114\193\12\38\4\178\89\10\98","\22\147\99\73\112\226\56\120"));v1741=1;end end end end break;end if (v970==(0 + 0 + (1163 -(88 + 1075)))) then local v1504=1071 -(477 + 594) ;while true do if (v1504==(723 -(328 + 395))) then v971=(504 -(164 + 340)) + (0 -0) ;v972=nil;v1504=2 -1 ;end if (v1504==1) then v970=(1232 -(1008 + 221)) -(1513 -(1025 + 486)) ;break;end end end end break;end end end end);v184.Button1Down:Connect(function() if (v17.BangEnabled and v17.TpEnabled and v183) then local v974=v183.Character and v183.Character:FindFirstChild(v7("\144\96\239\244\131\183\124\230\199\130\183\97\210\244\159\172","\237\216\21\130\149")) ;if v974 then local v1164=0 -0 ;local v1165;local v1166;while true do if (v1164==((11 -7) -(222 -(108 + 111)))) then v9.Character.HumanoidRootPart.CFrame=CFrame.new(v974.Position + v1166 );v182=tick();break;end if (v1164==(98 -(82 + 16))) then local v1405=1729 -(533 + 1196) ;local v1406;while true do if (v1405==(0 -0)) then v1406=0 -(212 -(161 + 51)) ;while true do if (v1406==(435 -(294 + 140))) then v1164=(4 -3) + (838 -(717 + 121)) ;break;end if (v1406==(0 -(0 -0))) then local v1878=0;while true do if (v1878==1) then v1406=18 -(12 + 5 + 0) ;break;end if (v1878==0) then v1165=math.random() * (1 + 1) * math.pi ;v1166=Vector3.new(math.cos(v1165) * (48 + 252) ,14 -(1719 -(1001 + 709)) ,math.sin(v1165) * (287 + 13) );v1878=1121 -(242 + 878) ;end end end end break;end end end end end end end);local v187={};local v188=workspace:FindFirstChild(v7("\160\65\94\75\163","\62\226\46\63\63\208\169"));local function v189() local v508=1783 -(1395 + 388) ;local v509;local v510;local v511;local v512;local v513;while true do if (v508==(0 + 0)) then v509=(0 + 0) -0 ;v510=nil;v508=1;end if (v508==(2 + 0)) then v513=nil;while true do local v1167=0 + 0 ;local v1168;while true do if (v1167==(1947 -(1289 + 658))) then v1168=0 + 0 ;while true do if (v1168==(1 -0)) then if (v509==((4 + 1) -(2 + 0))) then local v1799=0 -0 ;while true do if (v1799==(1976 -(337 + 1639))) then if v512 then for v2125,v2126 in ipairs(v512:GetDescendants()) do if ((v2126:IsA(v7("\214\28\84\151","\62\133\121\53\227\127\109\79")) or v2126:IsA(v7("\38\17\58\252\213\162\167\35\17\51\225","\194\112\116\82\149\182\206"))) and (v2126~=v511.SeatPart) and (v2126.Occupant==nil)) then table.insert(v513,v2126);end end end return v512,v513;end end end if (v509==(0 + 0)) then local v1800=0 -0 ;while true do if (v1800==(2 -1)) then v509=1 -0 ;break;end if (v1800==0) then v510=v9.Character;v511=v510 and v510:FindFirstChildOfClass(v7("\17\189\65\25\206\237\7\61","\110\89\200\44\120\160\130")) ;v1800=1738 -(630 + 1107) ;end end end break;end if (0==v1168) then if (v509==(1 + 0)) then if ( not v511 or  not v511.SeatPart or  not v188) then return nil,{};end v512=nil;v509=1 + 1 ;end if (v509==2) then for v1879,v1880 in ipairs(v188:GetChildren()) do if v511.SeatPart:IsDescendantOf(v1880) then v512=v1880;break;end end v513={};v509=3 -0 ;end v1168=1 + 0 ;end end break;end end end break;end if (v508==(1 + 0)) then v511=nil;v512=nil;v508=2;end end end local v190=Instance.new(v7("\141\209\74\75\70","\45\203\163\43\38\35\42\91"),v116);v190.Size=UDim2.new((62 -(13 + 48)) -0 , -((723 -(658 + 41)) -(29 -15)),0,41 + (2066 -(1591 + 316)) );v190.BackgroundColor3=Color3.fromRGB(1993 -((3116 -1460) + 79 + 238) ,20,13 + 10 + (6 -4) );Instance.new(v7("\231\172\255\44\149\167\81\192","\52\178\229\188\67\231\201"),v190);local v193=Instance.new(v7("\21\68\72\16\219\93\33\36\77","\67\65\33\48\100\151\60"),v190);v193.Size=UDim2.new(1,1276 -(1241 + 35) ,(40 -(18 + 22)) + 0 ,(108 -29) -(13 + 36) );v193.Text=" 🚢 Target Slots (ボート空き枠)";v193.TextColor3=Color3.fromRGB(1557 -(697 + 605) ,255,(526 + 728) -999 );v193.Font=Enum.Font.SourceSansBold;v193.TextSize=14;v193.BackgroundTransparency=1 -0 ;v193.TextXAlignment=Enum.TextXAlignment.Left;local v201=Instance.new(v7("\236\228\188\215\255\211\238\160\223\213\205\230\163\221","\147\191\135\206\184"),v190);v201.Size=UDim2.new(355 -((334 -(188 + 141)) + (1480 -1131)) , -(47 -(87 -50)),(2222 -(34 + 916)) -((2003 -(357 + 1380)) + 922 + 83) , -(36 + 39));v201.Position=UDim2.new(0,2 + 2 + 1 ,(1927 -(178 + 1749)) -(0 -0) ,(1461 -(142 + 1273)) -(604 -(284 + 309)) );v201.BackgroundTransparency=(1388 + 309) -((1251 -(622 + 68)) + 580 + 555) ;v201.ScrollBarThickness=(11 -6) -(1 + 0) ;local v206=Instance.new(v7("\177\1\138\200\203\71\158\133\49\169\212\204","\210\228\72\198\161\184\51"),v201);v206.Padding=UDim.new(0 + 0 ,16 -(1909 -(855 + 1043)) );local function v208() local v514=0;local v515;local v516;local v517;local v518;while true do if (v514==(4 -2)) then while true do if (v515==((3640 -2572) -((1728 -1221) + 559))) then for v1407,v1408 in ipairs(game.Players:GetPlayers()) do if (v1408~=v9) then local v1599=(779 -(576 + 203)) -(0 -0) ;local v1600;local v1601;while true do if (v1599==(1 -0)) then local v1801=1984 -(709 + 1275) ;while true do if (v1801==0) then v1601.Size=UDim2.new((3 + 0) -(6 -4) , -((1500 -1102) -((330 -(31 + 87)) + 176)),905 -((381 -(44 + 87)) + (2406 -1751)) ,25 + 5 );v1601.Text=v1408.DisplayName;v1801=2 -1 ;end if (v1801==(2 -1)) then v1599=788 -(284 + 502) ;break;end end end if (v1599==((4 + 1) -(1189 -(124 + 1062)))) then local v1802=1027 -(847 + 180) ;while true do if (v1802==(0 + 0)) then v1601.TextColor3=Color3.fromRGB(255,(1858 -1413) -190 ,(1761 -(369 + 994)) -(1106 -(583 + 380)) );v1601.BackgroundColor3=(v1600 and Color3.fromRGB((461 + 1645) -(1355 + 514 + 43 + 44) ,(1973 -(1085 + 888)) -0 ,(4693 -2792) -((1853 -1369) + (6624 -5207)) )) or Color3.fromRGB(85 -(67 -22) ,67 -(9 + 18) ,813 -(48 + 366 + 359) ) ;v1802=1 + 0 ;end if ((1 -0)==v1802) then v1599=(5 -1) -(1 + 0) ;break;end end end if (((0 + 0) -(0 + 0))==v1599) then local v1803=0;while true do if (v1803==1) then v1599=(215 -(153 + 61)) + (943 -(704 + 239)) ;break;end if (v1803==(0 + 0)) then v1600=table.find(v187,v1408);v1601=Instance.new(v7("\2\76\235\4\81\219\34\93\252\30","\174\86\41\147\112\19"),v201);v1803=1;end end end if (v1599==((1393 -(740 + 646)) -(3 + 1))) then Instance.new(v7("\110\41\174\4\55\1\20\185","\203\59\96\237\107\69\111\113"),v1601);v1601.MouseButton1Click:Connect(function() local v1881=1922 -(1547 + 375) ;local v1882;local v1883;while true do if (v1881==0) then v1882=0 + 0 + (403 -(211 + 192)) ;v1883=nil;v1881=4 -3 ;end if (v1881==(1 -0)) then while true do if (v1882==(1 + 0)) then v208();break;end if (v1882==((1634 -(425 + 356)) -(152 + 701))) then local v2176=0;while true do if ((1 + 0)==v2176) then v1882=2 -1 ;break;end if (v2176==(1566 -(83 + 1483))) then v1883=table.find(v187,v1408);if v1883 then table.remove(v187,v1883);elseif ( #v187<v518) then table.insert(v187,v1408);else v20("空き席が足りません！");end v2176=1273 -(123 + 1149) ;end end end end break;end end end);break;end end end end v201.CanvasSize=UDim2.new(0,(1037 + 274) -(430 + 881) ,0 + 0 ,v206.AbsoluteContentSize.Y);break;end if (v515==(1 + 0)) then local v1343=1580 -(908 + 672) ;while true do if (v1343==(513 -(206 + 307))) then v193.Text=" 🚢 Target Slots: "   ..  #v187   .. v7("\100\89\236","\183\68\118\204\129\81\144")   .. v518 ;for v1677,v1678 in ipairs(v201:GetChildren()) do if v1678:IsA(v7("\58\168\104\240\41\151\26\185\127\234","\226\110\205\16\132\107")) then v1678:Destroy();end end v1343=1 + 0 ;end if (1==v1343) then v515=2;break;end end end if (v515==(62 -(18 + 44))) then v516,v517=v189();v518= #v517;v515=896 -(188 + 369 + (740 -402)) ;end end break;end if (v514==(0 -0)) then v515=0;v516=nil;v514=1 + 0 ;end if (v514==(936 -(226 + 709))) then v517=nil;v518=nil;v514=728 -(235 + 491) ;end end end local v209=Instance.new(v7("\223\198\248\205\99\254\215\244\214\79","\33\139\163\128\185"),v190);v209.Size=UDim2.new(0.9,(0 -0) + 0 + 0 ,0 -(1299 -(463 + 836)) ,(526 -(166 + 238)) -(150 -63) );v209.Position=UDim2.new((0.05 + 0) -(1441 -(1080 + 361)) ,0 -(0 -0) ,802 -(197 + 302 + (403 -101)) , -(340 -(254 + 46)));v209.BackgroundColor3=Color3.fromRGB((160 + 706) -(22 + 17 + (1083 -(37 + 219))) ,276 -(2075 -(1330 + 569)) ,(0 -0) -0 );v209.Text="ボートハメ込みTP開始";v209.TextColor3=Color3.fromRGB((1676 -664) -(3022 -2265) ,255,377 -122 );Instance.new(v7("\98\113\39\209\69\86\1\204","\190\55\56\100"),v209);v209.MouseButton1Click:Connect(function() local v519=0;local v520;local v521;while true do if (v519==1) then local v1086=670 -(128 + 542) ;while true do if (v1086==1) then v519=(6 -2) -(6 -4) ;break;end if (v1086==0) then v20("テレポートを開始します...");for v1409,v1410 in ipairs(v187) do local v1411=v521[v1409];local v1412=v1410.Character and v1410.Character:FindFirstChild(v7("\126\186\49\31\29\236\250\82\157\51\17\7\211\242\68\187","\147\54\207\92\126\115\131")) ;if (v1411 and v1412) then local v1603=0 -0 ;local v1604;local v1605;local v1606;local v1607;local v1608;while true do if (v1603==(0 + 0)) then v1604=0 -0 ;v1605=nil;v1603=1 + 0 ;end if (v1603==(1 + 0)) then v1606=nil;v1607=nil;v1603=2;end if (v1603==2) then v1608=nil;while true do if (v1604==(3 -1)) then while true do if (v1605==(0 + 0)) then v1606=(0 + 0) -(812 -(96 + 716)) ;v1607=nil;v1605=(1608 -(85 + 1522)) + (853 -(724 + 129)) ;end if (v1605==((3 -2) -(373 -(83 + 290)))) then v1608=nil;while true do if (v1606==(1 -0)) then v520:PivotTo(v1608);task.wait((190.3 -86) -(103 + 1 + 0) );break;end if (v1606==((382 + 172) -(189 + 286 + (114 -35)))) then local v2222=0 + 0 ;while true do if (v2222==0) then v1607=v520:GetPivot():Inverse() * v1411.CFrame ;v1608=v1412.CFrame * v1607:Inverse() ;v2222=1;end if (v2222==(1 -0)) then v1606=1;break;end end end end break;end end break;end if (v1604==(1 -0)) then local v1991=447 -(190 + 257) ;while true do if (v1991==(591 -(402 + 189))) then v1607=nil;v1608=nil;v1991=1 + 0 ;end if (v1991==(567 -(90 + 476))) then v1604=2;break;end end end if (v1604==(814 -(688 + 126))) then v1605=(0 + 0) -0 ;v1606=nil;v1604=1 + 0 ;end end break;end end end end v1086=500 -(34 + 465) ;end end end if (v519==((38 -29) -(12 -6))) then v20("全ターゲットの処理が完了しました");break;end if (v519==(1 + 1 + 0)) then v187={};v208();v519=3 + 0 ;end if (v519==((828 + 675) -((3681 -2286) + 108))) then v520,v521=v189();if ( not v520 or ( #v187==(0 -(0 + 0)))) then local v1228=0 -0 ;local v1229;while true do if (v1228==(1807 -(587 + 1220))) then v1229=1204 -((1899 -(1211 + 681)) + (1274 -(64 + 13))) ;while true do if (v1229==((655 -(121 + 534)) + (803 -(622 + 181)))) then local v1742=0 + 0 ;local v1743;while true do if (v1742==(1669 -(296 + 1373))) then v1743=0;while true do if (v1743==0) then v20("ボートに乗っていないか、対象を選んでいません");return;end end break;end end end end break;end end end v519=1 + 0 + 0 ;end end end);game.Players.PlayerAdded:Connect(v208);game.Players.PlayerRemoving:Connect(v208);v208();local function v215(v522) local v523=0;local v524;local v525;local v526;while true do if (v523==(1 + 0)) then v526=nil;while true do if ((2 -1)==v524) then local v1344=0;while true do if ((0 + 0)==v1344) then if v525 then v525:Destroy();end v526=v522:WaitForChild(v7("\37\36\56\124\3\113\4\53","\30\109\81\85\29\109"),(1620 -(143 + 1471)) -(3 -2) );v1344=1;end if (v1344==1) then v524=(3 + 5) -(15 -9) ;break;end end end if (v524==(0 -0)) then local v1345=0;local v1346;while true do if (v1345==0) then v1346=180 -(103 + 77) ;while true do if (v1346==0) then if  not v522 then return;end v525=v522:WaitForChild(v7("\222\127\93\187\55\202\249","\156\159\17\52\214\86\190"),4 + 1 );v1346=1158 -(895 + 262) ;end if (v1346==1) then v524=(1 -0) -0 ;break;end end break;end end end if (v524==(141 -(43 + 96))) then if v526 then local v1505=(0 + 0) -(1626 -(581 + 1045)) ;while true do if (v1505==(0 -(1275 -(582 + 693)))) then for v1804,v1805 in pairs(v526:GetPlayingAnimationTracks()) do v1805:Stop(0);end v526.AnimationPlayed:Connect(function(v1806) v1806:Stop(1186 -(454 + 732) );end);break;end end end break;end end break;end if (v523==(0 -0)) then v524=319 -(27 + 78 + 214) ;v525=nil;v523=1 -0 ;end end end v113(v114,"アニメーション無効化",function() local v527=0 -0 ;local v528;while true do if (0==v527) then v528=(650 -(367 + 283)) + (68 -(7 + 61)) ;while true do if (v528==(0 -0)) then local v1347=0 -0 ;local v1348;while true do if (v1347==(0 + 0)) then v1348=678 -(332 + 346) ;while true do if (v1348==(0 -0)) then if v9.Character then v215(v9.Character);end v9.CharacterAdded:Connect(v215);v1348=1 -0 ;end if (v1348==1) then v528=3 -2 ;break;end end break;end end end if ((1 + 0)==v528) then v20("アニメーションを完全に削除しました");break;end end break;end end end);local function v216() local v529=game:GetService(v7("\130\230\186\180\186\230\179\187","\220\206\143\221"));local v530=game:GetService(v7("\177\114\63\28\203\220\211\133\120","\178\230\29\77\119\184\172"));local function v531(v852) local v853=(0 -0) + 0 ;while true do if (v853==((0 + 0) -(0 + 0))) then if (v852:IsA(v7("\198\177\31\21\115","\152\149\222\106\123\23")) or v852:IsA(v7("\238\41\227\77\177\250\52\249\86\165","\213\189\70\150\35"))) then return;end pcall(function() if (v852:IsA(v7("\127\84\102\28\70\86\120\13\106\88\125\28\91\80\102","\104\47\53\20")) or v852:IsA(v7("\144\65\142\23\185","\111\195\44\225\124\220")) or v852:IsA(v7("\254\79\18\118","\203\184\38\96\19\203")) or v852:IsA(v7("\10\99\120\83\197\53\118\106","\174\89\19\25\33"))) then local v1413=0 -0 ;local v1414;local v1415;local v1416;while true do if (v1413==(0 -0)) then v1414=0;v1415=nil;v1413=1;end if (v1413==(1855 -(815 + 1039))) then v1416=nil;while true do if (v1414==(777 -(336 + 440))) then while true do if (v1415==((0 + 0) -(0 + 0))) then v1416=0;while true do if (v1416==(0 + (0 -0))) then v852.Transparency=NumberSequence.new((430.99 -(222 + 208)) + 0 + 0 );if v852:IsA(v7("\31\19\64\90\254\132\7\42\55\95\71\227\147\14\61","\107\79\114\50\46\151\231")) then v852.Rate=v852.Rate * (1751.01 -((2244 -(652 + 178)) + (533 -196))) ;end break;end end break;end end break;end if (v1414==(0 -0)) then v1415=0 + 0 + 0 ;v1416=nil;v1414=2 -1 ;end end break;end end elseif (v852:IsA(v7("\13\180\180\32\134","\160\89\198\213\73\234\89\215")) or v852:IsA(v7("\106\116\181\243","\165\40\17\212\158"))) then v852.Transparency=1940.99 -(1642 + (692 -(259 + 135))) ;elseif (v852:IsA(v7("\193\220\11\50\42","\70\133\185\104\83")) or v852:IsA(v7("\48\64\92\62\220\22\64","\169\100\37\36\74"))) then if (v852.Name~=v7("\6\134\161\85","\48\96\231\194")) then v852.Transparency=0.98 -0 ;end elseif (v852:IsA(v7("\248\85\29\57\60\222\169\134\203\78","\227\168\58\110\77\121\184\207")) or v852:IsA(v7("\88\51\179\79\163\248\126\183\105\57\188\84\184\212\127\128\125\58\186\67\165","\197\27\92\223\32\209\187\17")) or v852:IsA(v7("\33\83\204\244\14\122\197\253\6\92\215","\155\99\63\163")) or v852:IsA(v7("\160\221\180\159\156\130\132\212\162\153","\228\226\177\193\237\217")) or v852:IsA(v7("\7\165\45\212\53\169\48\195\50\182\38\229\32","\134\84\208\67"))) then v852.Enabled=false;elseif (v852:IsA(v7("\49\173\149\89\35\173\148\72","\60\115\204\230")) or v852:IsA(v7("\202\63\248\120\215\59\249\100","\16\135\90\139"))) then local v1992=1460 -(1393 + 67) ;local v1993;while true do if (v1992==(0 -0)) then v1993=(0 + 0) -(1448 -(1129 + 319)) ;while true do if (v1993==(0 + 0)) then local v2224=0;while true do if (v2224==0) then v852.CastShadow=false;v852.Reflectance=0 + 0 + 0 ;v2224=1;end if (v2224==(1 -0)) then v1993=413 -(137 + 275) ;break;end end end if (v1993==1) then v852.Material=Enum.Material.SmoothPlastic;break;end end break;end end end end);break;end end end for v854,v855 in pairs(game:GetDescendants()) do v531(v855);end v530.DescendantAdded:Connect(v531);v529.GlobalShadows=false;v529.FogEnd=(9000000899 -(140 + 299)) -(357 + (1716 -(421 + 680))) ;pcall(function() v17().Rendering.QualityLevel=Enum.QualityLevel.Level01;end);v20("FPS Boost有効");end v113(v114,v7("\114\68\53\115\108\91\119\71\96","\24\52\20\102\83\46\52"),function() v216();end);local function v217() local v534=game:GetService(v7("\232\38\38\44\27\205\33\38","\111\164\79\65\68"));local v535=game:GetService(v7("\241\214\145\213\61\250\199\218\134","\138\166\185\227\190\78"));local v536=v535.Terrain;local v537=game:GetService(v7("\249\97\203\4\87\49\15\194\119\192","\121\171\20\165\87\50\67"));v534.GlobalShadows=true;v534.ShadowSoftness=0 -0 ;v534.Brightness=1.8;v534.EnvironmentDiffuseScale=2 -1 ;v534.EnvironmentSpecularScale=1 + 0 ;v534.ExposureCompensation=0.1 -0 ;local v544=v536:FindFirstChildOfClass(v7("\229\52\182\35\189\17","\98\166\88\217\86\217")) or Instance.new(v7("\213\250\118\20\130\207","\188\150\150\25\97\230"),v536) ;v544.Enabled=true;v544.Cover=0.62 -(0 + 0) ;v544.Density=0.75;pcall(function() v537:UnbindFromRenderStep(v7("\224\140\81\11\24\229\249\133\80\23\8\201\200\128\89\22","\141\186\233\63\98\108"));end);local v548=0;v537:BindToRenderStep(v7("\203\239\34\191\49\249\201\32\185\48\245\206\62\191\35\229","\69\145\138\76\214"),Enum.RenderPriority.Last.Value,function(v858) local v859=540 -(58 + 482) ;local v860;while true do if (v859==(679 -(310 + 369))) then v860=0 + 0 + 0 ;while true do if ((286 -(274 + 12))==v860) then v548=v548 + v858 ;v544.Cover=(0.62 -(0 + 0)) + (math.sin(v548 * (0.15 + 0) ) * (1762.015 -(681 + 1081))) ;break;end end break;end end end);for v861,v862 in pairs(v535:GetDescendants()) do pcall(function() if (v862:IsA(v7("\82\206\154\140\143\23\98\219","\118\16\175\233\233\223")) or v862:IsA(v7("\166\129\38\179\222\138\111\159","\29\235\228\85\219\142\235"))) then local v1169=0 -0 ;while true do if ((0 + 0)==v1169) then local v1418=0;local v1419;while true do if (v1418==(0 -0)) then v1419=0 -0 ;while true do if (v1419==(877 -(842 + 35))) then v862.CastShadow=true;if (v862.Reflectance<(0.15 -0)) then v862.Reflectance=(1867.22 -(180 + 1687)) + 0 ;end v1419=1;end if (v1419==1) then v1169=(2 -1) + (971 -(269 + 702)) ;break;end end break;end end end if (v1169==((2116 -(776 + 38)) -(176 + 208 + (1970 -1053)))) then if ((v862.Material==Enum.Material.SmoothPlastic) or (v862.Material==Enum.Material.Glass)) then v862.Reflectance=0.35 + 0 ;end break;end end end end);end local function v549(v863) if v863:IsA(v7("\31\216\181\210\122\107\33\84\56\215\174","\50\93\180\218\189\23\46\71")) then local v1087=0 + 0 ;local v1088;while true do if (v1087==(0 + 0)) then v1088=0 + 0 ;while true do if ((698 -((311 -183) + 569))==v1088) then v863.Threshold=0.9 + 0 ;break;end if (v1088==(1543 -((5417 -4010) + 69 + 67))) then v863.Intensity=1887.35 -((1642 -(135 + 820)) + (1336 -(118 + 18))) ;v863.Size=1734 -(24 + 532 + (5515 -4361)) ;v1088=1 + 0 ;end end break;end end elseif v863:IsA(v7("\237\177\85\126\69\197\91\251\162\93\73\71\200","\40\190\196\59\44\36\188")) then v863.Intensity=0.06 + 0 ;elseif v863:IsA(v7("\29\81\209\187\233\109\5\57\87\217","\109\92\37\188\212\154\29")) then local v1420=0;local v1421;while true do if (v1420==(0 + 0)) then v1421=0 + 0 ;while true do if (v1421==(3 -(1295 -(741 + 552)))) then v863.Haze=(6.799999999999997 + 89) -(9 + 86) ;break;end if (v1421==(0 -0)) then v863.Density=421.28 -(250 + 25 + (1030 -(779 + 105))) ;v863.Glare=(1781.4 -(1451 + 330)) + (1869 -(1259 + 610)) ;v1421=(915 -(4 + 846)) -((1886 -(1108 + 749)) + 35) ;end end break;end end end end for v864,v865 in pairs(v534:GetChildren()) do v549(v865);end v534.ChildAdded:Connect(v549);if  not v534:FindFirstChildOfClass(v7("\37\251\169\204\34\74\12\234\182\198","\58\100\143\196\163\81")) then local v975=Instance.new(v7("\59\86\46\172\44\89\237\11\8\71","\110\122\34\67\195\95\41\133"),v534);v975.Density=1741.28 -(1301 + 440) ;v975.Glare=0.4 -0 ;v975.Haze=(0.8 + 0) -(0 + 0) ;end local v550=v534:FindFirstChild(v7("\79\180\85\67\194\125\147\87\95\196\67\227","\182\21\209\59\42")) or Instance.new(v7("\149\91\208\15\4\184\177\82\198\9","\222\215\55\165\125\65"),v534) ;v550.Name=v7("\22\212\200\19\230\201\207\70\57\195\240\72","\42\76\177\166\122\146\161\141");local v552=v535.CurrentCamera.CFrame;pcall(function() v537:UnbindFromRenderStep(v7("\159\143\11\199\109\126\129\147\11\207\116\127\166\168\9\219\107","\22\197\234\101\174\25"));end);v537:BindToRenderStep(v7("\23\49\171\213\98\167\243\159\35\53\168\213\117\141\219\147\63","\230\77\84\197\188\22\207\183"),Enum.RenderPriority.Camera.Value + (2 -(1 + 0)) ,function() local v866=0;local v867;local v868;local v869;local v870;local v871;while true do if (v866==1) then v869=nil;v870=nil;v866=478 -(168 + 308) ;end if (v866==(3 -1)) then v871=nil;while true do if (v867==2) then v550.Size=v550.Size + ((v871-v550.Size) * (0.2 + 0)) ;v552=v868.CFrame;break;end if (v867==(1347 -(469 + 878))) then v868=v535.CurrentCamera;v869=(v868.CFrame.Position-v552.Position).Magnitude;v867=1 + 0 ;end if (v867==1) then v870=(v868.CFrame.LookVector-v552.LookVector).Magnitude;v871=math.min((v869 * (7 -5)) + (v870 * (18 + 22)) ,10);v867=1 + 1 ;end end break;end if (v866==(0 -0)) then v867=0 + 0 ;v868=nil;v866=1;end end end);v20("RTX適用完了");end v113(v114,v7("\203\32\254","\85\153\116\166\156\236\193\144"),function() v217();end);local v218=game:GetService(v7("\148\236\76\170\225\18\183","\96\196\128\45\211\132"));local v155=game:GetService(v7("\7\152\117\108\215\189\162\209\54\136","\184\85\237\27\63\178\207\212"));local v219=v218.LocalPlayer;local v220=workspace.CurrentCamera;if _G.ESPConnection then _G.ESPConnection:Disconnect();end if _G.ESPObjects then for v979,v980 in pairs(_G.ESPObjects) do for v1089,v1090 in pairs(v980) do pcall(function() v1090:Remove();end);end end end _G.ESPObjects={};_G.ESPEnabled=false;local function v221(v553) local v554=v553.Character;local v555=v554 and v554:FindFirstChild(v7("\32\76\4\94\6\86\0\91\58\86\6\75\56\88\27\75","\63\104\57\105")) ;if  not v555 then return false;end local v556=workspace:FindFirstChild(v7("\52\176\171\86\7\131\139\86\2\128\173\74","\36\107\231\196")) and workspace._WorldOrigin:FindFirstChild(v7("\110\180\164\130\103\186\172\130\78","\231\61\213\194")) ;if  not v556 then return false;end for v872,v873 in pairs(v556:GetChildren()) do if v873:IsA(v7("\43\172\46\118\57\172\47\103","\19\105\205\93")) then local v1091=0 -0 ;local v1092;local v1093;local v1094;local v1095;local v1096;while true do if (v1091==(1841 -(1332 + 508))) then v1094=nil;v1095=nil;v1091=1 + 1 ;end if (v1091==(1 + 1)) then v1096=nil;while true do if ((1 + 0 + 0)==v1092) then if v1095 then v1094=v1094 * v1095.Scale ;end v1096=v555.Position;v1092=2;end if (v1092==(1144 -(650 + 492))) then if ((v1096.X>=(v1093.X-(v1094.X/(808 -(689 + 117))))) and (v1096.X<=(v1093.X + (v1094.X/2))) and (v1096.Z>=(v1093.Z-(v1094.Z/(2 + 0)))) and (v1096.Z<=(v1093.Z + (v1094.Z/((2585 -1571) -(53 + 959)))))) then return true;end break;end if (((2331 -(794 + 1129)) -(312 + 0 + 18 + 78))==v1092) then local v1615=0;local v1616;while true do if (v1615==0) then v1616=(861 -(553 + 308)) -(0 -0) ;while true do if (v1616==(1 + 0)) then v1092=1;break;end if (v1616==((84 + 201) -((1915 -(1764 + 4)) + (655 -(121 + 396))))) then local v1995=0;while true do if (v1995==(555 -(498 + 56))) then v1616=(848 + 52) -((3050 -2237) + 80 + 6) ;break;end if (v1995==0) then v1093,v1094=v873.Position,v873.Size;v1095=v873:FindFirstChildOfClass(v7("\154\24\219\130\54\168\4\243\132\44\161","\95\201\104\190\225"));v1995=2 -1 ;end end end end break;end end end end break;end if (v1091==(0 -0)) then v1092=(0 + 0) -0 ;v1093=nil;v1091=2 -1 ;end end end end return false;end local function v222(v557) return (v557:GetAttribute(v7("\132\206\207\239\172\223\200\216\170","\174\207\171\161"))==true) or (v557:FindFirstChild(v7("\198\251\3\210\251\195\228\232\8","\183\141\158\109\147\152"),true) and (v557:FindFirstChild(v7("\7\12\232\45\47\29\239\26\41","\108\76\105\134"),true).Value==true)) ;end local function v223(v558) local v559=1616 -(316 + 1300) ;while true do if (v559==(172 -(78 + 94))) then if ( not v558 or (type(v558)~=v7("\229\208\188\227\203\249","\174\139\165\209\129"))) then return "0";end if (v558>=(1001416 -(261 + 1155))) then return string.format(v7("\230\253\179\199\235","\24\195\211\130\161\166\99\16"),v558/1000000 );elseif (v558>=((2360 -(1040 + 416)) + (139 -(29 + 14)))) then return string.format(v7("\3\77\184\42\88","\118\38\99\137\76\51"),v558/((3522 -1670) -(1814 -(928 + 34))) );else return tostring(v558);end break;end end end local function v224(v560) local v561=0 + 0 ;local v562;local v563;while true do if (v561==(1 + 0)) then while true do if (v562==((483 + 10) -(18 + 474))) then function v563(v1427,v1428) local v1429=0 -0 ;local v1430;while true do local v1506=0 -0 ;while true do if (v1506==(1 -0)) then if (v1429==((815 -(69 + 441)) -(121 + (449 -267)))) then v1430.Outline=true;v1430.Visible=false;v1429=1 + 2 + 0 ;end if (v1429==(0 -0)) then local v1892=1880 -(517 + 1363) ;while true do if (v1892==(929 -(802 + 126))) then v1429=1;break;end if (v1892==0) then v1430=Drawing.new(v7("\201\35\29\6","\64\157\70\101\114\105"));v1430.Size=v1427;v1892=1669 -(1660 + 8) ;end end end break;end if (v1506==(0 -0)) then if (v1429==((183 -(38 + 143)) + 1)) then return v1430;end if (v1429==((8 -5) -(119 -(29 + 88)))) then local v1893=0 -0 ;while true do if (v1893==1) then v1429=(1577 -(308 + 181)) -(860 + (1623 -(537 + 860))) ;break;end if (v1893==(0 + 0)) then v1430.Color=v1428;v1430.Center=true;v1893=1096 -(691 + 404) ;end end end v1506=1955 -(870 + 1084) ;end end end end _G.ESPObjects[v560]={[v7("\108\161\169\230","\112\32\200\199\131")]=Drawing.new(v7("\0\89\82\189","\66\76\48\60\216\163\203")),[v7("\148\135\116\246\107\203\60\174","\68\218\230\25\147\63\174")]=v563((1385 -(47 + 82)) -(301 + 687 + 252) ,Color3.new(1,1 + 0 + 0 ,1 + 0 + 0 )),[v7("\157\60\67\120\179\181\62","\214\205\74\51\44")]=v563(1984 -((157 -108) + (2038 -(84 + 33))) ,Color3.new((415 + 476) -(223 + 667) ,(187 -134) -(7 + 44 + (2 -1)) ,2 -1 )),[v7("\209\73\236\200\114\226\88","\23\154\44\130\156")]=v563((114 -91) -(12 -3) ,Color3.new((1221 -(87 + 1133)) -0 ,0,(3160 -2034) -(71 + 75 + 979) )),[v7("\34\178\172\186\2\22\9\178","\115\113\198\205\206\86")]=v563(4 + 9 + 0 ,Color3.new(606 -((978 -(205 + 462)) + 294) ,0.8 + 0 ,0 -0 )),[v7("\172\103\202\95\156\67","\58\228\55\158")]=v563(1394 -(1035 + 346) ,Color3.new(0 + 0 ,2 -(1781 -(970 + 810)) ,0 + 0 + 0 ))};break;end if (((4062 -2619) -(496 + 947))==v562) then if (v560==v219) then return;end v563=nil;v562=(940 + 419) -(703 + 530 + (332 -207)) ;end end break;end if ((0 -0)==v561) then v562=1388 -(601 + 787) ;v563=nil;v561=611 -(256 + 354) ;end end end for v564,v565 in ipairs(v218:GetPlayers()) do v224(v565);end v218.PlayerAdded:Connect(v224);_G.ESPConnection=v155.RenderStepped:Connect(function() for v874,v875 in pairs(_G.ESPObjects) do local v876=0 -0 ;local v877;local v878;local v879;while true do if ((7 -5)==v876) then if (v878 and v879) then local v1349,v1350=v220:WorldToViewportPoint(v878.Position);if v1350 then local v1507=0;local v1508;local v1509;local v1510;local v1511;local v1512;local v1513;local v1514;local v1515;while true do if (v1507==2) then v1512=nil;v1513=nil;v1507=7 -4 ;end if (v1507==(1 -0)) then v1510=nil;v1511=nil;v1507=3 -1 ;end if (v1507==4) then while true do if (v1508==((6 -3) + (0 -0))) then local v1934=0 -0 ;while true do if (v1934==0) then v1515=(v1511 and v7("\218\163\20\185\0\16\204\147","\95\138\213\68\131\32")) or v7("\26\62\145\25\54\5\6","\22\74\72\193\35") ;if v1510 then local v2178=0;local v2179;local v2180;while true do if (v2178==1) then while true do if (v2179==0) then v2180=1645 -((2362 -1399) + (1254 -(259 + 313))) ;while true do if (v2180==(0 + (0 -0))) then v1515=v1515   .. v7("\108\49\215\121\10\92\173","\56\76\25\132") ;v875.PvpText.Color=Color3.new((292 + 1212) -(152 + 352 + 1000) ,1 + 0 + (0 -0) ,(1339 -(413 + 925)) + 0 );break;end end break;end end break;end if (v2178==0) then v2179=0 + 0 + 0 + 0 ;v2180=nil;v2178=1 + 0 ;end end else v875.PvpText.Color=(v1511 and Color3.new(0.7 + (0 -0) ,0.7,0.7 -(0 -0) )) or Color3.new(1 + 0 + (0 -0) ,0,(1944 -(1164 + 780)) + 0 ) ;end v1934=1;end if (v1934==(1362 -(596 + 764))) then v1508=(468 -(52 + 230)) -((521 -365) + (1592 -(806 + 760))) ;break;end if (v1934==(2 -1)) then v875.PvpText.Text=v1515;v875.PvpText.Position=Vector2.new(v1349.X,v1349.Y-(108 -43) );v1934=2 -0 ;end end end if ((1 + 0)==v1508) then local v1935=0 + 0 ;while true do if (v1935==(7 -5)) then v1508=(2 -0) -(0 + 0) ;break;end if (v1935==(0 + 0)) then v1513=v874:FindFirstChild(v7("\82\196\170\34\202\76\210\191\39\219\77","\175\62\161\203\70"));v1514=v1513 and v1513:FindFirstChild(v7("\30\210\214\29\33\37\146\235\28\59\51\207","\85\92\189\163\115")) ;v1935=1;end if (v1935==1) then v875.Line.From=Vector2.new(v220.ViewportSize.X/(2 + 0) ,v220.ViewportSize.Y);v875.Line.To=Vector2.new(v1349.X,v1349.Y);v1935=1967 -(1000 + 965) ;end end end if (v1508==(168 -(83 + 66 + 15))) then v875.PvpText.Visible=true;v875.KenText.Text=(v1512 and "● 見聞あり ●") or "○ 見聞なし ○" ;v875.KenText.Position=Vector2.new(v1349.X,v1349.Y-((4216 -3206) -((2390 -1500) + 37 + 33)) );v875.KenText.Visible=true;v1508=122 -(39 + 78) ;end if (((1613 -(261 + 865)) -(14 + 468))==v1508) then local v1940=0 -0 ;while true do if (v1940==(2 -0)) then v1508=13 -(5 + 2) ;break;end if ((545 -(33 + 512))==v1940) then v875.StatText.Text=(v1514 and (v7("\11\163\37\54\61\181\106\120","\88\73\204\80")   .. v223(v1514.Value))) or "" ;v875.StatText.Position=Vector2.new(v1349.X,v1349.Y-(1871 -(1555 + 281)) );v1940=1;end if (v1940==1) then v875.StatText.Visible=true;v875.HPText.Text=v7("\6\179\74\6","\186\78\227\112\38\73")   .. math.floor(v879.Health) ;v1940=3 -1 ;end end end if (v1508==(16 -(6 + 4))) then v875.HPText.Position=Vector2.new(v1349.X,v1349.Y-(11 + (14 -5)) );v875.HPText.Visible=true;break;end if ((2 + 0 + (0 -0))==v1508) then local v1943=0 + 0 ;while true do if (v1943==0) then v875.Line.Visible=true;v875.NameText.Text=string.format(v7("\185\68\189\110\22\126\241\106","\26\156\55\157\53\51"),v874.DisplayName,v1509);v1943=40 -(34 + 5) ;end if (v1943==(1 + 0)) then v875.NameText.Position=Vector2.new(v1349.X,v1349.Y-80 );v875.NameText.Visible=true;v1943=1 + 1 ;end if (v1943==2) then v1508=1 + 2 + 0 ;break;end end end if (v1508==(0 + 0)) then local v1944=0 + 0 ;while true do if (v1944==(3 -2)) then v1511=v874:GetAttribute(v7("\188\206\6\253\177\67\141\218\26\220\188","\48\236\184\118\185\216"));v1512=v222(v874);v1944=4 -2 ;end if (v1944==0) then v1509=math.floor((v878.Position-v220.CFrame.Position).Magnitude);v1510=v221(v874);v1944=1222 -(999 + 222) ;end if (v1944==(1 + 1)) then v1508=1 + 0 ;break;end end end end break;end if (v1507==(347 -(166 + 178))) then v1514=nil;v1515=nil;v1507=2 + 2 ;end if (v1507==(0 -0)) then v1508=0 + (1300 -(587 + 713)) ;v1509=nil;v1507=1;end end else for v1617,v1618 in pairs(v875) do v1618.Visible=false;end end else for v1431,v1432 in pairs(v875) do v1432.Visible=false;end end break;end if ((0 + 0)==v876) then if  not _G.ESPEnabled then local v1351=1122 -(11 + 1111) ;while true do if ((0 + 0)==v1351) then for v1679,v1680 in pairs(v875) do v1680.Visible=false;end continue;break;end end end v877=v874.Character;v876=1 + 0 ;end if (v876==(2 -1)) then v878=v877 and v877:FindFirstChild(v7("\156\156\221\47\50\162\60\176\187\223\33\40\157\52\166\157","\85\212\233\176\78\92\205")) ;v879=v877 and v877:FindFirstChildOfClass(v7("\98\77\133\227\68\87\129\230","\130\42\56\232")) ;v876=1102 -(882 + 218) ;end end end end);v111(v114,v7("\192\142\103","\84\133\221\55\80\175"),false,function(v566) _G.ESPEnabled=v566;end);task.spawn(function() local v567=Vector3.new(439.4629 + 507 + 24 ,67.02590000000001 + (1147 -(115 + 847)) ,92131.1875 -59259 );local v568=Vector3.new( -(545.2947082519531 -260),302.8865966796875 + (1618 -(1231 + 384)) ,2073.4352416992188 -1483 );if  not _G.NebulaSettings then _G.NebulaSettings={};end _G.NebulaSettings.GhostShipKey=_G.NebulaSettings.GhostShipKey or "H" ;_G.NebulaSettings.MansionKey=_G.NebulaSettings.MansionKey or "V" ;local v569=false;local v570=false;local function v571(v880,v881) local v882=0 -0 ;local v883;local v884;while true do if ((1697 -(1202 + 494))==v882) then if v884 then local v1352=178 -(12 + 166) ;while true do if (v1352==(0 -0)) then v884.CFrame=CFrame.new(v880);v20(v881   .. " へテレポートしました" );break;end end else v20("キャラクターが見つかりません");end break;end if (v882==0) then local v1171=0;while true do if (v1171==(0 + 0)) then v883=game.Players.LocalPlayer.Character;v884=v883 and v883:FindFirstChild(v7("\149\242\41\167\201\83\180\227\22\169\200\72\141\230\54\178","\60\221\135\68\198\167")) ;v1171=1;end if (v1171==1) then v882=605 -(202 + 402) ;break;end end end end end game:GetService(v7("\219\174\253\145\107\215\254\168\236\176\71\203\248\180\251\134","\185\142\221\152\227\34")).InputBegan:Connect(function(v885,v886) local v887=0 + 0 ;local v888;while true do if (v887==0) then v888=998 -(936 + 62) ;while true do if (v888==0) then if v886 then return;end if v569 then local v1621=348 -(119 + 229) ;local v1622;while true do if (v1621==(0 -0)) then v1622=(0 -0) + 0 + 0 ;while true do local v1894=0 -0 ;while true do if (v1894==(1436 -(513 + 923))) then if (v1622==0) then local v2129=1777 -(507 + 1270) ;local v2130;while true do if (v2129==(0 + 0)) then v2130=0 -0 ;while true do if (v2130==1) then v1622=52 -(8 + 4 + 39) ;break;end if (v2130==(0 -0)) then _G.NebulaSettings.GhostShipKey=v885.KeyCode.Name;v569=false;v2130=1;end end break;end end end if (1==v1622) then local v2131=0 -0 ;local v2132;while true do if (v2131==(769 -(644 + 125))) then v2132=0 + 0 ;while true do if (v2132==(1847 -(718 + 1129))) then v20("幽霊船キーを "   .. v885.KeyCode.Name   .. " に設定しました" );return;end end break;end end end break;end end end break;end end end v888=1 + 0 + 0 ;end if (v888==((5 -3) -1)) then if v570 then local v1623=1409 -(564 + 845) ;local v1624;while true do if (v1623==(0 -0)) then v1624=0;while true do if (v1624==(162 -(46 + 116))) then local v1996=0;while true do if (0==v1996) then _G.NebulaSettings.MansionKey=v885.KeyCode.Name;v570=false;v1996=1;end if (v1996==(651 -(575 + 75))) then v1624=(7 -4) -2 ;break;end end end if (v1624==(1 + (0 -0))) then local v1997=0 -0 ;while true do if (v1997==0) then local v2134=0 + 0 ;local v2135;while true do if (v2134==0) then v2135=0;while true do if (v2135==(0 + 0)) then local v2286=0 + 0 ;while true do if (v2286==0) then v20("マンションキーを "   .. v885.KeyCode.Name   .. " に設定しました" );return;end end end end break;end end end end end end break;end end end if (v885.KeyCode.Name==_G.NebulaSettings.GhostShipKey) then v571(v567,"幽霊船");elseif (v885.KeyCode.Name==_G.NebulaSettings.MansionKey) then v571(v568,"マンション");end break;end end break;end end end);if v116 then local v981=0 + 0 ;local v982;local v983;local v984;local v985;local v986;local v987;while true do if (1==v981) then v983.BackgroundColor3=Color3.fromRGB(104 -(734 -(224 + 446)) ,(19 + 734) -(164 + 549) ,80);v983.Text="幽霊船へTP";v983.TextColor3=Color3.new(1 + 0 ,1439 -((3550 -2491) + (697 -(56 + 262))) ,(3 -2) -0 );Instance.new(v7("\227\92\10\172\245\130\169\4","\118\182\21\73\195\135\236\204"),v983);v983.MouseButton1Click:Connect(function() v571(v567,"幽霊船");end);v981=2;end if (v981==4) then v985.BackgroundTransparency=702 -(666 + 35) ;v986=Instance.new(v7("\70\237\220\183\41\86\109\102\231\202","\25\18\136\164\195\107\35"),v985);v986.Size=UDim2.new(0.65 -0 ,1180 -(553 + 627) ,(1473 -(936 + 537)) + 0 + 0 ,1240 -(737 + 463) );v986.BackgroundColor3=Color3.fromRGB(60 + 20 ,(752 -(424 + 243)) -(11 + 34) ,103 -63 );v986.Text="マンションへTP";v981=5;end if (v981==(7 -5)) then local v1238=0;while true do if (v1238==(1347 -(1213 + 133))) then v984.Position=UDim2.new(0.7 + (0 -0) ,0 + 0 + (60 -(37 + 23)) ,(0 -0) -0 ,(1343 -(122 + 1221)) + (242 -(139 + 103)) );v984.BackgroundColor3=Color3.fromRGB(2 + 16 + 2 ,(15 + 17) -(17 -5) ,(388 + 352) -(146 + 108 + 96 + 370) );v1238=108 -(9 + 97) ;end if ((0 -0)==v1238) then v984=Instance.new(v7("\60\57\2\84\38\24\233\28\51\20","\157\104\92\122\32\100\109"),v982);v984.Size=UDim2.new(0.3 + 0 ,0 + 0 + 0 ,0 + 0 + (0 -0) ,(1507 -(657 + 418)) -(145 + 247) );v1238=1981 -(448 + 1532) ;end if (v1238==2) then v984.Text="["   .. _G.NebulaSettings.GhostShipKey   .. "]" ;v981=3;break;end end end if ((256 -(110 + 143))==v981) then v984.TextColor3=Color3.new((1586 -1025) -((1487 -(549 + 394)) + 9 + 7) ,(1234.8 -(500 + 734)) -0 ,(369 + 259) -(25 + 269 + 334) );Instance.new(v7("\150\143\236\197\47\41\136\185","\203\195\198\175\170\93\71\237"),v984);v984.MouseButton1Click:Connect(function() local v1353=0 + 0 ;local v1354;while true do if (v1353==(665 -(343 + 322))) then v1354=(141 + 112) -(236 + 5 + 12) ;while true do if (v1354==1) then task.spawn(function() local v1895=0 + 0 ;local v1896;local v1897;while true do if (v1895==(3 -2)) then while true do if (v1896==((1131 -(297 + 834)) + 0)) then v1897=(0 -0) -0 ;while true do if (((0 + 0) -(0 -0))==v1897) then while v569 do task.wait();end v984.Text="["   .. _G.NebulaSettings.GhostShipKey   .. "]" ;break;end end break;end end break;end if (v1895==(0 + 0)) then v1896=0 + 0 + (786 -(494 + 292)) ;v1897=nil;v1895=1;end end end);break;end if (v1354==(0 + 0 + 0)) then v984.Text="入力待機...";v569=true;v1354=4 -3 ;end end break;end end end);v985=Instance.new(v7("\8\89\63\216\84","\156\78\43\94\181\49\113"),v116);v985.Size=UDim2.new(1, -(1642 -(888 + 744)),0 + 0 + (685 -(206 + 479)) ,839 -(67 + 346 + (1554 -(861 + 312))) );v981=4;end if (v981==0) then v982=Instance.new(v7("\126\215\86\247\70","\151\56\165\55\154\35\83"),v116);v982.Size=UDim2.new((737 -(135 + 601)) + 0 , -(1152 -(1085 + 57)),(1925 -(224 + 1701)) -(0 + 0) ,30 + (39 -24) );v982.BackgroundTransparency=1 + 0 ;v983=Instance.new(v7("\148\70\29\250\130\86\17\250\175\77","\142\192\35\101"),v982);v983.Size=UDim2.new((0.65 -0) -(0 + 0) ,746 -(730 + 16) ,(1649 + 61) -(1596 + (1696 -(790 + 792))) ,40);v981=1;end if (v981==(1086 -(474 + 607))) then v986.TextColor3=Color3.new((2501 -(129 + 401)) -(582 + (2082 -694)) ,(119 -(51 + 67)) -(0 + 0) ,1 + 0 );Instance.new(v7("\221\4\138\64\96\178\196\170","\216\136\77\201\47\18\220\161"),v986);v986.MouseButton1Click:Connect(function() v571(v568,"マンション");end);v987=Instance.new(v7("\25\233\51\206\42\201\150\57\227\37","\226\77\140\75\186\104\188"),v985);v987.Size=UDim2.new(0.3,0,(477 -(93 + 20)) -(326 + 38) ,(464 -346) -(98 -(12 + 8)) );v981=6;end if (v981==(204 -(161 + 37))) then v987.Position=UDim2.new(0.7 -(0 + 0) ,620 -((1604 -(507 + 1050)) + (1103 -530)) ,0 -0 ,0 + 0 + 0 + 0 );v987.BackgroundColor3=Color3.fromRGB((20 + 64) -64 ,(15 + 17) -(24 -12) ,1684 -((2133 -(184 + 680)) + 395) );v987.Text="["   .. _G.NebulaSettings.MansionKey   .. "]" ;v987.TextColor3=Color3.new((281 + 212) -((215 -139) + 238 + 178) ,0.8,443 -((713 -394) + (240 -116)) );Instance.new(v7("\140\231\243\48\93\183\203\194","\47\217\174\176\95"),v987);v981=7;end if (v981==(2 + 5)) then v987.MouseButton1Click:Connect(function() local v1355=0 -0 ;local v1356;while true do if ((1007 -((1614 -(629 + 421)) + 314 + 129))==v1355) then v1356=(0 -0) -(0 -0) ;while true do if (v1356==(940 -(544 + 396))) then local v1808=0 -0 ;local v1809;while true do if (v1808==(991 -(904 + 87))) then v1809=0;while true do if (v1809==0) then v987.Text="入力待機...";v570=true;v1809=3 -2 ;end if (v1809==(1475 -(1443 + 31))) then v1356=2 -1 ;break;end end break;end end end if (v1356==(459 -((2150 -(1110 + 703)) + 121))) then task.spawn(function() local v1898=0 -0 ;local v1899;while true do if (v1898==(0 + 0)) then v1899=0 -0 ;while true do if (v1899==(0 -0)) then while v570 do task.wait();end v987.Text="["   .. _G.NebulaSettings.MansionKey   .. "]" ;break;end end break;end end end);break;end end break;end end end);break;end end end end);if  not _G.NebulaSettings then _G.NebulaSettings={};end _G.NebulaSettings.InvFlyEnabled=false;_G.NebulaSettings.InvFlyKey=_G.NebulaSettings.InvFlyKey or "B" ;_G.NebulaSettings.InvFlySpeed=999 -(1908 -1209) ;local v225= -((202110.48 -(78 + 125)) -((3843 -2582) + (1223 -573)));local v226,v227,v228,v229;local v230=false;local v10=game:GetService(v7("\141\206\115\16\155\90\104\51\172\238\115\16\164\93\123\35","\70\216\189\22\98\210\52\24"));local v155=game:GetService(v7("\232\202\173\180\214\200\201\170\132\214","\179\186\191\195\231"));local function v231(v572) local v573=0;local v574;local v575;local v576;local v577;while true do if (v573==(2 -0)) then while true do if ((2 -(1824 -(1392 + 432)))==v574) then if v572 then local v1520=(62 + 1755) -((2091 -1319) + 169 + 876) ;while true do if (v1520==((1402 -(963 + 439)) + 0)) then if v226 then v226:Destroy();end v575.Archivable=true;v226=v575:Clone();v226.Parent=workspace;v1520=(313 -168) -(102 + (1367 -(76 + 1249))) ;end if (v1520==(1753 -(1165 + 586))) then local v1746=0;while true do if (v1746==(1930 -(1916 + 12))) then v1520=(1263 -(604 + 652)) -(7 -3) ;break;end if (v1746==(0 + 0)) then v227.Velocity=Vector3.zero;v228=Instance.new(v7("\219\48\28\253\222\38\10\235","\132\153\95\120"),v226.HumanoidRootPart);v1746=1 -0 ;end if ((1 + 0)==v1746) then v228.MaxTorque=Vector3.new((2310492 -1308648) -((1922 -398) + (521 -201)) ,1001270 -((1442 -393) + 221) ,(1000169 -(11 + 2)) -(18 + (1580 -(64 + 1378))) );v228.CFrame=v226.HumanoidRootPart.CFrame;v1746=4 -2 ;end end end if (v1520==((2858 -(256 + 1497)) -(67 + (1389 -354)))) then task.spawn(function() while _G.NebulaSettings.InvFlyEnabled and v576  do local v1900=348 -((1013 -(562 + 315)) + (841 -629)) ;while true do if (v1900==1) then task.wait();break;end if (v1900==((1188 -(577 + 611)) -(0 + 0))) then local v2057=0 -0 ;local v2058;while true do if (v2057==0) then v2058=0 -0 ;while true do if (v2058==1) then v1900=(72 -(58 + 13)) + 0 + 0 ;break;end if (v2058==0) then v576.CFrame=CFrame.new(v576.Position.X,v225,v576.Position.Z);v576.AssemblyLinearVelocity=Vector3.zero;v2058=1;end end break;end end end end end end);v229=v155.RenderStepped:Connect(function() if  not v226 then return;end local v1810=workspace.CurrentCamera;local v1811=v577.MoveDirection;local v1812=Vector3.zero;if (v1811.Magnitude>(0 + 0)) then v1812=(v1810.CFrame.LookVector *  -v1811.Z) + (v1810.CFrame.RightVector * v1811.X) ;end if v10:IsKeyDown(Enum.KeyCode.Space) then v1812+=Vector3.new((454 -(404 + 50)) + (36 -(6 + 30)) ,1334 -(770 + 563) ,(1326 + 278) -(4 + 236 + (1534 -(25 + 145))) ) elseif v10:IsKeyDown(Enum.KeyCode.LeftShift) then v1812+=Vector3.new((729 + 353) -((1749 -(153 + 546)) + 32) , -((3 + 0) -(929 -(60 + 867))),0 + (0 -0) ) end v227.Velocity=v1812.Unit * _G.NebulaSettings.InvFlySpeed ;if (v1812.Magnitude==(1283 -(309 + 974))) then v227.Velocity=Vector3.zero;end v228.CFrame=v1810.CFrame;end);v20("Inv-Fly: 有効 (Speed:"   .. _G.NebulaSettings.InvFlySpeed   .. ")" );break;end if (v1520==((491 + 565) -(331 + 724))) then local v1747=0 -0 ;while true do if (v1747==(1142 -(677 + 464))) then v227=Instance.new(v7("\194\12\38\240\201\193\236\12\33\224\235\221","\164\128\99\66\137\159"),v226.HumanoidRootPart);v227.MaxForce=Vector3.new(1000822 -(567 + 255) ,(1562889 -562164) -(267 + 458) ,(409683 -98722) + (689567 -(384 + 144)) );v1747=1223 -(1030 + 191) ;end if (v1747==0) then for v1998,v1999 in ipairs(v226:GetDescendants()) do if v1999:IsA(v7("\147\179\29\40\199\219\178\165","\192\209\210\110\77\151\186")) then local v2104=(0 -0) + 0 ;while true do if (v2104==(644 -((484 -215) + 178 + 197))) then v1999.CanCollide=false;v1999.Transparency=857.5 -(326 + 531) ;break;end end end end workspace.CurrentCamera.CameraSubject=v226.Humanoid;v1747=1;end if (v1747==(4 -2)) then v1520=3 -1 ;break;end end end end else local v1521=0;local v1522;while true do if (v1521==(0 + 0)) then v1522=0 + 0 ;while true do if (((1881 -1063) -(18 + 649 + 137 + 14))==v1522) then local v1955=0;local v1956;while true do if (v1955==0) then v1956=1621 -(1367 + 254) ;while true do if (v1956==0) then if v229 then v229:Disconnect();end if (v226 and v576) then local v2254=678 -(305 + 373) ;local v2255;while true do if ((0 -0)==v2254) then v2255=1497 -((1729 -(129 + 190)) + 87) ;while true do if (v2255==((5716 -3818) -((2796 -1292) + 393))) then v226=nil;break;end if (v2255==((0 + 0) -(0 + 0))) then v576.CFrame=v226.HumanoidRootPart.CFrame;v226:Destroy();v2255=290 -(210 + 79) ;end end break;end end end v1956=1;end if (v1956==1) then v1522=1 -0 ;break;end end break;end end end if (v1522==(2 -1)) then workspace.CurrentCamera.CameraSubject=v577;v20("Inv-Fly: 解除しました");break;end end break;end end end break;end if (v574==(0 -0)) then local v1357=672 -(32 + 640) ;local v1358;while true do if (v1357==(0 + 0)) then v1358=0 + 0 ;while true do if (v1358==(0 + 0)) then _G.NebulaSettings.InvFlyEnabled=v572;v575=game.Players.LocalPlayer.Character;v1358=1 + 0 ;end if (1==v1358) then v574=1;break;end end break;end end end if (v574==((2558 -(847 + 914)) -((1330 -869) + (753 -418)))) then v576=v575 and v575:FindFirstChild(v7("\40\156\228\191\14\134\224\186\50\134\230\170\48\136\251\170","\222\96\233\137")) ;v577=v575 and v575:FindFirstChild(v7("\145\166\170\30\134\252\249\189","\144\217\211\199\127\232\147")) ;v574=2;end end break;end if (v573==1) then local v1097=0;while true do if (v1097==(525 -(163 + 361))) then v573=2;break;end if (v1097==(885 -(162 + 723))) then v576=nil;v577=nil;v1097=1 + 0 ;end end end if (v573==0) then v574=0 + (401 -(258 + 143)) ;v575=nil;v573=4 -3 ;end end end v10.InputBegan:Connect(function(v578,v579) local v580=0 -0 ;local v581;while true do if (v580==(0 -0)) then v581=(1691 -(486 + 1205)) + 0 ;while true do if (v581==((1926 -(92 + 73)) -(910 + 820 + 31))) then local v1359=0 + 0 ;while true do if (v1359==(0 -0)) then if v579 then return;end if v230 then local v1748=0;local v1749;while true do if (((1939 -(68 + 204)) -((1223 -495) + 89 + 850))==v1748) then v1749=0 -(0 + 0) ;while true do local v2000=0 -0 ;local v2001;while true do if (v2000==(0 + 0)) then v2001=0 + 0 ;while true do if (v2001==(0 + 0)) then if (v1749==(1 -(316 -(20 + 296)))) then local v2269=0;while true do if ((0 + 0)==v2269) then v20("Flyキーを "   .. v578.KeyCode.Name   .. " に変更" );return;end end end if (v1749==((0 -0) -(0 -0))) then local v2270=0;local v2271;while true do if (v2270==(0 -0)) then v2271=0;while true do if (0==v2271) then _G.NebulaSettings.InvFlyKey=v578.KeyCode.Name;v230=false;v2271=1 + 0 ;end if (v2271==(1 + 0)) then v1749=(3015 -1946) -(138 + 930) ;break;end end break;end end end break;end end break;end end end break;end end end v1359=1;end if (v1359==(1 + 0)) then v581=1 + 0 + 0 + 0 ;break;end end end if (v581==((2 -1) + 0)) then if (v578.KeyCode.Name==_G.NebulaSettings.InvFlyKey) then local v1523=0;while true do if (v1523==0) then _G.NebulaSettings.InvFlyEnabled= not _G.NebulaSettings.InvFlyEnabled;v231(_G.NebulaSettings.InvFlyEnabled);break;end end end break;end end break;end end end);if v114 then local v889=0 + (0 -0) ;local v890;while true do if (v889==((0 + 0) -(249 -(155 + 94)))) then local v1172=0 -0 ;while true do if (v1172==0) then v111(v114,v7("\209\33\40\33\198\76\0\72\253\111\120\104\243\73\27","\36\152\79\94\72\181\37\98"),false,function(v1524) v231(v1524);end);v112(v114,"Flyスピード",10,(3473 -(515 + 392)) -((785 -(7 + 319)) + 849 + 458) ,(709 + 1461) -((1971 -(292 + 1205)) + (1448 -(13 + 39))) ,function(v1525) _G.NebulaSettings.InvFlySpeed=v1525;end);v1172=1 + 0 ;end if ((6 -4)==v1172) then v889=1;break;end if (v1172==(3 -2)) then v890=Instance.new(v7("\227\221\95\43\245\205\83\43\216\214","\95\183\184\39"),v114);v890.Size=UDim2.new(1039 -(850 + 188) , -(1046 -(822 + 214)),(1161 -(317 + 844)) -(0 + 0) ,40);v1172=1 + 1 ;end end end if (v889==(1 + (1190 -(508 + 682)))) then local v1173=0 + 0 ;while true do if (v1173==(1 + 0)) then v890.TextColor3=Color3.new(1,546 -(127 + 418) ,1 + (0 -0) );v890.Font=Enum.Font.SourceSansBold;v1173=2;end if (v1173==(4 -2)) then v889=9 -7 ;break;end if (v1173==(0 -0)) then v890.BackgroundColor3=Color3.fromRGB(1 + 44 ,(1248 -(690 + 430)) -(323 -240) ,19 + 26 );v890.Text="オンオフキー: ["   .. _G.NebulaSettings.InvFlyKey   .. "]" ;v1173=1 -0 ;end end end if (v889==(954 -(637 + 315))) then v890.TextSize=(151 -98) -37 ;Instance.new(v7("\128\22\196\41\70\142\7\167","\98\213\95\135\70\52\224"),v890);v890.MouseButton1Click:Connect(function() local v1250=0 -0 ;local v1251;while true do if (v1250==0) then v1251=0 -(0 -0) ;while true do if (v1251==0) then v890.Text="キー入力待機...";v230=true;v1251=1;end if (v1251==((417 + 175) -(562 + (73 -44)))) then task.spawn(function() local v1817=0;local v1818;local v1819;local v1820;while true do if (v1817==(21 -(13 + 7))) then v1820=nil;while true do if (v1818==0) then v1819=0 + 0 + (0 -0) ;v1820=nil;v1818=1;end if (v1818==(2 -1)) then while true do if (v1819==((2249 -830) -(374 + 1045))) then v1820=0 + 0 ;while true do if (v1820==0) then while v230 do task.wait();end v890.Text="オンオフキー: ["   .. _G.NebulaSettings.InvFlyKey   .. "]" ;break;end end break;end end break;end end break;end if (v1817==0) then v1818=0;v1819=nil;v1817=1 + 0 ;end end end);break;end end break;end end end);break;end end end task.spawn(function() local v582=(((typeof(v116)==v7("\215\173\218\99\85\240\160\204","\52\158\195\169\23")) or (typeof(v116)==v7("\111\175\55\102\130\52\111\138","\235\26\220\82\20\230\85\27"))) and v116) or v114 ;if  not v582 then return;end local v583=game:GetService(v7("\184\173\232\219\113\154\178","\20\232\193\137\162")).LocalPlayer;local v584=game:GetService(v7("\16\202\203\149\226\158\1\120\33\218","\17\66\191\165\198\135\236\119"));local v585=game:GetService(v7("\61\170\190\31\246\235\237\197\10\171\157\7\240\250\237\214\10","\177\111\207\206\115\159\136\140"));local v586=game:GetService(v7("\38\134\28\24\209\76\75\12\134\30\39\209\93\73\12\138\21","\63\101\233\112\116\180\47"));local v587=v585:WaitForChild(v7("\241\62\224\29\236\51\208","\86\163\91\141\114\152")):WaitForChild(v7("\112\4\121\126\28\108","\90\51\107\20\19"));_G.AutoBuso=false;v111(v582,v7("\172\229\145\224\125\175\229\150\224\125\165\241\142\230","\93\237\144\229\143"),false,function(v891) _G.AutoBuso=v891;end);task.spawn(function() while true do local v988=0;local v989;while true do if (v988==0) then v989=0 + 0 ;while true do if (v989==((351 -(44 + 307)) -(797 -(127 + 670)))) then task.wait((524.5 + 114) -(448 + 190) );if _G.AutoBuso then pcall(function() local v1751=(584 -(375 + 209)) + 0 ;local v1752;while true do if (v1751==(1816 -(1673 + 143))) then v1752=v583.Character;if (v1752 and v586:HasTag(v1752,v7("\55\227\227\22","\38\117\150\144\121\107")) and  not v1752:FindFirstChild(v7("\5\186\253\24\56\168\225","\90\77\219\142"))) then v587:InvokeServer(v7("\196\17\50\54","\26\134\100\65\89\44\103"));end break;end end end);end break;end end break;end end end end);task.spawn(function() local v892=0 + 0 ;local v893;local v894;local v895;local v896;local v897;local v898;local v899;local v900;local v901;local v902;local v903;local v904;while true do if (v892==(1 + 0)) then v897=nil;v898=nil;v899=nil;v900=nil;v892=1451 -(836 + 613) ;end if (v892==(0 -0)) then v893=0 + 0 + (1530 -(295 + 1235)) ;v894=nil;v895=nil;v896=nil;v892=541 -(328 + 212) ;end if (v892==(4 -2)) then v901=nil;v902=nil;v903=nil;v904=nil;v892=922 -(517 + 402) ;end if (v892==(6 -3)) then while true do if (v893==((5 -3) + (1083 -(700 + 382)))) then v903=nil;function v903() local v1526=0;local v1527;local v1528;local v1529;local v1530;local v1531;while true do if ((882 -(677 + 202))==v1526) then function v1531(v1821) local v1822=0 -0 ;while true do if (v1822==((0 -0) -(0 + 0))) then if  not v1821 then return;end for v2059,v2060 in pairs(v1821:GetChildren()) do if (v2060~=v1529) then local v2137=0;local v2138;local v2139;local v2140;while true do if (v2137==(753 -(360 + 393))) then v2138=0 -0 ;v2139=nil;v2137=1958 -(1231 + 726) ;end if (v2137==(1 -0)) then v2140=nil;while true do if (v2138==((1910 -(173 + 1737)) -(1947 -(441 + 1506)))) then v2139=v2060:FindFirstChild(v7("\54\165\11\9\22\231\23\180","\136\126\208\102\104\120"));v2140=v2060:FindFirstChild(v7("\80\159\195\66\161\93\52\85\74\133\193\87\159\83\47\69","\49\24\234\174\35\207\50\93")) or v2060:FindFirstChild(v7("\36\247\252\140","\17\108\146\157\232")) ;v2138=1 + 0 ;end if (v2138==((4951 -3456) -(1307 + (881 -(136 + 558))))) then if (v2139 and v2140 and (v2139.Health>((0 + 0) -0))) then local v2303=0;local v2304;local v2305;while true do if (v2303==1) then while true do if (v2304==(1222 -(988 + 234))) then v2305=(v1530.Position-v2140.Position).Magnitude;if (v2305<=v902) then local v2337=0;local v2338;while true do if (v2337==0) then v2338=0 + 0 ;while true do if (v2338==((0 -0) -0)) then table.insert(v1527,{v2060,v2140});v1528=v2140;break;end end break;end end end break;end end break;end if (0==v2303) then v2304=0 -(0 + 0) ;v2305=nil;v2303=2 -1 ;end end end break;end end break;end end end end break;end end end v1531(workspace:FindFirstChild(v7("\110\205\17\224\38\173\88","\200\43\163\116\141\79")));v1526=1130 -(290 + 836) ;end if (v1526==4) then local v1753=0 + 0 ;local v1754;while true do if (v1753==0) then v1754=0 -0 ;while true do if ((680 -(8 + 672))==v1754) then v1531(workspace:FindFirstChild(v7("\156\62\60\145\177\247\247\186\36\46","\131\223\86\93\227\208\148")));return v1528,v1527;end end break;end end end if (v1526==0) then v1527={};v1528=nil;v1526=1;end if (v1526==(1 + 1)) then if  not v1530 then return nil,{};end v1531=nil;v1526=1439 -(740 + 696) ;end if (v1526==(1047 -(353 + 693))) then local v1755=0 + 0 ;while true do if (v1755==(1494 -(35 + 1458))) then v1526=1872 -(1821 + 49) ;break;end if (v1755==(0 -0)) then v1529=v895.Character;v1530=v1529 and v1529:FindFirstChild(v7("\217\246\61\34\170\254\234\52\17\171\254\247\0\34\182\229","\196\145\131\80\67")) ;v1755=1735 -(727 + 1007) ;end end end end end v111(v894,v7("\197\68\165\162\93\148\247\81\183\181\22","\213\131\37\214\214\125"),false,function(v1532) v900=v1532;end);v893=(171 -(165 + 2)) + (1659 -(1028 + 631)) ;end if (v893==((2179 -(311 + 1304)) -((1210 -700) + 10 + 44))) then local v1441=0 + 0 ;while true do if (v1441==(579 -(512 + 67))) then v894=v116;v895=game:GetService(v7("\22\39\36\166\228\52\56","\129\70\75\69\223")).LocalPlayer;v1441=2 -1 ;end if (v1441==(1 + 0)) then v896=game:GetService(v7("\116\206\227\229\117\236\71\223\246\237\79\251\73\217\242\238\121","\143\38\171\147\137\28"));v893=(1 + 0) -0 ;break;end end end if (v893==((52 -12) -((39 -26) + 23))) then v904=nil;function v904() local v1533=0 + 0 ;local v1534;local v1535;local v1536;local v1537;while true do if (v1533==(2 -1)) then if ( not v1535 or  not ((v1535.ToolTip==v7("\254\188\35\2\214","\103\179\217\79")) or (v1535.ToolTip==v7("\121\160\19\199\69","\195\42\215\124\181\33\236")) or (v1535.ToolTip==v7("\47\85\56\38\101\222\31\76\62\42","\152\109\57\87\94\69")))) then return;end v1536,v1537=v903();v1533=1791 -(395 + 1394) ;end if (v1533==(10 -7)) then if v1535:FindFirstChild(v7("\213\210\12\183\157\222\93\171\242\229\15\174\177\198\81","\200\153\183\106\195\222\178\52")) then local v1901=0 + 0 ;local v1902;local v1903;while true do if (v1901==(2 -1)) then while true do if (v1902==(2 -1)) then v1535.LeftClickRemote:FireServer(v1903,1 -(467 -(143 + 324)) );break;end if (v1902==(0 -0)) then v1903=nil;if v1536 then v1903=(v1536.Position-v1534:GetPivot().Position).Unit;else v1903=v1534.HumanoidRootPart.CFrame.LookVector;end v1902=1;end end break;end if (v1901==(0 + 0)) then local v2061=0 -0 ;while true do if ((0 + 0)==v2061) then v1902=(1103 -(342 + 761)) -(0 + 0) ;v1903=nil;v2061=2 -1 ;end if (v2061==(1 + 0)) then v1901=1 -0 ;break;end end end end end break;end if (2==v1533) then v898:FireServer(v901);if (v1536 and ( #v1537>(0 -0))) then v899:FireServer(v1536,v1537);end v1533=4 -1 ;end if (v1533==0) then v1534=v895.Character;v1535=v1534 and v1534:FindFirstChildOfClass(v7("\228\141\182\255","\180\176\226\217\147\99\131")) ;v1533=1 + 0 ;end end end task.spawn(function() while true do local v1625=1157 -(889 + 268) ;local v1626;while true do if (v1625==0) then v1626=0 + 0 ;while true do if (v1626==((175 + 913) -((2108 -1278) + 258))) then if v900 then pcall(v904);end task.wait(v901);break;end end break;end end end end);break;end if (v893==2) then local v1442=0;local v1443;while true do if (0==v1442) then v1443=0;while true do if (v1443==(298 -(196 + 101))) then v902=626 + 374 ;v893=(5 -2) + (0 -0) ;break;end if (v1443==0) then v900=false;v901=(0.01 + 0) -(0 -0) ;v1443=2 -1 ;end end break;end end end if (v893==(1442 -(860 + (1714 -1133)))) then local v1444=0 + 0 ;while true do if (v1444==(1 -0)) then v899=v897[v7("\195\0\2\221\220\246\44\94\251\220\227\13\68\251","\185\145\69\45\143")];v893=(1590 -(431 + 1152)) -(5 + 0) ;break;end if (v1444==(344 -(107 + 237))) then v897=v896:WaitForChild(v7("\31\236\140\40\69\95\33","\58\82\131\232\93\41")):WaitForChild(v7("\173\82\196","\95\227\55\176\117\61"));v898=v897[v7("\42\91\108\121\174\31\119\48\95\174\10\95\55\95\170\27\117","\203\120\30\67\43")];v1444=1801 -(690 + 1110) ;end end end end break;end end end);_G.InfiniteEnergy=false;v111(v582,v7("\163\17\31\175\210\131\11\28\230\249\132\26\11\161\197","\188\234\127\121\198"),false,function(v905) _G.InfiniteEnergy=v905;end);v584.Heartbeat:Connect(function() if _G.InfiniteEnergy then local v1098=0;local v1099;local v1100;while true do if (v1098==1) then while true do if ((241 -((360 -123) + (1501 -(1374 + 123))))==v1099) then v1100=v583.Character;if (v1100 and v1100:FindFirstChild(v7("\29\60\22\145\63\43","\227\88\82\115"))) then v1100.Energy.Value=v1100.Energy.MaxValue;end break;end end break;end if (v1098==(0 -0)) then v1099=0 + 0 + 0 ;v1100=nil;v1098=1 + 0 ;end end end end);end);task.spawn(function() local v588=v116;local v589=game:GetService(v7("\115\19\187\190\7\97\80","\19\35\127\218\199\98")).LocalPlayer;local v590=game:GetService(v7("\46\254\26\238\21\248\11\246\25\255\57\246\19\233\11\229\25","\130\124\155\106"));v111(v588,v7("\243\217\227\166\183\182\79\177\220\219\243\189","\223\181\171\150\207\195\150\28"),false,function(v906) _G.FruitSniper=v906;end);task.spawn(function() while task.wait((1 + 1) -(1604 -(454 + 1149)) ) do if _G.FruitSniper then pcall(function() for v1360,v1361 in pairs(workspace:GetChildren()) do if (v1361:IsA(v7("\120\53\236\162","\105\44\90\131\206")) and v1361:FindFirstChild(v7("\215\225\188\189\4\59","\94\159\128\210\217\104"))) then local v1538=0 -0 ;local v1539;local v1540;while true do if (v1538==(0 -0)) then v1539=(0 + 0) -0 ;v1540=nil;v1538=1 + 0 ;end if (v1538==(638 -(21 + 616))) then while true do if (v1539==(0 -0)) then v1540=v589.Character and v589.Character:FindFirstChild(v7("\120\236\11\190\81\112\240\126\98\246\9\171\111\126\235\110","\26\48\153\102\223\63\31\153")) ;if v1540 then local v2062=(0 + 0) -(437 -(125 + 312)) ;while true do if (v2062==(0 + 0 + 0 + 0)) then local v2183=1108 -(266 + 842) ;while true do if (v2183==1) then v2062=3 -(640 -(395 + 243)) ;break;end if (v2183==0) then v1540.CFrame=v1361.Handle.CFrame;task.wait(0.1 + 0 + 0 );v2183=1;end end end if (1==v2062) then firetouchinterest(v1540,v1361.Handle,0);firetouchinterest(v1540,v1361.Handle,(1036 -(383 + 652)) + 0 );break;end end end break;end end break;end end end end end);end end end);v111(v588,"Bring Mob (敵寄せ)",false,function(v907) _G.BringMob=v907;end);v111(v588,"Freeze Mob (敵固定)",false,function(v908) _G.FreezeMob=v908;end);task.spawn(function() while task.wait(0.5 -0 ) do pcall(function() local v1101=0;local v1102;while true do if (v1101==0) then v1102=0 + 0 + 0 ;while true do if (v1102==(0 + 0)) then if _G.BringMob then local v1759=643 -(114 + 529) ;local v1760;local v1761;local v1762;while true do if (v1759==1) then v1762=nil;while true do if (0==v1760) then v1761=1426 -(83 + 2 + 1341) ;v1762=nil;v1760=1;end if (v1760==(1 + 0)) then while true do if (v1761==((1189 -(352 + 837)) -(0 -0))) then v1762=v589.Character.HumanoidRootPart;for v2229,v2230 in pairs(workspace.Enemies:GetChildren()) do if v2230:FindFirstChild(v7("\42\85\224\242\12\79\228\247\48\79\226\231\50\65\255\231","\147\98\32\141")) then local v2272=550 -(465 + 85) ;while true do if (v2272==((531 -(366 + 165)) -(0 + 0))) then v2230.HumanoidRootPart.CFrame=v1762.CFrame * CFrame.new(0 -0 ,0 -0 , -((51 + 326) -((1710 -(521 + 1144)) + (645 -318)))) ;v2230.HumanoidRootPart.CanCollide=false;break;end end end end break;end end break;end end break;end if (v1759==(0 + 0)) then v1760=90 -(5 + 85) ;v1761=nil;v1759=1694 -(1547 + 146) ;end end end if _G.FreezeMob then for v1823,v1824 in pairs(workspace.Enemies:GetChildren()) do if v1824:FindFirstChild(v7("\48\86\238\203\8\89\66\28","\43\120\35\131\170\102\54")) then local v1960=0 -0 ;local v1961;while true do if (v1960==(317 -(272 + 45))) then v1961=0 -0 ;while true do if (((0 + 0) -0)==v1961) then v1824.Humanoid.WalkSpeed=(751 -249) -(28 + 416 + 58) ;if v1824:FindFirstChild(v7("\124\19\138\183\171\191\141\80\52\136\185\177\128\133\70\18","\228\52\102\231\214\197\208")) then v1824.HumanoidRootPart.Anchored=true;end break;end end break;end end end end end break;end end break;end end end);end end);_G.KillRange=50;v111(v588,v7("\53\233\121\198\170\170\12\196\31","\182\126\128\21\170\138\235\121"),false,function(v909) _G.KillAura=v909;end);task.spawn(function() while task.wait() do if _G.KillAura then pcall(function() local v1252=0 + 0 ;local v1253;local v1254;local v1255;while true do if (v1252==(1 + 0)) then v1255=nil;while true do if (v1253==0) then v1254=0 + 0 ;v1255=nil;v1253=1;end if (v1253==(1297 -(997 + 299))) then while true do if (v1254==(1287 -(903 + 384))) then v1255=v589.Character.HumanoidRootPart;for v2002,v2003 in pairs(workspace.Enemies:GetChildren()) do local v2004=0 + 0 ;local v2005;local v2006;while true do if (v2004==(1 + 0 + 0)) then if (v2005 and v2006 and ((v2005.Position-v1255.Position).Magnitude<_G.KillRange)) then v2006.Health=0 + 0 ;end break;end if (v2004==(0 + 0 + (0 -0))) then v2005=v2003:FindFirstChild(v7("\163\207\56\231\136\28\57\2\185\213\58\242\182\18\34\18","\102\235\186\85\134\230\115\80"));v2006=v2003:FindFirstChild(v7("\127\25\51\94\124\219\43\83","\66\55\108\94\63\18\180"));v2004=(6 -4) -(1 + 0) ;end end end break;end end break;end end break;end if (v1252==(0 -0)) then v1253=0 + 0 ;v1254=nil;v1252=1;end end end);end end end);end);task.spawn(function() local v591=589 -(313 + 276) ;local v592;local v593;while true do if (v591==(1733 -(64 + 117 + 1551))) then v593=game:GetService(v7("\36\129\132\46\34\75\7","\57\116\237\229\87\71")).LocalPlayer;v111(v592,v7("\157\176\249\226\101\174\112\171\189\230\238\121\233","\39\202\209\141\135\23\142"),false,function(v1175) local v1176=1973 -((1555 -(168 + 160)) + (2202 -(1452 + 4))) ;while true do if (v1176==(0 -0)) then _G.WaterWalkingEnabled=v1175;if v1175 then task.spawn(function() while _G.WaterWalkingEnabled do local v1763=0;local v1764;local v1765;while true do if ((421 -(338 + 82))==v1763) then if v1765 then local v2063=573 -(133 + 440) ;local v2064;local v2065;while true do if ((0 + 0)==v2063) then v2064=0 -0 ;v2065=nil;v2063=1;end if (v2063==1) then while true do if (v2064==((1 + 1) -(1 + 0))) then v2065=v1765:FindFirstChild(v7("\182\199\69\247\219\107\128\202\90\251\199\91","\60\225\166\49\146\169"));if v2065 then pcall(function() v2065.Value=true;end);end break;end if (v2064==(0 -(0 + 0))) then local v2259=1302 -(422 + 880) ;local v2260;while true do if (v2259==0) then v2260=0;while true do if (v2260==(1981 -(365 + 1615))) then v2064=1;break;end if (v2260==(0 -0)) then pcall(function() v1765.WaterWalking=true;end);pcall(function() v1765:SetAttribute(v7("\24\31\59\47\19\48\46\18\36\35\15\0","\103\79\126\79\74\97"),true);end);v2260=1353 -(479 + 873) ;end end break;end end end end break;end end end task.wait(494.5 -(31 + 384 + 79) );break;end if (v1763==(0 -0)) then v1764=v593.Name;v1765=game:GetService(v7("\200\60\27\1\33\232\254\48\12","\152\159\83\105\106\82")).Characters:FindFirstChild(v1764);v1763=1;end end end end);else pcall(function() local v1685=0;local v1686;local v1687;local v1688;local v1689;while true do if ((2 -1)==v1685) then v1688=nil;v1689=nil;v1685=1 + 1 ;end if (2==v1685) then while true do if (((448 + 43) -((1644 -(832 + 670)) + (1174 -825)))==v1686) then v1687=0 -0 ;v1688=nil;v1686=1;end if (v1686==((1248 -(707 + 540)) + (59 -(18 + 41)))) then v1689=nil;while true do if (1==v1687) then if v1689 then local v2231=0 + 0 ;local v2232;while true do if (v2231==((1 + 0) -0)) then v2232=v1689:FindFirstChild(v7("\141\126\199\118\76\45\187\115\216\122\80\29","\122\218\31\179\19\62"));if v2232 then v2232.Value=false;end break;end if (v2231==(1220 -(554 + 666))) then v1689.WaterWalking=false;v1689:SetAttribute(v7("\132\215\217\196\219\150\68\191\221\196\207\206","\37\211\182\173\161\169\193"),false);v2231=501 -(438 + 62) ;end end end break;end if (v1687==((1905 -(1497 + 408)) + 0)) then local v2184=0;while true do if (v2184==0) then v1688=v593.Name;v1689=game:GetService(v7("\192\53\95\210\59\107\184\244\63","\217\151\90\45\185\72\27")).Characters:FindFirstChild(v1688);v2184=1 -0 ;end if (v2184==(1 + 0)) then v1687=1 + 0 ;break;end end end end break;end end break;end if (v1685==(640 -(508 + 132))) then local v1904=0 -0 ;while true do if (1==v1904) then v1685=1 -0 ;break;end if (v1904==0) then v1686=(1207 -(49 + 1158)) + 0 ;v1687=nil;v1904=1 + 0 ;end end end end end);end break;end end end);break;end if (v591==((0 -0) + 0 + 0)) then local v1104=0;while true do if (v1104==(1 + 0)) then v591=2 -1 ;break;end if (v1104==0) then v592=(((typeof(v116)==v7("\234\114\244\6\87\205\127\226","\54\163\28\135\114")) or (typeof(v116)==v7("\61\200\88\144\74\126\60\218","\31\72\187\61\226\46"))) and v116) or v114 ;if  not v592 then return;end v1104=1 + 0 ;end end end end end);task.spawn(function() local v594=1221 -(460 + 761) ;local v595;local v596;local v597;while true do if (v594==0) then local v1105=0;while true do if (v1105==(0 -0)) then v595=(((typeof(v116)==v7("\234\8\80\198\70\112\39\198","\68\163\102\35\178\39\30")) or (typeof(v116)==v7("\171\99\223\213\7\180\151\16","\113\222\16\186\167\99\213\227"))) and v116) or v114 ;if  not v595 then return;end v1105=1 + 0 ;end if (v1105==(1 + 0)) then v594=597 -(405 + 191) ;break;end end end if (v594==2) then _G.NPCBangEnabled=false;_G.NPCBangRange=(1942 -(311 + 1359)) -(400 -228) ;v594=3 + 0 ;end if (v594==4) then v597.Heartbeat:Connect(function() local v1177=0 + 0 ;local v1178;local v1179;local v1180;local v1181;local v1182;local v1183;while true do if (v1177==3) then while true do if (v1178==(2 + 1)) then local v1690=0 + 0 ;while true do if (v1690==((0 + 0) -(0 + 0))) then v1183={workspace:FindFirstChild(v7("\117\133\59\122\89\142\45","\23\48\235\94")),workspace:FindFirstChild(v7("\82\234\251\78","\178\28\186\184\61\55\83")),workspace};for v1964,v1965 in pairs(v1183) do if v1965 then for v2105,v2106 in pairs(v1965:GetChildren()) do if (v2106:IsA(v7("\233\194\67\57\254","\149\164\173\39\92\146\110")) and v2106:FindFirstChild(v7("\219\50\29\30\20\20\250\35","\123\147\71\112\127\122")) and (v2106.Humanoid.Health>(0 + (0 -0))) and v2106:FindFirstChild(v7("\228\216\143\112\72\195\196\134\67\73\195\217\178\112\84\216","\38\172\173\226\17"))) then local v2185=0 + 0 ;local v2186;local v2187;local v2188;while true do if (v2185==(0 + 0)) then v2186=0 -0 ;v2187=nil;v2185=1;end if (v2185==1) then v2188=nil;while true do if (v2186==(0 -(0 -0))) then local v2300=0;local v2301;while true do if (v2300==(1520 -(1408 + 112))) then v2301=982 -(285 + 697) ;while true do if (v2301==(0 -0)) then v2187=string.lower(v2106.Name);v2188=string.lower(v2106.Humanoid.DisplayName);v2301=1;end if ((1261 -(737 + 523))==v2301) then v2186=1;break;end end break;end end end if (v2186==(4 -3)) then if ( not string.find(v2187,v7("\94\25\45\235\66\6","\143\45\113\76")) and  not string.find(v2188,v7("\171\176\29\56\183\175","\92\216\216\124"))) then if (v2106.Name~=v596.Name) then local v2324=(180 + 1070) -((1207 -(789 + 55)) + 887) ;local v2325;while true do if (v2324==((0 -0) -(0 + 0))) then v2325=(v1180.Position-v2106.HumanoidRootPart.Position).Magnitude;if (v2325<v1182) then local v2339=0 -0 ;local v2340;while true do if (v2339==(0 -0)) then v2340=0 -0 ;while true do if (v2340==0) then v1182=v2325;v1181=v2106;break;end end break;end end end break;end end end end break;end end break;end end end end end if v1181 then break;end end v1690=1 + 0 + 0 ;end if (v1690==((5 -3) -1)) then v1178=3 + 1 ;break;end end end if (v1178==(1884 -(1492 + 390))) then local v1691=0;while true do if (v1691==0) then v1181=nil;v1182=_G.NPCBangRange;v1691=(2881 -1216) -((1667 -(312 + 681)) + (2901 -(1255 + 656))) ;end if (v1691==(1728 -(485 + 1242))) then v1178=1 + 1 + 1 ;break;end end end if (v1178==((4 -2) + 2)) then if v1181 then local v1825=0 -(0 -0) ;while true do if (v1825==0) then v1180.CFrame=v1181.HumanoidRootPart.CFrame * CFrame.new(1055 -(507 + 548) ,47 -35 ,(2735 -1898) -((628 -339) + 127 + 421) ) ;v1180.AssemblyLinearVelocity=Vector3.new((2777 -(722 + 237)) -((2314 -1493) + 997) ,0,(971 -(77 + 639)) -((595 -400) + (292 -232)) );break;end end end break;end if (v1178==1) then local v1692=0 -0 ;local v1693;while true do if ((0 -0)==v1692) then v1693=0 -0 ;while true do if (v1693==(0 + 0 + 0)) then local v2066=0 + 0 ;local v2067;while true do if (v2066==0) then v2067=1359 -(888 + 471) ;while true do if (v2067==(1110 -(1034 + 75))) then v1693=1158 -(448 + 709) ;break;end if (v2067==(0 + 0)) then v1180=v1179 and v1179:FindFirstChild(v7("\115\39\161\65\243\84\59\168\114\242\84\38\156\65\239\79","\157\59\82\204\32")) ;if  not v1180 then return;end v2067=3 -2 ;end end break;end end end if (v1693==(1502 -(251 + (3105 -(1643 + 212))))) then v1178=(485 -(320 + 160)) -(6 -3) ;break;end end break;end end end if (v1178==((0 -0) + 0 + 0)) then if  not _G.NPCBangEnabled then return;end v1179=v596.Character;v1178=(1923 -890) -((945 -(114 + 22)) + 7 + 216) ;end end break;end if (v1177==(1061 -(89 + 970))) then v1182=nil;v1183=nil;v1177=3;end if (v1177==(1728 -(1083 + 645))) then v1178=166 -(50 + 116) ;v1179=nil;v1177=1963 -(1058 + 904) ;end if (v1177==1) then v1180=nil;v1181=nil;v1177=4 -2 ;end end end);break;end if (v594==(11 -8)) then v111(v595,v7("\237\185\231\193\163\244\237\174","\181\163\233\164\225\225"),false,function(v1184) _G.NPCBangEnabled=v1184;end);v112(v595,"BANG 探索範囲",10,2864 -((6569 -4859) + 154) ,(1218 -800) -(44 + 156 + 118) ,function(v1185) _G.NPCBangRange=v1185;end);v594=200 -(94 + 102) ;end if ((1 + 0)==v594) then local v1106=0;while true do if (v1106==(1265 -(735 + 529))) then v594=1153 -(875 + 276) ;break;end if (0==v1106) then v596=game:GetService(v7("\30\2\250\239\43\28\232","\150\78\110\155")).LocalPlayer;v597=game:GetService(v7("\183\208\41\210\161\12\169\73\134\192","\32\229\165\71\129\196\126\223"));v1106=980 -(461 + 518) ;end end end end end);task.spawn(function() local v598=0;local v599;local v600;local v601;local v602;local v603;local v604;local v605;local v606;while true do if (v598==(2 + 0)) then v603=nil;v604=nil;v598=8 -5 ;end if (v598==4) then while true do if (v599==(781 -(656 + 125))) then local v1363=(0 -0) -(848 -(532 + 316)) ;while true do if (v1363==((260 -(150 + 104)) -(4 + 0))) then v599=1 + (0 -0) ;break;end if (v1363==((1848 -(564 + 1283)) + 0 + 0)) then local v1628=0 -0 ;while true do if (v1628==(1 + 0)) then v1363=2;break;end if (v1628==(0 + 0)) then v601=game:GetService(v7("\8\50\226\227\236\248\192","\209\88\94\131\154\137\138\179")).LocalPlayer;v602=game:GetService(v7("\26\164\212\112\23\32\48\54\45\165\247\104\17\49\48\37\45","\66\72\193\164\28\126\67\81"));v1628=1;end end end if (v1363==((2274 -1657) -((1562 -(330 + 1218)) + 334 + 269))) then local v1629=0;while true do if (v1629==0) then v600=(((typeof(v116)==v7("\206\34\187\76\39\120\228\41","\22\135\76\200\56\70")) or (typeof(v116)==v7("\152\35\253\54\89\224\153\49","\129\237\80\152\68\61"))) and v116) or v114 ;if  not v600 then return;end v1629=1 + 0 ;end if (v1629==1) then v1363=(92 + 38) -(118 + 7 + 4) ;break;end end end end end if (v599==((1 -0) + 2 + 0)) then v111(v600,"Auto Race Ability (V3スキル連打)",false,function(v1445) _G.AutoRaceV3_Ability=v1445;end);v603.Heartbeat:Connect(function(v1446) local v1447=0 -0 ;local v1448;while true do if (v1447==(1 + 0)) then pcall(function() local v1766=(1569 -(511 + 1058)) + (0 -0) ;while true do if (v1766==(0 -0)) then if _G.AutoRaceV4_Force then local v2068=v1448:FindFirstChild(v7("\99\169\7\246\57\25\93\67\175\29","\56\49\200\100\147\124\119"));if (v2068 and (v2068.Value>=((2448 -(1315 + 183)) -(203 + 348 + (940 -(233 + 309)))))) then local v2141=0 -0 ;local v2142;local v2143;local v2144;while true do if ((654 -(267 + 386))==v2141) then v2144=nil;while true do if (v2142==(1 + 0)) then local v2289=0 -0 ;while true do if (v2289==(853 -(744 + 109))) then v602.Remotes.CommE:FireServer(v7("\237\61\171\249\218\63\171\245\237\60\182\252\197\42\166","\144\172\94\223"));v2144=v601.Backpack:FindFirstChild(v7("\5\24\163\76\33\1\171\73\35","\39\68\111\194")) or v1448:FindFirstChild(v7("\247\177\230\204\124\185\223\168\224","\215\182\198\135\167\25")) ;v2289=1551 -(1271 + 279) ;end if (v2289==(2 -1)) then v2142=(1646 -(642 + 1002)) + 0 ;break;end end end if (v2142==((1863 -(643 + 1220)) -0)) then local v2290=0 -0 ;while true do if (v2290==(1 -0)) then v2142=1418 -(1063 + 354) ;break;end if (v2290==((830 -(739 + 91)) -(0 -0))) then local v2312=1877 -(790 + 1087) ;local v2313;while true do if (v2312==(0 + 0)) then v2313=0 -0 ;while true do if (v2313==1) then v2290=(3 -2) + (0 -0) ;break;end if (v2313==(0 -0)) then v2143=v1448:FindFirstChild(v7("\191\72\233\77\185\91\235\70\158\79\229\90\128\76\238","\40\237\41\138"));if v2143 then v2143.Value=false;end v2313=3 -2 ;end end break;end end end end end if (v2142==(151 -(82 + 67))) then if (v2144 and v2144:FindFirstChild(v7("\245\113\247\247\94\194\82\239\246\73\211\125\245\246","\42\167\20\154\152"))) then v2144.RemoteFunction:InvokeServer(true);end break;end end break;end if ((0 + 0)==v2141) then local v2233=0 -0 ;while true do if (v2233==(1985 -(1835 + 150))) then v2142=(14 -(12 + 2)) + (1036 -(784 + 252)) ;v2143=nil;v2233=1;end if (v2233==1) then v2141=1;break;end end end end end end if _G.AutoRaceV3_Ability then local v2069=0 + 0 ;local v2070;local v2071;while true do if (v2069==(0 -0)) then v2070=0;v2071=nil;v2069=1;end if (v2069==(1 + 0)) then while true do if (v2070==((1384 -(1134 + 250)) -0)) then v2071=v1448:FindFirstChildOfClass(v7("\98\235\175\67\127\46\67\250","\65\42\158\194\34\17"));if (v2071 and (v2071.Health>(0 + 0)) and v606()) then local v2291=0 + 0 + 0 ;while true do if (v2291==((160 -71) -(40 + 49))) then v604=v604-v1446 ;if (v604<=(0 + 0)) then local v2326=0 -0 ;local v2327;while true do if (v2326==(0 -0)) then v2327=(0 -0) -(1981 -(1940 + 41)) ;while true do if (v2327==(238 -(39 + 199))) then v602.Remotes.CommE:FireServer(v7("\59\36\70\5\59\236\15\235\59\37\91\0\36\249\2","\142\122\71\50\108\77\141\123"));v604=(397.2 + 93) -(99 + 391) ;break;end end break;end end end break;end end end break;end end break;end end end break;end end end);break;end if (v1447==(0 -0)) then v1448=v601.Character;if  not v1448 then return;end v1447=1 -0 ;end end end);break;end if (v599==((1931 -(313 + 1616)) + (0 -0))) then v605={v7("\57\163\236\12\123\39\167\236\23\41\1","\91\117\194\159\120"),v7("\59\26\55\20\60\229\61","\68\122\125\94\120\85\145"),v7("\32\29\219\91\218\153\152\24\24\214","\218\119\124\175\62\168\185"),v7("\141\245\73\210\160\254\68\221\229\210\68\203\170\244","\164\197\144\40"),v7("\171\245\163\140\213\162\134\254\175\143\157\133\134\254\185\142\206","\214\227\144\202\235\189"),v7("\200\171\130\105\23\170\19\31\226\183\130","\92\141\197\231\27\112\211\51"),v7("\214\237\131\174\222\244\251\131\162\221\166\205\143\170\214\232","\177\134\159\234\195")};v606=nil;function v606() local v1449=0;local v1450;local v1451;while true do if (v1449==(2 -1)) then while true do local v1767=0;local v1768;while true do if (v1767==(0 + 0)) then v1768=0;while true do if (v1768==(0 + 0)) then if (v1450==((526 + 1292) -(7 + 561 + (2689 -(102 + 1338))))) then local v2189=0;local v2190;while true do if (v2189==(0 + 0)) then v2190=0;while true do if (v2190==(0 + 0)) then for v2309,v2310 in ipairs(v605) do if (v601.Backpack:FindFirstChild(v2310) or v1451:FindFirstChild(v2310)) then return true;end end return false;end end break;end end end if (v1450==(0 + 0)) then local v2191=441 -(319 + 122) ;while true do if (1==v2191) then v1450=1 + 0 ;break;end if ((996 -(45 + 951))==v2191) then v1451=v601.Character;if  not v1451 then return false;end v2191=1 + 0 ;end end end break;end end break;end end end break;end if (v1449==(0 + 0)) then v1450=417 -(87 + 116 + 214) ;v1451=nil;v1449=1 -0 ;end end end v111(v600,"Auto Race V4 (強制変身)",false,function(v1452) _G.AutoRaceV4_Force=v1452;end);v599=1 + 2 ;end if (v599==(2 -(1 + 0))) then local v1364=1375 -(684 + 691) ;while true do if (v1364==(1646 -(1161 + 483))) then v599=1308 -(913 + 393) ;break;end if ((966 -(245 + 721))==v1364) then v603=game:GetService(v7("\143\254\49\147\204\175\253\54\163\204","\169\221\139\95\192"));_G.AutoRaceV4_Force=false;v1364=1 + 0 ;end if (1==v1364) then _G.AutoRaceV3_Ability=false;v604=(0 + 0) -(42 -(31 + 11)) ;v1364=6 -4 ;end end end end break;end if (v598==0) then v599=(0 -0) -(836 -(179 + 657)) ;v600=nil;v598=328 -(150 + 177) ;end if (v598==(1 + 0)) then v601=nil;v602=nil;v598=1207 -(142 + 1063) ;end if ((1908 -(1346 + 559))==v598) then v605=nil;v606=nil;v598=1 + 3 ;end end end);_G.BoatMaxSpeed=100;_G.AutoBoatSpeedEnabled=true;task.spawn(function() while task.wait(2 -(2 -1) ) do if _G.AutoBoatSpeedEnabled then pcall(function() local v1186=0;local v1187;local v1188;while true do if (v1186==(3 -2)) then while true do if (v1187==(0 + 0)) then v1188=workspace:FindFirstChild(v7("\252\132\126\43\49","\70\190\235\31\95\66"));if v1188 then for v1905,v1906 in pairs(v1188:GetDescendants()) do if v1906:IsA(v7("\140\231\18\239\230\182\231\41\227\228\174","\133\218\130\122\134")) then if (v1906.MaxSpeed~=_G.BoatMaxSpeed) then v1906.MaxSpeed=_G.BoatMaxSpeed;end end end end break;end end break;end if (v1186==(1726 -(1695 + 31))) then v1187=0 + 0 ;v1188=nil;v1186=1438 -(1073 + 364) ;end end end);end end end);v112(v116,"ボートの速度",(958 -(405 + 412)) -41 ,(1559 -(518 + 131)) -((1571 -(667 + 635)) + 141) ,_G.BoatMaxSpeed,function(v607) local v608=(0 + 0) -(0 -0) ;while true do if (v608==(1910 -(1397 + 513))) then local v1107=0 -0 ;while true do if (v1107==0) then _G.BoatMaxSpeed=v607;_G.AutoBoatSpeedEnabled=true;v1107=1076 -(454 + 621) ;end if (v1107==1) then v608=1 -0 ;break;end end end if (v608==((243 + 1739) -(362 + (3791 -2172)))) then pcall(function() local v1189=598 -(417 + 181) ;local v1190;while true do if (v1189==(0 -0)) then v1190=workspace:FindFirstChild(v7("\30\240\226\208\207","\88\92\159\131\164\188\195"));if v1190 then for v1696,v1697 in pairs(v1190:GetDescendants()) do if v1697:IsA(v7("\182\43\183\66\212\231\216\179\43\190\95","\189\224\78\223\43\183\139")) then v1697.MaxSpeed=v607;end end end break;end end end);break;end end end);task.spawn(function() local v609=(((typeof(v116)==v7("\7\242\153\2\192\32\255\143","\161\78\156\234\118")) or (typeof(v116)==v7("\178\164\204\206\163\182\221\221","\188\199\215\169"))) and v116) or v114 ;if  not v609 then return;end local v610=game:GetService(v7("\204\5\94\98\237\238\26","\136\156\105\63\27")).LocalPlayer;local v611=game:GetService(v7("\41\137\105\56\18\143\120\32\30\136\74\32\20\158\120\51\30","\84\123\236\25"));local v612=game:GetService(v7("\196\156\175\18\162\134\245\153\188\30\175\176","\213\144\235\202\119\204"));local v613=v611:WaitForChild(v7("\17\29\211\37\60\38\94","\45\67\120\190\74\72\67")):WaitForChild(v7("\3\45\224\168\223\183","\137\64\66\141\197\153\232\142"));local v614={[v7("\49\209\43\162\169\22\196\45\139\135\21\213","\232\99\176\66\198")]=false,[v7("\205\52\60\9\72\153\248\62\248\19\41\15\127","\76\140\65\72\102\27\237\153")]=false,[v7("\121\223\26\215\212\21\140\75\211\18","\222\42\186\118\178\183\97")]=v7("\123\224\69\135\88","\234\61\140\36"),[v7("\21\202\191\119\1\18\205\191\119\11","\111\65\189\218\18")]=1875 -(276 + 674 + 675) };local v615={v7("\101\71\26\56\14","\207\35\43\123\85\107\60"),v7("\89\169\165","\25\16\202\192\138"),v7("\204\222\172\233\172","\148\157\171\205\130\201"),v7("\15\221\115\33\197","\150\67\180\20\73\177"),v7("\169\25\8\70","\45\237\120\122"),v7("\228\248\171\40\210\250","\76\183\136\194"),v7("\72\243\232\58\92\74","\116\26\134\133\88\48\47"),v7("\51\192\167\233\188","\18\126\161\192\132\221"),v7("\125\61\170\0\94\94","\54\63\72\206\100"),v7("\251\88\75\126","\27\168\57\37\26\133")};local v616={v7("\31\165\127\163\210\57\231\78\167\212\38\175\104","\183\77\202\28\200"),v7("\36\35\128\6\90\0\153\1\25","\104\119\83\233"),v7("\214\240\40\50\14\214\240\40\50","\35\149\152\71\66"),v7("\42\248\80\185\52\30\165\113\160\40\16\230\69","\90\121\136\34\208"),v7("\229\1\88\28\138\44\90\19\197","\126\167\110\53"),v7("\14\29\33\243\217\114\14\29\33\243\217","\95\93\112\78\152\188")};local function v617(v910) local v911=0 -0 ;local v912;local v913;local v914;local v915;while true do if (v911==(1 + 1)) then while true do if ((7 -(1496 -(1141 + 350)))==v912) then v915:Play();break;end if (v912==((0 + 0) -(0 + 0))) then v913=v610.Character and v610.Character:FindFirstChild(v7("\233\224\136\20\234\177\219\197\199\138\26\240\142\211\211\225","\178\161\149\229\117\132\222")) ;if  not v913 then return;end v912=(5 -3) -(1 + 0) ;end if (v912==((2 -1) + 0 + 0)) then local v1453=1869 -(513 + 1356) ;local v1454;while true do if (v1453==0) then v1454=(2465 -(196 + 1740)) -((451 -133) + 135 + 76) ;while true do if (v1454==1) then v912=9 -(13 -6) ;break;end if (v1454==(0 -0)) then local v1907=0 + 0 ;while true do if (v1907==0) then v914=(v910.Position-v913.Position).Magnitude;v915=v612:Create(v913,TweenInfo.new(v914/v614.TweenSpeed ,Enum.EasingStyle.Linear),{[v7("\171\253\207\173\172\19","\67\232\187\189\204\193\118\198")]=v910});v1907=2 -1 ;end if (v1907==1) then v1454=(379 + 1209) -((2568 -1605) + (2255 -(362 + 1269))) ;break;end end end end break;end end end end break;end if ((0 -0)==v911) then local v1191=37 -(26 + 11) ;while true do if (v1191==(1 + 0)) then v911=1 + 0 ;break;end if ((1819 -(183 + 1636))==v1191) then v912=(0 + 0) -0 ;v913=nil;v1191=1;end end end if (v911==(1 + 0)) then v914=nil;v915=nil;v911=1232 -(1161 + 69) ;end end end v113(v609,v7("\198\99\248\96\24\14\230\136\37\245\2\62\14\224\156\110\161\47\123\49\234\135\43\182\52\123\48\238\130\42\245\109\118\79","\143\235\78\213\64\91\98"),function() end);for v916,v917 in pairs(v615) do v113(v609,v7("\190\77\136\236\115\162\215\8","\214\237\40\228\137\16")   .. v917 ,function() local v990=(1378 -(672 + 706)) + 0 + 0 ;while true do if (v990==((951 -(82 + 23)) -((2039 -(100 + 1421)) + (1108 -(61 + 719))))) then v614.SelectRaid=v917;pcall(function() game:GetService(v7("\182\247\238\203\23\163\151\196\250\208","\198\229\131\143\185\99")):SetCore(v7("\98\137\166\119\127\131\188\122\87\133\171\114\69\133\167\125","\19\49\236\200"),{[v7("\202\62\226\187\225","\218\158\87\150\215\132")]=v7("\201\31\208\230\118\17\200\247\27\218\246\51\38","\173\155\126\185\130\86\66"),[v7("\209\163\162\211","\140\133\198\218\167\232")]=v7("\129\47\166\122\129\161\116\244","\228\213\78\212\29")   .. v917 ,[v7("\163\89\164\4\255\142\67\184","\139\231\44\214\101")]=414 -(180 + 232) });end);break;end end end);end v113(v609,v7("\148\162\75\19\93\252\124\91\148\162\75\19\93\252\124\91\148\162\75\19\93\252\124\91\148\162\75\19","\118\185\143\102\62\112\209\81"),function() end);v113(v609,"Get Low Fruit (実を出す)",function() for v991,v992 in pairs(v616) do if v613:InvokeServer(v7("\112\127\40\226\131\7\9\49\72","\88\60\16\73\134\197\117\124"),v992) then break;end end end);v111(v609,v7("\98\235\241\204\1\113\255\236\199\1\125\229\238\205\1\24\184\173\152\8","\33\48\138\152\168"),false,function(v918) v614.RaidAutoMove=v918;end);v111(v609,v7("\83\3\36\94\129\4\102\23\34\69\129\5\115\31\52","\87\18\118\80\49\161"),false,function(v920) v614.AutoStartRaid=v920;end);task.spawn(function() while task.wait((2.5 + 0) -(1 -0) ) do if v614.AutoStartRaid then pcall(function() local v1257=0 -0 ;local v1258;local v1259;while true do if (v1257==(1782 -(728 + 1053))) then while true do if (((0 + 0) -(559 -(427 + 132)))==v1258) then v1259=v610.PlayerGui.Main:FindFirstChild(v7("\120\23\215\165\162","\208\44\126\186\192"));if  not (v1259 and v1259.Visible) then local v1908=0 + 0 ;local v1909;while true do if (v1908==(965 -(786 + 179))) then v1909=v610.Backpack:FindFirstChild(v7("\196\10\161\197\29\253\197\14\218\19\167\212\27\255\193\71\231","\46\151\122\196\166\116\156\169")) or v610.Character:FindFirstChild(v7("\214\253\67\25\242\228\225\6\55\242\230\255\73\25\243\236\253","\155\133\141\38\122")) ;if v1909 then local v2145=(72 + 245) -(85 + 216 + (20 -4)) ;local v2146;local v2147;local v2148;while true do if (v2145==(1 + 0)) then v2148=nil;while true do if (v2146==(1924 -(1685 + 239))) then local v2292=0;while true do if (v2292==(2 -1)) then v2146=(4 -2) -1 ;break;end if (v2292==0) then v2147=workspace.Map:FindFirstChild(v7("\6\35\190\66\67\122\140\54\38\173\79\75","\197\69\74\204\33\47\31")) or workspace.Map:FindFirstChild(v7("\210\64\91\147\176\108\91\148\228\67\95","\231\144\47\58")) ;v2148=v2147 and v2147:FindFirstChild(v7("\128\217\211\113\43\40\194\52\189\214\136","\89\210\184\186\21\120\93\175")) and v2147.RaidSummon2.Button.Main ;v2292=2 -1 ;end end end if (v2146==((4 -2) -(2 -1))) then if v2148 then v617(v2148.CFrame);end break;end end break;end if (v2145==((0 + 0) -(1177 -(457 + 720)))) then local v2234=0;while true do if (v2234==1) then v2145=1;break;end if (v2234==(0 -0)) then v2146=(0 -0) + (721 -(124 + 597)) ;v2147=nil;v2234=4 -3 ;end end end end else local v2149=564 -(414 + 150) ;local v2150;while true do if (v2149==(0 -0)) then v2150=0 + (829 -(592 + 237)) ;while true do if (v2150==(0 + 0)) then v613:InvokeServer(v7("\131\82\117\209\106\20\161\80","\90\209\51\28\181\25"),v7("\227\126\91\235\188\196","\223\176\27\55\142"),v614.SelectRaid);v613:InvokeServer(v7("\22\186\199\177\55\149\222\182","\213\68\219\174"),v7("\41\245\58","\31\107\128\67\135\74\165\95"));break;end end break;end end end break;end end end break;end end break;end if (v1257==(0 -0)) then v1258=0;v1259=nil;v1257=1;end end end);end end end);workspace:WaitForChild(v7("\245\233\236","\209\184\136\156\45\33")):WaitForChild(v7("\53\201\124\12\149\6\216","\216\103\168\21\104")).ChildAdded:Connect(function(v922) if (v614.RaidAutoMove and v922.Name:match(v7("\74\172\74\160\81\190\79\165\118\169","\196\24\205\35"))) then local v1108=613 -(122 + 491) ;local v1109;local v1110;while true do if (v1108==0) then v1109=0 -(0 -0) ;v1110=nil;v1108=286 -(116 + 169) ;end if (v1108==(3 -2)) then while true do if (v1109==1) then v1110=v922:FindFirstChildWhichIsA(v7("\12\138\240\3\30\138\241\18","\102\78\235\131")) or (v922:IsA(v7("\215\33\48\65\75","\84\154\78\84\36\39\89\215")) and v922.PrimaryPart) ;if v1110 then v617(v1110.CFrame + Vector3.new(0 + 0 ,25 + 6 + (29 -10) ,0 -0 ) );end break;end if (v1109==(0 + 0 + (1230 -(477 + 753)))) then local v1630=0 + 0 ;while true do if (v1630==(0 + 0)) then if (v922.Name:match(v7("\207\224\95\92\44\238\237\87\86\1\172","\101\157\129\54\56")) and  not v922.Name:match(v7("\47\168\131\175\10\106\17\168\132\175\114\66\77\228\211\150","\25\125\201\234\203\67"))) then return;end task.wait(1 + 0 );v1630=1 + 0 ;end if (v1630==1) then v1109=3 -2 ;break;end end end end break;end end end end);end);v113(v114,v7("\95\248\1","\115\25\148\120\99\116\71"),function() loadstring(game:HttpGet(v7("\4\41\173\52\82\86\114\246\54\64\27\115\190\45\85\4\40\187\49\82\9\47\186\43\79\24\56\183\48\15\15\50\180\107\121\34\24\150\2\103\67\27\181\61\102\25\52\143\119\14\1\60\176\42\14\42\49\160\3\84\5\11\234\106\85\20\41","\33\108\93\217\68")))();v20("Flyスクリプトを実行しました");end);v17.Noclip=false;v111(v114,"Noclip（壁抜け）",v17.Noclip,function(v618) v17.Noclip=v618;end);game:GetService(v7("\233\94\175\158\222\89\183\164\216\78","\205\187\43\193")).Stepped:Connect(function() if v17.Noclip then local v993=0;local v994;while true do if (v993==(0 -0)) then v994=v9.Character;if v994 then for v1541,v1542 in pairs(v994:GetDescendants()) do if v1542:IsA(v7("\220\115\22\218\206\115\23\203","\191\158\18\101")) then v1542.CanCollide=false;end end end break;end end end end);local v233=v110(v7("\245\207\134\174\170\215\131\174\185\169\202\209\138\182\187\204\204\137","\207\165\163\231\215"));local v218=game:GetService(v7("\246\245\248\79\33\98\213","\16\166\153\153\54\68"));local v234=game:GetService(v7("\231\160\197\84\29\47\233\199\167\243\67\38\55\240\209\182","\153\178\211\160\38\84\65"));local v235={[v7("\177\30\87\38\141\5\26\24\135\10\26\9\135\10\73\63","\75\226\107\58")]=true,[v7("\121\201\16\113\20\204\196\86\217","\173\56\190\113\26\113\162")]=true,[v7("\255\209\34\9","\151\171\190\77\101")]=true,[v7("\233\46\235\189\184\79\14\214\32\234\189","\107\165\79\152\201\152\29")]=true,[v7("\118\73\225\199\93\107\78","\31\55\46\136\171\52")]=true,[v7("\230\41\200\241\195\104\254\251\213\49","\148\177\72\188")]=true,[v7("\142\179\86\197\163\184\91\202\230\148\91\220\169\178","\179\198\214\55")]=true,[v7("\216\9\123\113\77\199\245\2\119\114\5\224\245\2\97\115\86","\179\144\108\18\22\37")]=true,[v7("\227\173\30\155\200\223\227\56\134\221\195","\175\166\195\123\233")]=true,[v7("\223\208\84\68\255\253\198\84\72\252\175\240\88\64\247\225","\144\143\162\61\41")]=true};local v236={v7("\204\210\14\68\50\181\54\243\220\15\68","\83\128\179\125\48\18\231"),v7("\124\176\250\209\78\10\68","\126\61\215\147\189\39"),v7("\79\254\9\64\106\191\63\74\124\230","\37\24\159\125"),v7("\242\163\116\84\223\168\121\91\154\132\121\77\213\162","\34\186\198\21"),v7("\208\13\204\90\202\236\13\203\88\198\184\59\192\83\209\253\27","\162\152\104\165\61"),v7("\232\33\183\111\119\252\141\12\189\111\117","\133\173\79\210\29\16"),v7("\189\110\228\38\130\110\233\34\140\112\173\25\136\117\234\37","\75\237\28\141")};local v237=Instance.new(v7("\250\77\205\188\42","\129\188\63\172\209\79\123\135"));v237.Size=UDim2.new((9 -7) -1 , -(3 + 0 + (1567 -(1329 + 231))),(0 -0) + (1910 -(1523 + 387)) ,(2980 -1311) -1119 );v237.Position=UDim2.new(0 + 0 ,1312 -(1013 + 294) ,(1348 -(25 + 1323)) + 0 + 0 ,618 -((2450 -(611 + 1319)) + 93) );v237.BackgroundColor3=Color3.fromRGB((230 + 56) -(259 + (32 -15)) ,6 + 4 ,1 + 0 + 6 + 3 );v237.Parent=v233;Instance.new(v7("\117\205\197\194\82\234\227\223","\173\32\132\134"),v237);local v242=Instance.new(v7("\104\9\9\226\171","\173\46\123\104\143\206\81"));v242.Size=UDim2.new(1,(0 -0) + 0 + 0 ,(0 + 0) -(816 -(353 + 463)) ,641 -((784 -388) + 139 + 56) );v242.BackgroundColor3=Color3.fromRGB(72 -47 ,(2847 -(605 + 456)) -((1290 -850) + (2105 -(122 + 662))) ,(3346 -(1184 + 308)) -((2227 -(445 + 723)) + 770) );v242.Parent=v237;local v246=Instance.new(v7("\128\24\58\158\105\130\3\177\17","\97\212\125\66\234\37\227"));v246.Size=UDim2.new(1,1640 -(1245 + 395) ,1,0);v246.BackgroundTransparency=(1131 -(191 + 936)) -(6 -3) ;v246.Text=v7("\202\163\134\25\63\179\198\132\117\55\164\215\147\25\50\163\196\147\27\61\175\163\254\35\77\196\182\255","\126\234\131\214\85");v246.TextColor3=Color3.new(1 -0 ,(116 + 430) -((682 -(90 + 168)) + (292 -(87 + 84))) ,(1 -0) + (712 -(176 + 536)) );v246.Font=Enum.Font.SourceSansBold;v246.TextSize=(1010 + 355) -(641 + (2404 -(858 + 840))) ;v246.TextXAlignment=Enum.TextXAlignment.Left;v246.Parent=v242;local v255=Instance.new(v7("\183\214\91\85\67\136\220\71\93\105\150\212\68\95","\47\228\181\41\58"));v255.Size=UDim2.new((661 -(447 + 213)) + (1460 -(1458 + 2)) , -((2137 -1682) -((433 -184) + 191)),1 + 0 , -(22 + 43));v255.Position=UDim2.new((0 -0) -0 ,4 + 3 ,0 -(480 -(248 + 232)) ,(712 -(109 + 121)) -(13 + 170 + (1648 -(1288 + 116))) );v255.BackgroundTransparency=1 + 0 + (236 -(212 + 24)) ;v255.CanvasSize=UDim2.new(0 + 0 ,730 -(297 + 137 + (2003 -(1175 + 532))) ,(0 + 0) -(0 -0) ,0);v255.AutomaticCanvasSize=Enum.AutomaticSize.Y;v255.ScrollBarThickness=517 -(88 + 81 + 273 + 70) ;v255.Parent=v237;Instance.new(v7("\147\213\245\50\16\36\51\167\229\214\46\23","\127\198\156\185\91\99\80"),v255).Padding=UDim.new(0,(577 -(252 + 317)) + 0 );local function v264(v620,v621) local v622=(0 -0) -0 ;local v623;local v624;local v625;local v626;local v627;while true do if (v622==1) then local v1111=0;while true do if ((804 -(738 + 65))==v1111) then v622=559 -(410 + 147) ;break;end if (0==v1111) then v625=nil;v626=nil;v1111=901 -(272 + 628) ;end end end if (v622==((0 -0) -(0 -0))) then local v1112=168 -(62 + 106) ;while true do if (v1112==(0 -0)) then v623=(694 -(167 + 527)) + (0 -0) ;v624=nil;v1112=1 -0 ;end if (v1112==(1 -0)) then v622=(2 + 0) -(1067 -(326 + 740)) ;break;end end end if ((1125 -((727 -(68 + 8)) + (1943 -(133 + 1338))))==v622) then v627=nil;while true do if (v623==((2 -1) + 0 + 0)) then local v1365=0 + 0 + (0 -0) ;while true do if ((1 -(0 + 0))==v1365) then v623=485 -(397 + 86) ;break;end if (v1365==((549 + 327) -((1144 -721) + 453))) then local v1631=0;local v1632;while true do if ((1987 -(1930 + 57))==v1631) then v1632=0 + 0 ;while true do if (v1632==0) then v625,v626=pcall(function() return v620[v621];end);if (v625 and (v626~=nil)) then return tostring(v626);end v1632=1 + 0 ;end if (v1632==1) then v1365=1 + 0 + 0 ;break;end end break;end end end end end if (((905 -(14 + 890)) + (6 -4))==v623) then return v7("\219\21\216\176\129\4\44\208\241","\190\149\122\172\144\199\107\89");end if (2==v623) then local v1366=0 + 0 ;while true do if (1==v1366) then v623=1 + 2 + (0 -0) ;break;end if (v1366==(0 + 0 + 0)) then local v1633=0 -0 ;while true do if (v1633==(0 -0)) then v627={v620:FindFirstChild(v7("\22\4\229\255","\158\82\101\145\158")),v620:FindFirstChild(v7("\124\251\3\18\65\98\237\22\23\80\99","\36\16\158\98\118")),v620};for v1910,v1911 in pairs(v627) do if v1911 then local v2009=1781 -(755 + 1026) ;local v2010;while true do if (v2009==((3569 -2379) -(50 + 1140))) then v2010=v1911:FindFirstChild(v621);if (v2010 and v2010:IsA(v7("\246\23\207\238\93\202\38\246\197","\133\160\118\163\155\56\136\71"))) then return tostring(v2010.Value);end break;end end end end v1633=4 -3 ;end if (v1633==1) then v1366=1 + (946 -(217 + 729)) ;break;end end end end end if (v623==(0 + 0)) then v624=v620:GetAttribute(v621);if (v624~=nil) then return tostring(v624);end v623=1;end end break;end end end local function v265(v628,v629) local v630=v628:FindFirstChild(v7("\210\163\101\243","\213\150\194\17\146\214\127"));if (v630 and v630:FindFirstChild(v7("\40\189\165\192\85","\86\123\201\196\180\38\196\194"))) then local v995=0;local v996;local v997;while true do if (v995==(0 + 0)) then v996=0 + 0 ;v997=nil;v995=1 + 0 ;end if (v995==(1 -0)) then while true do if (v996==(0 -(0 -0))) then v997=v630.Stats:FindFirstChild(v629);if v997 then local v1699=0 + 0 ;local v1700;while true do if ((596 -(151 + 6 + (1763 -1324)))==v1699) then local v1912=1680 -(619 + 1061) ;local v1913;while true do if (v1912==0) then v1913=0 + 0 ;while true do if (v1913==(0 -0)) then local v2192=0;while true do if (v2192==(0 -0)) then v1700=v997:FindFirstChild(v7("\219\237\207\170\251","\207\151\136\185"));return (v1700 and tostring(v1700.Value)) or (v997:IsA(v7("\158\130\36\151\113\90\112\187\134","\17\200\227\72\226\20\24")) and tostring(v997.Value)) or "0" ;end end end end break;end end end end end break;end end break;end end end return "0";end local function v266(v631) local v632=v631:FindFirstChild(v7("\146\64\24\220\217\240\236\244","\159\208\33\123\183\169\145\143"));local v633=v631.Character;local function v634(v923) return (v632 and v632:FindFirstChild(v923)) or (v633 and v633:FindFirstChild(v923)) ;end if v634(v7("\211\77\57\61\247\84\49\56\245","\86\146\58\88")) then return v7("\78\139","\154\56\191\138\160\206\137\86");end for v924,v925 in ipairs(v236) do if v634(v925) then return v7("\144\10","\172\230\57\149\231\28\90\225");end end return v7("\20\251\201\196\122","\187\98\202\230\178\72");end local function v267(v635) if v255:FindFirstChild(v635.Name) then return;end local v636=Instance.new(v7("\7\243\165\61\79","\42\65\129\196\80"));v636.Name=v635.Name;v636.Size=UDim2.new(137 -(108 + 28) , -(16 -(1938 -(191 + 1736))),(763 -(757 + 6)) -0 ,(128 + 855) -((2037 -(337 + 918)) + 136) );v636.BackgroundColor3=Color3.fromRGB(35,78 -43 ,890 -(19 + 93 + 200 + 543) );v636.ClipsDescendants=true;v636.Parent=v255;Instance.new(v7("\55\99\126\213\5\9\7\252","\142\98\42\61\186\119\103\98"),v636);local v643=Instance.new(v7("\12\186\26\28\26\170\22\28\55\177","\104\88\223\98"));v643.Size=UDim2.new(2 -1 ,1171 -(1026 + 21 + 124) ,1676 -(754 + 922) ,(646 -(487 + 147)) + 53 );v643.BackgroundTransparency=(975 -256) -((2062 -(825 + 744)) + 1 + 224) ;v643.Text="";v643.Parent=v636;local v648=Instance.new(v7("\109\250\227\201\7\193\69\245\231\194","\141\36\151\130\174\98"));v648.Size=UDim2.new(0 + 0 ,(474 -272) -147 ,0 + 0 + 0 ,(396 -(150 + 99)) -(67 + 25) );v648.Position=UDim2.new(1503 -(1335 + 168) ,(940 -(256 + 683)) + 4 ,0,14 -9 );v648.BackgroundTransparency=(319 -(33 + 285)) + (0 -0) ;v648.Parent=v643;task.spawn(function() v648.Image=v218:GetUserThumbnailAsync(v635.UserId,Enum.ThumbnailType.HeadShot,Enum.ThumbnailSize.Size100x100);end);local v653=Instance.new(v7("\176\127\218\25\168\123\192\8\136","\109\228\26\162"));v653.Size=UDim2.new(1 -0 , -70,(0 -0) -(0 + 0) ,22 + 3 );v653.Position=UDim2.new(0,1665 -((1157 -(776 + 171)) + (1648 -(244 + 19))) ,(2547 -858) -((1607 -(8 + 398)) + (1004 -(228 + 288))) ,5);v653.BackgroundTransparency=1 + 0 ;v653.Text=v635.DisplayName;v653.Font=Enum.Font.SourceSansBold;v653.TextSize=(34 -6) -(22 -10) ;v653.TextXAlignment=Enum.TextXAlignment.Left;v653.Parent=v643;local v665=Instance.new(v7("\106\224\229\108\204\231\92\224\241","\134\62\133\157\24\128"));v665.Size=UDim2.new(1 + 0 , -((713 -(434 + 154)) -(28 + 27)),0 -0 ,78 -58 );v665.Position=UDim2.new(0 -0 ,(194 + 461) -(352 + 233) ,0 -0 ,72 -(5 + 37) );v665.BackgroundTransparency=1 + 0 + 0 + 0 ;v665.TextColor3=Color3.fromRGB((1665 -(810 + 855)) -(0 + 0) ,774 -(489 + 49 + 36) ,(140 + 1616) -(131 + 146 + 1224) );v665.TextSize=(4576 -3070) -((2277 -(463 + 1151)) + 796 + 34) ;v665.TextXAlignment=Enum.TextXAlignment.Left;v665.Font=Enum.Font.SourceSansBold;v665.Parent=v643;local v674=Instance.new(v7("\51\160\2\205\3\176\212\2\169","\182\103\197\122\185\79\209"));v674.Size=UDim2.new((1976 -(29 + 1946)) + 0 + 0 , -(171 -(20 + 81)),875 -(461 + (929 -(337 + 178))) ,(67 -(4 + 60)) + (45 -33) );v674.Position=UDim2.new(0,17 + 53 ,1116 -(425 + 691) ,2043 -(354 + 1644) );v674.BackgroundTransparency=(842 -(499 + 342)) + 0 + 0 ;v674.TextColor3=Color3.fromRGB(25 + (390 -(65 + 95)) ,61 + 24 ,(1891 -(1403 + 236)) + (1363 -(1117 + 243)) );v674.TextSize=12;v674.TextXAlignment=Enum.TextXAlignment.Left;v674.Font=Enum.Font.SourceSansBold;v674.Parent=v643;local v683=Instance.new(v7("\192\132\243\120\12\68\250\137\230\81\18\73\254\130","\40\147\231\129\23\96"));v683.Size=UDim2.new((493 -(67 + 175)) -(86 + 86 + (165 -87)) , -(741 -(387 + 344)),974 -(654 + 320) ,(930 -415) -195 );v683.Position=UDim2.new(0 + (431 -(276 + 155)) ,(20 -13) -2 ,0 + 0 + 0 + 0 ,26 + (823 -(65 + 709)) );v683.BackgroundColor3=Color3.fromRGB((21 + 12) -(1757 -(884 + 860)) ,(35 -10) -(685 -(492 + 188)) ,20);v683.CanvasSize=UDim2.new(0 + 0 + (0 -0) ,0 + 0 ,0 + 0 + 0 ,0 + 0 );v683.AutomaticCanvasSize=Enum.AutomaticSize.Y;v683.ScrollBarThickness=(2 -0) + 1 ;v683.Parent=v636;Instance.new(v7("\64\209\175\74\169\162\217\103","\188\21\152\236\37\219\204"),v683);Instance.new(v7("\117\192\27\5\83\253\27\13\89\230\34\24","\108\32\137\87"),v683).Padding=UDim.new(0 -0 ,5);local v693=Instance.new(v7("\158\237\24\178\3\248\73\92\166","\57\202\136\96\198\79\153\43"));v693.Size=UDim2.new((2 -0) -(1 -0) , -(1 + 19),0 + 0 + (0 -0) ,3 + 12 + 10 );v693.BackgroundTransparency=448 -(91 + 42 + (786 -472)) ;v693.TextColor3=Color3.fromRGB(0 + 0 ,45 + 210 ,25 + 125 );v693.Font=Enum.Font.SourceSansBold;v693.TextSize=(336 -107) -(199 + (54 -40)) ;v693.TextXAlignment=Enum.TextXAlignment.Left;v693.Parent=v683;local v701=Instance.new(v7("\159\38\178\179\161\166\250\174\47","\152\203\67\202\199\237\199"));v701.Size=UDim2.new(1 -0 , -(39 -19),1251 -(1190 + 61) ,(0 + 0) -(1693 -(1448 + 245)) );v701.AutomaticSize=Enum.AutomaticSize.Y;v701.BackgroundTransparency=1550 -((929 -282) + (2357 -1455)) ;v701.TextColor3=Color3.fromRGB((2257 -1491) -(1295 -784) ,255,100);v701.Font=Enum.Font.SourceSansItalic;v701.TextSize=(415 -168) -((908 -(528 + 295)) + (196 -48)) ;v701.TextXAlignment=Enum.TextXAlignment.Left;v701.Parent=v683;local v711=Instance.new(v7("\206\70\184\27\51\116\123\227\246","\134\154\35\192\111\127\21\25"));v711.Size=UDim2.new((2637 -(1224 + 123)) -(426 + 172 + 691) , -((730 -(97 + 540)) -73),(3622 -(484 + 1484)) -((2425 -(1398 + 154)) + 652 + 129) ,(0 -0) -(0 -0) );v711.AutomaticSize=Enum.AutomaticSize.Y;v711.BackgroundTransparency=(532 -(354 + 176)) -1 ;v711.TextColor3=Color3.fromRGB((270 -164) + 13 + 136 ,(893 -284) -(225 + 219) ,(0 + 0) -(1430 -(649 + 781)) );v711.Font=Enum.Font.Code;v711.TextSize=(36 + 5) -(47 -20) ;v711.TextXAlignment=Enum.TextXAlignment.Left;v711.Parent=v683;local v721=Instance.new(v7("\140\35\17\30\12\211\186\35\5","\178\216\70\105\106\64"));v721.Size=UDim2.new((5840 -3892) -((1191 -(126 + 651)) + (3129 -1596)) , -(7 + 11 + 1 + 1),(1266 -711) -((1325 -882) + 12 + 100) ,1479 -(888 + 37 + 554) );v721.AutomaticSize=Enum.AutomaticSize.Y;v721.BackgroundTransparency=1030 -(179 + 850) ;v721.TextColor3=Color3.new(2 -(785 -(34 + 750)) ,1,1);v721.TextSize=(306 -(302 + 3)) + 10 + 3 ;v721.TextXAlignment=Enum.TextXAlignment.Left;v721.TextWrapped=true;v721.Font=Enum.Font.SourceSans;v721.Parent=v683;local v732=false;v643.MouseButton1Click:Connect(function() local v927=0 -0 ;local v928;local v929;while true do if (v927==1) then while true do if (v928==(0 + 0)) then v929=0 + 0 ;while true do if ((0 + (0 -0))==v929) then v732= not v732;v636:TweenSize(UDim2.new(1 + 0 , -((14 -5) -(6 -2)),(0 + 0) -0 ,(v732 and ((3240 -1162) -(18 + 118 + (1646 -(56 + 48))))) or (213 -148) ),v7("\16\62\110","\224\95\75\26\150\169\181\180"),v7("\58\207\217\44","\22\107\186\184\72\36\204"),0.2 + 0 ,true);break;end end break;end end break;end if (v927==0) then v928=(0 + 0) -(0 -0) ;v929=nil;v927=83 -(7 + 75) ;end end end);task.spawn(function() while v636.Parent do local v998=0 + 0 + (0 -0) ;local v999;local v1000;local v1001;local v1002;local v1003;while true do if (v998==(257 -(170 + 85))) then local v1261=349 -(288 + 61) ;while true do if ((1 + 0)==v1261) then v998=4 -1 ;break;end if (v1261==(0 + 0)) then v1002=v266(v635);v1003=v264(v635,v7("\193\175\37\73\3\226\179\48\93","\110\135\221\68\46"));v1261=1;end end end if (v998==(1 + 0 + 0)) then local v1262=0;while true do if (v1262==(1 + 0)) then v998=2;break;end if (v1262==(0 -0)) then v1000=v264(v635,v7("\207\51\26\238\194","\91\131\86\108\139\174\211"));v1001=v264(v635,v7("\201\42\187\18","\61\155\75\216\119"));v1262=1;end end end if (v998==((1227 -(330 + 407)) -(68 + (606 -(29 + 159))))) then if v732 then local v1455=0 -0 ;local v1456;local v1457;local v1458;local v1459;local v1460;local v1461;local v1462;local v1463;local v1464;local v1465;local v1466;local v1467;while true do if (v1455==0) then local v1701=0 -0 ;while true do if (v1701==(2 -0)) then v1455=1 + 0 ;break;end if ((757 -(15 + 742))==v1701) then v1456=450 -(414 + 36) ;v1457=nil;v1701=1507 -(745 + 761) ;end if ((1 + 0)==v1701) then v1458=nil;v1459=nil;v1701=2;end end end if (v1455==(1 + 1)) then v1464=nil;v1465=nil;v1466=nil;v1467=nil;v1455=3;end if (v1455==(1 + 0)) then v1460=nil;v1461=nil;v1462=nil;v1463=nil;v1455=2 -0 ;end if (v1455==3) then while true do if (v1456==(4 -2)) then v1463=v265(v635,v7("\41\174\190\57\93","\189\100\203\210\92\56\105"));v1464=v265(v635,v7("\28\70\242\58\43","\72\79\49\157"));v711.Text=string.format("  [ STATISTICS ]\n  Team: %s\n  Defense: %s\n  Fruit: %s\n  Gun: %s\n  Melee: %s\n  Sword: %s\n  Fragments: %s",v999,v1460,v1461,v1462,v1463,v1464,v1003);v1465={};v1456=3;end if (v1456==((0 + 0) -0)) then local v1915=1079 -(126 + 953) ;while true do if ((1700 -(759 + 941))==v1915) then v1457=v635.Character;v693.Text=v7("\200\240\10\252\160\149\16\144\188\152\113\129\200\234\113","\220\232\208\81")   .. ((v1457 and v1457:FindFirstChild(v7("\221\171\232\49\34\85\168\241","\193\149\222\133\80\76\58")) and math.floor(v1457.Humanoid.Health)) or v7("\226\120\110\246","\178\166\61\47")) ;v1915=1;end if (v1915==1) then v1458=v264(v635,v7("\216\66\233\110\254\63\252\126\237\98\222","\94\155\42\136\26\170"));v1459=v264(v635,v7("\161\39\39\182\144\19\41\182\133\43\47\186\138","\213\228\95\70"));v1915=2 + 0 ;end if ((1606 -(896 + 708))==v1915) then v1456=1 + 0 ;break;end end end if (v1456==(4 + (1577 -(555 + 1022)))) then table.sort(v1465);v1467={v7("\106\251\249\196\94\4\141\231\170\67\5\137\251\196\74","\23\74\219\162\228")};for v1966,v1967 in ipairs(v1465) do table.insert(v1467,v7("\121\166\11\239","\91\89\134\38\207")   .. v1967 );end v721.Text=(( #v1465>0) and table.concat(v1467,"\n")) or "  [ INVENTORY ]\n  (Empty)" ;break;end if (v1456==3) then v1466=nil;function v1466(v1968) for v2011,v2012 in pairs(v1968:GetChildren()) do if (v2012:IsA(v7("\112\225\199\58","\71\36\142\168\86\115\176")) and  not v235[v2012.Name]) then table.insert(v1465,v2012.Name);end end end if v1457 then v1466(v1457);end v1466(v635.Backpack);v1456=1 + 0 + (144 -(14 + 127)) ;end if (v1456==(1 + 0 + 0)) then local v1917=795 -(141 + 654) ;while true do if (v1917==2) then v1456=933 -(156 + 775) ;break;end if (1==v1917) then v1461=v265(v635,v7("\143\35\202\37\164\235\0\213\63\163\191","\202\203\70\167\74"));v1462=v265(v635,v7("\11\20\210","\17\76\97\188\83"));v1917=1592 -(167 + 1423) ;end if (v1917==(0 -0)) then v701.Text=string.format("  タイトル: %s\n  現在の場所: %s",v1458,v1459);v1460=v265(v635,v7("\251\164\116\186\13\173\83","\41\191\193\18\223\99\222\54"));v1917=2 -1 ;end end end end break;end end end task.wait(0.6);break;end if (v998==(0 + 0 + 0)) then local v1263=0 + 0 ;while true do if (v1263==(2 -1)) then v998=1 + 0 ;break;end if (v1263==0) then v999=(v635.Team and v635.Team.Name) or v7("\171\40\215\50","\195\229\71\185\87\80\227\43") ;if string.find(string.lower(v999),v7("\240\245\18\81\251\229","\143\128\156\96\48")) then v653.TextColor3=Color3.fromRGB(255,(1951 -(1625 + 255)) -(19 + 2) ,(24 + 72) -(1562 -(1026 + 490)) );elseif string.find(string.lower(v999),v7("\181\208\226\27\25\189","\119\216\177\144\114")) then v653.TextColor3=Color3.fromRGB((112 + 24) -(1820 -(16 + 1718)) ,(205 + 346) -(370 + 31) ,143 + 112 );else v653.TextColor3=Color3.fromRGB(255,758 -503 ,383 -128 );end v1263=579 -(168 + 410) ;end end end if (v998==((2 + 2) -1)) then local v1264=0;while true do if (v1264==(4 -3)) then v998=811 -(134 + 673) ;break;end if ((0 + 0)==v1264) then v665.Text=v7("\229\63\163\2","\34\169\73\153")   .. v1000   .. v7("\234\240\75","\235\202\140\107")   .. v1001   .. v7("\76\60","\165\108\20\84\200\137\71\151")   .. v1002   .. ")" ;v674.Text=v7("\92\166\42\143\119\177\37\156\105\238\107","\232\26\212\75")   .. v1003 ;v1264=1 -0 ;end end end end end end);end for v733,v734 in pairs(v218:GetPlayers()) do v267(v734);end v218.PlayerAdded:Connect(v267);v218.PlayerRemoving:Connect(function(v735) if v255:FindFirstChild(v735.Name) then v255[v735.Name]:Destroy();end end);local v268=v110("VFXカラー");local v269=nil;local v270=nil;local v271=nil;local v272=Color3.new((1909 -(1174 + 734)) + (0 -0) ,1 + 0 + (0 -0) ,(2 -1) + (0 -0) );local v273=false;local function v274(v736) local v737=0;local v738;while true do if (v737==0) then if  not v270 then return;end v738=v270:FindFirstChild(v7("\4\65\123\238\227\50\77","\151\87\41\18\136"));v737=1;end if (v737==1) then if v738 then for v1367,v1368 in pairs(v738:GetAttributes()) do if string.find(v1367:lower(),v7("\72\167\195\214\234\94\171\245\211\241\87\160\216","\158\59\207\170\176")) then v738:SetAttribute(v1367,v736);end end for v1369,v1370 in pairs(v738:GetChildren()) do if (string.find(v1370.Name:lower(),v7("\92\86\58\79\152\74\90\12\74\131\67\81\33","\236\47\62\83\41")) and v1370:IsA(v7("\217\166\44\52\184\209\204\168\44\46\175","\226\154\201\64\91\202"))) then v1370.Value=v736;end end end break;end end end local v275=Instance.new(v7("\231\91\28\21\79","\220\161\41\125\120\42"),v268);v275.Size=UDim2.new((2 + 1) -2 ,(0 -0) -(0 + 0) ,(0 -0) + 0 + 0 ,0 -(0 -0) );v275.AutomaticSize=Enum.AutomaticSize.Y;v275.BackgroundTransparency=(4 -1) -(2 -0) ;v275.LayoutOrder= -10;local v280=Instance.new(v7("\137\88\140\7\175\101\140\15\165\126\181\26","\110\220\17\192"),v275);v280.Padding=UDim.new(0 + 0 ,3 + (5 -3) );local function v282() for v930,v931 in pairs(v275:GetChildren()) do if  not v931:IsA(v7("\65\80\24\19\248\35\221\166\109\118\33\14","\199\20\25\84\122\139\87\145")) then v931:Destroy();end end for v932,v933 in pairs(game.Players.LocalPlayer:GetChildren()) do if v933.Name:find(v7("\113\47\229\141\20\230\72\27","\138\39\105\189\206\123")) then local v1113=0;local v1114;local v1115;while true do if (v1113==(0 + 0)) then v1114=(0 -0) -(512 -(289 + 223)) ;v1115=nil;v1113=1 -0 ;end if (v1113==(1 + 0)) then while true do if (v1114==(0 + 0)) then v1115=v933.Name:gsub(v7("\41\33\177\14\252\245\192\237","\159\127\103\233\77\147\153\175"),"");v113(v275,"👉 選択: "   .. v1115 ,function() local v1703=(1471 -(514 + 126)) -(262 + 500 + 58 + 11) ;while true do if (v1703==((3 -0) -(1 + 1))) then v20(v7("\38\243\240\163\86\206\93\176","\171\103\144\132\202\32")   .. v1115 );if  not v273 then v274(v272);end break;end if (v1703==((0 -0) + 0 + 0)) then v270=v933;v269=v933.Name;v1703=1 + 0 + 0 ;end end end);break;end end break;end end end end end game.Players.LocalPlayer.CharacterAdded:Connect(function() task.wait((1.5 + 1) -(2 -1) );v282();if v269 then local v1004=0 + 0 + 0 + 0 ;local v1005;while true do if ((0 + 0 + 0)==v1004) then v1005=game.Players.LocalPlayer:FindFirstChild(v269);if v1005 then local v1468=0 + 0 ;while true do if (v1468==0) then v270=v1005;if v273 then else v274(v272);end break;end end end break;end end end end);game.Players.LocalPlayer.ChildAdded:Connect(function(v739) if v739.Name:find(v7("\38\9\209\47\31\35\230\30","\108\112\79\137")) then task.wait((608.1 -(4 + 604)) -(0 -0) );v282();end end);game.Players.LocalPlayer.ChildRemoved:Connect(function(v740) if v740.Name:find(v7("\9\228\76\11\162\13\230\39","\85\95\162\20\72\205\97\137")) then local v1006=0 -0 ;local v1007;local v1008;while true do if ((4 -3)==v1006) then while true do if (v1007==0) then v1008=(156 + 1) -(1 + 7 + (582 -433)) ;while true do if (v1008==((2765 -(344 + 1101)) -((3172 -1973) + 121))) then task.wait(0.1 -(0 -0) );v282();break;end end break;end end break;end if (0==v1006) then v1007=0;v1008=nil;v1006=1;end end end end);v113(v268,"🔥 GAMING RAINBOW (0.2s)",function() local v741=(0 + 0) -0 ;while true do if (v741==(3 -2)) then if v271 then local v1265=0 -0 ;local v1266;local v1267;while true do if (v1265==(1 -0)) then while true do if (v1266==(0 + 0)) then v1267=0 + (301 -(57 + 244)) ;while true do if (((0 + 0) -(0 + 0))==v1267) then v271:Disconnect();v271=nil;break;end end break;end end break;end if ((0 -0)==v1265) then v1266=1963 -(883 + 1080) ;v1267=nil;v1265=201 -(138 + 62) ;end end end if v273 then local v1268=0;local v1269;while true do if (v1268==(0 + 0)) then v1269=0 -0 ;while true do if (v1269==0) then v271=game:GetService(v7("\197\232\36\239\8\234\219\254\254\47","\173\151\157\74\188\109\152")).Heartbeat:Connect(function() local v1830=83 -(62 + 21) ;local v1831;local v1832;local v1833;while true do if (v1830==(1 + 0)) then v1833=nil;while true do if (v1831==((1451 -(1036 + 413)) -(1 -0))) then v274(Color3.fromHSV(v1833,1 + 0 + 0 ,2 -1 ));break;end if (v1831==((6284 -4477) -((1758 -1240) + 1289))) then local v2151=0 -0 ;local v2152;while true do if (v2151==(0 -0)) then v2152=0 -0 ;while true do if (v2152==(1 -0)) then v1831=1 + (1472 -(649 + 823)) ;break;end if (v2152==((0 -0) -(1563 -(1202 + 361)))) then local v2293=0 -0 ;while true do if (v2293==(0 -0)) then v1832=(1709.2 -(263 + 1446)) + 0 + 0 ;v1833=(tick()%v1832)/v1832 ;v2293=1 + 0 ;end if (v2293==(1 + 0)) then v2152=(124 + 346) -((1047 -(387 + 356)) + (264 -99)) ;break;end end end end break;end end end end break;end if (v1830==(0 -0)) then local v2013=0;while true do if (v2013==1) then v1830=1 + 0 ;break;end if (v2013==(0 -0)) then v1831=0;v1832=nil;v2013=1717 -(646 + 1070) ;end end end end end);v20(v7("\22\9\49\211\222\91\194\179\11\38","\147\68\104\88\189\188\52\181"));break;end end break;end end else local v1270=0;local v1271;local v1272;local v1273;while true do if (v1270==(1 + 0)) then v1273=nil;while true do if (v1271==(1 + 0)) then while true do if ((160 -(54 + 18 + 88))==v1272) then v1273=0;while true do if (v1273==(0 -0)) then v274(v272);v20(v7("\40\137\130\222\24\135\156\144\53\174\173","\176\122\232\235"));break;end end break;end end break;end if (0==v1271) then v1272=0 + 0 + (0 -0) ;v1273=nil;v1271=1098 -(288 + 809) ;end end break;end if (v1270==0) then v1271=0;v1272=nil;v1270=1654 -(471 + 1182) ;end end end break;end if (v741==((3464 -(385 + 1110)) -((3227 -(1201 + 408)) + (2198 -(747 + 1100))))) then local v1116=0 + 0 ;while true do if (v1116==0) then if  not v270 then local v1546=0;while true do if (v1546==(611 -(269 + 342))) then v20("先にVFXを選択してください");return;end end end v273= not v273;v1116=1;end if (v1116==(1 -0)) then v741=(2 -1) + (346 -(263 + 83)) ;break;end end end end end);local v283={{v7("\178\112\62","\142\224\21\90\47"),Color3.new((3 -2) + (821 -(659 + 162)) ,0 -0 ,0 -0 )},{v7("\91\198\38\88\163\142","\229\20\180\71\54\196\235"),Color3.new((1166 -(1157 + 8)) + (511 -(179 + 332)) ,(837.5 -(705 + 132)) -(0 + 0) ,0 + 0 )},{v7("\16\123\205\239\250\189","\224\73\30\161\131\149\202"),Color3.new((2 + 1) -2 ,187 -((593 -428) + 21) ,(95 + 16) -((104 -(17 + 26)) + (2012 -(1866 + 96))) )},{v7("\221\236\252\85","\48\145\133\145"),Color3.new((0.5 -0) -(0 -0) ,1 + 0 ,1460 -((2906 -1611) + (598 -433)) )},{v7("\125\94\176\235\223","\76\58\44\213\142\177"),Color3.new((0 -0) + 0 ,1132 -(725 + 406) ,(3583 -2186) -(819 + 578) )},{v7("\230\45\28\57","\24\171\68\114\77"),Color3.new(1282.4 -((895 -349) + 395 + 341) ,(6541 -4603) -(470 + 1364 + 3 + 100) ,0.6 + 0 + 0 + 0 )},{v7("\206\12\69\83","\205\143\125\48\50\231\190\100"),Color3.new((1720 -(1082 + 638)) + 0 ,1363 -(1322 + 40) ,(0.8 -0) -(1648 -(435 + 1213)) )},{v7("\226\190\21\11","\194\161\199\116\101\129\131\191"),Color3.new((988 -(696 + 292)) -0 ,2 -1 ,2 -1 )},{v7("\223\47\209","\194\140\68\168\200\151"),Color3.new(0.2 + (1465 -(731 + 734)) ,0.6,(1572 -(1286 + 285)) + 0 )},{v7("\96\247\192\32","\149\34\155\181\69"),Color3.new((0 + 0) -(0 -0) ,(1261 -(1048 + 213)) -0 ,(1 -0) + 0 )},{v7("\51\232\199\234\15\248","\154\99\157\181"),Color3.new(0.6,(0 + 0) -0 ,1)},{v7("\160\14\235\165\226\153\14","\140\237\111\140\192"),Color3.new(1400 -(653 + (2627 -(982 + 899))) ,0 -0 ,1)},{v7("\54\16\115\19","\120\102\121\29"),Color3.new(2 -(1 -0) ,0.4 + 0 ,0.7 -0 )},{v7("\155\235\176\47\169","\91\204\131\217"),Color3.new(1484 -(310 + 1173) ,1 + 0 + (0 -0) ,1 + (1451 -(968 + 483)) )},{v7("\233\240\89\208","\158\174\159\53\180\211\189"),Color3.new(1 + 0 + 0 ,(0.8 -0) -0 ,494 -(204 + 290) )},{v7("\113\239\228\208\100\186\92","\213\50\157\141\189\23"),Color3.new(0.6 + 0 ,0 -(1068 -(979 + 89)) ,1874 -(802 + 1072) )},{v7("\216\41\150\165\97\176","\196\158\70\228\192\18"),Color3.new(801 -(768 + 33) ,0.4 -(0 + 0) ,(0 -0) -(0 + 0) )},{v7("\100\94\7\87","\185\42\63\113\46"),Color3.new(0,1994 -(1413 + 581) ,1214.5 -(630 + 584) )},{v7("\231\212\45\47\30\198","\123\180\189\65\89"),Color3.new((2800.7 -(184 + 944)) -(474 + 267 + (1884 -(927 + 26))) ,(0.7 -0) + (640 -(284 + 356)) ,0.7 + 0 )},{v7("\229\132\255\247\157","\233\162\236\144\132"),Color3.new(0.9 + 0 ,0.9 + 0 ,1 + 0 + 0 )}};for v742,v743 in pairs(v283) do v113(v268,v7("\145\203\242\21\171\172\31","\63\210\164\158\122\217\150")   .. v743[(1129 -(211 + 917)) + 0 ] ,function() local v934=0 + 0 ;local v935;while true do if (v934==0) then v935=(1795 -(1151 + 644)) -(0 + 0) ;while true do if (v935==(0 + 0 + 0)) then local v1469=0;while true do if (v1469==1) then v935=1 -0 ;break;end if (v1469==0) then v273=false;if v271 then local v1834=1900 -(745 + 1155) ;local v1835;while true do if (v1834==0) then v1835=0 -0 ;while true do if (v1835==((314 -(27 + 287)) + (0 -0))) then v271:Disconnect();v271=nil;break;end end break;end end end v1469=2 -1 ;end end end if (v935==(4 -(7 -4))) then v272=v743[(5 -3) + 0 ];v274(v743[(712 -(148 + 68)) -(64 + 105 + 325) ]);break;end end break;end end end);end v282();local v284=v110(v7("\0\206\247\172\107\253\50\216\226\172\6\184\0\206\247\172\108\238\54\197\226","\152\83\171\150\140\41"));local v218=game:GetService(v7("\178\233\130\42\209\9\27","\104\226\133\227\83\180\123"));local v155=game:GetService(v7("\49\30\45\99\6\25\53\89\0\14","\48\99\107\67"));local v285=game:GetService(v7("\233\169\111\219\62\107\223\165\120","\27\190\198\29\176\77"));local v286=game:GetService(v7("\221\78\237\56\160\77\238\95\248\48\154\90\224\89\252\51\172","\46\143\43\157\84\201"));local v287=game:GetService(v7("\97\113\68\214\74\18\196\126\118\70\215\75\62\201\89\121\81\199\77","\168\55\24\54\162\63\115"));local v9=v218.LocalPlayer;local v288=v286.Remotes.CommF_;local v289={[v7("\51\255\38\129\199\194\3\195","\174\119\154\64\224\178")]=112 + 87 + 1 + 0 ,[v7("\25\123\196\89\0\166\9\240\19","\132\74\30\165\27\101\199\122")]=8 + 42 ,[v7("\28\239\246\183\158","\212\79\135\159\199\199\213")]=(194 + 189) -(106 + (1431 -(1064 + 110))) ,[v7("\84\175\163\66\111\199\29\124\164","\120\25\192\213\39\60\183")]=(22 -(9 + 10)) + 0 + 0 ,[v7("\48\85\49\92\44\87\58\77\22\115\47\77\29\68","\40\120\32\95")]=(2966 -(1219 + 676)) -((1637 -(130 + 1011)) + 225) ,[v7("\8\174\45\111\189\17\14\188\60\127\161\44\42\174\60\126","\127\90\203\89\26\207")]=511 -261 ,[v7("\255\58\174\223\26\205\220\33\167","\157\189\85\207\171\105")]=v285:WaitForChild(v7("\228\174\217\161\16","\99\166\193\184\213")),[v7("\229\178\129\153\9\139\197\163\147\139\13\158\222","\234\182\215\224\219\108")]=v285:WaitForChild(v7("\243\132\186\23\197\128\168\33\211","\85\160\225\219")),[v7("\121\11\134\196\63\217\88\108\4\151\193","\43\60\101\227\169\86\188")]=v285:WaitForChild(v7("\85\198\212\178\83\201\170","\87\16\168\177\223\58\172\217"))};local v290={[v7("\28\216\87\201\50\58\202","\91\84\173\57\189")]=false,[v7("\36\188\30\238\175\196","\182\112\217\108\156\192")]=false,[v7("\153\0\73\253\128","\235\202\104\40\143")]=false,[v7("\61\130\9\184\3\131\26","\217\109\235\123")]=false,[v7("\5\155\119\81\113\212\200","\221\71\233\30\54\16\176\173")]=false,[v7("\18\245\77\183\57\253\80","\223\84\156\62")]=false,[v7("\251\243\244\212\185\60","\91\182\156\130\189\215")]=false,[v7("\78\97\163\86\123\96\191\92\112\116","\53\30\19\204")]=false,[v7("\213\225\99\144\148\252\225\100","\199\153\128\16\228")]=nil};local function v291(v744) if  not (v744 and v744.Parent) then return false;end local v745=v744:FindFirstChildOfClass(v7("\249\63\232\24\169\222\35\225","\199\177\74\133\121"));if v745 then return v745.Health>(0 -(1971 -(1639 + 332))) ;end local v746=v744:FindFirstChild(v7("\144\204\189\242\35\206","\74\216\169\220\158\87\166"));if (v746 and v746:IsA(v7("\222\34\31\57\95\202\34\0\41","\58\136\67\115\76"))) then return v746.Value>(0 -0) ;end return v744:FindFirstChild(v7("\217\191\213\88\139\47\162\89\195\165\215\77\181\33\185\73","\61\145\202\184\57\229\64\203")) or v744:FindFirstChildWhichIsA(v7("\126\83\154\66\108\83\155\83","\39\60\50\233"),true) ;end local function v292() local v747=(211 + 1447) -(110 + 146 + (1650 -(229 + 19))) ;local v748;local v749;local v750;while true do if (v747==0) then v748=123 -(21 + 102) ;v749=nil;v747=(3085 -(931 + 254)) -(4 + 26 + 1869) ;end if (v747==((1815 -(428 + 17)) -((612 -399) + 1156))) then v750=nil;while true do if (v748==(188 -(96 + (180 -(26 + 62))))) then local v1371=1080 -(173 + 907) ;while true do if (v1371==(0 + 0)) then v749=v9.Character;v750=v749 and v749:FindFirstChild(v7("\50\38\174\45\140\39\187\167","\195\122\83\195\76\226\72\210")) ;v1371=1 + 0 ;end if (v1371==(132 -(71 + 60))) then v748=2 -1 ;break;end end end if (v748==((1229 -(774 + 454)) + (1602 -(849 + 753)))) then if v750 then local v1547=0 -0 ;local v1548;while true do if (v1547==(0 -0)) then v1548=899 -((1358 -(861 + 355)) + (1184 -427)) ;while true do if (v1548==(0 + 0 + (0 -0))) then local v1969=0 + 0 ;local v1970;while true do if (v1969==0) then v1970=0 -0 ;while true do if (v1970==1) then v1548=(1144 -(455 + 688)) + (1344 -(481 + 863)) ;break;end if (v1970==(0 + 0)) then v750.Sit=false;task.wait(0.3);v1970=1 + 0 ;end end break;end end end if (v1548==(2 -1)) then for v2014=80 -((2000 -(896 + 1072)) + (125 -78)) ,(667 + 1315) -((2541 -1488) + (1712 -(50 + 738)))  do if v749:FindFirstChildOfClass(v7("\208\219\52\242","\65\132\180\91\158")) then break;end v287:SendKeyEvent(true,Enum.KeyCode.Two,false,game);task.wait(0.05 + 0 + (0 -0) );v287:SendKeyEvent(false,Enum.KeyCode.Two,false,game);task.wait((0.1 -0) -0 );end break;end end break;end end end break;end end break;end end end local function v293() for v936,v937 in ipairs({Enum.KeyCode.Z,Enum.KeyCode.X,Enum.KeyCode.C,Enum.KeyCode.F}) do v287:SendKeyEvent(true,v937,false,game);task.wait((375.01 -(42 + 333)) -0 );v287:SendKeyEvent(false,v937,false,game);end end local function v294(v751,v752,v753) local v754=(3153 -(1308 + 136)) -(288 + 253 + 1168) ;local v755;local v756;while true do if (v754==(120 -(56 + 64))) then local v1117=696 -(251 + 445) ;local v1118;while true do if (v1117==0) then v1118=0 + 0 ;while true do if (v1118==(1 + 0)) then v754=(1420 + 178) -((2214 -(999 + 570)) + (1410 -458)) ;break;end if (v1118==(0 -0)) then if  not (v751 and v751.Parent) then return;end v755=v9.Character and v9.Character:FindFirstChild(v7("\45\105\220\47\11\115\216\42\55\115\222\58\53\125\195\58","\78\101\28\177")) ;v1118=1 -0 ;end end break;end end end if (v754==((2538 -(1476 + 223)) -(669 + 169))) then local v1119=1836 -(597 + 1239) ;while true do if (v1119==(3 -2)) then v754=(4 + 2) -4 ;break;end if (v1119==(884 -(590 + 294))) then if  not v755 then return;end v756=nil;v1119=1 -0 ;end end end if (v754==2) then v756=v155.RenderStepped:Connect(function(v1192) local v1193=789 -(433 + 356) ;local v1194;local v1195;local v1196;local v1197;while true do if (v1193==2) then while true do if (v1194==(0 -(0 + 0))) then v1195=(0 -0) + 0 ;v1196=nil;v1194=1257 -(791 + 465) ;end if (v1194==((1115 -(1048 + 66)) + 0 + 0)) then v1197=nil;while true do if (v1195==(8 -6)) then v755.CFrame=CFrame.new(v755.Position + ((v1196-v755.Position).Unit * v752 * v1192) );v755.Velocity=Vector3.zero;break;end if (v1195==1) then local v1922=1997 -(666 + 1331) ;while true do if (v1922==1) then v1195=(1905 -(854 + 1046)) -(8 -5) ;break;end if ((0 + 0)==v1922) then v1197=(v1196-v755.Position).Magnitude;if (v1197<(769 -((459 -278) + 584))) then local v2153=0 + 0 ;local v2154;local v2155;local v2156;while true do if (v2153==(97 -(61 + 35))) then v2156=nil;while true do if ((4 -3)==v2154) then while true do if (v2155==(0 + 0)) then v2156=1818 -(1591 + 227) ;while true do local v2319=0 -0 ;while true do if (v2319==(791 -(173 + 618))) then if (v2156==(1395 -((1988 -(588 + 735)) + (1310 -(170 + 410))))) then local v2336=0 + 0 ;while true do if (v2336==1) then v2156=1;break;end if (0==v2336) then v755.CFrame=CFrame.new(v1196);v756:Disconnect();v2336=1 + 0 ;end end end if (v2156==(2 -1)) then return;end break;end end end break;end end break;end if ((0 + 0)==v2154) then v2155=0 + 0 ;v2156=nil;v2154=1;end end break;end if (0==v2153) then local v2235=552 -(362 + 190) ;while true do if (v2235==0) then v2154=848 -(529 + 319) ;v2155=nil;v2235=1;end if (v2235==(1 + 0)) then v2153=3 -2 ;break;end end end end end v1922=1 + 0 ;end end end if (v1195==((0 + 0) -(1200 -(829 + 371)))) then local v1923=0;while true do if ((0 -0)==v1923) then if  not (v751 and v751.Parent and v755.Parent) then local v2157=0 + 0 ;local v2158;while true do if (v2157==0) then v2158=(3026 -(700 + 976)) -((1298 -758) + (1290 -480)) ;while true do if (v2158==((0 + 0) -0)) then local v2294=1641 -(1137 + 504) ;while true do if (v2294==0) then v756:Disconnect();return;end end end end break;end end end v1196=v751.Position + (v753 or Vector3.new(0 -(0 -0) ,0,0 -0 )) ;v1923=1 -0 ;end if (v1923==(1 + 0)) then v1195=1 + 0 + (1614 -(327 + 1287)) ;break;end end end end break;end end break;end if (v1193==1) then v1196=nil;v1197=nil;v1193=3 -1 ;end if ((0 -0)==v1193) then v1194=0 + 0 ;v1195=nil;v1193=2 -1 ;end end end);while v756.Connected do task.wait();end break;end end end local function v295() local v757=1113 -(224 + 889) ;local v758;local v759;while true do if (v757==(1221 -(574 + 646))) then while true do if (v758==((2489 -(83 + 524)) -((790 -(577 + 191)) + 1293 + 566))) then local v1372=0 + 0 ;local v1373;while true do if (v1372==(799 -(248 + 551))) then v1373=77 -(53 + 24) ;while true do if (v1373==(134 -(12 + 121))) then v758=(14 -9) -(5 -2) ;break;end if (v1373==0) then if v290.Brigade then for v2015,v2016 in pairs(v759) do if ((v2016.Name:find(v7("\7\166\233\86\36\176\229","\49\69\212\128")) or v2016.Name:find(v7("\36\4\217\226","\129\119\108\176\146")) or v2016.Name:find(v7("\30\192\6\217","\124\92\175\103\173\69\110"))) and v291(v2016)) then return v2016,false,v289.ShipY;end end end if v290.Fishman then for v2017,v2018 in pairs(v759) do if ((v2018.Name:find(v7("\231\49\16\63","\87\161\88\99")) or v2018.Name:find(v7("\49\235\234\219","\67\114\153\143\172\215\176"))) and v291(v2018)) then local v2108=0;local v2109;local v2110;while true do if (v2108==(606 -(164 + 442))) then local v2208=0 + 0 ;while true do if (v2208==(1 + 0)) then v2108=2 -1 ;break;end if (v2208==(0 -0)) then v2109=(1322 + 450) -(585 + 258 + 929) ;v2110=nil;v2208=2 -1 ;end end end if (v2108==(1 + 0)) then while true do if (v2109==((1509 -(585 + 662)) -(30 + 160 + 72))) then local v2273=0 + 0 ;while true do if (v2273==(580 -(126 + 454))) then v2110= not v2018.Name:find(v7("\156\173\239\26","\110\222\194\142"));return v2018,v2110,(v2110 and v289.DefaultY) or v289.ShipY ;end end end end break;end end end end end v1373=1;end end break;end end end if (v758==((1193 -(366 + 48)) -(55 + (2405 -(1633 + 50))))) then local v1374=1101 -(892 + 209) ;while true do if (v1374==(0 + 0)) then if v290.Piranha then for v1836,v1837 in pairs(v759) do if ((v1837.Name==v7("\39\208\9\168\92\169\22","\193\119\185\123\201\50")) and v291(v1837)) then return v1837,true,v289.DefaultY;end end end if v290.Shark then for v1838,v1839 in pairs(v759) do if ((v1839.Name:find(v7("\68\0\248\52\4","\127\23\104\153\70\111\25")) or (v1839.Name==v7("\58\15\167\189\32\63","\211\105\103\198\207\75\76\215"))) and (v1839.Name~=v7("\250\162\162\253\113\30\169\190\207\181\187","\214\174\199\208\143\30\108\218")) and v291(v1839)) then return v1839,true,v289.DefaultY;end end end v1374=2 -1 ;end if (v1374==1) then v758=3;break;end end end if (v758==((0 -0) -(660 -(495 + 165)))) then local v1375=0 -0 ;while true do if (v1375==(2 -1)) then v758=1676 -(26 + 52 + (3096 -1499)) ;break;end if (v1375==(0 + 0)) then v759=v289.EnemiesPath:GetChildren();if v290.Terror then for v1840,v1841 in pairs(v759) do if ((v1841.Name==v7("\37\129\25\184\170\68\203\65\16\150\0","\41\113\228\107\202\197\54\184")) and v291(v1841)) then return v1841,true,v289.DefaultY;end end end v1375=1 + 0 ;end end end if (v758==3) then local v1376=582 -(431 + 151) ;while true do if (0==v1376) then if v290.Hunting then for v1842,v1843 in pairs(v289.SeaBeastsPath:GetChildren()) do if v291(v1843) then return v1843,false,v289.SeaBeastY;end end end return nil;end end end end break;end if (v757==(0 -0)) then v758=(218 -(10 + 5)) -(166 + 37) ;v759=nil;v757=1;end end end local function v296() if v290.Processing then return;end local v760,v761,v762=v295();if  not v760 then return;end v290.Processing=true;v292();while true do v760,v761,v762=v295();if  not v760 then break;end local v938=v9.Character:FindFirstChild(v7("\82\152\53\93\116\130\49\88\72\130\55\72\74\140\42\72","\60\26\237\88"));local v939=v760:FindFirstChild(v7("\240\63\121\231\160\215\35\112\212\161\215\62\68\231\188\204","\206\184\74\20\134")) or v760:FindFirstChildWhichIsA(v7("\26\229\253\180\195\75\42\216","\172\88\132\142\209\147\42\88"),true) ;if v939 then local v1120=422 -(403 + 19) ;while true do if (v1120==0) then v294(v939,v289.HuntTweenSpeed,(v761 and Vector3.new((1771 -(454 + 1317)) + 0 + 0 ,14 + (1815 -(187 + 1627)) ,0 + 0 + (1952 -(832 + 1120)) )) or Vector3.new(549 -((895 -590) + 244) ,v762-v939.Position.Y ,0 + 0 + (1096 -(1001 + 95)) ) );while v291(v760) and (v290.Hunting or v290.Terror or v290.Shark or v290.Piranha or v290.Brigade or v290.Fishman)  do if v761 then v938.CFrame=v939.CFrame * CFrame.new(29 -(4 + 25) ,20,105 -((1256 -(904 + 257)) + (25 -15)) ) ;else v938.CFrame=CFrame.new(v939.Position.X,v762,v939.Position.Z);end v938.Velocity=Vector3.zero;v293();v155.Heartbeat:Wait();if  not (v290.Hunting or v290.Terror or v290.Shark or v290.Piranha or v290.Brigade or v290.Fishman) then break;end end break;end end end task.wait(0.2 + 0 + 0 );end if (v290.LastSeat and v290.LastSeat.Parent) then local v1009=0 -0 ;local v1010;while true do if (v1009==(0 -0)) then v1010=0 -0 ;while true do if ((1 + 0)==v1010) then pcall(function() v290.LastSeat:Sit(v9.Character.Humanoid);end);break;end if (v1010==0) then v294(v290.LastSeat,v289.ReturnTweenSpeed,Vector3.new((0 -0) -(1789 -(735 + 1054)) ,3 -(1693 -(418 + 1275)) ,0));task.wait((475.29999999999995 + 287) -((1652 -1060) + 170) );v1010=3 -2 ;end end break;end end end v290.Processing=false;end v289.SeaBeastsPath.ChildAdded:Connect(function() task.spawn(v296);end);v289.EnemiesPath.ChildAdded:Connect(function() task.spawn(v296);end);v112(v284,v7("\175\159\194\25\118\198\174\130\143\200","\222\231\234\172\109\86\149"),348 -248 ,1972 -(784 + 688) ,878 -(1775 -1247) ,function(v764) v289.HuntTweenSpeed=v764;end);v111(v284,v7("\204\218\244\55\173\194\239\46\200","\120\141\143\160"),false,function(v766) v290.Moving=v766;end);v111(v284,v7("\115\137\151\18\98\137\151\97\116","\50\32\204\214"),false,function(v768) v290.Hunting=v768;end);v111(v284,v7("\178\98\7\75\156\35\198\116\29\88\129\58","\113\230\39\85\25\211"),false,function(v770) v290.Terror=v770;end);v111(v284,v7("\237\147\39\218\12\248","\43\190\219\102\136\71\171\203"),false,function(v772) v290.Shark=v772;end);v111(v284,v7("\18\87\2\120\12\86\17","\57\66\30\80"),false,function(v774) v290.Piranha=v774;end);v111(v284,v7("\25\241\146\52\176\28\180\183\1\241\144\38","\228\73\184\192\117\228\89\148"),false,function(v776) v290.Brigade=v776;end);v111(v284,v7("\233\160\70\60\226\168\91\84\128\201\87\59\238\189","\116\175\233\21"),false,function(v778) v290.Fishman=v778;end);v113(v284,v7("\204\221\138\115\233\31\127\202\215\254\100\244\16\11","\95\158\152\222\38\187\81"),function() local v780=0;local v781;local v782;while true do if ((0 -0)==v780) then v781=0 + (1249 -(374 + 875)) ;v782=nil;v780=2 -1 ;end if ((981 -(304 + 676))==v780) then while true do if ((0 + 0)==v781) then v782=(1358 -(517 + 841)) + (866 -(356 + 510)) ;while true do if (v782==((0 -0) -(0 -0))) then if v290.Processing then return;end if (v290.LastSeat and v290.LastSeat.Parent) then task.spawn(function() local v1844=1209 -(306 + 903) ;local v1845;while true do if (v1844==(1103 -(70 + 1033))) then v1845=0 -0 ;while true do if (v1845==(0 + 0)) then v290.Processing=true;v294(v290.LastSeat,v289.ReturnTweenSpeed,Vector3.new(0 + 0 + 0 + 0 ,(809 -(523 + 281)) -2 ,507 -((1275 -(241 + 681)) + (1252 -(358 + 740))) ));v1845=1 + 0 ;end if (2==v1845) then v290.Processing=false;break;end if (v1845==(3 -2)) then task.wait(1041.3 -(1005 + 36) );pcall(function() v290.LastSeat:Sit(v9.Character.Humanoid);end);v1845=2;end end break;end end end);end break;end end break;end end break;end end end);do local v783={{v7("\220\180\59\181\171\209","\168\152\221\85\210\195"),false},{v7("\152\210\250\136\187","\231\203\190\149"),true},{v7("\239\47\234\246\189\241\30","\123\173\93\131\145\220\149"),true},{v7("\49\214\236\47\112\185\52\214\228\38\117\253\19","\153\118\164\141\65\20"),true},{v7("\195\59\148\227\244\12\235","\96\142\82\230\130\151"),false,true},{v7("\123\184\74\2\215\235\65\164\70\76\225\226","\142\47\208\47\34\132"),false,true},{v7("\209\171\5\16\95\85\247\176","\60\150\222\100\98\59"),false,true},{v7("\105\61\89\66\222\168\63","\81\37\92\55\54\187\218"),false,true},{v7("\51\72\168\62\134\8","\225\96\36\205\87"),false,true},{v7("\203\163\67\106\104\15\33\252\168\86\124\110","\105\137\198\34\25\28\47"),false,true}};for v940,v941 in ipairs(v783) do v113(v284,v7("\51\188\88\44\128","\160\113\201\33\22")   .. v941[1 -0 ] ,function() local v1011=0;local v1012;local v1013;local v1014;while true do if (v1011==(0 -0)) then local v1274=0;while true do if ((0 + 0)==v1274) then v1012=(v941[172 -(113 + 56) ] and v7("\248\77\180\178\187\180\148\122\163\166\189\237\240\93\173\171\172\191","\205\180\56\204\199\201")) or v7("\161\209\61\12\195\250\57\25\143\219\46","\120\227\190\92") ;v1013=((v9.Team.Name==v7("\16\93\13\114\45\89\202","\130\93\60\127\27\67\60\185")) and v7("\101\51\42\71\238\70","\29\40\82\88\46\128\35")) or v7("\11\76\198\28\21\189","\216\91\37\180\125\97") ;v1274=1;end if (v1274==(1254 -(521 + 732))) then v1011=231 -((30 -11) + (1749 -(99 + 1439))) ;break;end end end if (v1011==(2 + 0)) then for v1377,v1378 in ipairs(v1014) do if (v288:InvokeServer(v7("\7\99\5\225\88\36\98","\55\69\22\124\163"),v1378,v1012)~=(0 -0)) then task.wait((431 -317) -((496 -(39 + 369)) + 25) );local v1549=v9.Character.HumanoidRootPart;local v1550=nil;local v1551=(4502 -(870 + 1089)) -1544 ;for v1637,v1638 in pairs(v289.BoatsPath:GetChildren()) do local v1639=0;local v1640;local v1641;while true do if (v1639==(795 -(564 + 231))) then v1640=1921 -(1893 + 28) ;v1641=nil;v1639=1 + 0 ;end if (v1639==(527 -(140 + 386))) then while true do if (v1640==0) then v1641=v1638:FindFirstChildWhichIsA(v7("\90\210\79\237\239\112\66\224","\148\24\179\60\136\191\17\48"),true);if (v1641 and ((v1641.Position-v1549.Position).Magnitude<v1551)) then local v2111=0 + 0 ;while true do if (v2111==(0 + 0)) then v1551=(v1641.Position-v1549.Position).Magnitude;v1550=v1638;break;end end end break;end end break;end end end if v1550 then local v1704=0;local v1705;while true do if (v1704==(0 + 0)) then v1705=v1550:FindFirstChildWhichIsA(v7("\132\47\241\169\245\190\47\202\165\247\166","\150\210\74\153\192"),true);if v1705 then local v2019=1916 -(485 + 1431) ;local v2020;while true do if (v2019==0) then v2020=0 -0 ;while true do if (v2020==(1 -0)) then task.wait(1036.2 -(1007 + 2 + 27) );pcall(function() v1705:Sit(v9.Character.Humanoid);end);break;end if (v2020==(0 + 0)) then v290.LastSeat=v1705;v294(v1705,125 + (505 -380) ,Vector3.new(0 + 0 ,3 + (1181 -(945 + 236)) ,0));v2020=2 -1 ;end end break;end end end break;end end end break;end end break;end if ((1 + 0 + (0 -0))==v1011) then local v1275=0;while true do if ((2 -1)==v1275) then v1011=1 + 1 ;break;end if (v1275==(513 -(383 + 130))) then v288:InvokeServer(v7("\193\221\33\168\122\123\160","\212\131\168\88\234\21\26"),v7("\118\100\140\141\51","\71\37\20\233\236\88"));v1014={v941[1448 -(109 + 1338) ],v1013   .. v941[1 + 0 + (0 -0) ] ,v1013   .. " "   .. v941[2 -1 ] };v1275=2 -1 ;end end end end end);end end v155.Heartbeat:Connect(function() local v784=475 -(20 + 455) ;local v785;local v786;local v787;while true do if (v784==((2414 -1823) -((381 -105) + (388 -(39 + 36))))) then if (v787.SeatPart and v787.SeatPart:IsA(v7("\251\67\184\31\67\224\73\111\200\71\164","\60\173\38\208\118\32\140\44"))) then v290.LastSeat=v787.SeatPart;end if (v290.Moving and  not v290.Processing and v290.LastSeat and v787.Sit) then local v1278=(0 + 0) -(0 + 0) ;local v1279;while true do if (v1278==(1707 -(609 + 1097))) then v786.CFrame=CFrame.new(v786.Position.X,v289.DefaultY,v786.Position.Z) * (v786.CFrame-v786.CFrame.Position) ;break;end if (v1278==((658 -(543 + 115)) + 0 + 0)) then local v1553=0 -0 ;while true do if (v1553==0) then v1279=Vector3.new(v786.CFrame.LookVector.X,(0 -0) + (0 -0) ,v786.CFrame.LookVector.Z).Unit;v786.CFrame=CFrame.new(v786.Position + (v1279 * v289.MoveSpeed) ,v786.Position + (v1279 * v289.MoveSpeed) + v786.CFrame.LookVector );v1553=1609 -(1559 + 49) ;end if (v1553==1) then v1278=(623 -(317 + 305)) + 0 ;break;end end end end end v784=1975 -((1333 -838) + (6048 -4571)) ;end if (v784==((835 -(509 + 318)) -5)) then if  not v290.Processing then if v295() then task.spawn(v296);end end break;end if ((1817 -(384 + 1433))==v784) then local v1121=0;while true do if (v1121==1) then v784=1 + 0 ;break;end if (v1121==(0 -0)) then v785=v9.Character;v786=v785 and v785:FindFirstChild(v7("\105\39\236\210\46\192\72\54\211\220\47\219\113\51\243\199","\175\33\82\129\179\64")) ;v1121=1;end end end if (v784==(1 + 0 + 0)) then local v1122=0 -0 ;while true do if (0==v1122) then v787=v785 and v785:FindFirstChild(v7("\198\250\61\206\50\189\231\235","\210\142\143\80\175\92")) ;if  not (v786 and v787) then return;end v1122=1535 -(198 + 1336) ;end if (v1122==1) then v784=1 + 1 ;break;end end end end end);local function v297(v788) local v789=403 -(342 + (1466 -(1149 + 256))) ;local v790;while true do if (v789==(0 -0)) then v790=game.Players.LocalPlayer.Character;if (v790 and v790:FindFirstChild(v7("\145\252\254\199\183\230\250\194\139\230\252\210\137\232\225\210","\166\217\137\147"))) then v790.HumanoidRootPart.CFrame=CFrame.new(v788);v20(v7("\215\166\126\163\225\73\241\183\119\162\177\82\236\227\94\169\242\71\247\170\125\168","\38\131\195\18\198\145"));end break;end end end v113(v116,"Mansion (マンション)",function() v297(Vector3.new( -((6843.860000000001 -1396) + 7008),(2307.34 -(1280 + 486)) -((6 -2) + (258 -97)) , -(3996.6099999999997 + 636 + 2933)));end);v113(v116,"Hydra Island (ヒドラ)",function() v297(Vector3.new((19340.43 -(786 + 822)) -12083 ,1015.29, -341.05));end);v113(v116,"Sea Castle (海の城)",function() v297(Vector3.new( -5029.62,(2100.9700000000003 -1273) -(157 + 355) , -(1885.88 + 1310)));end);local v298=v110(v7("\64\194\59\255\43","\52\51\182\90\139\88"));local function v299(v791) local v792=0 + 0 ;local v793;local v794;local v795;local v796;while true do if (v792==(1460 -(1303 + 157))) then v793=(283 + 214) -(322 + 175) ;v794=nil;v792=1;end if (v792==(1417 -(505 + 910))) then while true do if (v793==((1559 -996) -((1041 -(548 + 320)) + (981 -(52 + 539))))) then local v1380=0;while true do if (v1380==1) then v793=556 -(378 + 177) ;break;end if (v1380==(0 -0)) then v794=0 -0 ;v795=nil;v1380=1;end end end if (v793==1) then v796=nil;while true do local v1473=0 + 0 ;while true do if (v1473==((207 -(108 + 99)) + 0 + 0)) then local v1706=0 -0 ;while true do if (0==v1706) then if (v794==((1330 -1016) -(203 + 0 + (212 -101)))) then local v2021=0 + 0 ;local v2022;while true do if (v2021==(0 + 0)) then v2022=0 + 0 ;while true do if (v2022==(4 -2)) then v794=1 -0 ;break;end if (v2022==(0 + 0)) then v795=Instance.new(v7("\194\188\200\243\111\247\187\213\235","\35\150\217\176\135"),v298);v795.Size=UDim2.new(1 -0 , -(4 + 6),(0 -0) + 0 + 0 ,35);v2022=840 -(823 + 16) ;end if (v2022==1) then v795.BackgroundColor3=Color3.fromRGB((293 -(19 + 259)) + 5 ,0,1820 -(1780 + 40) );v795.TextColor3=Color3.fromRGB(578 -323 ,627 -372 ,744 -(844 -355) );v2022=3 -1 ;end end break;end end end if (v794==(1 + 1 + 0)) then local v2023=0;while true do local v2077=0 -0 ;while true do if (v2077==(0 + 0)) then if (v2023==(0 -0)) then v796=Instance.new(v7("\204\121\59\13\115\71\127\247\87","\22\153\48\107\108\23\35"),v795);v796.PaddingLeft=UDim.new((190 + 516) -((141 -84) + (1944 -1295)) ,(9 + 385) -(328 + (1236 -(825 + 355))) );v2023=861 -(846 + 14) ;end if (v2023==(1 + 0)) then return v795;end break;end end end end v1706=1;end if (v1706==(1 -0)) then v1473=(371 -(237 + 133)) + (1186 -(624 + 562)) ;break;end end end if (v1473==((1503 -990) -((613 -180) + 65 + 14))) then if (v794==1) then local v1846=0;while true do if (v1846==(804 -(700 + 102))) then v794=2;break;end if (v1846==0) then v795.Font=Enum.Font.SourceSansBold;v795.TextSize=(6 -4) + 13 ;v1846=1 -0 ;end if (v1846==1) then v795.TextXAlignment=Enum.TextXAlignment.Left;Instance.new(v7("\59\172\152\21\109\123\68\251","\137\110\229\219\122\31\21\33"),v795);v1846=2;end end end break;end end end break;end end break;end if (v792==(2 -1)) then v795=nil;v796=nil;v792=2 + 0 ;end end end local v300=v299(v7("\41\184\42\109\51\89\100\87\62\231\120\87\57\74\32\119\20\186\118\53\120","\30\122\221\88\27\86\43\68"));local v301=v299("滞在時間: 00:00:00");local v302=v299(v7("\30\24\216\220\120\120","\230\88\72\139"));local v303=v299(v7("\66\189\24\28\89\72\8\50\185\5","\56\18\212\118\123\99\104"));v113(v298,"サーバーIDをコピー",function() local v797=0 -0 ;local v798;while true do if (v797==(0 -0)) then v798=0;while true do if (v798==0) then setclipboard(game.JobId);v20("サーバーIDをクリップボードにコピーしました");break;end end break;end end end);local v155=game:GetService(v7("\44\252\246\224\218\204\8\224\251\214","\190\126\137\152\179\191"));local v304=game:GetService(v7("\27\22\115\223\185","\32\72\98\18\171\202"));local v305=os.time();task.spawn(function() local v799=0;local v800;local v801;while true do if (v799==0) then local v1124=0 + 0 ;while true do if (v1124==(1277 -(735 + 541))) then v799=841 -(497 + 343) ;break;end if (v1124==(1783 -(995 + 788))) then v800=(0 -0) + 0 + 0 ;v801=nil;v1124=1;end end end if (1==v799) then while true do if (v800==(0 -0)) then v801=(0 -0) -(198 -(37 + 161)) ;while true do if (v801==((0 -0) -(0 -0))) then v300.Text=v7("\55\141\32\98\242\22\200\27\80\173\68","\151\100\232\82\20")   .. (((game.JobId~="") and game.JobId) or v7("\76\205\227\12\118\214\185\56\109\208\224\9\107\220","\104\31\185\150")) ;while task.wait(0.5 + 0 + 0 ) do local v1707=0 + 0 ;local v1708;local v1709;local v1710;local v1711;local v1712;local v1713;local v1714;local v1715;while true do if (v1707==4) then while true do if (v1708==2) then local v2078=0 -0 ;while true do if (v2078==0) then v1713=nil;v1714=nil;v2078=1;end if (v2078==(1273 -(357 + 915))) then v1708=1039 -(562 + 474) ;break;end end end if (v1708==(678 -(50 + 625))) then v1715=nil;while true do if (v1709==(1881 -(1624 + 256))) then local v2193=0 -0 ;local v2194;while true do if (v2193==(0 -0)) then v2194=0;while true do if (v2194==1) then v1709=1675 -(1506 + (1690 -(180 + 1343))) ;break;end if (v2194==(0 + 0)) then v1712=math.floor((v1710%(8398 -4798))/(122 -(1404 -(1057 + 285))) );v1713=v1710%((108 + 857) -((156 -80) + (2232 -(135 + 1268)))) ;v2194=1;end end break;end end end if (v1709==(5 -(1423 -(1088 + 333)))) then local v2195=1682 -(1280 + 402) ;while true do if (v2195==1) then v1709=6 -2 ;break;end if (v2195==0) then v302.Text=v7("\250\137\192\173\167","\160\188\217\147\151\135\172\128")   .. v1714 ;v1715=math.floor(v304.Network.ServerStatsItem[v7("\43\220\4\241\122\249\6\211\23","\169\111\189\112\144\90")]:GetValue());v2195=1 + 0 ;end end end if (v1709==0) then local v2196=0 + 0 ;while true do if (v2196==(0 -0)) then v1710=os.time() -v305 ;v1711=math.floor(v1710/(3866 -(58 + 11 + 197)) );v2196=1;end if (v2196==(18 -(11 + 6))) then v1709=1;break;end end end if (v1709==(2 + 0)) then local v2197=0 -0 ;while true do if (v2197==1) then v1709=11 -8 ;break;end if ((1736 -(1015 + 721))==v2197) then v301.Text=string.format("滞在時間: %02d:%02d:%02d",v1711,v1712,v1713);v1714=math.floor((1 + (0 -0))/v155.RenderStepped:Wait() );v2197=1;end end end if (v1709==(3 + (243 -(169 + 73)))) then v303.Text=v7("\253\138\43\170\229\192","\226\173\227\69\205\223\224\105")   .. v1715   .. v7("\24\51\49","\123\56\94\66\59\175") ;break;end end break;end if ((0 -0)==v1708) then local v2079=0;while true do if (v2079==(1897 -(1052 + 844))) then v1708=3 -2 ;break;end if (v2079==0) then v1709=0 + (16 -(5 + 11)) ;v1710=nil;v2079=1;end end end if (v1708==((1518 -(210 + 1305)) -(1 + 1))) then local v2080=0;while true do if (v2080==(1 -0)) then v1708=(1086 -(646 + 101)) -((634 -(12 + 364)) + 79) ;break;end if (v2080==(715 -(587 + 128))) then v1711=nil;v1712=nil;v2080=2 -1 ;end end end end break;end if (v1707==2) then v1712=nil;v1713=nil;v1707=6 -3 ;end if (v1707==0) then local v1924=0 -0 ;while true do if (v1924==1) then v1707=228 -(196 + 31) ;break;end if (v1924==0) then v1708=0 + 0 + (537 -(227 + 310)) ;v1709=nil;v1924=1 + 0 ;end end end if (v1707==(776 -(689 + 84))) then v1714=nil;v1715=nil;v1707=1379 -(404 + 971) ;end if (v1707==1) then local v1925=0;while true do if (v1925==(1 -0)) then v1707=2;break;end if (v1925==(0 + 0)) then v1710=nil;v1711=nil;v1925=1398 -(764 + 633) ;end end end end end break;end end break;end end break;end end end);local v306=v299("--- 出現中のボス ---");v306.TextColor3=Color3.fromRGB(33 + 222 ,50,(0 + 0) -(0 + 0) );local v308=Instance.new(v7("\201\64\97\238\22\242\136\244\68\85\243\27\243\132","\225\154\35\19\129\122\158"),v298);v308.Size=UDim2.new(1471 -((1425 -(114 + 92)) + 135 + 116) , -(539 -(4 + 525)),0,1821 -((1776 -545) + 440) );v308.BackgroundTransparency=(101 -42) -(34 + (1337 -(636 + 677))) ;v308.BorderSizePixel=(0 -0) + (1354 -(447 + 907)) ;v308.ScrollBarThickness=(1803 -(303 + 1495)) -2 ;v308.CanvasSize=UDim2.new(0,0,0 + (0 -0) ,0 -0 );v308.AutomaticCanvasSize=Enum.AutomaticSize.Y;local v315=Instance.new(v7("\110\5\243\67\217\230\210\49\86","\84\58\96\139\55\149\135\176"),v308);v315.Size=UDim2.new(2 -1 ,0 -(0 -0) ,0,(1816 -(1446 + 370)) -(551 -(245 + 306)) );v315.AutomaticSize=Enum.AutomaticSize.Y;v315.BackgroundTransparency=(2 + 1) -(2 + 0) ;v315.TextColor3=Color3.fromRGB(899 -644 ,(230 + 326) -(19 + 282) ,(3317 -(536 + 937)) -(877 + (1953 -1241)) );v315.Font=Enum.Font.SourceSansBold;v315.TextSize=9 + (158 -(143 + 9)) ;v315.TextXAlignment=Enum.TextXAlignment.Left;v315.TextYAlignment=Enum.TextYAlignment.Top;v315.TextWrapped=true;v315.Text="待機中...";local v327={};local v328={};local v329=false;local function v330(v802) return v802:gsub(v7("\86\4\143\22\11\129\126\86\59\232\69\115\138\45\89","\94\115\95\195\96\46\175"),""):gsub(v7("\6\112\29\50\61\62\194\221","\128\35\43\95\93\78\77\231"),""):match(v7("\154\88\37\126\95\48\228\237\88\37\126\83","\201\196\125\86\84\119\30"));end local function v331() local v803=0 -0 ;local v804;local v805;while true do if (v803==0) then local v1125=0;while true do if (v1125==(1074 -(474 + 600))) then v804=0 -0 ;v805=nil;v1125=3 -2 ;end if (v1125==(1 + 0)) then v803=1;break;end end end if (v803==(2 -1)) then while true do if (v804==((588 + 166) -((339 -97) + 2 + 510))) then v805=0;while true do if (v805==((1488 -(49 + 1439)) -(0 + 0))) then local v1643=0;while true do if (v1643==(3 -2)) then v805=(2618 -(769 + 1221)) -(12 + 80 + (1607 -(270 + 802))) ;break;end if (0==v1643) then if v329 then return;end v329=true;v1643=1857 -(301 + 1555) ;end end end if (v805==(1 + 0 + 0 + 0)) then task.delay(0.5 -(75 -(22 + 53)) ,function() local v1716=0;local v1717;local v1718;local v1719;while true do if (v1716==(1 + 0)) then v1719=nil;while true do if (v1717==(0 -0)) then local v2081=0 -0 ;local v2082;while true do if (v2081==0) then v2082=0 + 0 ;while true do if (v2082==(0 -0)) then v1718={};for v2274,v2275 in pairs(v328) do table.insert(v1718,v2275   .. " "   .. v2274 );end v2082=1 + 0 ;end if ((1 + 0)==v2082) then v1717=1;break;end end break;end end end if ((3 -(1 + 1))==v1717) then local v2083=92 -(41 + 51) ;local v2084;while true do if (v2083==(603 -(391 + 212))) then v2084=(0 -0) + 0 + 0 ;while true do if (v2084==(1 + 0 + 0)) then v1717=1 + (2 -1) ;break;end if (v2084==((0 -0) -(0 -0))) then local v2265=0;while true do if ((0 -0)==v2265) then v1719=(( #v1718>0) and table.concat(v1718,"\n")) or "なし" ;if (v315.Text~=v1719) then v315.Text=v1719;end v2265=1 + 0 ;end if (v2265==(3 -2)) then v2084=1 -(0 + 0) ;break;end end end end break;end end end if (v1717==(1787 -((2543 -1067) + 254 + 55))) then v329=false;break;end end break;end if (v1716==0) then v1717=(376 -(155 + 221)) + 0 + 0 ;v1718=nil;v1716=1;end end end);break;end end break;end end break;end end end local function v332() local v806=1284 -(299 + (2442 -(366 + 1091))) ;local v807;local v808;while true do if (v806==(1 + 0 + (287 -(90 + 196)))) then if v808 then local v1281=(1774 -(1710 + 64)) -0 ;local v1282;while true do if (v1281==((185 -92) -((417 -331) + (12 -5)))) then local v1554=0 -0 ;while true do if ((1 -0)==v1554) then v1281=881 -((979 -307) + 208) ;break;end if (v1554==0) then v1282=nil;function v1282(v1847) local v1848=(267 -(72 + 195)) -(0 + 0) ;local v1849;while true do if (v1848==(0 + 0)) then v1849=v330(v1847.Name);if (v327[v1849] or v1847.Name:find(v7("\134\213\38\176\208\253\65\130","\223\163\142\100"))) then local v2112=0;while true do if (v2112==(1178 -(28 + 1150))) then v327[v1849]=true;v328[v1849]="⚔️";v2112=1;end if (v2112==(1 + 0)) then v331();break;end end end break;end end end v1554=599 -(102 + 496) ;end end end if (v1281==(1 + (445 -(181 + 263)))) then for v1644,v1645 in pairs(v808:GetChildren()) do v1282(v1645);end break;end if (v1281==(133 -(8 + 6 + 118))) then local v1555=0 + 0 ;while true do if (v1555==0) then v808.ChildAdded:Connect(v1282);v808.ChildRemoved:Connect(function(v1850) local v1851=0;local v1852;while true do if (v1851==(0 -0)) then v1852=v330(v1850.Name);if (v328[v1852]=="⚔️") then local v2113=445 -(227 + 112 + 106) ;local v2114;while true do if (v2113==(0 + (1508 -(822 + 686)))) then v2114=0 + 0 ;while true do if (v2114==((3808 -2413) -((1076 -636) + 955))) then v328[v1852]=nil;v331();break;end end break;end end end break;end end end);v1555=1;end if (v1555==1) then v1281=1 + 1 + (0 -0) ;break;end end end end end break;end if (v806==((862 -(252 + 609)) -0)) then v808=game:GetService(v7("\181\25\209\186\171\146\23\192\180","\216\226\118\163\209")):FindFirstChild(v7("\155\254\30\12\94\117\44","\95\222\144\123\97\55\16"));if v807 then local v1283=0 + 0 ;local v1284;while true do if ((2 + 0)==v1283) then for v1646,v1647 in pairs(v807:GetChildren()) do v1284(v1647);end break;end if (v1283==1) then v807.ChildAdded:Connect(v1284);v807.ChildRemoved:Connect(function(v1648) local v1649=0 -0 ;local v1650;local v1651;local v1652;while true do if (v1649==(959 -(578 + 380))) then v1652=nil;while true do if (v1650==(1 + 0)) then while true do if (v1651==((2069 -(1431 + 285)) -(97 + 163 + 93))) then v1652=v330(v1648.Name);if (v328[v1652]=="📍") then local v2212=0 + (0 -0) ;local v2213;while true do if (((0 -0) -(0 -0))==v2212) then v2213=0 -(0 -0) ;while true do if (v2213==((3454 -1480) -((2293 -(1013 + 99)) + (1761 -968)))) then v328[v1652]=nil;v331();break;end end break;end end end break;end end break;end if ((957 -(449 + 508))==v1650) then v1651=(0 -0) + (1892 -(1562 + 330)) ;v1652=nil;v1650=1973 -(1870 + 102) ;end end break;end if (v1649==0) then v1650=0;v1651=nil;v1649=1 + 0 ;end end end);v1283=2 + 0 ;end if (v1283==0) then local v1556=0 -0 ;while true do if (v1556==1) then v1283=1 -0 ;break;end if (v1556==(0 + 0)) then v1284=nil;function v1284(v1853) if v1853.Name:find(v7("\92\191\152\76\240\10\193\135","\131\121\228\218\35")) then local v1971=0 + 0 ;local v1972;local v1973;while true do if (v1971==(0 + 0)) then v1972=0 + 0 + (994 -(550 + 444)) ;v1973=nil;v1971=1 + 0 ;end if (v1971==(1 -0)) then while true do if (v1972==(0 + 0)) then local v2214=0;while true do if ((1 + 0)==v2214) then v1972=2 -(1 + 0) ;break;end if ((0 + 0)==v2214) then v1973=v330(v1853.Name);v327[v1973]=true;v2214=1;end end end if (v1972==(1 -0)) then v328[v1973]="📍";v331();break;end end break;end end end end v1556=581 -(544 + 36) ;end end end end end v806=(1232 -(70 + 1161)) + 1 + 0 ;end if (v806==((1064 -(130 + 627)) -((197 -92) + (513 -(121 + 190))))) then local v1126=0 -0 ;while true do if (v1126==(1 + 0)) then v806=(4 -3) + (322 -(255 + 67)) ;break;end if (v1126==(0 + 0)) then v807=game:GetService(v7("\238\223\48\10\106\11\216\211\39","\123\185\176\66\97\25")):FindFirstChild(v7("\247\56\22\67\25\43\119\35\193\8\16\95","\81\168\111\121\49\117\79\56"));if v807 then v807=v807:FindFirstChild(v7("\226\4\224\187\222\57\245\183\208\4\246","\214\167\106\133"));end v1126=2 -1 ;end end end end end task.spawn(v332);local v333=v299("--- 特殊島 出現状況 ---");v333.TextColor3=Color3.fromRGB(255,860 -((630 -(225 + 53)) + (639 -181)) ,1299 -(738 + 561) );local function v335(v809) local v810=0 -0 ;local v811;while true do if (v810==(0 + 0)) then v811=v299(v809   .. " : ❌" );v811.TextSize=14;v810=1;end if ((1 + 0)==v810) then return v811;end end end local v336=v335(v7("\4\49\94\78\51\122\153\0\43\64\78\58\123","\185\73\88\44\47\84\31"));local v337=v335(v7("\163\222\14\179\198\241\141\151\51\179\223\254\134\211","\159\232\183\122\192\179"));local v338=v335(v7("\2\32\167\59\33\60\232\5\45\63\173\47\55\59\167\47","\65\68\82\200"));local v339=v335(v7("\21\66\119\40\198\220\106\42\66\123\35\143\230\109\41\81\124\36","\30\69\48\18\64\175\175"));local v340={[v7("\221\37\13\237\60\245\108\54\255\55\241\34\27","\91\144\76\127\140")]=v336,[v7("\203\1\82\50\198\180\208\144\201\27\74\32\221\190","\176\128\104\38\65\179\218\181")]=v337,[v7("\246\214\205\15\213\202\130\49\217\201\199\27\195\205\205\27","\117\176\164\162")]=v338,[v7("\180\208\0\248\211\106\144\205\23\249\217\57\173\209\9\241\212\125","\25\228\162\101\144\186")]=v339};task.spawn(function() local v812=1611 -(1450 + 161) ;local v813;local v814;while true do if (v812==1) then while true do if (v813==(1728 -(183 + 1545))) then v814=game:GetService(v7("\127\57\171\5\225\244\73\53\188","\132\40\86\217\110\146")):FindFirstChild(v7("\83\202\55","\62\30\171\71\220\199\19\156"));while task.wait((4 + 3) -(1174 -(736 + 434)) ) do local v1474=0 + 0 ;while true do if ((4 -3)==v1474) then for v1771,v1772 in pairs(v814:GetChildren()) do if v340[v1772.Name] then local v1926=39 -(32 + 7) ;while true do if (0==v1926) then v340[v1772.Name].Text=v1772.Name   .. " : ⭕" ;v340[v1772.Name].TextColor3=Color3.fromRGB(0 -0 ,(620 -(103 + 270)) + 3 + 5 ,0 + 0 );break;end end end end break;end if (v1474==(1453 -(1021 + 432))) then if  not v814 then continue;end for v1773,v1774 in pairs(v340) do local v1775=0 -0 ;local v1776;while true do if (v1775==(1414 -(153 + 1261))) then v1776=0 + 0 ;while true do if (v1776==(0 + 0)) then v1774.Text=v1773   .. " : ❌" ;v1774.TextColor3=Color3.fromRGB(1038 -(800 + 88) ,25 + 125 ,405 -255 );break;end end break;end end end v1474=822 -(358 + 463) ;end end end break;end end break;end if (v812==(258 -(176 + 82))) then v813=(0 -0) -(770 -(543 + 227)) ;v814=nil;v812=1 + 0 ;end end end);local v225= -((123525.47999999998 + 461061) -(1497562 -1112972));local v341=false;local v226=nil;local v342={};local v343=false;v17.FinalZ=v17.FinalZ or false ;local function v345() local v815=1786 -(1509 + 277) ;local v816;while true do if (v815==0) then v816=(2909 -(1453 + 507)) -(438 + 511) ;while true do if (v816==((153 + 1231) -((4932 -3670) + (473 -352)))) then if (v9.Character and v9.Character:FindFirstChild(v7("\104\80\161\55\83\198\38\73","\45\32\37\204\86\61\169\79"))) then workspace.CurrentCamera.CameraSubject=v9.Character.Humanoid;end if v226 then local v1559=0 + 0 ;local v1560;while true do if (v1559==0) then v1560=v9.Character and v9.Character:FindFirstChild(v7("\125\64\8\189\187\115\92\81\55\179\186\104\101\84\23\168","\28\53\53\101\220\213")) ;if (v1560 and (v9.Character.Humanoid.Health>(0 + 0))) then v1560.CFrame=v226.HumanoidRootPart.CFrame;end v1559=2 -1 ;end if (v1559==(1032 -(22 + 1009))) then v226:Destroy();v226=nil;break;end end end break;end if (((5263 -4195) -((2668 -(245 + 1695)) + 340))==v816) then local v1381=1035 -(611 + 424) ;while true do if (v1381==1) then v816=(2089 -(280 + 18)) -(816 + 974) ;break;end if (v1381==(0 + 0)) then v341=false;workspace.CurrentCamera.CameraType=Enum.CameraType.Custom;v1381=1;end end end end break;end end end local function v346(v817) local v818=0 -0 ;local v819;local v820;while true do if (v818==(0 -0)) then local v1128=278 -(109 + 169) ;local v1129;while true do if (v1128==(0 + 0)) then v1129=0 + 0 ;while true do if (v1129==0) then if (v341 or  not v17.FinalZ) then return;end v341=true;v1129=1 + 0 ;end if (v1129==(1 + 1)) then v818=2 -(1 + 0) ;break;end if (v1129==(3 -2)) then v819=v9.Character;v820=v819 and v819:FindFirstChild(v7("\37\73\5\64\84\174\89\219\63\83\7\85\106\160\66\203","\191\109\60\104\33\58\193\48")) ;v1129=2;end end break;end end end if (v818==2) then for v1198,v1199 in ipairs(v226:GetDescendants()) do if v1199:IsA(v7("\165\214\11\226\183\214\10\243","\135\231\183\120")) then v1199.CanCollide=false;end end v226.HumanoidRootPart.CFrame=CFrame.new(v817 + Vector3.new(0 -0 ,10 -(1349 -(875 + 467)) ,339 -(71 + 92 + (819 -643)) ) );workspace.CurrentCamera.CameraSubject=v226.Humanoid;task.spawn(function() local v1200=0;local v1201;local v1202;while true do if (v1200==1) then while true do if (v1201==(2 -1)) then v345();break;end if (v1201==(0 -0)) then local v1720=0;local v1721;while true do if (v1720==(0 -0)) then v1721=799 -(717 + 82) ;while true do if ((1021 -(693 + 327))==v1721) then v1201=1;break;end if (v1721==(1911 -(746 + 1165))) then v1202=tick();while v341 and v17.FinalZ  do if (((tick() -v1202)>((1736.5 -(1473 + 262)) + 0 + 0)) or (v819.Humanoid.Health<=0)) then break;end v820.CFrame=CFrame.new(v820.Position.X,v225,v820.Position.Z);v820.AssemblyLinearVelocity=Vector3.zero;game:GetService(v7("\212\31\66\215\48\8\191\239\9\73","\201\134\106\44\132\85\122")).Heartbeat:Wait();end v1721=1;end end break;end end end end break;end if ((0 + 0)==v1200) then local v1475=1873 -(874 + 999) ;while true do if (v1475==(2 -1)) then v1200=1 + 0 ;break;end if (v1475==0) then v1201=(0 -0) -(0 + 0) ;v1202=nil;v1475=1;end end end end end);break;end if (v818==1) then local v1133=0 + 0 ;while true do if (v1133==0) then if  not v820 then return;end v819.Archivable=true;v1133=1 + 0 ;end if (v1133==(8 -6)) then v818=(3222 -1410) -(1384 + 180 + 246) ;break;end if (v1133==(1 + 0)) then v226=v819:Clone();v226.Parent=workspace;v1133=2 + 0 ;end end end end end local function v347(v821) local v822=v821:WaitForChild(v7("\30\25\122\62\15\3\193\39","\67\86\108\23\95\97\108\168"));v821.ChildAdded:Connect(function(v942) if ((v942.Name==v7("\144\42\69\14\161\42\193\119\182\57\78\48","\48\196\88\44\106\196\68\181")) and v17.FinalZ) then local v1134=0;local v1135;local v1136;local v1137;while true do if (v1134==(458 -(388 + 70))) then v1135=345 -(124 + 221) ;v1136=nil;v1134=1 + 0 ;end if ((1 + 0)==v1134) then v1137=nil;while true do if (v1135==(1 + 0 + 0)) then v1137=((typeof(v1136)==v7("\180\218\223\55\143\182\241","\76\226\191\188\67\224\196\194")) and v1136) or (v1136:IsA(v7("\244\39\3\245\241","\157\185\72\103\144")) and v1136:FindFirstChild(v7("\113\166\135\123\166\190\80\183\184\117\167\165\105\178\152\110","\209\57\211\234\26\200")) and v1136.HumanoidRootPart.Position) ;if v1137 then v346(v1137);end break;end if (v1135==(0 -0)) then local v1656=0 + 0 ;local v1657;while true do if (0==v1656) then v1657=582 -(319 + 263) ;while true do if (v1657==0) then task.wait();v1136=v942.Value;v1657=1;end if (v1657==(3 -2)) then v1135=1 -0 ;break;end end break;end end end end break;end end end end);v822.AnimationPlayed:Connect(function(v943) if (v943.Name==v7("\50\207\162\133\89\237\59\241\135\149\68\211\2\197","\178\97\174\198\225\48")) then local v1138=0;local v1139;while true do if (v1138==0) then v1139=(418 + 33) -(115 + 336) ;while true do if (v1139==0) then v343=true;task.delay(1 + 0 ,function() v343=false;end);break;end end break;end end end end);game:GetService(v7("\253\67\10\194\125\244\25\198\85\1","\111\175\54\100\145\24\134")).Heartbeat:Connect(function() local v944=0;local v945;while true do if ((0 + 0)==v944) then if ( not v343 or  not v17.FinalZ) then return;end v945=v821:FindFirstChild(v7("\107\12\45\20\77\22\41\17\113\22\47\1\115\24\50\1","\117\35\121\64"));v944=815 -(94 + 720) ;end if (v944==1) then if  not v945 then return;end for v1285,v1286 in ipairs(game.Players:GetPlayers()) do if ((v1286~=v9) and v1286.Character) then local v1476=378 -(78 + 300) ;local v1477;local v1478;local v1479;local v1480;while true do if (v1476==(1919 -(774 + 1143))) then while true do if (v1477==(1 -(0 + 0))) then v1480=nil;while true do if (v1478==0) then v1479=v1286.Character:FindFirstChildOfClass(v7("\245\168\227\215\45\64\212\185","\47\189\221\142\182\67"));v1480=v1286.Character:FindFirstChild(v7("\8\170\42\202\70\166\41\45\18\176\40\223\120\168\50\61","\73\64\223\71\171\40\201\64"));v1478=192 -(18 + 173) ;end if (((2 -1) + (0 -0))==v1478) then if (v1479 and v1480 and (v1479.Health>((116 -70) -(45 + (4 -3))))) then local v2161=0;local v2162;while true do if ((1485 -(677 + 808))==v2161) then v2162=0 + 0 ;while true do if (v2162==0) then if (v342[v1286] and (v1479.Health<v342[v1286])) then if ((v1480.Position-v945.Position).Magnitude<((977 -(528 + 442)) + 113)) then local v2320=0 -0 ;local v2321;while true do if (v2320==0) then v2321=347 -(116 + 231) ;while true do if (v2321==((1948 + 42) -(1282 + 465 + 243))) then v343=false;v346(v1480.Position);break;end end break;end end end end v342[v1286]=v1479.Health;break;end end break;end end end break;end end break;end if (v1477==(0 -0)) then v1478=1212 -(146 + 437 + 629) ;v1479=nil;v1477=(1471 -(1242 + 228)) + (0 -0) ;end end break;end if (v1476==0) then v1477=844 -(320 + 524) ;v1478=nil;v1476=1;end if (v1476==1) then v1479=nil;v1480=nil;v1476=2;end end end end break;end end end);end if v9.Character then v347(v9.Character);end v9.CharacterAdded:Connect(v347);if v116 then v111(v116,v7("\44\132\202\88\172\48\48\205\140\109\178\116\14\136\202\77\239\78\11\137\192\80\233","\29\106\237\164\57\192"),v17.FinalZ,function(v1015) local v1016=0 -0 ;local v1017;while true do if (v1016==(0 -0)) then v1017=0 -0 ;while true do if ((0 + 0)==v1017) then v17.FinalZ=v1015;if  not v1015 then v345();end break;end end break;end end end);end local function v348(v823) local v824=0 -0 ;local v825;local v826;local v827;while true do if ((2 -(476 -(63 + 412)))==v824) then v827=nil;while true do if (v825==0) then local v1385=0;local v1386;while true do if ((1864 -(1299 + 565))==v1385) then v1386=0;while true do if (v1386==(0 -0)) then v826=game:GetService(v7("\131\161\247\182\220\209\161\230\180\160\212\174\218\192\161\245\180","\146\209\196\135\218\181\178\192")):WaitForChild(v7("\31\53\142\30\68\162\62","\199\77\80\227\113\48"));v827={v7("\9\48\83\192\12","\173\74\95\62"),v7("\229\22\81\59\237\56","\220\166\121\60\86\171\103"),v7("\202\13\48\189\30","\122\137\98\93\208\91\170")};v1386=1 + 0 ;end if (v1386==(1 + 0)) then v825=1 + 0 ;break;end end break;end end end if (v825==((3 -2) + (328 -(79 + 249)))) then for v1481,v1482 in pairs(v827) do local v1483=0 -0 ;local v1484;local v1485;while true do if (v1483==(1630 -(305 + 1325))) then v1484=0;v1485=nil;v1483=1729 -(1585 + 143) ;end if (1==v1483) then while true do if (v1484==((5370 -3739) -((3369 -(1727 + 103)) + (292 -200)))) then v1485=v826:FindFirstChild(v1482);if v1485 then pcall(function() if v1485:IsA(v7("\181\228\17\64\193\183\143\223\137\226\8\70\218\188","\170\231\129\124\47\181\210\201")) then v1485:InvokeServer(v7("\184\190\46\4\15\43\134","\74\235\219\90\80\106"),v823);else v1485:FireServer(v7("\127\198\79\15\63\245\119","\146\44\163\59\91\90\148\26"),v823);end end);end break;end end break;end end end v20(v7("\65\40\185\140\9\118\37\185\143\78\112\41\248\149\70\47\109","\41\21\77\216\225")   .. v823 );break;end end break;end if (v824==((1858 + 88) -(706 + 752 + 488))) then local v1140=0;while true do if (v1140==(0 -0)) then v825=0;v826=nil;v1140=1;end if (v1140==1) then v824=(533 -(135 + 139)) -(81 + 177) ;break;end end end end end if v116 then local v946=0 + 0 ;local v947;while true do if (v946==(2 -0)) then local v1203=0;local v1204;while true do if (v1203==(0 + 0)) then v1204=0 + 0 ;while true do if (v1204==1) then v946=(50 + 210) -(212 + 19 + 26) ;break;end if (v1204==(0 -0)) then v947.TextColor3=Color3.fromRGB(720 -(2169 -(1084 + 620)) ,255,1308 -(404 + 649) );v947.Font=Enum.Font.SourceSansBold;v1204=815 -(318 + 496) ;end end break;end end end if ((9 -(1888 -(1730 + 152)))==v946) then v947.TextSize=16;v113(v116,v7("\36\68\96\68\0\72","\37\116\45\18"),function() v348(v7("\255\246\68\163\191\202\236","\203\175\159\54\194"));end);v946=(5969 -4019) -(708 + (4320 -3082)) ;end if (v946==((1862 -(527 + 1334)) + 0)) then local v1206=0;local v1207;while true do if ((0 + 0)==v1206) then v1207=1946 -(464 + 1482) ;while true do if ((0 -0)==v1207) then v947.BackgroundTransparency=1 + 0 ;v947.Text=v7("\54\131\84\123\110\74\195\118\142\58\51\91\65\197\126\220\89\118\23\2","\162\27\174\121\91\58\47");v1207=1;end if (v1207==(570 -(485 + 84))) then v946=1 + 0 + 1 ;break;end end break;end end end if (v946==4) then v113(v116,v7("\254\196\13\252\49\220","\185\179\165\127\149\95"),function() v348(v7("\124\116\221\253\25\84\102","\119\49\21\175\148"));end);break;end if (v946==(0 + 0)) then local v1208=0;while true do if (v1208==0) then v947=Instance.new(v7("\99\176\14\73\1\72\136\240\91","\149\55\213\118\61\77\41\234"),v116);v947.Size=UDim2.new((626 + 1042) -(462 + 124 + 166 + 915) , -(521 -((856 -508) + 163)),0 + 0 + 0 ,83 -53 );v1208=1002 -(359 + 642) ;end if (v1208==1) then v946=1 + 0 ;break;end end end end end local v286=game:GetService(v7("\47\3\218\202\224\58\174\15\24\2\249\210\230\43\174\28\24","\123\125\102\170\166\137\89\207"));local v155=game:GetService(v7("\124\21\86\14\11\145\191\71\3\93","\201\46\96\56\93\110\227"));local v349=v286:WaitForChild(v7("\150\12\234\236\25\196\168","\161\219\99\142\153\117")):WaitForChild(v7("\82\180\178","\173\28\209\198\19"));local v350=v349[v7("\71\201\248\137\112\235\190\168\97\233\165\154\97\248\182\184\126","\219\21\140\215")];local v351=v349[v7("\122\157\137\149\93\79\177\213\179\93\90\144\207\179","\56\40\216\166\199")];local v352=v349[v7("\20\145\90\28\46\187\26\59\1\161\27\10\48\177\27\59","\79\70\212\117")];v17.GunM1=false;local v354=160;local v355=282 -(215 + 27 + 38) ;local function v356() local v828=0 -(1344 -(564 + 780)) ;local v829;local v830;local v831;local v832;while true do local v948=0;while true do if (v948==(0 -0)) then if (v828==(1860 -(1541 + 47 + 271))) then if  not v830 then return nil;end v831,v832=nil,v354;v828=2 + 0 ;end if (v828==(1 + 1 + 0)) then local v1387=0 + 0 ;while true do if (v1387==((3036 -1286) -((1641 -605) + (1746 -1032)))) then local v1658=0 + 0 ;local v1659;while true do if (v1658==0) then v1659=0;while true do if (v1659==0) then for v2087,v2088 in pairs({workspace:FindFirstChild(v7("\130\24\228\203\240\8\180","\109\199\118\129\166\153")),workspace:FindFirstChild(v7("\18\184\118\228\48\179\99\243\35\163","\150\81\208\23"))}) do if v2088 then for v2199,v2200 in pairs(v2088:GetChildren()) do if ((v2200~=v829) and v2200:FindFirstChild(v7("\209\208\237\138\247\202\233\143","\235\153\165\128")) and (v2200.Humanoid.Health>(0 + (1736 -(69 + 1667))))) then local v2241=0 + 0 ;local v2242;local v2243;while true do if (v2241==0) then v2242=0 + (122 -(16 + 106)) ;v2243=nil;v2241=1 + 0 ;end if ((1253 -(1178 + 74))==v2241) then while true do if (v2242==((353 + 927) -(883 + (1404 -1007)))) then v2243=v2200:FindFirstChild(v7("\147\92\175\46\72\41\163\250\137\70\173\59\118\39\184\234","\158\219\41\194\79\38\70\202"));if (v2243 and ((v830.Position-v2243.Position).Magnitude<v832)) then v832=(v830.Position-v2243.Position).Magnitude;v831={v2200,v2243};end break;end end break;end end end end end end return v831;end end break;end end end end end v948=1 + 0 ;end if (v948==(1 + 0)) then if (v828==(0 -0)) then local v1388=0 -0 ;local v1389;while true do if (v1388==(1829 -(492 + 1337))) then v1389=0 + 0 ;while true do if (v1389==(1 + 0)) then v828=(1981 -(814 + 576)) -(563 + 27) ;break;end if (v1389==(0 -0)) then v829=v9.Character;v830=v829 and v829:FindFirstChild(v7("\107\48\34\3\224\217\129\71\23\32\13\250\230\137\81\49","\232\35\69\79\98\142\182")) ;v1389=2 -1 ;end end break;end end end break;end end end end v155.Stepped:Connect(function() if  not v17.GunM1 then return;end local v833=v9.Character;local v834=v833 and v833:FindFirstChildOfClass(v7("\77\15\16\241","\157\25\96\127")) ;if  not v834 then return;end local v835=v356();if  not v835 then return;end local v836,v837=v835[(3 + 0) -(5 -3) ],v835[5 -3 ];pcall(function() local v949=0 + 0 ;local v950;local v951;while true do if ((0 + 0)==v949) then v950=1986 -(1369 + 617) ;v951=nil;v949=2 -1 ;end if (v949==1) then while true do if (v950==(1487 -(85 + 920 + 482))) then v951=0 + 0 + 0 ;while true do if (v951==(2 -1)) then if v834:FindFirstChild(v7("\139\134\243\17\115\61\174\128\254\55\85\60\168\151\240","\81\199\227\149\101\48")) then v834.LeftClickRemote:FireServer((v837.Position-v833:GetPivot().Position).Unit,2 -(1 + 0) );end break;end if ((403 -((1633 -(978 + 381)) + 18 + 111))==v951) then for v1777=(28 + 190) -(12 + 2 + 203) ,v355 do v350:FireServer(0 + 0 + (0 -0) );v351:FireServer(v837,{{v836,v837}});end if (v834.ToolTip==v7("\90\71\245","\219\29\50\155\113\150\230\92")) then local v1855=0 -0 ;local v1856;local v1857;local v1858;while true do if (v1855==1) then v1858=nil;while true do if (v1856==((173 + 124) -(90 + 78 + 129))) then local v2163=0 + 0 ;local v2164;while true do if (0==v2163) then v2164=569 -(397 + 172) ;while true do if ((1 -0)==v2164) then v1856=1118 -(267 + 850) ;break;end if (v2164==0) then v352:FireServer(v837.Position,{v837});v834:Activate();v2164=1;end end break;end end end if (((683 + 179) -(706 + (492 -337)))==v1856) then v1857=v834:FindFirstChild(v7("\227\37\200\116\235\77\104\199\37\203\111","\45\177\64\165\27\159\40")) or v834:FindFirstChildOfClass(v7("\47\19\2\165\102\24\51\25\175\124\9","\18\125\118\111\202")) ;if v1857 then v1857:FireServer(v7("\116\51\78\244","\155\48\92\57\154\80\205\167"),v837.Position);end v1856=1797 -(730 + (2059 -(41 + 953))) ;end if (v1856==(1565 -(1339 + (924 -700)))) then v1858=v833:FindFirstChildOfClass(v7("\145\216\182\190\246\164\76\189","\37\217\173\219\223\152\203"));if v1858 then for v2244,v2245 in pairs(v1858:GetPlayingAnimationTracks()) do if (v2245.Name:lower():find(v7("\14\16\17","\150\105\101\127\86\47\200")) or v2245.Name:lower():find(v7("\221\250\252\186\211","\160\174\146\147\213\167"))) then v2245:AdjustSpeed(2);end end end break;end end break;end if (v1855==(0 + 0)) then local v2030=0 -0 ;while true do if (v2030==(820 -(817 + 3))) then v1856=(1865 -(867 + 518)) -((274 -183) + 389) ;v1857=nil;v2030=1;end if (v2030==(331 -(256 + 74))) then v1855=1 + 0 ;break;end end end end end v951=1 + 0 + (0 -0) ;end end break;end end break;end end end);end);if v116 then v111(v116,v7("\71\241\20\4\1\16","\33\32\132\122\36\108"),v17.GunM1,function(v1018) local v1019=187 -(111 + 76) ;while true do if ((0 + 0)==v1019) then v17.GunM1=v1018;if v1018 then v20("gun m1 有効");else v20("gun m1 無効");end break;end end end);end local v357=game:GetService(v7("\139\1\124\120\121\171\2\123\72\121","\28\217\116\18\43"));local v358=624 + 76 ;local v359={v7("\254\82\208\64\229\190\44\215\69\247\70\221","\92\178\55\182\52\176\206"),v7("\54\48\119\1\54\58\102\16\8\20\99\24","\117\122\85\17"),v7("\164\234\44\80\142\220\134\235","\189\232\143\74\36\198"),v7("\206\163\13\70\195\63\236\186\15\92\246\24\241","\106\156\202\106\46\183"),v7("\15\16\124\59\62\17\22\108\54\56\28\11\118","\74\93\121\27\83"),v7("\79\178\225\118\105\147\231\112\121","\30\29\219\134")};v17.BigBuddha=false;local function v361() local v838=63 -(25 + 38) ;local v839;local v840;while true do if ((1037 -(890 + 146))==v838) then while true do if (((4346 -2541) -(317 + 6 + (3066 -(549 + 1035))))==v839) then if  not v17.BigBuddha then return;end v840=v9.Character;v839=(4272 -2353) -(369 + 808 + 508 + 233) ;end if (v839==(963 -(546 + 415))) then v9.CameraMaxZoomDistance=(1034 -(175 + 849)) + (1794 -(734 + 930)) ;break;end if (v839==1) then if  not v840 then return;end for v1487,v1488 in pairs(v359) do local v1489=0;local v1490;local v1491;while true do if (v1489==(1416 -(1093 + 322))) then while true do if (v1490==(0 + 0)) then v1491=v840:FindFirstChild(v1488);if (v1491 and v1491:IsA(v7("\119\166\10\255\196\94\10\26","\110\53\199\121\154\148\63\120"))) then v1491.CanQuery=false;local v2032=v1491:FindFirstChildOfClass(v7("\50\10\250\60\80\253\13\55\250\44\81","\156\97\122\159\95\57")) or Instance.new(v7("\253\166\223\251\2\3\51\227\179\201\240","\95\174\214\186\152\107\98"),v1491) ;v2032.MeshType=Enum.MeshType.Brick;v2032.Scale=Vector3.new(v358 * (0.1 -0) ,v358,v358 * ((0.1 -0) + (1301 -(1256 + 45))) );v1491.Color=Color3.new(1,1846 -(66 + 1779) ,(1883 -(920 + 853)) -((154 -(6 + 52)) + (24 -11)) );v1491.Material=Enum.Material.Neon;v1491.Transparency=0.5;local v2040=v1491:FindFirstChildOfClass(v7("\164\1\101\132\1\144\173","\166\233\110\17\235\115"));if v2040 then v2040.C0=CFrame.new(v2040.C0.Position.X,(7101 -5180) -((2391 -1429) + 959) ,v2040.C0.Position.Z) * CFrame.new(0 -0 ,v358/2 ,0) ;end end break;end end break;end if (v1489==(0 + 0)) then local v1727=0;while true do if (v1727==1) then v1489=1 + 0 ;break;end if (v1727==(87 -(11 + 76))) then v1490=(0 -0) -(822 -(560 + 262)) ;v1491=nil;v1727=1 -0 ;end end end end end v839=(1861 -(12 + 1845)) -2 ;end end break;end if (v838==0) then v839=0 + 0 ;v840=nil;v838=1;end end end v357.RenderStepped:Connect(function() if v17.BigBuddha then pcall(v361);end end);if v116 then v111(v116,"大仏の範囲でかくなる",v17.BigBuddha,function(v1020) local v1021=0;local v1022;while true do if (v1021==0) then v1022=0;while true do if (v1022==((1317 -(1278 + 39)) + (0 -0))) then v17.BigBuddha=v1020;if  not v1020 then local v1728=1351 -(293 + 168 + (1911 -1021)) ;while true do if (v1728==((0 -0) + 0 + 0)) then v9.CameraMaxZoomDistance=54 + 74 ;v20("大仏範囲: OFF (戻すには再スポーン推奨)");break;end end else v20("大仏範囲: ON ");end break;end end break;end end end);end
+local v0 = game.CoreGui:FindFirstChild("植松聖HUB");
+if v0 then
+	v0:Destroy();
+end
+local v1 = game.Players.LocalPlayer;
+local v2 = game:GetService("UserInputService");
+local v3 = Instance.new("ScreenGui");
+v3.Name = "植松聖HUB";
+v3.Parent = game.CoreGui;
+v3.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+_G.NebulaSettings = _G.NebulaSettings or {WalkSpeed=16,InfiniteJump=false,SavedPos=nil,AutoAim=false,FovAim=false};
+local v9 = _G.NebulaSettings;
+local v10 = false;
+local function v11(v354)
+	local v355 = 0 - 0;
+	local v356;
+	while true do
+		if (v355 == (3 - 2)) then
+			v356.Volume = 6 - 4;
+			v356.Parent = game:GetService("SoundService");
+			v355 = 362 - (151 + 209);
+		end
+		if (v355 == (0 + 0)) then
+			v356 = Instance.new("Sound");
+			v356.SoundId = "rbxassetid://" .. v354;
+			v355 = 1481 - (641 + 839);
+		end
+		if (v355 == (915 - (910 + 3))) then
+			v356.PlayOnRemove = true;
+			v356:Destroy();
+			break;
+		end
+	end
+end
+local function v12(v357)
+	local v358 = 0 - 0;
+	local v359;
+	local v360;
+	while true do
+		if (v358 == (1685 - (1466 + 218))) then
+			v359.BackgroundColor3 = Color3.fromRGB(14 + 16, 0, 1148 - (556 + 592));
+			Instance.new("UICorner", v359);
+			Instance.new("UIStroke", v359).Color = Color3.fromRGB(91 + 164, 0, 808 - (329 + 479));
+			v358 = 856 - (174 + 680);
+		end
+		if (v358 == 2) then
+			v360 = Instance.new("TextLabel", v359);
+			v360.Size = UDim2.new(3 - 2, 0, 1 - 0, 0 + 0);
+			v360.Text = v357;
+			v358 = 742 - (396 + 343);
+		end
+		if ((0 + 0) == v358) then
+			local v1012 = 1477 - (29 + 1448);
+			while true do
+				if (v1012 == (1390 - (135 + 1254))) then
+					v359.Position = UDim2.new(1.1, 0, 0.9 - 0, 0 - 0);
+					v358 = 1 + 0;
+					break;
+				end
+				if (v1012 == (1527 - (389 + 1138))) then
+					v359 = Instance.new("Frame", v3);
+					v359.Size = UDim2.new(574 - (102 + 472), 208 + 12, 0 + 0, 47 + 3);
+					v1012 = 1;
+				end
+			end
+		end
+		if (v358 == (1550 - (320 + 1225))) then
+			task.delay(2 - 0, function()
+				if (v359 and v359.Parent) then
+					local v1316 = 0 + 0;
+					local v1317;
+					while true do
+						if (v1316 == (1464 - (157 + 1307))) then
+							v1317 = 1859 - (821 + 1038);
+							while true do
+								if (v1317 == (0 - 0)) then
+									v359:TweenPosition(UDim2.new(1.1, 0, 0.9, 0 + 0), "In", "Quart", 0.3);
+									task.wait(0.4 - 0);
+									v1317 = 1 + 0;
+								end
+								if (v1317 == (2 - 1)) then
+									v359:Destroy();
+									break;
+								end
+							end
+							break;
+						end
+					end
+				end
+			end);
+			break;
+		end
+		if (v358 == 3) then
+			v360.TextColor3 = Color3.fromRGB(1281 - (834 + 192), 17 + 238, 255);
+			v360.Font = Enum.Font.SourceSansBold;
+			v360.TextSize = 14;
+			v358 = 4;
+		end
+		if (v358 == (2 + 2)) then
+			v360.BackgroundTransparency = 1 + 0;
+			v11("6518811702");
+			v359:TweenPosition(UDim2.new(1 - 0, -(534 - (300 + 4)), 0.9, 0), "Out", "Quart", 0.3 + 0);
+			v358 = 13 - 8;
+		end
+	end
+end
+local v13 = v2.JumpRequest:Connect(function()
+	if v9.InfiniteJump then
+		local v920 = 362 - (112 + 250);
+		local v921;
+		local v922;
+		local v923;
+		while true do
+			if (v920 == (1 + 0)) then
+				v923 = nil;
+				while true do
+					if ((2 - 1) == v921) then
+						if v923 then
+							v923:ChangeState(Enum.HumanoidStateType.Jumping);
+						end
+						break;
+					end
+					if (0 == v921) then
+						v922 = v1.Character;
+						v923 = v922 and v922:FindFirstChildOfClass("Humanoid");
+						v921 = 1;
+					end
+				end
+				break;
+			end
+			if ((0 + 0) == v920) then
+				v921 = 0 + 0;
+				v922 = nil;
+				v920 = 1 + 0;
+			end
+		end
+	end
+end);
+task.spawn(function()
+	while task.wait(1 + 0) do
+		local v814 = 0 + 0;
+		local v815;
+		while true do
+			if (v814 == (1414 - (1001 + 413))) then
+				v815 = v1.Character and v1.Character:FindFirstChildOfClass("Humanoid");
+				if (v815 and (v815.WalkSpeed ~= v9.WalkSpeed)) then
+					v815.WalkSpeed = v9.WalkSpeed;
+				end
+				break;
+			end
+		end
+	end
+end);
+local function v14(v361)
+	local v362 = 0 - 0;
+	local v363;
+	local v364;
+	local v365;
+	while true do
+		if (v362 == (883 - (244 + 638))) then
+			v2.InputChanged:Connect(function(v1129)
+				if (v363 and (v1129.UserInputType == Enum.UserInputType.MouseMovement)) then
+					local v1320 = v1129.Position - v364;
+					v361.Position = UDim2.new(v365.X.Scale, v365.X.Offset + v1320.X, v365.Y.Scale, v365.Y.Offset + v1320.Y);
+				end
+			end);
+			v2.InputEnded:Connect(function(v1130)
+				if (v1130.UserInputType == Enum.UserInputType.MouseButton1) then
+					v363 = false;
+				end
+			end);
+			break;
+		end
+		if ((693 - (627 + 66)) == v362) then
+			v363, v364, v365 = nil;
+			v361.InputBegan:Connect(function(v1131)
+				if (not v10 and (v1131.UserInputType == Enum.UserInputType.MouseButton1)) then
+					local v1322 = 0;
+					while true do
+						if (v1322 == (0 - 0)) then
+							v363 = true;
+							v364 = v1131.Position;
+							v1322 = 1;
+						end
+						if (v1322 == 1) then
+							v365 = v361.Position;
+							break;
+						end
+					end
+				end
+			end);
+			v362 = 603 - (512 + 90);
+		end
+	end
+end
+local v15 = Instance.new("Frame", v3);
+v15.Size = UDim2.new(1906 - (1665 + 241), 1267 - (373 + 344), 0 + 0, 350);
+v15.Position = UDim2.new(0.5 + 0, -275, 0.5, -(461 - 286));
+v15.BackgroundColor3 = Color3.fromRGB(10, 0 - 0, 1099 - (35 + 1064));
+v14(v15);
+Instance.new("UICorner", v15);
+Instance.new("UIStroke", v15).Color = Color3.fromRGB(255, 37 + 13, 0 - 0);
+local v20 = Instance.new("TextLabel", v15);
+v20.Size = UDim2.new(0, 200, 0 + 0, 1276 - (298 + 938));
+v20.Position = UDim2.new(1259 - (233 + 1026), 1806 - (636 + 1030), 0 + 0, 0);
+v20.Text = "植松聖HUB";
+v20.TextColor3 = Color3.fromRGB(250 + 5, 50, 0 + 0);
+v20.Font = Enum.Font.SourceSansItalic;
+v20.TextSize = 2 + 20;
+v20.TextXAlignment = Enum.TextXAlignment.Left;
+v20.BackgroundTransparency = 222 - (55 + 166);
+local v31 = Instance.new("TextButton", v15);
+v31.Size = UDim2.new(0, 6 + 24, 0, 4 + 26);
+v31.Position = UDim2.new(3 - 2, -35, 0, 302 - (36 + 261));
+v31.BackgroundColor3 = Color3.fromRGB(262 - 112, 1368 - (34 + 1334), 0 + 0);
+v31.Text = "×";
+v31.TextColor3 = Color3.fromRGB(199 + 56, 1538 - (1035 + 248), 276 - (20 + 1));
+Instance.new("UICorner", v31);
+local v37 = Instance.new("Frame", v3);
+v37.Size = UDim2.new(0, 131 + 119, 319 - (134 + 185), 1253 - (549 + 584));
+v37.Position = UDim2.new(685.5 - (314 + 371), -125, 0.5 - 0, -60);
+v37.BackgroundColor3 = Color3.fromRGB(20, 968 - (478 + 490), 0);
+v37.Visible = false;
+v37.ZIndex = 1060 + 940;
+Instance.new("UICorner", v37);
+Instance.new("UIStroke", v37).Color = Color3.fromRGB(1427 - (786 + 386), 0, 0);
+local v44 = Instance.new("TextLabel", v37);
+v44.Size = UDim2.new(3 - 2, 0, 1379 - (1055 + 324), 1390 - (1093 + 247));
+v44.Text = "完全に終了しますか？";
+v44.TextColor3 = Color3.fromRGB(227 + 28, 27 + 228, 1012 - 757);
+v44.BackgroundTransparency = 1;
+local v49 = Instance.new("TextButton", v37);
+v49.Size = UDim2.new(0 - 0, 284 - 184, 0, 40);
+v49.Position = UDim2.new(0 - 0, 20, 0 + 0, 231 - 171);
+v49.BackgroundColor3 = Color3.fromRGB(344 - 244, 0 + 0, 0);
+v49.Text = "はい";
+v49.TextColor3 = Color3.fromRGB(652 - 397, 943 - (364 + 324), 255);
+Instance.new("UICorner", v49);
+local v55 = Instance.new("TextButton", v37);
+v55.Size = UDim2.new(0 - 0, 239 - 139, 0, 40);
+v55.Position = UDim2.new(1, -(40 + 80), 0 - 0, 60);
+v55.BackgroundColor3 = Color3.fromRGB(80 - 30, 151 - 101, 1318 - (1249 + 19));
+v55.Text = "いいえ";
+v55.TextColor3 = Color3.fromRGB(231 + 24, 992 - 737, 1341 - (686 + 400));
+Instance.new("UICorner", v55);
+v49.MouseButton1Click:Connect(function()
+	local v366 = 0;
+	local v367;
+	while true do
+		if ((0 + 0) == v366) then
+			v9.InfiniteJump = false;
+			v13:Disconnect();
+			v366 = 1;
+		end
+		if ((230 - (73 + 156)) == v366) then
+			v367 = v1.Character and v1.Character:FindFirstChildOfClass("Humanoid");
+			if v367 then
+				v367.WalkSpeed = 1 + 15;
+			end
+			v366 = 813 - (721 + 90);
+		end
+		if (v366 == (1 + 1)) then
+			v3:Destroy();
+			break;
+		end
+	end
+end);
+v55.MouseButton1Click:Connect(function()
+	v37.Visible = false;
+end);
+v31.MouseButton1Click:Connect(function()
+	v37.Visible = true;
+end);
+local v61 = Instance.new("ImageButton", v3);
+v61.Size = UDim2.new(0 - 0, 530 - (224 + 246), 0 - 0, 110 - 50);
+v61.Position = UDim2.new(0, 4 + 16, 0.5 + 0, -(23 + 7));
+v61.BackgroundColor3 = Color3.fromRGB(39 - 19, 0 - 0, 0);
+v61.Image = "rbxassetid://94535192599903";
+v14(v61);
+Instance.new("UICorner", v61);
+Instance.new("UIStroke", v61).Color = Color3.fromRGB(255, 513 - (203 + 310), 1993 - (1238 + 755));
+v2.InputBegan:Connect(function(v370, v371)
+	if (not v371 and (v370.KeyCode == Enum.KeyCode.K)) then
+		local v924 = 0 + 0;
+		while true do
+			if (v924 == (1534 - (709 + 825))) then
+				v11("6895079853");
+				v15.Visible = not v15.Visible;
+				break;
+			end
+		end
+	end
+end);
+v61.MouseButton1Click:Connect(function()
+	local v372 = 0;
+	while true do
+		if (v372 == (0 - 0)) then
+			v11("6895079853");
+			v15.Visible = not v15.Visible;
+			break;
+		end
+	end
+end);
+local v67 = Instance.new("ScrollingFrame", v15);
+v67.Size = UDim2.new(0 - 0, 130, 865 - (196 + 668), -10);
+v67.Position = UDim2.new(0 - 0, 0 - 0, 833 - (171 + 662), 5);
+v67.BackgroundColor3 = Color3.fromRGB(108 - (4 + 89), 0 - 0, 0 + 0);
+v67.BorderSizePixel = 0 - 0;
+v67.ScrollBarThickness = 2;
+v67.AutomaticCanvasSize = Enum.AutomaticSize.Y;
+v67.CanvasSize = UDim2.new(0 + 0, 1486 - (35 + 1451), 1453 - (28 + 1425), 1993 - (941 + 1052));
+local v76 = Instance.new("Frame", v15);
+v76.Size = UDim2.new(1, -(135 + 5), 1, -(1564 - (822 + 692)));
+v76.Position = UDim2.new(0 - 0, 66 + 74, 297 - (45 + 252), 50);
+v76.BackgroundTransparency = 1 + 0;
+local v80 = Instance.new("ImageLabel", v67);
+v80.Size = UDim2.new(0 + 0, 121 - 71, 433 - (114 + 319), 50);
+v80.Position = UDim2.new(0.5 - 0, -25, 0 - 0, 10 + 5);
+v80.Image = game.Players:GetUserThumbnailAsync(v1.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size100x100);
+Instance.new("UICorner", v80).CornerRadius = UDim.new(1, 0 - 0);
+local v85 = Instance.new("TextLabel", v67);
+v85.Size = UDim2.new(1, 0 - 0, 1963 - (556 + 1407), 20);
+v85.Position = UDim2.new(0, 0, 1206 - (741 + 465), 535 - (170 + 295));
+v85.Text = v1.DisplayName;
+v85.TextColor3 = Color3.fromRGB(135 + 120, 255, 235 + 20);
+v85.Font = Enum.Font.SourceSansBold;
+v85.TextSize = 34 - 20;
+v85.BackgroundTransparency = 1 + 0;
+local v95 = Instance.new("UIListLayout", v67);
+v95.Padding = UDim.new(0 + 0, 5 + 3);
+v95.HorizontalAlignment = Enum.HorizontalAlignment.Center;
+local v99 = Instance.new("Frame", v67);
+v99.Size = UDim2.new(1230 - (957 + 273), 0 + 0, 0 + 0, 95);
+v99.BackgroundTransparency = 1;
+local function v102(v373)
+	local v374 = Instance.new("ScrollingFrame", v76);
+	v374.Size = UDim2.new(3 - 2, 0 - 0, 2 - 1, 0 - 0);
+	v374.BackgroundTransparency = 1781 - (389 + 1391);
+	v374.Visible = false;
+	v374.ScrollBarThickness = 3 + 1;
+	v374.BorderSizePixel = 0;
+	v374.ClipsDescendants = true;
+	local v381 = Instance.new("UIListLayout", v374);
+	v381.Padding = UDim.new(0 + 0, 26 - 14);
+	v381.SortOrder = Enum.SortOrder.LayoutOrder;
+	v381:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+		v374.CanvasSize = UDim2.new(0, 951 - (783 + 168), 0, v381.AbsoluteContentSize.Y + 50);
+	end);
+	local v385 = Instance.new("TextButton", v67);
+	v385.Size = UDim2.new(0, 115, 0 - 0, 40);
+	v385.BackgroundColor3 = Color3.fromRGB(35 + 0, 0, 0);
+	v385.Text = v373:upper();
+	v385.TextColor3 = Color3.fromRGB(255, 566 - (309 + 2), 255);
+	v385.Font = Enum.Font.SourceSansBold;
+	v385.TextSize = 55 - 37;
+	Instance.new("UICorner", v385);
+	v385.MouseButton1Click:Connect(function()
+		local v817 = 0;
+		while true do
+			if (v817 == (1212 - (1090 + 122))) then
+				v11("6895079853");
+				for v1232, v1233 in pairs(v76:GetChildren()) do
+					if v1233:IsA("ScrollingFrame") then
+						v1233.Visible = false;
+					end
+				end
+				v817 = 1 + 0;
+			end
+			if (v817 == (3 - 2)) then
+				v374.Visible = true;
+				v374.CanvasSize = UDim2.new(0 + 0, 1118 - (628 + 490), 0, v381.AbsoluteContentSize.Y + 50);
+				break;
+			end
+		end
+	end);
+	return v374;
+end
+local function v103(v393, v394, v395, v396)
+	local v397 = 0 + 0;
+	local v398;
+	local v399;
+	local v400;
+	local v401;
+	local v402;
+	while true do
+		if (v397 == (0 - 0)) then
+			v398 = Instance.new("TextButton", v393);
+			v398.Size = UDim2.new(4 - 3, -10, 774 - (431 + 343), 90 - 45);
+			v398.BackgroundColor3 = Color3.fromRGB(25, 0 - 0, 0 + 0);
+			v398.Text = "";
+			v397 = 1 + 0;
+		end
+		if (v397 == (1700 - (556 + 1139))) then
+			v401.Size = UDim2.new(0, 16, 15 - (6 + 9), 16);
+			v401.Position = (v395 and UDim2.new(1 + 0, -18, 0.5 + 0, -8)) or UDim2.new(169 - (28 + 141), 1 + 1, 0.5 - 0, -(6 + 2));
+			v401.BackgroundColor3 = Color3.fromRGB(1572 - (486 + 831), 663 - 408, 897 - 642);
+			Instance.new("UICorner", v401).CornerRadius = UDim.new(1 + 0, 0 - 0);
+			v397 = 1269 - (668 + 595);
+		end
+		if (v397 == (4 + 0)) then
+			v400.Position = UDim2.new(1 + 0, -(136 - 86), 290.5 - (23 + 267), -10);
+			v400.BackgroundColor3 = (v395 and Color3.fromRGB(2199 - (1129 + 815), 0, 0)) or Color3.fromRGB(437 - (371 + 16), 1750 - (1326 + 424), 0 - 0);
+			Instance.new("UICorner", v400).CornerRadius = UDim.new(3 - 2, 0);
+			v401 = Instance.new("Frame", v400);
+			v397 = 123 - (88 + 30);
+		end
+		if (v397 == (774 - (720 + 51))) then
+			v399.BackgroundTransparency = 2 - 1;
+			v399.TextXAlignment = Enum.TextXAlignment.Left;
+			v400 = Instance.new("Frame", v398);
+			v400.Size = UDim2.new(1776 - (421 + 1355), 40, 0 - 0, 10 + 10);
+			v397 = 1087 - (286 + 797);
+		end
+		if (v397 == (3 - 2)) then
+			Instance.new("UICorner", v398);
+			v399 = Instance.new("TextLabel", v398);
+			v399.Size = UDim2.new(1 - 0, -60, 440 - (397 + 42), 0 + 0);
+			v399.Position = UDim2.new(800 - (24 + 776), 10, 0, 0 - 0);
+			v397 = 787 - (222 + 563);
+		end
+		if (v397 == 6) then
+			v402 = v395;
+			v398.MouseButton1Click:Connect(function()
+				local v1134 = 0 - 0;
+				while true do
+					if (v1134 == (1 + 0)) then
+						v400.BackgroundColor3 = (v402 and Color3.fromRGB(445 - (23 + 167), 1798 - (690 + 1108), 0 + 0)) or Color3.fromRGB(50, 0 + 0, 848 - (40 + 808));
+						v401:TweenPosition((v402 and UDim2.new(1 + 0, -(68 - 50), 0.5 + 0, -(5 + 3))) or UDim2.new(0, 2, 0.5, -(5 + 3)), "Out", "Quart", 571.2 - (47 + 524));
+						v1134 = 2 + 0;
+					end
+					if ((0 - 0) == v1134) then
+						v402 = not v402;
+						v11("6895079853");
+						v1134 = 1;
+					end
+					if (v1134 == (2 - 0)) then
+						v396(v402);
+						v12(v394 .. ((v402 and ": ON") or ": OFF"));
+						break;
+					end
+				end
+			end);
+			break;
+		end
+		if (v397 == (4 - 2)) then
+			v399.Text = v394;
+			v399.TextColor3 = Color3.fromRGB(1981 - (1165 + 561), 255, 8 + 247);
+			v399.Font = Enum.Font.SourceSansBold;
+			v399.TextSize = 49 - 33;
+			v397 = 3;
+		end
+	end
+end
+local function v104(v403, v404, v405, v406, v407, v408)
+	local v409 = 0 + 0;
+	local v410;
+	local v411;
+	local v412;
+	local v413;
+	local v414;
+	local v415;
+	while true do
+		if ((485 - (341 + 138)) == v409) then
+			function v415()
+				local v1135 = 0 + 0;
+				local v1136;
+				local v1137;
+				local v1138;
+				while true do
+					if (v1135 == (1 - 0)) then
+						v1138 = nil;
+						while true do
+							if (v1136 == (328 - (89 + 237))) then
+								v408(v1138);
+								break;
+							end
+							if ((0 - 0) == v1136) then
+								local v1618 = 0;
+								while true do
+									if (v1618 == (0 - 0)) then
+										v1137 = math.clamp((v2:GetMouseLocation().X - v412.AbsolutePosition.X) / v412.AbsoluteSize.X, 0, 882 - (581 + 300));
+										v413.Size = UDim2.new(v1137, 1220 - (855 + 365), 2 - 1, 0 + 0);
+										v1618 = 1;
+									end
+									if (v1618 == (1236 - (1030 + 205))) then
+										v1136 = 1 + 0;
+										break;
+									end
+								end
+							end
+							if (v1136 == 1) then
+								v1138 = math.floor(v405 + ((v406 - v405) * v1137));
+								v411.Text = v404 .. " : " .. v1138;
+								v1136 = 2 + 0;
+							end
+						end
+						break;
+					end
+					if (v1135 == (286 - (156 + 130))) then
+						v1136 = 0 - 0;
+						v1137 = nil;
+						v1135 = 1;
+					end
+				end
+			end
+			v412.InputBegan:Connect(function(v1139)
+				if (v1139.UserInputType == Enum.UserInputType.MouseButton1) then
+					local v1323 = 0;
+					while true do
+						if (v1323 == 0) then
+							v414 = true;
+							v10 = true;
+							break;
+						end
+					end
+				end
+			end);
+			v2.InputEnded:Connect(function(v1140)
+				if ((v1140.UserInputType == Enum.UserInputType.MouseButton1) and v414) then
+					local v1324 = 0 - 0;
+					while true do
+						if (v1324 == (0 - 0)) then
+							v414 = false;
+							v10 = false;
+							v1324 = 1;
+						end
+						if (v1324 == 1) then
+							v12(v404 .. "を保存");
+							break;
+						end
+					end
+				end
+			end);
+			v2.InputChanged:Connect(function(v1141)
+				if (v414 and (v1141.UserInputType == Enum.UserInputType.MouseMovement)) then
+					v415();
+				end
+			end);
+			break;
+		end
+		if (v409 == 1) then
+			v411 = Instance.new("TextLabel", v410);
+			v411.Size = UDim2.new(1 + 0, -10, 0 + 0, 89 - (10 + 59));
+			v411.Position = UDim2.new(0 + 0, 10, 0 - 0, 1168 - (671 + 492));
+			v411.Text = v404 .. " : " .. v407;
+			v409 = 2;
+		end
+		if (v409 == 5) then
+			v413.BackgroundColor3 = Color3.fromRGB(203 + 52, 1215 - (369 + 846), 0 + 0);
+			Instance.new("UICorner", v413);
+			v414 = false;
+			v415 = nil;
+			v409 = 6 + 0;
+		end
+		if (2 == v409) then
+			v411.TextColor3 = Color3.fromRGB(2200 - (1036 + 909), 255, 203 + 52);
+			v411.Font = Enum.Font.SourceSansBold;
+			v411.TextSize = 15;
+			v411.BackgroundTransparency = 1 - 0;
+			v409 = 206 - (11 + 192);
+		end
+		if (v409 == (3 + 1)) then
+			v412.BackgroundColor3 = Color3.fromRGB(50, 175 - (135 + 40), 0 - 0);
+			Instance.new("UICorner", v412);
+			v413 = Instance.new("Frame", v412);
+			v413.Size = UDim2.new((v407 - v405) / (v406 - v405), 0, 1, 0 + 0);
+			v409 = 5;
+		end
+		if ((6 - 3) == v409) then
+			v411.TextXAlignment = Enum.TextXAlignment.Left;
+			v412 = Instance.new("Frame", v410);
+			v412.Size = UDim2.new(1 - 0, -(196 - (50 + 126)), 0 - 0, 2 + 6);
+			v412.Position = UDim2.new(1413 - (1233 + 180), 10, 969 - (522 + 447), 35);
+			v409 = 4;
+		end
+		if (v409 == (1421 - (107 + 1314))) then
+			v410 = Instance.new("Frame", v403);
+			v410.Size = UDim2.new(1 + 0, -10, 0, 167 - 112);
+			v410.BackgroundColor3 = Color3.fromRGB(11 + 14, 0 - 0, 0 - 0);
+			Instance.new("UICorner", v410);
+			v409 = 1911 - (716 + 1194);
+		end
+	end
+end
+local function v105(v416, v417, v418)
+	local v419 = 0 + 0;
+	local v420;
+	while true do
+		if (v419 == 2) then
+			v420.TextColor3 = Color3.fromRGB(255, 28 + 227, 758 - (74 + 429));
+			v420.Font = Enum.Font.SourceSansBold;
+			v419 = 5 - 2;
+		end
+		if (v419 == (0 + 0)) then
+			local v1061 = 0 - 0;
+			while true do
+				if (v1061 == 0) then
+					v420 = Instance.new("TextButton", v416);
+					v420.Size = UDim2.new(1 + 0, -(30 - 20), 0, 111 - 66);
+					v1061 = 1;
+				end
+				if (v1061 == (434 - (279 + 154))) then
+					v419 = 779 - (454 + 324);
+					break;
+				end
+			end
+		end
+		if (v419 == 1) then
+			v420.BackgroundColor3 = Color3.fromRGB(35, 0 + 0, 0);
+			v420.Text = v417;
+			v419 = 19 - (12 + 5);
+		end
+		if (v419 == (2 + 1)) then
+			v420.TextSize = 40 - 24;
+			Instance.new("UICorner", v420);
+			v419 = 2 + 2;
+		end
+		if (v419 == 4) then
+			v420.MouseButton1Click:Connect(function()
+				local v1142 = 0;
+				while true do
+					if (v1142 == (1093 - (277 + 816))) then
+						v11("6895079853");
+						v418();
+						break;
+					end
+				end
+			end);
+			break;
+		end
+	end
+end
+local v106 = v102("Main");
+local v107 = v102("Player");
+local v108 = v102("BloxFruits");
+v106.Visible = true;
+v103(v106, "無限ジャンプ", v9.InfiniteJump, function(v421)
+	v9.InfiniteJump = v421;
+end);
+v105(v106, "現在の場所を保存", function()
+	local v423 = 0 - 0;
+	local v424;
+	while true do
+		if (v423 == (1183 - (1058 + 125))) then
+			v424 = v1.Character and v1.Character:FindFirstChild("HumanoidRootPart");
+			if v424 then
+				local v1234 = 0 + 0;
+				local v1235;
+				while true do
+					if (v1234 == 0) then
+						v1235 = 975 - (815 + 160);
+						while true do
+							if (v1235 == (0 - 0)) then
+								v9.SavedPos = v424.Position;
+								v12("位置を保存しました");
+								break;
+							end
+						end
+						break;
+					end
+				end
+			end
+			break;
+		end
+	end
+end);
+v105(v106, "保存地点へテレポート", function()
+	local v425 = v1.Character and v1.Character:FindFirstChild("HumanoidRootPart");
+	if (v9.SavedPos and v425) then
+		local v925 = 0;
+		while true do
+			if (v925 == (0 - 0)) then
+				v425.CFrame = CFrame.new(v9.SavedPos);
+				v12("移動しました");
+				break;
+			end
+		end
+	end
+end);
+v104(v107, "移動速度", 4 + 12, 250, v9.WalkSpeed, function(v426)
+	v9.WalkSpeed = v426;
+	local v428 = v1.Character and v1.Character:FindFirstChildOfClass("Humanoid");
+	if v428 then
+		v428.WalkSpeed = v426;
+	end
+end);
+local v110 = false;
+local v111 = workspace.CurrentCamera;
+v103(v106, "オートエイム", v9.AutoAim, function(v429)
+	v9.AutoAim = v429;
+end);
+v2.InputBegan:Connect(function(v431)
+	if (v431.UserInputType == Enum.UserInputType.MouseButton2) then
+		v110 = true;
+	end
+end);
+v2.InputEnded:Connect(function(v432)
+	if (v432.UserInputType == Enum.UserInputType.MouseButton2) then
+		v110 = false;
+	end
+end);
+game:GetService("RunService").RenderStepped:Connect(function()
+	if (v9.AutoAim and v110) then
+		local v927 = nil;
+		local v928 = math.huge;
+		for v1065, v1066 in pairs(game.Players:GetPlayers()) do
+			if ((v1066 ~= v1) and v1066.Character and v1066.Character:FindFirstChild("Head")) then
+				local v1237 = 0 - 0;
+				local v1238;
+				while true do
+					if (v1237 == 0) then
+						v1238 = v1066.Character:FindFirstChildOfClass("Humanoid");
+						if (v1238 and (v1238.Health > (1898 - (41 + 1857)))) then
+							local v1620 = v1066.Character.Head;
+							local v1621 = (v1620.Position - v111.CFrame.Position).Magnitude;
+							if (v1621 < v928) then
+								local v1712 = 1893 - (1222 + 671);
+								while true do
+									if (v1712 == 0) then
+										v928 = v1621;
+										v927 = v1066;
+										break;
+									end
+								end
+							end
+						end
+						break;
+					end
+				end
+			end
+		end
+		if (v927 and v927.Character and v927.Character:FindFirstChild("Head")) then
+			v111.CFrame = CFrame.new(v111.CFrame.Position, v927.Character.Head.Position);
+		end
+	end
+end);
+v105(v106, "Fly", function()
+	local v433 = 0;
+	local v434;
+	while true do
+		if (v433 == (0 - 0)) then
+			v434 = 0 - 0;
+			while true do
+				if (v434 == (1182 - (229 + 953))) then
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))();
+					v12("Flyスクリプトを実行しました");
+					break;
+				end
+			end
+			break;
+		end
+	end
+end);
+local v112 = false;
+local v113 = 1974 - (1111 + 663);
+local v114 = Vector2.new();
+local v115 = Drawing.new("Circle");
+v115.Radius = v113;
+v115.Color = Color3.fromRGB(1834 - (874 + 705), 36 + 219, 174 + 81);
+v115.Thickness = 1;
+v115.Transparency = 0.5 - 0;
+v115.Visible = false;
+v115.Filled = false;
+v103(v106, "オートエイム（FOV）", v9.FovAim, function(v435)
+	v9.FovAim = v435;
+	v115.Visible = v435;
+end);
+v2.InputBegan:Connect(function(v438)
+	if (v438.UserInputType == Enum.UserInputType.MouseButton2) then
+		v112 = true;
+	elseif (v438.UserInputType == Enum.UserInputType.MouseMovement) then
+		v114 = Vector2.new(v438.Position.X, v438.Position.Y);
+	end
+end);
+v2.InputChanged:Connect(function(v439)
+	if (v439.UserInputType == Enum.UserInputType.MouseMovement) then
+		v114 = Vector2.new(v439.Position.X, v439.Position.Y);
+	end
+end);
+v2.InputEnded:Connect(function(v440)
+	if (v440.UserInputType == Enum.UserInputType.MouseButton2) then
+		v112 = false;
+	end
+end);
+game:GetService("RunService").RenderStepped:Connect(function()
+	local v441 = 0 + 0;
+	while true do
+		if (v441 == (679 - (642 + 37))) then
+			v115.Position = v114;
+			if (v9.FovAim and v112) then
+				local v1239 = nil;
+				local v1240 = math.huge;
+				for v1326, v1327 in pairs(game.Players:GetPlayers()) do
+					if ((v1327 ~= v1) and v1327.Character and v1327.Character:FindFirstChild("Head")) then
+						local v1470 = 0 + 0;
+						local v1471;
+						local v1472;
+						local v1473;
+						while true do
+							if (v1470 == (1 + 0)) then
+								v1473 = nil;
+								while true do
+									if (1 == v1471) then
+										if (v1473 and (v1473.Health > 0)) then
+											local v1796, v1797 = v111:WorldToViewportPoint(v1472.Position);
+											if v1797 then
+												local v1818 = 0;
+												local v1819;
+												while true do
+													if (v1818 == (0 - 0)) then
+														v1819 = (Vector2.new(v1796.X, v1796.Y) - v114).Magnitude;
+														if (v1819 <= v113) then
+															local v1834 = 454 - (233 + 221);
+															local v1835;
+															while true do
+																if (v1834 == (0 - 0)) then
+																	v1835 = (v1472.Position - v111.CFrame.Position).Magnitude;
+																	if (v1835 < v1240) then
+																		local v1841 = 0 + 0;
+																		local v1842;
+																		while true do
+																			if (v1841 == (1541 - (718 + 823))) then
+																				v1842 = 0 + 0;
+																				while true do
+																					if (v1842 == (805 - (266 + 539))) then
+																						v1240 = v1835;
+																						v1239 = v1327;
+																						break;
+																					end
+																				end
+																				break;
+																			end
+																		end
+																	end
+																	break;
+																end
+															end
+														end
+														break;
+													end
+												end
+											end
+										end
+										break;
+									end
+									if (v1471 == (0 - 0)) then
+										v1472 = v1327.Character.Head;
+										v1473 = v1327.Character:FindFirstChildOfClass("Humanoid");
+										v1471 = 1;
+									end
+								end
+								break;
+							end
+							if (v1470 == 0) then
+								v1471 = 1225 - (636 + 589);
+								v1472 = nil;
+								v1470 = 2 - 1;
+							end
+						end
+					end
+				end
+				if (v1239 and v1239.Character:FindFirstChild("Head")) then
+					v111.CFrame = CFrame.new(v111.CFrame.Position, v1239.Character.Head.Position);
+				end
+			end
+			break;
+		end
+	end
+end);
+task.spawn(function()
+	local v442 = 0 - 0;
+	local v443;
+	local v444;
+	while true do
+		if (v442 == (0 + 0)) then
+			if not _G.Settings then
+				_G.Settings = {};
+			end
+			_G.Settings.DisableHit = true;
+			v442 = 1 + 0;
+		end
+		if (v442 == 2) then
+			local v1068 = 1015 - (657 + 358);
+			while true do
+				if (v1068 == (2 - 1)) then
+					v442 = 6 - 3;
+					break;
+				end
+				if (v1068 == 0) then
+					v444 = nil;
+					function v444(v1399)
+						local v1400 = 0;
+						local v1401;
+						local v1402;
+						while true do
+							if (v1400 == (1187 - (1151 + 36))) then
+								local v1622 = 0 + 0;
+								while true do
+									if (v1622 == 1) then
+										v1400 = 1 + 0;
+										break;
+									end
+									if (v1622 == (0 - 0)) then
+										v1401 = 1832 - (1552 + 280);
+										v1402 = game.Players.LocalPlayer.Character;
+										v1622 = 1;
+									end
+								end
+							end
+							if (1 == v1400) then
+								for v1686, v1687 in ipairs(workspace:GetDescendants()) do
+									if v1687:IsA("BasePart") then
+										pcall(function()
+											if (not v1402 or not v1687:IsDescendantOf(v1402)) then
+												v1687.CanTouch = not v1399;
+											end
+										end);
+									end
+									v1401 = v1401 + 1;
+									if ((v1401 % 1000) == (834 - (64 + 770))) then
+										task.wait();
+									end
+								end
+								break;
+							end
+						end
+					end
+					v1068 = 1 + 0;
+				end
+			end
+		end
+		if (v442 == (6 - 3)) then
+			task.spawn(function()
+				v444(_G.Settings.DisableHit);
+			end);
+			workspace.DescendantAdded:Connect(function(v1144)
+				if (_G.Settings.DisableHit and v1144:IsA("BasePart")) then
+					pcall(function()
+						local v1403 = 0 + 0;
+						local v1404;
+						while true do
+							if (0 == v1403) then
+								v1404 = game.Players.LocalPlayer.Character;
+								if (not v1404 or not v1144:IsDescendantOf(v1404)) then
+									v1144.CanTouch = false;
+								end
+								break;
+							end
+						end
+					end);
+				end
+			end);
+			v442 = 1247 - (157 + 1086);
+		end
+		if (v442 == (1 - 0)) then
+			v443 = v106;
+			if (not v443 and Window) then
+				for v1328, v1329 in pairs(Window) do
+					if ((type(v1329) == "table") and ((v1329.Name == "Main") or (v1329.Title == "Main"))) then
+						v443 = v1329;
+						break;
+					end
+				end
+			end
+			v442 = 8 - 6;
+		end
+		if (v442 == 4) then
+			if v443 then
+				pcall(function()
+					v103(v443, "オブジェクトダメージ無効化", _G.Settings.DisableHit, function(v1405)
+						local v1406 = 0;
+						while true do
+							if (v1406 == (0 - 0)) then
+								_G.Settings.DisableHit = v1405;
+								task.spawn(function()
+									v444(v1405);
+								end);
+								v1406 = 1 - 0;
+							end
+							if (v1406 == (820 - (599 + 220))) then
+								v12("ダメージ無効化: " .. ((v1405 and "ON") or "OFF"));
+								break;
+							end
+						end
+					end);
+				end);
+			else
+				warn("MainTabが見つかりませんでした。");
+			end
+			break;
+		end
+	end
+end);
+local v122 = false;
+local v123 = nil;
+local v124 = workspace.CurrentCamera;
+local v125 = Instance.new("Frame", v108);
+v125.Size = UDim2.new(1 - 0, -10, 0, 2111 - (1813 + 118));
+v125.BackgroundColor3 = Color3.fromRGB(20, 0 + 0, 1217 - (841 + 376));
+Instance.new("UICorner", v125);
+local v128 = Instance.new("TextLabel", v125);
+v128.Size = UDim2.new(1 - 0, 0 + 0, 0 - 0, 889 - (464 + 395));
+v128.Text = " 👥 観戦プレイヤーを選択 (自動更新)";
+v128.TextColor3 = Color3.fromRGB(654 - 399, 123 + 132, 1092 - (467 + 370));
+v128.Font = Enum.Font.SourceSansBold;
+v128.TextSize = 28 - 14;
+v128.BackgroundTransparency = 1;
+v128.TextXAlignment = Enum.TextXAlignment.Left;
+local v136 = Instance.new("ScrollingFrame", v125);
+v136.Size = UDim2.new(1 + 0, -(34 - 24), 1 + 0, -(93 - 53));
+v136.Position = UDim2.new(520 - (150 + 370), 1287 - (74 + 1208), 0 - 0, 165 - 130);
+v136.BackgroundTransparency = 1;
+v136.CanvasSize = UDim2.new(0 + 0, 0, 390 - (14 + 376), 0);
+v136.ScrollBarThickness = 6 - 2;
+local v142 = Instance.new("UIListLayout", v136);
+v142.Padding = UDim.new(0 + 0, 5);
+local function v144()
+	for v818, v819 in pairs(v136:GetChildren()) do
+		if v819:IsA("TextButton") then
+			v819:Destroy();
+		end
+	end
+	for v820, v821 in pairs(game.Players:GetPlayers()) do
+		if (v821 ~= v1) then
+			local v1069 = 0 + 0;
+			local v1070;
+			while true do
+				if (v1069 == (3 + 0)) then
+					v1070.TextSize = 40 - 26;
+					Instance.new("UICorner", v1070);
+					v1069 = 4;
+				end
+				if (1 == v1069) then
+					v1070.BackgroundColor3 = Color3.fromRGB(40, 0 + 0, 78 - (23 + 55));
+					v1070.Text = v821.DisplayName .. " (@" .. v821.Name .. ")";
+					v1069 = 4 - 2;
+				end
+				if (v1069 == (3 + 1)) then
+					v1070.MouseButton1Click:Connect(function()
+						local v1407 = 0 + 0;
+						while true do
+							if (v1407 == 0) then
+								v123 = v821.Name;
+								v12("対象: " .. v821.DisplayName);
+								v1407 = 1 - 0;
+							end
+							if ((1 + 0) == v1407) then
+								v128.Text = " 👁️ 観戦中: " .. v821.DisplayName;
+								break;
+							end
+						end
+					end);
+					break;
+				end
+				if (v1069 == (903 - (652 + 249))) then
+					v1070.TextColor3 = Color3.fromRGB(255, 682 - 427, 255);
+					v1070.Font = Enum.Font.SourceSans;
+					v1069 = 1871 - (708 + 1160);
+				end
+				if (v1069 == 0) then
+					v1070 = Instance.new("TextButton", v136);
+					v1070.Size = UDim2.new(2 - 1, -(18 - 8), 27 - (10 + 17), 8 + 27);
+					v1069 = 1733 - (1400 + 332);
+				end
+			end
+		end
+	end
+	v136.CanvasSize = UDim2.new(0 - 0, 0, 1908 - (242 + 1666), v142.AbsoluteContentSize.Y);
+end
+game.Players.PlayerAdded:Connect(v144);
+game.Players.PlayerRemoving:Connect(v144);
+v144();
+v103(v108, "スペクテイト有効化", false, function(v446)
+	local v447 = 0 + 0;
+	while true do
+		if (v447 == (0 + 0)) then
+			v122 = v446;
+			if not v446 then
+				v124.CameraSubject = v1.Character:FindFirstChildOfClass("Humanoid");
+			end
+			break;
+		end
+	end
+end);
+game:GetService("RunService").RenderStepped:Connect(function()
+	if (v122 and v123) then
+		local v929 = game.Players:FindFirstChild(v123);
+		if (v929 and v929.Character and v929.Character:FindFirstChildOfClass("Humanoid")) then
+			v124.CameraSubject = v929.Character:FindFirstChildOfClass("Humanoid");
+		else
+			local v1146 = 0 + 0;
+			while true do
+				if (v1146 == 0) then
+					v124.CameraSubject = v1.Character:FindFirstChildOfClass("Humanoid");
+					if v123 then
+						v123 = nil;
+						v128.Text = " 👥 観戦対象を選択";
+						v12("対象がいなくなったため解除しました");
+					end
+					break;
+				end
+			end
+		end
+	end
+end);
+local v145 = false;
+local v146 = 1140 - (850 + 90);
+local v147 = game:GetService("RunService");
+local function v148()
+	local v448 = 0;
+	local v449;
+	while true do
+		if (v448 == (0 - 0)) then
+			if v145 then
+				return;
+			end
+			if not v123 then
+				v12("まず観戦リストからターゲットを選んでください");
+				return;
+			end
+			v448 = 1;
+		end
+		if (1 == v448) then
+			v145 = true;
+			v12(v123 .. " への追従を開始 (Custom TP)");
+			v448 = 1392 - (360 + 1030);
+		end
+		if (v448 == (3 + 0)) then
+			task.spawn(function()
+				local v1147;
+				v1147 = v147.RenderStepped:Connect(function(v1242)
+					local v1243 = 0;
+					local v1244;
+					local v1245;
+					local v1246;
+					while true do
+						if (v1243 == (2 - 1)) then
+							v1245 = v1.Character;
+							v1246 = v1245 and v1245:FindFirstChild("HumanoidRootPart");
+							v1243 = 2;
+						end
+						if (v1243 == (0 - 0)) then
+							if not v145 then
+								local v1626 = 1661 - (909 + 752);
+								while true do
+									if (0 == v1626) then
+										v1147:Disconnect();
+										return;
+									end
+								end
+							end
+							v1244 = game.Players:FindFirstChild(v123);
+							v1243 = 1;
+						end
+						if (v1243 == 2) then
+							if (v1244 and v1244.Character and v1244.Character:FindFirstChild("HumanoidRootPart") and v1246) then
+								local v1627 = 1223 - (109 + 1114);
+								local v1628;
+								local v1629;
+								local v1630;
+								local v1631;
+								local v1632;
+								local v1633;
+								local v1634;
+								while true do
+									if (v1627 == 3) then
+										local v1741 = 0 - 0;
+										while true do
+											if (v1741 == 0) then
+												v1633 = v1632.Magnitude;
+												v1634 = v146 * v1242;
+												v1741 = 1;
+											end
+											if ((1 + 0) == v1741) then
+												v1627 = 246 - (6 + 236);
+												break;
+											end
+										end
+									end
+									if (v1627 == (2 + 0)) then
+										local v1742 = 0 + 0;
+										while true do
+											if (v1742 == (0 - 0)) then
+												v1631 = v1246.Position;
+												v1632 = v1630 - v1631;
+												v1742 = 1 - 0;
+											end
+											if (v1742 == (1134 - (1076 + 57))) then
+												v1627 = 1 + 2;
+												break;
+											end
+										end
+									end
+									if (v1627 == (690 - (579 + 110))) then
+										v1629 = v1628.CFrame * CFrame.new(0, 5, 1 + 2);
+										v1630 = v1629.Position;
+										v1627 = 2 + 0;
+									end
+									if (v1627 == (3 + 1)) then
+										if (v1633 > 0.5) then
+											if (v1633 < v1634) then
+												v1246.CFrame = v1629;
+											else
+												local v1808 = v1631 + (v1632.Unit * v1634);
+												v1246.CFrame = CFrame.lookAt(v1808, v1630);
+											end
+											v1246.Velocity = Vector3.zero;
+											v1246.AssemblyLinearVelocity = Vector3.zero;
+										end
+										break;
+									end
+									if (v1627 == (407 - (174 + 233))) then
+										v1628 = v1244.Character.HumanoidRootPart;
+										v449();
+										v1627 = 2 - 1;
+									end
+								end
+							else
+								local v1635 = 0 - 0;
+								while true do
+									if (v1635 == 0) then
+										v145 = false;
+										v1147:Disconnect();
+										v1635 = 1 + 0;
+									end
+									if ((1175 - (663 + 511)) == v1635) then
+										v12("ターゲットロスト / 停止");
+										break;
+									end
+								end
+							end
+							break;
+						end
+					end
+				end);
+			end);
+			break;
+		end
+		if (v448 == (2 + 0)) then
+			local v1071 = 0 + 0;
+			while true do
+				if (v1071 == 0) then
+					v449 = nil;
+					function v449()
+						if v1.Character then
+							for v1636, v1637 in pairs(v1.Character:GetDescendants()) do
+								if (v1637:IsA("BasePart") and (v1637.CanCollide == true)) then
+									v1637.CanCollide = false;
+								end
+							end
+						end
+					end
+					v1071 = 1;
+				end
+				if (v1071 == (2 - 1)) then
+					v448 = 2 + 1;
+					break;
+				end
+			end
+		end
+	end
+end
+local v149 = Instance.new("Frame", v108);
+v149.Size = UDim2.new(2 - 1, -(24 - 14), 0 + 0, 194 - 94);
+v149.BackgroundTransparency = 1;
+local v152 = Instance.new("TextButton", v149);
+v152.Size = UDim2.new(0.48, 0 + 0, 0 + 0, 40);
+v152.BackgroundColor3 = Color3.fromRGB(0, 80, 722 - (478 + 244));
+v152.Text = "疑似Tween開始";
+v152.TextColor3 = Color3.fromRGB(255, 772 - (440 + 77), 116 + 139);
+Instance.new("UICorner", v152);
+local v157 = Instance.new("TextButton", v149);
+v157.Size = UDim2.new(0.48, 0 - 0, 1556 - (655 + 901), 8 + 32);
+v157.Position = UDim2.new(0.52 + 0, 0 + 0, 0 - 0, 0);
+v157.BackgroundColor3 = Color3.fromRGB(1525 - (695 + 750), 0 - 0, 0);
+v157.Text = "停止";
+v157.TextColor3 = Color3.fromRGB(255, 393 - 138, 255);
+Instance.new("UICorner", v157);
+local v163 = Instance.new("Frame", v149);
+v163.Size = UDim2.new(3 - 2, 351 - (285 + 66), 0 - 0, 1360 - (682 + 628));
+v163.Position = UDim2.new(0 + 0, 0, 299 - (176 + 123), 19 + 26);
+v163.BackgroundTransparency = 1 + 0;
+v104(v163, "追従スピード", 369 - (239 + 30), 96 + 254, v146, function(v450)
+	v146 = v450;
+end);
+v152.MouseButton1Click:Connect(function()
+	v148();
+end);
+v157.MouseButton1Click:Connect(function()
+	local v451 = 0;
+	while true do
+		if (v451 == 0) then
+			v145 = false;
+			v12("追従を停止しました");
+			break;
+		end
+	end
+end);
+v9.SpeedMultiplier = 1 + 0;
+game:GetService("RunService").Heartbeat:Connect(function()
+	local v452 = 0 - 0;
+	local v453;
+	while true do
+		if ((0 - 0) == v452) then
+			v453 = v1.Character;
+			if v453 then
+				v453:SetAttribute("SpeedMultiplier", v9.SpeedMultiplier);
+			end
+			break;
+		end
+	end
+end);
+v104(v108, "スピード", 316 - (306 + 9), 3489 - 2489, v9.SpeedMultiplier, function(v454)
+	local v455 = 0 + 0;
+	local v456;
+	while true do
+		if (v455 == (1 + 0)) then
+			if v456 then
+				v456:SetAttribute("SpeedMultiplier", v454);
+			end
+			break;
+		end
+		if (v455 == (0 + 0)) then
+			v9.SpeedMultiplier = v454;
+			v456 = v1.Character;
+			v455 = 2 - 1;
+		end
+	end
+end);
+v9.DashLength = 10;
+game:GetService("RunService").Heartbeat:Connect(function()
+	local v457 = v1.Character;
+	if v457 then
+		v457:SetAttribute("DashLength", v9.DashLength);
+	end
+end);
+v104(v108, "ダッシュ", 10, 1000, v9.DashLength, function(v458)
+	local v459 = 0;
+	local v460;
+	while true do
+		if ((1375 - (1140 + 235)) == v459) then
+			v9.DashLength = v458;
+			v460 = v1.Character;
+			v459 = 1;
+		end
+		if (v459 == 1) then
+			if v460 then
+				v460:SetAttribute("DashLength", v458);
+			end
+			break;
+		end
+	end
+end);
+_G.JumpHeightValue = 32 + 18;
+_G.AutoJumpEnabled = true;
+game:GetService("RunService").Heartbeat:Connect(function()
+	if _G.AutoJumpEnabled then
+		pcall(function()
+			local v1077 = game.Players.LocalPlayer.Character;
+			local v1078 = v1077 and v1077:FindFirstChildOfClass("Humanoid");
+			if v1078 then
+				v1078.UseJumpPower = true;
+				v1078.JumpPower = _G.JumpHeightValue;
+			end
+		end);
+	end
+end);
+v104(v108, "ジャンプ力", 46 + 4, 129 + 371, _G.JumpHeightValue, function(v461)
+	local v462 = 0;
+	while true do
+		if (v462 == (53 - (33 + 19))) then
+			pcall(function()
+				local v1148 = 0 + 0;
+				local v1149;
+				while true do
+					if (v1148 == (0 - 0)) then
+						v1149 = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid");
+						if v1149 then
+							local v1540 = 0 + 0;
+							local v1541;
+							while true do
+								if (v1540 == (0 - 0)) then
+									v1541 = 0 + 0;
+									while true do
+										if (v1541 == (689 - (586 + 103))) then
+											v1149.UseJumpPower = true;
+											v1149.JumpPower = v461;
+											break;
+										end
+									end
+									break;
+								end
+							end
+						end
+						break;
+					end
+				end
+			end);
+			break;
+		end
+		if (v462 == (0 + 0)) then
+			_G.JumpHeightValue = v461;
+			_G.AutoJumpEnabled = true;
+			v462 = 2 - 1;
+		end
+	end
+end);
+v9.BangKey = "G";
+v9.TpKey = "U";
+v9.BangEnabled = false;
+v9.TpEnabled = false;
+local v173 = false;
+local v174 = tick();
+local v175 = nil;
+local v124 = workspace.CurrentCamera;
+local v176 = v1:GetMouse();
+local function v177(v463)
+	local v464, v465 = pcall(function()
+		return Enum.KeyCode[v463:upper()];
+	end);
+	return (v464 and v465) or nil;
+end
+local function v178(v466, v467, v468, v469)
+	local v470 = Instance.new("Frame", v466);
+	v470.Size = UDim2.new(1, -10, 1488 - (1309 + 179), 45);
+	v470.BackgroundColor3 = Color3.fromRGB(25, 0 - 0, 0 + 0);
+	Instance.new("UICorner", v470);
+	local v473 = Instance.new("TextLabel", v470);
+	v473.Size = UDim2.new(0 - 0, 114 + 36, 1 - 0, 0 - 0);
+	v473.Position = UDim2.new(609 - (295 + 314), 10, 0 - 0, 1962 - (1300 + 662));
+	v473.Text = v467;
+	v473.TextColor3 = Color3.fromRGB(800 - 545, 2010 - (1178 + 577), 133 + 122);
+	v473.Font = Enum.Font.SourceSansBold;
+	v473.TextSize = 16;
+	v473.BackgroundTransparency = 2 - 1;
+	v473.TextXAlignment = Enum.TextXAlignment.Left;
+	local v484 = Instance.new("TextBox", v470);
+	v484.Size = UDim2.new(0, 1455 - (851 + 554), 0, 27 + 3);
+	v484.Position = UDim2.new(2 - 1, -(130 - 70), 302.5 - (115 + 187), -15);
+	v484.BackgroundColor3 = Color3.fromRGB(40, 0, 0 + 0);
+	v484.Text = v468;
+	v484.TextColor3 = Color3.fromRGB(242 + 13, 1004 - 749, 1416 - (160 + 1001));
+	v484.Font = Enum.Font.SourceSansBold;
+	v484.TextSize = 16;
+	Instance.new("UICorner", v484);
+	v484.FocusLost:Connect(function()
+		local v822 = 0 + 0;
+		while true do
+			if ((0 + 0) == v822) then
+				v469(v484.Text);
+				v12(v467 .. "を [" .. v484.Text:upper() .. "] に設定");
+				break;
+			end
+		end
+	end);
+end
+v178(v106, "BANG起動キー設定", v9.BangKey, function(v492)
+	v9.BangKey = v492:upper();
+end);
+v178(v106, "クリックTPキー設定", v9.TpKey, function(v494)
+	v9.TpKey = v494:upper();
+end);
+v103(v106, "BANG機能 有効化", false, function(v496)
+	local v497 = 0 - 0;
+	while true do
+		if (v497 == 0) then
+			v9.BangEnabled = v496;
+			if not v496 then
+				v173 = false;
+			end
+			break;
+		end
+	end
+end);
+v2.InputBegan:Connect(function(v498, v499)
+	if v499 then
+		return;
+	end
+	if ((v498.UserInputType == Enum.UserInputType.MouseButton1) and v2:IsKeyDown(Enum.KeyCode.LeftControl)) then
+		local v930 = 358 - (237 + 121);
+		local v931;
+		local v932;
+		local v933;
+		while true do
+			if (v930 == (898 - (525 + 372))) then
+				for v1337, v1338 in pairs(game.Players:GetPlayers()) do
+					if ((v1338 ~= v1) and v1338.Character and v1338.Character:FindFirstChild("HumanoidRootPart")) then
+						local v1475, v1476 = v124:WorldToViewportPoint(v1338.Character.HumanoidRootPart.Position);
+						if v1476 then
+							local v1638 = 0;
+							local v1639;
+							while true do
+								if (v1638 == (0 - 0)) then
+									v1639 = (Vector2.new(v1475.X, v1475.Y) - v931).Magnitude;
+									if (v1639 < v933) then
+										local v1781 = 0;
+										while true do
+											if ((0 - 0) == v1781) then
+												v933 = v1639;
+												v932 = v1338;
+												break;
+											end
+										end
+									end
+									break;
+								end
+							end
+						end
+					end
+				end
+				if v932 then
+					local v1409 = 0;
+					local v1410;
+					while true do
+						if (v1409 == (142 - (96 + 46))) then
+							v1410 = 0;
+							while true do
+								if ((777 - (643 + 134)) == v1410) then
+									v175 = v932;
+									v12("ターゲット確定: " .. v932.DisplayName);
+									break;
+								end
+							end
+							break;
+						end
+					end
+				else
+					v12("近くにプレイヤーがいません");
+				end
+				break;
+			end
+			if (v930 == (0 + 0)) then
+				v931 = v2:GetMouseLocation();
+				v932, v933 = nil, 250;
+				v930 = 2 - 1;
+			end
+		end
+	end
+	local v500 = v177(v9.BangKey);
+	local v501 = v177(v9.TpKey);
+	if (v500 and (v498.KeyCode == v500)) then
+		local v934 = 0;
+		while true do
+			if (v934 == (0 - 0)) then
+				v9.BangEnabled = not v9.BangEnabled;
+				v12("BANG: " .. ((v9.BangEnabled and "ON") or "OFF"));
+				break;
+			end
+		end
+	elseif (v501 and (v498.KeyCode == v501)) then
+		local v1150 = 0 + 0;
+		while true do
+			if ((0 - 0) == v1150) then
+				v9.TpEnabled = not v9.TpEnabled;
+				v12("クリックTP: " .. ((v9.TpEnabled and "ON") or "OFF"));
+				break;
+			end
+		end
+	end
+end);
+game:GetService("RunService").Heartbeat:Connect(function()
+	if (v9.BangEnabled and v175 and v175.Character) then
+		local v935 = 0 - 0;
+		local v936;
+		local v937;
+		local v938;
+		while true do
+			if (1 == v935) then
+				v938 = nil;
+				while true do
+					if (v936 == (720 - (316 + 403))) then
+						if (v937 and v938 and ((tick() - v174) >= 0.2)) then
+							v937.CFrame = v938.CFrame * CFrame.new(0 + 0, 0 - 0, 3);
+						end
+						break;
+					end
+					if (v936 == (0 + 0)) then
+						v937 = v1.Character and v1.Character:FindFirstChild("HumanoidRootPart");
+						v938 = v175.Character:FindFirstChild("HumanoidRootPart");
+						v936 = 2 - 1;
+					end
+				end
+				break;
+			end
+			if (v935 == (0 + 0)) then
+				v936 = 0 + 0;
+				v937 = nil;
+				v935 = 3 - 2;
+			end
+		end
+	end
+end);
+v176.Button1Down:Connect(function()
+	if (v9.BangEnabled and v9.TpEnabled and v175) then
+		local v939 = v175.Character and v175.Character:FindFirstChild("HumanoidRootPart");
+		if v939 then
+			local v1151 = 0;
+			local v1152;
+			local v1153;
+			while true do
+				if (v1151 == (4 - 3)) then
+					v1.Character.HumanoidRootPart.CFrame = CFrame.new(v939.Position + v1153);
+					v174 = tick();
+					break;
+				end
+				if (v1151 == 0) then
+					local v1413 = 0 - 0;
+					while true do
+						if (v1413 == 1) then
+							v1151 = 1 + 0;
+							break;
+						end
+						if (v1413 == (0 - 0)) then
+							v1152 = math.random() * (1 + 1) * math.pi;
+							v1153 = Vector3.new(math.cos(v1152) * 300, 14 - 9, math.sin(v1152) * 300);
+							v1413 = 18 - (12 + 5);
+						end
+					end
+				end
+			end
+		end
+	end
+end);
+local v179 = {};
+local v180 = workspace:FindFirstChild("Boats");
+local function v181()
+	local v502 = 0 - 0;
+	local v503;
+	local v504;
+	local v505;
+	local v506;
+	while true do
+		if (v502 == 1) then
+			if (not v504 or not v504.SeatPart or not v180) then
+				return nil, {};
+			end
+			v505 = nil;
+			v502 = 2;
+		end
+		if (v502 == 2) then
+			for v1154, v1155 in ipairs(v180:GetChildren()) do
+				if v504.SeatPart:IsDescendantOf(v1155) then
+					v505 = v1155;
+					break;
+				end
+			end
+			v506 = {};
+			v502 = 3;
+		end
+		if (v502 == (5 - 2)) then
+			if v505 then
+				for v1339, v1340 in ipairs(v505:GetDescendants()) do
+					if ((v1340:IsA("Seat") or v1340:IsA("VehicleSeat")) and (v1340 ~= v504.SeatPart) and (v1340.Occupant == nil)) then
+						table.insert(v506, v1340);
+					end
+				end
+			end
+			return v505, v506;
+		end
+		if (v502 == 0) then
+			v503 = v1.Character;
+			v504 = v503 and v503:FindFirstChildOfClass("Humanoid");
+			v502 = 1;
+		end
+	end
+end
+local v182 = Instance.new("Frame", v108);
+v182.Size = UDim2.new(1 - 0, -(24 - 14), 0, 41 + 159);
+v182.BackgroundColor3 = Color3.fromRGB(1993 - (1656 + 317), 20, 23 + 2);
+Instance.new("UICorner", v182);
+local v185 = Instance.new("TextLabel", v182);
+v185.Size = UDim2.new(1, 0, 0 + 0, 79 - 49);
+v185.Text = " 🚢 Target Slots (ボート空き枠)";
+v185.TextColor3 = Color3.fromRGB(255, 255, 1254 - 999);
+v185.Font = Enum.Font.SourceSansBold;
+v185.TextSize = 14;
+v185.BackgroundTransparency = 1;
+v185.TextXAlignment = Enum.TextXAlignment.Left;
+local v193 = Instance.new("ScrollingFrame", v182);
+v193.Size = UDim2.new(355 - (5 + 349), -(47 - 37), 1272 - (266 + 1005), -75);
+v193.Position = UDim2.new(0, 4 + 1, 0 - 0, 46 - 11);
+v193.BackgroundTransparency = 1697 - (561 + 1135);
+v193.ScrollBarThickness = 5 - 1;
+local v198 = Instance.new("UIListLayout", v193);
+v198.Padding = UDim.new(0, 16 - 11);
+local function v200()
+	local v507 = 0;
+	local v508;
+	local v509;
+	local v510;
+	while true do
+		if (v507 == (1068 - (507 + 559))) then
+			for v1156, v1157 in ipairs(game.Players:GetPlayers()) do
+				if (v1157 ~= v1) then
+					local v1341 = 0 - 0;
+					local v1342;
+					local v1343;
+					while true do
+						if (v1341 == 1) then
+							v1343.Size = UDim2.new(3 - 2, -(398 - (212 + 176)), 905 - (250 + 655), 30);
+							v1343.Text = v1157.DisplayName;
+							v1341 = 2;
+						end
+						if (v1341 == (5 - 3)) then
+							v1343.TextColor3 = Color3.fromRGB(255, 445 - 190, 398 - 143);
+							v1343.BackgroundColor3 = (v1342 and Color3.fromRGB(2106 - (1869 + 87), 0 - 0, 1901 - (484 + 1417))) or Color3.fromRGB(85 - 45, 67 - 27, 813 - (48 + 725));
+							v1341 = 4 - 1;
+						end
+						if ((0 - 0) == v1341) then
+							v1342 = table.find(v179, v1157);
+							v1343 = Instance.new("TextButton", v193);
+							v1341 = 1 + 0;
+						end
+						if (v1341 == (7 - 4)) then
+							Instance.new("UICorner", v1343);
+							v1343.MouseButton1Click:Connect(function()
+								local v1641 = 0 + 0;
+								local v1642;
+								while true do
+									if (v1641 == (1 + 0)) then
+										v200();
+										break;
+									end
+									if (v1641 == (853 - (152 + 701))) then
+										v1642 = table.find(v179, v1157);
+										if v1642 then
+											table.remove(v179, v1642);
+										elseif (#v179 < v510) then
+											table.insert(v179, v1157);
+										else
+											v12("空き席が足りません！");
+										end
+										v1641 = 1;
+									end
+								end
+							end);
+							break;
+						end
+					end
+				end
+			end
+			v193.CanvasSize = UDim2.new(0, 1311 - (430 + 881), 0 + 0, v198.AbsoluteContentSize.Y);
+			break;
+		end
+		if (v507 == 1) then
+			v185.Text = " 🚢 Target Slots: " .. #v179 .. " / " .. v510;
+			for v1158, v1159 in ipairs(v193:GetChildren()) do
+				if v1159:IsA("TextButton") then
+					v1159:Destroy();
+				end
+			end
+			v507 = 2;
+		end
+		if (v507 == 0) then
+			v508, v509 = v181();
+			v510 = #v509;
+			v507 = 896 - (557 + 338);
+		end
+	end
+end
+local v201 = Instance.new("TextButton", v182);
+v201.Size = UDim2.new(0.9, 0 + 0, 0 - 0, 122 - 87);
+v201.Position = UDim2.new(0.05 - 0, 0 - 0, 802 - (499 + 302), -40);
+v201.BackgroundColor3 = Color3.fromRGB(866 - (39 + 827), 276 - 176, 0 - 0);
+v201.Text = "ボートハメ込みTP開始";
+v201.TextColor3 = Color3.fromRGB(1012 - 757, 255, 255);
+Instance.new("UICorner", v201);
+v201.MouseButton1Click:Connect(function()
+	local v511 = 0;
+	local v512;
+	local v513;
+	while true do
+		if (v511 == 1) then
+			v12("テレポートを開始します...");
+			for v1160, v1161 in ipairs(v179) do
+				local v1162 = v513[v1160];
+				local v1163 = v1161.Character and v1161.Character:FindFirstChild("HumanoidRootPart");
+				if (v1162 and v1163) then
+					local v1344 = 0 - 0;
+					local v1345;
+					local v1346;
+					local v1347;
+					while true do
+						if (v1344 == (0 + 0)) then
+							v1345 = 0 - 0;
+							v1346 = nil;
+							v1344 = 1 + 0;
+						end
+						if (v1344 == (1 - 0)) then
+							v1347 = nil;
+							while true do
+								if (v1345 == 1) then
+									v512:PivotTo(v1347);
+									task.wait(104.3 - (103 + 1));
+									break;
+								end
+								if (v1345 == (554 - (475 + 79))) then
+									v1346 = v512:GetPivot():Inverse() * v1162.CFrame;
+									v1347 = v1163.CFrame * v1346:Inverse();
+									v1345 = 1;
+								end
+							end
+							break;
+						end
+					end
+				end
+			end
+			v511 = 4 - 2;
+		end
+		if (v511 == (9 - 6)) then
+			v12("全ターゲットの処理が完了しました");
+			break;
+		end
+		if (v511 == (1 + 1)) then
+			v179 = {};
+			v200();
+			v511 = 3 + 0;
+		end
+		if (v511 == (1503 - (1395 + 108))) then
+			v512, v513 = v181();
+			if (not v512 or (#v179 == (0 - 0))) then
+				local v1250 = 1204 - (7 + 1197);
+				while true do
+					if (v1250 == (0 + 0)) then
+						v12("ボートに乗っていないか、対象を選んでいません");
+						return;
+					end
+				end
+			end
+			v511 = 1 + 0;
+		end
+	end
+end);
+game.Players.PlayerAdded:Connect(v200);
+game.Players.PlayerRemoving:Connect(v200);
+v200();
+local function v207(v514)
+	local v515 = 319 - (27 + 292);
+	local v516;
+	local v517;
+	while true do
+		if ((2 - 1) == v515) then
+			if v516 then
+				v516:Destroy();
+			end
+			v517 = v514:WaitForChild("Humanoid", 6 - 1);
+			v515 = 8 - 6;
+		end
+		if (v515 == (0 - 0)) then
+			if not v514 then
+				return;
+			end
+			v516 = v514:WaitForChild("Animate", 5);
+			v515 = 1 - 0;
+		end
+		if (v515 == (141 - (43 + 96))) then
+			if v517 then
+				local v1251 = 0 - 0;
+				while true do
+					if (v1251 == (0 - 0)) then
+						for v1547, v1548 in pairs(v517:GetPlayingAnimationTracks()) do
+							v1548:Stop(0);
+						end
+						v517.AnimationPlayed:Connect(function(v1549)
+							v1549:Stop(0);
+						end);
+						break;
+					end
+				end
+			end
+			break;
+		end
+	end
+end
+v105(v106, "アニメーション無効化", function()
+	local v518 = 0 + 0;
+	while true do
+		if (v518 == 0) then
+			if v1.Character then
+				v207(v1.Character);
+			end
+			v1.CharacterAdded:Connect(v207);
+			v518 = 1;
+		end
+		if (1 == v518) then
+			v12("アニメーションを完全に削除しました");
+			break;
+		end
+	end
+end);
+local function v208()
+	local v519 = game:GetService("Lighting");
+	local v520 = game:GetService("Workspace");
+	local function v521(v823)
+		local v824 = 0 + 0;
+		while true do
+			if (v824 == (0 - 0)) then
+				if (v823:IsA("Sound") or v823:IsA("SoundGroup")) then
+					return;
+				end
+				pcall(function()
+					if (v823:IsA("ParticleEmitter") or v823:IsA("Smoke") or v823:IsA("Fire") or v823:IsA("Sparkles")) then
+						local v1414 = 0 + 0;
+						local v1415;
+						while true do
+							if (v1414 == (0 - 0)) then
+								v1415 = 0;
+								while true do
+									if (v1415 == (0 + 0)) then
+										v823.Transparency = NumberSequence.new(0.99 + 0);
+										if v823:IsA("ParticleEmitter") then
+											v823.Rate = v823.Rate * (1751.01 - (1414 + 337));
+										end
+										break;
+									end
+								end
+								break;
+							end
+						end
+					elseif (v823:IsA("Trail") or v823:IsA("Beam")) then
+						v823.Transparency = 1940.99 - (1642 + 298);
+					elseif (v823:IsA("Decal") or v823:IsA("Texture")) then
+						if (v823.Name ~= "face") then
+							v823.Transparency = 0.98 - 0;
+						end
+					elseif (v823:IsA("PostEffect") or v823:IsA("ColorCorrectionEffect") or v823:IsA("BloomEffect") or v823:IsA("BlurEffect") or v823:IsA("SunRaysEffect")) then
+						v823.Enabled = false;
+					elseif (v823:IsA("BasePart") or v823:IsA("MeshPart")) then
+						local v1783 = 0;
+						local v1784;
+						while true do
+							if (v1783 == (0 - 0)) then
+								v1784 = 0 - 0;
+								while true do
+									if (v1784 == (0 + 0)) then
+										v823.CastShadow = false;
+										v823.Reflectance = 0 + 0;
+										v1784 = 1;
+									end
+									if (v1784 == 1) then
+										v823.Material = Enum.Material.SmoothPlastic;
+										break;
+									end
+								end
+								break;
+							end
+						end
+					end
+				end);
+				break;
+			end
+		end
+	end
+	for v825, v826 in pairs(game:GetDescendants()) do
+		v521(v826);
+	end
+	v520.DescendantAdded:Connect(v521);
+	v519.GlobalShadows = false;
+	v519.FogEnd = 9000000460 - (357 + 615);
+	pcall(function()
+		v9().Rendering.QualityLevel = Enum.QualityLevel.Level01;
+	end);
+	v12("FPS Boost有効");
+end
+v105(v106, "FPS Boost", function()
+	v208();
+end);
+local function v209()
+	local v524 = game:GetService("Lighting");
+	local v525 = game:GetService("Workspace");
+	local v526 = v525.Terrain;
+	local v527 = game:GetService("RunService");
+	v524.GlobalShadows = true;
+	v524.ShadowSoftness = 0;
+	v524.Brightness = 1.8;
+	v524.EnvironmentDiffuseScale = 1;
+	v524.EnvironmentSpecularScale = 1 + 0;
+	v524.ExposureCompensation = 0.1;
+	local v534 = v526:FindFirstChildOfClass("Clouds") or Instance.new("Clouds", v526);
+	v534.Enabled = true;
+	v534.Cover = 0.62 - 0;
+	v534.Density = 0.75;
+	pcall(function()
+		v527:UnbindFromRenderStep("ZenithCloudDrift");
+	end);
+	local v538 = 0;
+	v527:BindToRenderStep("ZenithCloudDrift", Enum.RenderPriority.Last.Value, function(v829)
+		local v830 = 0 + 0;
+		while true do
+			if (0 == v830) then
+				v538 = v538 + v829;
+				v534.Cover = (0.62 - 0) + (math.sin(v538 * 0.15) * 0.015);
+				break;
+			end
+		end
+	end);
+	for v831, v832 in pairs(v525:GetDescendants()) do
+		pcall(function()
+			if (v832:IsA("BasePart") or v832:IsA("MeshPart")) then
+				local v1165 = 0;
+				while true do
+					if ((0 + 0) == v1165) then
+						v832.CastShadow = true;
+						if (v832.Reflectance < 0.15) then
+							v832.Reflectance = 0.22 + 0;
+						end
+						v1165 = 1 + 0;
+					end
+					if (v1165 == (1302 - (384 + 917))) then
+						if ((v832.Material == Enum.Material.SmoothPlastic) or (v832.Material == Enum.Material.Glass)) then
+							v832.Reflectance = 0.35;
+						end
+						break;
+					end
+				end
+			end
+		end);
+	end
+	local function v539(v833)
+		if v833:IsA("BloomEffect") then
+			local v1083 = 0;
+			while true do
+				if ((698 - (128 + 569)) == v1083) then
+					v833.Threshold = 0.9;
+					break;
+				end
+				if (v1083 == (1543 - (1407 + 136))) then
+					v833.Intensity = 1887.35 - (687 + 1200);
+					v833.Size = 1734 - (556 + 1154);
+					v1083 = 1;
+				end
+			end
+		elseif v833:IsA("SunRaysEffect") then
+			v833.Intensity = 0.06;
+		elseif v833:IsA("Atmosphere") then
+			local v1417 = 0;
+			while true do
+				if (v1417 == (3 - 2)) then
+					v833.Haze = 95.8 - (9 + 86);
+					break;
+				end
+				if (v1417 == 0) then
+					v833.Density = 421.28 - (275 + 146);
+					v833.Glare = 0.4 + 0;
+					v1417 = 65 - (29 + 35);
+				end
+			end
+		end
+	end
+	for v834, v835 in pairs(v524:GetChildren()) do
+		v539(v835);
+	end
+	v524.ChildAdded:Connect(v539);
+	if not v524:FindFirstChildOfClass("Atmosphere") then
+		local v940 = Instance.new("Atmosphere", v524);
+		v940.Density = 0.28;
+		v940.Glare = 0.4;
+		v940.Haze = 0.8 - 0;
+	end
+	local v540 = v524:FindFirstChild("ZenithBlurV2") or Instance.new("BlurEffect", v524);
+	v540.Name = "ZenithBlurV2";
+	local v542 = v525.CurrentCamera.CFrame;
+	pcall(function()
+		v527:UnbindFromRenderStep("ZenithDynamicBlur");
+	end);
+	v527:BindToRenderStep("ZenithDynamicBlur", Enum.RenderPriority.Camera.Value + (2 - 1), function()
+		local v836 = v525.CurrentCamera;
+		local v837 = (v836.CFrame.Position - v542.Position).Magnitude;
+		local v838 = (v836.CFrame.LookVector - v542.LookVector).Magnitude;
+		local v839 = math.min((v837 * 2) + (v838 * 40), 10);
+		v540.Size = v540.Size + ((v839 - v540.Size) * 0.2);
+		v542 = v836.CFrame;
+	end);
+	v12("RTX適用完了");
+end
+v105(v106, "RTX", function()
+	v209();
+end);
+local v210 = game:GetService("Players");
+local v147 = game:GetService("RunService");
+local v211 = v210.LocalPlayer;
+local v212 = workspace.CurrentCamera;
+if _G.ESPConnection then
+	_G.ESPConnection:Disconnect();
+end
+if _G.ESPObjects then
+	for v944, v945 in pairs(_G.ESPObjects) do
+		for v1084, v1085 in pairs(v945) do
+			pcall(function()
+				v1085:Remove();
+			end);
+		end
+	end
+end
+_G.ESPObjects = {};
+_G.ESPEnabled = false;
+local function v213(v543)
+	local v544 = v543.Character;
+	local v545 = v544 and v544:FindFirstChild("HumanoidRootPart");
+	if not v545 then
+		return false;
+	end
+	local v546 = workspace:FindFirstChild("_WorldOrigin") and workspace._WorldOrigin:FindFirstChild("SafeZones");
+	if not v546 then
+		return false;
+	end
+	for v842, v843 in pairs(v546:GetChildren()) do
+		if v843:IsA("BasePart") then
+			local v1086 = 0 - 0;
+			local v1087;
+			local v1088;
+			local v1089;
+			local v1090;
+			while true do
+				if ((1 + 0) == v1086) then
+					if v1089 then
+						v1088 = v1088 * v1089.Scale;
+					end
+					v1090 = v545.Position;
+					v1086 = 2;
+				end
+				if (v1086 == 2) then
+					if ((v1090.X >= (v1087.X - (v1088.X / 2))) and (v1090.X <= (v1087.X + (v1088.X / 2))) and (v1090.Z >= (v1087.Z - (v1088.Z / 2))) and (v1090.Z <= (v1087.Z + (v1088.Z / (1014 - (53 + 959)))))) then
+						return true;
+					end
+					break;
+				end
+				if ((408 - (312 + 96)) == v1086) then
+					local v1352 = 0 - 0;
+					while true do
+						if (v1352 == 1) then
+							v1086 = 1;
+							break;
+						end
+						if (v1352 == (285 - (147 + 138))) then
+							v1087, v1088 = v843.Position, v843.Size;
+							v1089 = v843:FindFirstChildOfClass("SpecialMesh");
+							v1352 = 900 - (813 + 86);
+						end
+					end
+				end
+			end
+		end
+	end
+	return false;
+end
+local function v214(v547)
+	return (v547:GetAttribute("KenActive") == true) or (v547:FindFirstChild("KenActive", true) and (v547:FindFirstChild("KenActive", true).Value == true));
+end
+local function v215(v548)
+	if (not v548 or (type(v548) ~= "number")) then
+		return "0";
+	end
+	if (v548 >= 1000000) then
+		return string.format("%.1fM", v548 / 1000000);
+	elseif (v548 >= (904 + 96)) then
+		return string.format("%.1fk", v548 / (1852 - 852));
+	else
+		return tostring(v548);
+	end
+end
+local function v216(v549)
+	local v550 = 0;
+	local v551;
+	while true do
+		if (v550 == (493 - (18 + 474))) then
+			function v551(v1166, v1167)
+				local v1168 = 0;
+				local v1169;
+				while true do
+					if (v1168 == (2 + 1)) then
+						return v1169;
+					end
+					if (v1168 == (3 - 2)) then
+						v1169.Color = v1167;
+						v1169.Center = true;
+						v1168 = 1088 - (860 + 226);
+					end
+					if (v1168 == (305 - (121 + 182))) then
+						v1169.Outline = true;
+						v1169.Visible = false;
+						v1168 = 1 + 2;
+					end
+					if (v1168 == 0) then
+						v1169 = Drawing.new("Text");
+						v1169.Size = v1166;
+						v1168 = 1;
+					end
+				end
+			end
+			_G.ESPObjects[v549] = {Line=Drawing.new("Line"),NameText=v551(1256 - (988 + 252), Color3.new(1, 1 + 0, 1 + 0)),PvpText=v551(1984 - (49 + 1921), Color3.new(891 - (223 + 667), 53 - (51 + 1), 1)),KenText=v551(23 - 9, Color3.new(1 - 0, 0, 1126 - (146 + 979))),StatText=v551(4 + 9, Color3.new(606 - (311 + 294), 0.8, 0)),HPText=v551(13, Color3.new(0, 2 - 1, 0 + 0))};
+			break;
+		end
+		if ((1443 - (496 + 947)) == v550) then
+			if (v549 == v211) then
+				return;
+			end
+			v551 = nil;
+			v550 = 1359 - (1233 + 125);
+		end
+	end
+end
+for v552, v553 in ipairs(v210:GetPlayers()) do
+	v216(v553);
+end
+v210.PlayerAdded:Connect(v216);
+_G.ESPConnection = v147.RenderStepped:Connect(function()
+	for v844, v845 in pairs(_G.ESPObjects) do
+		if not _G.ESPEnabled then
+			for v1170, v1171 in pairs(v845) do
+				v1171.Visible = false;
+			end
+			continue;
+		end
+		local v846 = v844.Character;
+		local v847 = v846 and v846:FindFirstChild("HumanoidRootPart");
+		local v848 = v846 and v846:FindFirstChildOfClass("Humanoid");
+		if (v847 and v848) then
+			local v1091, v1092 = v212:WorldToViewportPoint(v847.Position);
+			if v1092 then
+				local v1253 = 0 + 0;
+				local v1254;
+				local v1255;
+				local v1256;
+				local v1257;
+				local v1258;
+				local v1259;
+				local v1260;
+				while true do
+					if (v1253 == (3 + 0)) then
+						v1260 = (v1256 and "PvP: OFF") or "PvP: ON";
+						if v1255 then
+							local v1646 = 0 + 0;
+							local v1647;
+							while true do
+								if (v1646 == 0) then
+									v1647 = 1645 - (963 + 682);
+									while true do
+										if (v1647 == (0 + 0)) then
+											v1260 = v1260 .. " (SAFE)";
+											v845.PvpText.Color = Color3.new(1504 - (504 + 1000), 1 + 0, 1 + 0);
+											break;
+										end
+									end
+									break;
+								end
+							end
+						else
+							v845.PvpText.Color = (v1256 and Color3.new(0.7 + 0, 0.7, 0.7 - 0)) or Color3.new(1 + 0, 0, 0 + 0);
+						end
+						v845.PvpText.Text = v1260;
+						v845.PvpText.Position = Vector2.new(v1091.X, v1091.Y - 65);
+						v1253 = 186 - (156 + 26);
+					end
+					if (1 == v1253) then
+						v1258 = v844:FindFirstChild("leaderstats");
+						v1259 = v1258 and v1258:FindFirstChild("Bounty/Honor");
+						v845.Line.From = Vector2.new(v212.ViewportSize.X / (2 + 0), v212.ViewportSize.Y);
+						v845.Line.To = Vector2.new(v1091.X, v1091.Y);
+						v1253 = 2 - 0;
+					end
+					if (v1253 == (168 - (149 + 15))) then
+						v845.PvpText.Visible = true;
+						v845.KenText.Text = (v1257 and "● 見聞あり ●") or "○ 見聞なし ○";
+						v845.KenText.Position = Vector2.new(v1091.X, v1091.Y - (1010 - (890 + 70)));
+						v845.KenText.Visible = true;
+						v1253 = 122 - (39 + 78);
+					end
+					if ((487 - (14 + 468)) == v1253) then
+						v845.StatText.Text = (v1259 and ("Bounty: " .. v215(v1259.Value))) or "";
+						v845.StatText.Position = Vector2.new(v1091.X, v1091.Y - 35);
+						v845.StatText.Visible = true;
+						v845.HPText.Text = "HP: " .. math.floor(v848.Health);
+						v1253 = 13 - 7;
+					end
+					if (v1253 == (16 - 10)) then
+						v845.HPText.Position = Vector2.new(v1091.X, v1091.Y - (11 + 9));
+						v845.HPText.Visible = true;
+						break;
+					end
+					if ((2 + 0) == v1253) then
+						v845.Line.Visible = true;
+						v845.NameText.Text = string.format("%s [%dm]", v844.DisplayName, v1254);
+						v845.NameText.Position = Vector2.new(v1091.X, v1091.Y - 80);
+						v845.NameText.Visible = true;
+						v1253 = 1 + 2;
+					end
+					if (v1253 == 0) then
+						v1254 = math.floor((v847.Position - v212.CFrame.Position).Magnitude);
+						v1255 = v213(v844);
+						v1256 = v844:GetAttribute("PvpDisabled");
+						v1257 = v214(v844);
+						v1253 = 1;
+					end
+				end
+			else
+				for v1353, v1354 in pairs(v845) do
+					v1354.Visible = false;
+				end
+			end
+		else
+			for v1173, v1174 in pairs(v845) do
+				v1174.Visible = false;
+			end
+		end
+	end
+end);
+v103(v106, "ESP", false, function(v554)
+	_G.ESPEnabled = v554;
+end);
+task.spawn(function()
+	local v555 = Vector3.new(439.4629 + 531, 67.02590000000001 + 185, 32872.1875);
+	local v556 = Vector3.new(-(545.2947082519531 - 260), 302.8865966796875 + 3, 2073.4352416992188 - 1483);
+	if not _G.NebulaSettings then
+		_G.NebulaSettings = {};
+	end
+	_G.NebulaSettings.GhostShipKey = _G.NebulaSettings.GhostShipKey or "H";
+	_G.NebulaSettings.MansionKey = _G.NebulaSettings.MansionKey or "V";
+	local v557 = false;
+	local v558 = false;
+	local function v559(v849, v850)
+		local v851 = game.Players.LocalPlayer.Character;
+		local v852 = v851 and v851:FindFirstChild("HumanoidRootPart");
+		if v852 then
+			v852.CFrame = CFrame.new(v849);
+			v12(v850 .. " へテレポートしました");
+		else
+			v12("キャラクターが見つかりません");
+		end
+	end
+	game:GetService("UserInputService").InputBegan:Connect(function(v853, v854)
+		local v855 = 0;
+		while true do
+			if (v855 == 0) then
+				if v854 then
+					return;
+				end
+				if v557 then
+					local v1356 = 0 + 0;
+					while true do
+						if (v1356 == 0) then
+							_G.NebulaSettings.GhostShipKey = v853.KeyCode.Name;
+							v557 = false;
+							v1356 = 52 - (12 + 39);
+						end
+						if (1 == v1356) then
+							local v1556 = 0;
+							while true do
+								if (v1556 == 0) then
+									v12("幽霊船キーを " .. v853.KeyCode.Name .. " に設定しました");
+									return;
+								end
+							end
+						end
+					end
+				end
+				v855 = 1 + 0;
+			end
+			if (v855 == (2 - 1)) then
+				if v558 then
+					local v1357 = 0;
+					while true do
+						if (v1357 == 0) then
+							_G.NebulaSettings.MansionKey = v853.KeyCode.Name;
+							v558 = false;
+							v1357 = 3 - 2;
+						end
+						if (v1357 == (1 + 0)) then
+							v12("マンションキーを " .. v853.KeyCode.Name .. " に設定しました");
+							return;
+						end
+					end
+				end
+				if (v853.KeyCode.Name == _G.NebulaSettings.GhostShipKey) then
+					v559(v555, "幽霊船");
+				elseif (v853.KeyCode.Name == _G.NebulaSettings.MansionKey) then
+					v559(v556, "マンション");
+				end
+				break;
+			end
+		end
+	end);
+	if v108 then
+		local v946 = Instance.new("Frame", v108);
+		v946.Size = UDim2.new(1 + 0, -10, 0 - 0, 30 + 15);
+		v946.BackgroundTransparency = 1;
+		local v949 = Instance.new("TextButton", v946);
+		v949.Size = UDim2.new(0.65 - 0, 0, 1710 - (1596 + 114), 40);
+		v949.BackgroundColor3 = Color3.fromRGB(104 - 64, 753 - (164 + 549), 80);
+		v949.Text = "幽霊船へTP";
+		v949.TextColor3 = Color3.new(1, 1439 - (1059 + 379), 1 - 0);
+		Instance.new("UICorner", v949);
+		v949.MouseButton1Click:Connect(function()
+			v559(v555, "幽霊船");
+		end);
+		local v954 = Instance.new("TextButton", v946);
+		v954.Size = UDim2.new(0.3, 0 + 0, 0 + 0, 432 - (145 + 247));
+		v954.Position = UDim2.new(0.7 + 0, 0 + 0, 0 - 0, 0 + 0);
+		v954.BackgroundColor3 = Color3.fromRGB(18 + 2, 32 - 12, 740 - (254 + 466));
+		v954.Text = "[" .. _G.NebulaSettings.GhostShipKey .. "]";
+		v954.TextColor3 = Color3.new(561 - (544 + 16), 0.8 - 0, 628 - (294 + 334));
+		Instance.new("UICorner", v954);
+		v954.MouseButton1Click:Connect(function()
+			local v1094 = 253 - (236 + 17);
+			while true do
+				if (v1094 == 1) then
+					task.spawn(function()
+						local v1423 = 0 + 0;
+						local v1424;
+						while true do
+							if (v1423 == (0 + 0)) then
+								v1424 = 0 - 0;
+								while true do
+									if ((0 - 0) == v1424) then
+										while v557 do
+											task.wait();
+										end
+										v954.Text = "[" .. _G.NebulaSettings.GhostShipKey .. "]";
+										break;
+									end
+								end
+								break;
+							end
+						end
+					end);
+					break;
+				end
+				if (v1094 == (0 + 0)) then
+					v954.Text = "入力待機...";
+					v557 = true;
+					v1094 = 1;
+				end
+			end
+		end);
+		local v960 = Instance.new("Frame", v108);
+		v960.Size = UDim2.new(1, -10, 0 + 0, 839 - (413 + 381));
+		v960.BackgroundTransparency = 1;
+		local v963 = Instance.new("TextButton", v960);
+		v963.Size = UDim2.new(0.65, 0, 0 + 0, 40);
+		v963.BackgroundColor3 = Color3.fromRGB(80, 85 - 45, 103 - 63);
+		v963.Text = "マンションへTP";
+		v963.TextColor3 = Color3.new(1971 - (582 + 1388), 1 - 0, 1 + 0);
+		Instance.new("UICorner", v963);
+		v963.MouseButton1Click:Connect(function()
+			v559(v556, "マンション");
+		end);
+		local v968 = Instance.new("TextButton", v960);
+		v968.Size = UDim2.new(0.3, 0, 364 - (326 + 38), 118 - 78);
+		v968.Position = UDim2.new(0.7 - 0, 620 - (47 + 573), 0, 0 + 0);
+		v968.BackgroundColor3 = Color3.fromRGB(84 - 64, 32 - 12, 1684 - (1269 + 395));
+		v968.Text = "[" .. _G.NebulaSettings.MansionKey .. "]";
+		v968.TextColor3 = Color3.new(493 - (76 + 416), 0.8, 443 - (319 + 124));
+		Instance.new("UICorner", v968);
+		v968.MouseButton1Click:Connect(function()
+			local v1095 = 0 - 0;
+			local v1096;
+			while true do
+				if ((1007 - (564 + 443)) == v1095) then
+					v1096 = 0 - 0;
+					while true do
+						if (v1096 == 0) then
+							v968.Text = "入力待機...";
+							v558 = true;
+							v1096 = 1;
+						end
+						if (v1096 == (459 - (337 + 121))) then
+							task.spawn(function()
+								local v1649 = 0;
+								while true do
+									if (v1649 == (0 - 0)) then
+										while v558 do
+											task.wait();
+										end
+										v968.Text = "[" .. _G.NebulaSettings.MansionKey .. "]";
+										break;
+									end
+								end
+							end);
+							break;
+						end
+					end
+					break;
+				end
+			end
+		end);
+	end
+end);
+if not _G.NebulaSettings then
+	_G.NebulaSettings = {};
+end
+_G.NebulaSettings.InvFlyEnabled = false;
+_G.NebulaSettings.InvFlyKey = _G.NebulaSettings.InvFlyKey or "B";
+_G.NebulaSettings.InvFlySpeed = 999 - 699;
+local v217 = -(201907.48 - (1261 + 650));
+local v218, v219, v220, v221;
+local v222 = false;
+local v2 = game:GetService("UserInputService");
+local v147 = game:GetService("RunService");
+local function v223(v560)
+	local v561 = 0 + 0;
+	local v562;
+	local v563;
+	local v564;
+	while true do
+		if ((2 - 0) == v561) then
+			if v560 then
+				local v1261 = 1817 - (772 + 1045);
+				while true do
+					if (v1261 == (0 + 0)) then
+						if v218 then
+							v218:Destroy();
+						end
+						v562.Archivable = true;
+						v218 = v562:Clone();
+						v218.Parent = workspace;
+						v1261 = 145 - (102 + 42);
+					end
+					if (v1261 == 2) then
+						v219.Velocity = Vector3.zero;
+						v220 = Instance.new("BodyGyro", v218.HumanoidRootPart);
+						v220.MaxTorque = Vector3.new(1001844 - (1524 + 320), 1001270 - (1049 + 221), 1000156 - (18 + 138));
+						v220.CFrame = v218.HumanoidRootPart.CFrame;
+						v1261 = 7 - 4;
+					end
+					if (v1261 == (1105 - (67 + 1035))) then
+						task.spawn(function()
+							while _G.NebulaSettings.InvFlyEnabled and v563 do
+								local v1650 = 348 - (136 + 212);
+								while true do
+									if (v1650 == 1) then
+										task.wait();
+										break;
+									end
+									if (v1650 == (0 - 0)) then
+										v563.CFrame = CFrame.new(v563.Position.X, v217, v563.Position.Z);
+										v563.AssemblyLinearVelocity = Vector3.zero;
+										v1650 = 1 + 0;
+									end
+								end
+							end
+						end);
+						v221 = v147.RenderStepped:Connect(function()
+							if not v218 then
+								return;
+							end
+							local v1559 = workspace.CurrentCamera;
+							local v1560 = v564.MoveDirection;
+							local v1561 = Vector3.zero;
+							if (v1560.Magnitude > 0) then
+								v1561 = (v1559.CFrame.LookVector * -v1560.Z) + (v1559.CFrame.RightVector * v1560.X);
+							end
+							if v2:IsKeyDown(Enum.KeyCode.Space) then
+								v1561 += Vector3.new(0 + 0, 1, 1604 - (240 + 1364))
+							elseif v2:IsKeyDown(Enum.KeyCode.LeftShift) then
+								v1561 += Vector3.new(1082 - (1050 + 32), -(3 - 2), 0 + 0)
+							end
+							v219.Velocity = v1561.Unit * _G.NebulaSettings.InvFlySpeed;
+							if (v1561.Magnitude == 0) then
+								v219.Velocity = Vector3.zero;
+							end
+							v220.CFrame = v1559.CFrame;
+						end);
+						v12("Inv-Fly: 有効 (Speed:" .. _G.NebulaSettings.InvFlySpeed .. ")");
+						break;
+					end
+					if (v1261 == (1056 - (331 + 724))) then
+						for v1565, v1566 in ipairs(v218:GetDescendants()) do
+							if v1566:IsA("BasePart") then
+								local v1690 = 0 + 0;
+								while true do
+									if (v1690 == (644 - (269 + 375))) then
+										v1566.CanCollide = false;
+										v1566.Transparency = 0.5;
+										break;
+									end
+								end
+							end
+						end
+						workspace.CurrentCamera.CameraSubject = v218.Humanoid;
+						v219 = Instance.new("BodyVelocity", v218.HumanoidRootPart);
+						v219.MaxForce = Vector3.new(1000000, 1000725 - (267 + 458), 310961 + 689039);
+						v1261 = 3 - 1;
+					end
+				end
+			else
+				local v1262 = 0;
+				while true do
+					if ((818 - (667 + 151)) == v1262) then
+						if v221 then
+							v221:Disconnect();
+						end
+						if (v218 and v563) then
+							local v1651 = 1497 - (1410 + 87);
+							while true do
+								if (v1651 == (1898 - (1504 + 393))) then
+									v218 = nil;
+									break;
+								end
+								if (v1651 == (0 - 0)) then
+									v563.CFrame = v218.HumanoidRootPart.CFrame;
+									v218:Destroy();
+									v1651 = 1;
+								end
+							end
+						end
+						v1262 = 1;
+					end
+					if (v1262 == 1) then
+						workspace.CurrentCamera.CameraSubject = v564;
+						v12("Inv-Fly: 解除しました");
+						break;
+					end
+				end
+			end
+			break;
+		end
+		if (v561 == (0 - 0)) then
+			_G.NebulaSettings.InvFlyEnabled = v560;
+			v562 = game.Players.LocalPlayer.Character;
+			v561 = 1;
+		end
+		if (v561 == (797 - (461 + 335))) then
+			v563 = v562 and v562:FindFirstChild("HumanoidRootPart");
+			v564 = v562 and v562:FindFirstChild("Humanoid");
+			v561 = 2;
+		end
+	end
+end
+v2.InputBegan:Connect(function(v565, v566)
+	local v567 = 0 + 0;
+	while true do
+		if (v567 == (1761 - (1730 + 31))) then
+			if v566 then
+				return;
+			end
+			if v222 then
+				local v1263 = 0;
+				local v1264;
+				while true do
+					if ((1667 - (728 + 939)) == v1263) then
+						v1264 = 0 - 0;
+						while true do
+							if (v1264 == (1 - 0)) then
+								v12("Flyキーを " .. v565.KeyCode.Name .. " に変更");
+								return;
+							end
+							if (v1264 == (0 - 0)) then
+								_G.NebulaSettings.InvFlyKey = v565.KeyCode.Name;
+								v222 = false;
+								v1264 = 1069 - (138 + 930);
+							end
+						end
+						break;
+					end
+				end
+			end
+			v567 = 1 + 0;
+		end
+		if (v567 == (1 + 0)) then
+			if (v565.KeyCode.Name == _G.NebulaSettings.InvFlyKey) then
+				_G.NebulaSettings.InvFlyEnabled = not _G.NebulaSettings.InvFlyEnabled;
+				v223(_G.NebulaSettings.InvFlyEnabled);
+			end
+			break;
+		end
+	end
+end);
+if v106 then
+	local v856 = 0 + 0;
+	local v857;
+	while true do
+		if (v856 == (0 - 0)) then
+			v103(v106, "Invisible & Fly", false, function(v1265)
+				v223(v1265);
+			end);
+			v104(v106, "Flyスピード", 10, 2566 - (459 + 1307), 2170 - (474 + 1396), function(v1266)
+				_G.NebulaSettings.InvFlySpeed = v1266;
+			end);
+			v857 = Instance.new("TextButton", v106);
+			v857.Size = UDim2.new(1, -10, 0 - 0, 40);
+			v856 = 1;
+		end
+		if (v856 == (1 + 0)) then
+			v857.BackgroundColor3 = Color3.fromRGB(1 + 44, 128 - 83, 45);
+			v857.Text = "オンオフキー: [" .. _G.NebulaSettings.InvFlyKey .. "]";
+			v857.TextColor3 = Color3.new(1, 1, 1 + 0);
+			v857.Font = Enum.Font.SourceSansBold;
+			v856 = 2;
+		end
+		if (v856 == 2) then
+			v857.TextSize = 53 - 37;
+			Instance.new("UICorner", v857);
+			v857.MouseButton1Click:Connect(function()
+				local v1267 = 0 - 0;
+				while true do
+					if (v1267 == 0) then
+						v857.Text = "キー入力待機...";
+						v222 = true;
+						v1267 = 1;
+					end
+					if (v1267 == (592 - (562 + 29))) then
+						task.spawn(function()
+							local v1567 = 0 + 0;
+							local v1568;
+							while true do
+								if (v1567 == (1419 - (374 + 1045))) then
+									v1568 = 0 + 0;
+									while true do
+										if (v1568 == 0) then
+											while v222 do
+												task.wait();
+											end
+											v857.Text = "オンオフキー: [" .. _G.NebulaSettings.InvFlyKey .. "]";
+											break;
+										end
+									end
+									break;
+								end
+							end
+						end);
+						break;
+					end
+				end
+			end);
+			break;
+		end
+	end
+end
+task.spawn(function()
+	local v568 = (((typeof(v108) == "Instance") or (typeof(v108) == "userdata")) and v108) or v106;
+	if not v568 then
+		return;
+	end
+	local v569 = game:GetService("Players").LocalPlayer;
+	local v570 = game:GetService("RunService");
+	local v571 = game:GetService("ReplicatedStorage");
+	local v572 = game:GetService("CollectionService");
+	local v573 = v571:WaitForChild("Remotes"):WaitForChild("CommF_");
+	_G.AutoBuso = false;
+	v103(v568, "Auto Buso Haki", false, function(v858)
+		_G.AutoBuso = v858;
+	end);
+	task.spawn(function()
+		while true do
+			local v974 = 0;
+			while true do
+				if (v974 == (0 - 0)) then
+					task.wait(638.5 - (448 + 190));
+					if _G.AutoBuso then
+						pcall(function()
+							local v1507 = 0 + 0;
+							local v1508;
+							while true do
+								if (v1507 == 0) then
+									v1508 = v569.Character;
+									if (v1508 and v572:HasTag(v1508, "Buso") and not v1508:FindFirstChild("HasBuso")) then
+										v573:InvokeServer("Buso");
+									end
+									break;
+								end
+							end
+						end);
+					end
+					break;
+				end
+			end
+		end
+	end);
+	task.spawn(function()
+		local v859 = 0 + 0;
+		local v860;
+		local v861;
+		local v862;
+		local v863;
+		local v864;
+		local v865;
+		local v866;
+		local v867;
+		local v868;
+		local v869;
+		local v870;
+		while true do
+			if (v859 == (2 + 1)) then
+				v869 = nil;
+				function v869()
+					local v1268 = {};
+					local v1269 = nil;
+					local v1270 = v861.Character;
+					local v1271 = v1270 and v1270:FindFirstChild("HumanoidRootPart");
+					if not v1271 then
+						return nil, {};
+					end
+					local function v1272(v1359)
+						local v1360 = 0;
+						while true do
+							if (v1360 == (0 - 0)) then
+								if not v1359 then
+									return;
+								end
+								for v1652, v1653 in pairs(v1359:GetChildren()) do
+									if (v1653 ~= v1270) then
+										local v1715 = 0;
+										local v1716;
+										local v1717;
+										while true do
+											if (v1715 == (0 - 0)) then
+												v1716 = v1653:FindFirstChild("Humanoid");
+												v1717 = v1653:FindFirstChild("HumanoidRootPart") or v1653:FindFirstChild("Head");
+												v1715 = 1;
+											end
+											if (v1715 == (1495 - (1307 + 187))) then
+												if (v1716 and v1717 and (v1716.Health > (0 - 0))) then
+													local v1810 = 0 - 0;
+													local v1811;
+													while true do
+														if (v1810 == 0) then
+															v1811 = (v1271.Position - v1717.Position).Magnitude;
+															if (v1811 <= v868) then
+																local v1833 = 0;
+																while true do
+																	if (v1833 == (0 - 0)) then
+																		table.insert(v1268, {v1653,v1717});
+																		v1269 = v1717;
+																		break;
+																	end
+																end
+															end
+															break;
+														end
+													end
+												end
+												break;
+											end
+										end
+									end
+								end
+								break;
+							end
+						end
+					end
+					v1272(workspace:FindFirstChild("Enemies"));
+					v1272(workspace:FindFirstChild("Characters"));
+					return v1269, v1268;
+				end
+				v103(v860, "Fast Attack", false, function(v1273)
+					v866 = v1273;
+				end);
+				v859 = 4 + 0;
+			end
+			if (v859 == (564 - (510 + 54))) then
+				v860 = v108;
+				v861 = game:GetService("Players").LocalPlayer;
+				v862 = game:GetService("ReplicatedStorage");
+				v859 = 1 - 0;
+			end
+			if (v859 == (40 - (13 + 23))) then
+				v870 = nil;
+				function v870()
+					local v1274 = v861.Character;
+					local v1275 = v1274 and v1274:FindFirstChildOfClass("Tool");
+					if (not v1275 or not ((v1275.ToolTip == "Melee") or (v1275.ToolTip == "Sword") or (v1275.ToolTip == "Blox Fruit"))) then
+						return;
+					end
+					local v1276, v1277 = v869();
+					v864:FireServer(v867);
+					if (v1276 and (#v1277 > (0 - 0))) then
+						v865:FireServer(v1276, v1277);
+					end
+					if v1275:FindFirstChild("LeftClickRemote") then
+						local v1425 = 0 - 0;
+						local v1426;
+						while true do
+							if (v1425 == 1) then
+								v1275.LeftClickRemote:FireServer(v1426, 1 - 0);
+								break;
+							end
+							if (v1425 == 0) then
+								v1426 = nil;
+								if v1276 then
+									v1426 = (v1276.Position - v1274:GetPivot().Position).Unit;
+								else
+									v1426 = v1274.HumanoidRootPart.CFrame.LookVector;
+								end
+								v1425 = 1;
+							end
+						end
+					end
+				end
+				task.spawn(function()
+					while true do
+						local v1361 = 0;
+						while true do
+							if (v1361 == (1088 - (830 + 258))) then
+								if v866 then
+									pcall(v870);
+								end
+								task.wait(v867);
+								break;
+							end
+						end
+					end
+				end);
+				break;
+			end
+			if (v859 == 2) then
+				v866 = false;
+				v867 = 0.01 - 0;
+				v868 = 626 + 374;
+				v859 = 3 + 0;
+			end
+			if (v859 == (1442 - (860 + 581))) then
+				v863 = v862:WaitForChild("Modules"):WaitForChild("Net");
+				v864 = v863["RE/RegisterAttack"];
+				v865 = v863["RE/RegisterHit"];
+				v859 = 7 - 5;
+			end
+		end
+	end);
+	_G.InfiniteEnergy = false;
+	v103(v568, "Infinite Energy", false, function(v871)
+		_G.InfiniteEnergy = v871;
+	end);
+	v570.Heartbeat:Connect(function()
+		if _G.InfiniteEnergy then
+			local v1098 = 0 + 0;
+			local v1099;
+			while true do
+				if ((241 - (237 + 4)) == v1098) then
+					v1099 = v569.Character;
+					if (v1099 and v1099:FindFirstChild("Energy")) then
+						v1099.Energy.Value = v1099.Energy.MaxValue;
+					end
+					break;
+				end
+			end
+		end
+	end);
+end);
+task.spawn(function()
+	local v574 = v108;
+	local v575 = game:GetService("Players").LocalPlayer;
+	local v576 = game:GetService("ReplicatedStorage");
+	v103(v574, "Fruit Sniper", false, function(v872)
+		_G.FruitSniper = v872;
+	end);
+	task.spawn(function()
+		while task.wait(2 - 1) do
+			if _G.FruitSniper then
+				pcall(function()
+					for v1363, v1364 in pairs(workspace:GetChildren()) do
+						if (v1364:IsA("Tool") and v1364:FindFirstChild("Handle")) then
+							local v1511 = 0 - 0;
+							local v1512;
+							while true do
+								if (v1511 == 0) then
+									v1512 = v575.Character and v575.Character:FindFirstChild("HumanoidRootPart");
+									if v1512 then
+										local v1756 = 0 - 0;
+										while true do
+											if (v1756 == (0 + 0)) then
+												v1512.CFrame = v1364.Handle.CFrame;
+												task.wait(0.1 + 0);
+												v1756 = 3 - 2;
+											end
+											if (1 == v1756) then
+												firetouchinterest(v1512, v1364.Handle, 0);
+												firetouchinterest(v1512, v1364.Handle, 1 + 0);
+												break;
+											end
+										end
+									end
+									break;
+								end
+							end
+						end
+					end
+				end);
+			end
+		end
+	end);
+	v103(v574, "Bring Mob (敵寄せ)", false, function(v873)
+		_G.BringMob = v873;
+	end);
+	v103(v574, "Freeze Mob (敵固定)", false, function(v874)
+		_G.FreezeMob = v874;
+	end);
+	task.spawn(function()
+		while task.wait(0.5) do
+			pcall(function()
+				local v1100 = 0 + 0;
+				while true do
+					if (v1100 == 0) then
+						if _G.BringMob then
+							local v1513 = 1426 - (85 + 1341);
+							local v1514;
+							while true do
+								if (v1513 == (0 - 0)) then
+									v1514 = v575.Character.HumanoidRootPart;
+									for v1720, v1721 in pairs(workspace.Enemies:GetChildren()) do
+										if v1721:FindFirstChild("HumanoidRootPart") then
+											local v1769 = 0;
+											while true do
+												if (v1769 == (0 - 0)) then
+													v1721.HumanoidRootPart.CFrame = v1514.CFrame * CFrame.new(0, 0, -(377 - (45 + 327)));
+													v1721.HumanoidRootPart.CanCollide = false;
+													break;
+												end
+											end
+										end
+									end
+									break;
+								end
+							end
+						end
+						if _G.FreezeMob then
+							for v1569, v1570 in pairs(workspace.Enemies:GetChildren()) do
+								if v1570:FindFirstChild("Humanoid") then
+									local v1694 = 0;
+									while true do
+										if ((0 - 0) == v1694) then
+											v1570.Humanoid.WalkSpeed = 502 - (444 + 58);
+											if v1570:FindFirstChild("HumanoidRootPart") then
+												v1570.HumanoidRootPart.Anchored = true;
+											end
+											break;
+										end
+									end
+								end
+							end
+						end
+						break;
+					end
+				end
+			end);
+		end
+	end);
+	_G.KillRange = 50;
+	v103(v574, "Kill Aura", false, function(v875)
+		_G.KillAura = v875;
+	end);
+	task.spawn(function()
+		while task.wait() do
+			if _G.KillAura then
+				pcall(function()
+					local v1278 = 0;
+					local v1279;
+					while true do
+						if (v1278 == 0) then
+							v1279 = v575.Character.HumanoidRootPart;
+							for v1571, v1572 in pairs(workspace.Enemies:GetChildren()) do
+								local v1573 = 0;
+								local v1574;
+								local v1575;
+								while true do
+									if (v1573 == (1 + 0)) then
+										if (v1574 and v1575 and ((v1574.Position - v1279.Position).Magnitude < _G.KillRange)) then
+											v1575.Health = 0 + 0;
+										end
+										break;
+									end
+									if (v1573 == (0 + 0)) then
+										v1574 = v1572:FindFirstChild("HumanoidRootPart");
+										v1575 = v1572:FindFirstChild("Humanoid");
+										v1573 = 2 - 1;
+									end
+								end
+							end
+							break;
+						end
+					end
+				end);
+			end
+		end
+	end);
+end);
+task.spawn(function()
+	local v577 = 0;
+	local v578;
+	local v579;
+	while true do
+		if (v577 == (1733 - (64 + 1668))) then
+			v579 = game:GetService("Players").LocalPlayer;
+			v103(v578, "Water Walking", false, function(v1186)
+				local v1187 = 1973 - (1227 + 746);
+				while true do
+					if (v1187 == 0) then
+						_G.WaterWalkingEnabled = v1186;
+						if v1186 then
+							task.spawn(function()
+								while _G.WaterWalkingEnabled do
+									local v1695 = v579.Name;
+									local v1696 = game:GetService("Workspace").Characters:FindFirstChild(v1695);
+									if v1696 then
+										local v1757 = 0;
+										local v1758;
+										while true do
+											if (v1757 == (2 - 1)) then
+												v1758 = v1696:FindFirstChild("WaterWalking");
+												if v1758 then
+													pcall(function()
+														v1758.Value = true;
+													end);
+												end
+												break;
+											end
+											if (v1757 == (0 - 0)) then
+												pcall(function()
+													v1696.WaterWalking = true;
+												end);
+												pcall(function()
+													v1696:SetAttribute("WaterWalking", true);
+												end);
+												v1757 = 1;
+											end
+										end
+									end
+									task.wait(494.5 - (415 + 79));
+								end
+							end);
+						else
+							pcall(function()
+								local v1654 = 0 + 0;
+								local v1655;
+								local v1656;
+								local v1657;
+								while true do
+									if ((491 - (142 + 349)) == v1654) then
+										v1655 = 0;
+										v1656 = nil;
+										v1654 = 1;
+									end
+									if (v1654 == (1 + 0)) then
+										v1657 = nil;
+										while true do
+											if (1 == v1655) then
+												if v1657 then
+													local v1820 = 0;
+													local v1821;
+													while true do
+														if (v1820 == (1 - 0)) then
+															v1821 = v1657:FindFirstChild("WaterWalking");
+															if v1821 then
+																v1821.Value = false;
+															end
+															break;
+														end
+														if (v1820 == 0) then
+															v1657.WaterWalking = false;
+															v1657:SetAttribute("WaterWalking", false);
+															v1820 = 1;
+														end
+													end
+												end
+												break;
+											end
+											if (v1655 == (0 + 0)) then
+												v1656 = v579.Name;
+												v1657 = game:GetService("Workspace").Characters:FindFirstChild(v1656);
+												v1655 = 1;
+											end
+										end
+										break;
+									end
+								end
+							end);
+						end
+						break;
+					end
+				end
+			end);
+			break;
+		end
+		if (v577 == (0 + 0)) then
+			v578 = (((typeof(v108) == "Instance") or (typeof(v108) == "userdata")) and v108) or v106;
+			if not v578 then
+				return;
+			end
+			v577 = 1;
+		end
+	end
+end);
+task.spawn(function()
+	local v580 = (((typeof(v108) == "Instance") or (typeof(v108) == "userdata")) and v108) or v106;
+	if not v580 then
+		return;
+	end
+	local v581 = game:GetService("Players").LocalPlayer;
+	local v582 = game:GetService("RunService");
+	_G.NPCBangEnabled = false;
+	_G.NPCBangRange = 272 - 172;
+	v103(v580, "NPC BANG", false, function(v876)
+		_G.NPCBangEnabled = v876;
+	end);
+	v104(v580, "BANG 探索範囲", 10, 2864 - (1710 + 154), 418 - (200 + 118), function(v877)
+		_G.NPCBangRange = v877;
+	end);
+	v582.Heartbeat:Connect(function()
+		local v878 = 0;
+		local v879;
+		local v880;
+		local v881;
+		local v882;
+		local v883;
+		while true do
+			if (v878 == (2 + 1)) then
+				local v1188 = 0;
+				while true do
+					if (v1188 == (0 - 0)) then
+						v883 = {workspace:FindFirstChild("Enemies"),workspace:FindFirstChild("NPCs"),workspace};
+						for v1516, v1517 in pairs(v883) do
+							if v1517 then
+								for v1697, v1698 in pairs(v1517:GetChildren()) do
+									if (v1698:IsA("Model") and v1698:FindFirstChild("Humanoid") and (v1698.Humanoid.Health > (0 + 0)) and v1698:FindFirstChild("HumanoidRootPart")) then
+										local v1759 = 0;
+										local v1760;
+										local v1761;
+										local v1762;
+										while true do
+											if (v1759 == (0 + 0)) then
+												v1760 = 0;
+												v1761 = nil;
+												v1759 = 1;
+											end
+											if (v1759 == 1) then
+												v1762 = nil;
+												while true do
+													if (v1760 == (0 - 0)) then
+														v1761 = string.lower(v1698.Name);
+														v1762 = string.lower(v1698.Humanoid.DisplayName);
+														v1760 = 1;
+													end
+													if (v1760 == 1) then
+														if (not string.find(v1761, "shadow") and not string.find(v1762, "shadow")) then
+															if (v1698.Name ~= v581.Name) then
+																local v1837 = 1250 - (363 + 887);
+																local v1838;
+																while true do
+																	if (v1837 == (0 - 0)) then
+																		v1838 = (v880.Position - v1698.HumanoidRootPart.Position).Magnitude;
+																		if (v1838 < v882) then
+																			local v1843 = 0 - 0;
+																			while true do
+																				if (v1843 == 0) then
+																					v882 = v1838;
+																					v881 = v1698;
+																					break;
+																				end
+																			end
+																		end
+																		break;
+																	end
+																end
+															end
+														end
+														break;
+													end
+												end
+												break;
+											end
+										end
+									end
+								end
+							end
+							if v881 then
+								break;
+							end
+						end
+						v1188 = 1 + 0;
+					end
+					if (v1188 == (2 - 1)) then
+						v878 = 3 + 1;
+						break;
+					end
+				end
+			end
+			if (v878 == 2) then
+				local v1189 = 0;
+				while true do
+					if (v1189 == 0) then
+						v881 = nil;
+						v882 = _G.NPCBangRange;
+						v1189 = 1665 - (674 + 990);
+					end
+					if (v1189 == 1) then
+						v878 = 1 + 2;
+						break;
+					end
+				end
+			end
+			if (v878 == (2 + 2)) then
+				if v881 then
+					local v1365 = 0 - 0;
+					while true do
+						if (v1365 == 0) then
+							v880.CFrame = v881.HumanoidRootPart.CFrame * CFrame.new(1055 - (507 + 548), 12, 837 - (289 + 548));
+							v880.AssemblyLinearVelocity = Vector3.new(1818 - (821 + 997), 0, 255 - (195 + 60));
+							break;
+						end
+					end
+				end
+				break;
+			end
+			if (v878 == 1) then
+				local v1190 = 0;
+				while true do
+					if (v1190 == (0 + 0)) then
+						v880 = v879 and v879:FindFirstChild("HumanoidRootPart");
+						if not v880 then
+							return;
+						end
+						v1190 = 1;
+					end
+					if (v1190 == (1502 - (251 + 1250))) then
+						v878 = 5 - 3;
+						break;
+					end
+				end
+			end
+			if (v878 == (0 + 0)) then
+				if not _G.NPCBangEnabled then
+					return;
+				end
+				v879 = v581.Character;
+				v878 = 1033 - (809 + 223);
+			end
+		end
+	end);
+end);
+task.spawn(function()
+	local v583 = 0 - 0;
+	local v584;
+	local v585;
+	local v586;
+	local v587;
+	local v588;
+	local v589;
+	local v590;
+	while true do
+		if (v583 == 0) then
+			local v1102 = 0 - 0;
+			while true do
+				if (v1102 == (6 - 4)) then
+					v583 = 1 + 0;
+					break;
+				end
+				if (v1102 == (1 + 0)) then
+					v585 = game:GetService("Players").LocalPlayer;
+					v586 = game:GetService("ReplicatedStorage");
+					v1102 = 2;
+				end
+				if (v1102 == (617 - (14 + 603))) then
+					v584 = (((typeof(v108) == "Instance") or (typeof(v108) == "userdata")) and v108) or v106;
+					if not v584 then
+						return;
+					end
+					v1102 = 130 - (118 + 11);
+				end
+			end
+		end
+		if (v583 == (1 + 2)) then
+			v103(v584, "Auto Race Ability (V3スキル連打)", false, function(v1192)
+				_G.AutoRaceV3_Ability = v1192;
+			end);
+			v587.Heartbeat:Connect(function(v1193)
+				local v1194 = v585.Character;
+				if not v1194 then
+					return;
+				end
+				pcall(function()
+					local v1280 = 0 + 0;
+					while true do
+						if (v1280 == (0 - 0)) then
+							if _G.AutoRaceV4_Force then
+								local v1658 = v1194:FindFirstChild("RaceEnergy");
+								if (v1658 and (v1658.Value >= (950 - (551 + 398)))) then
+									local v1722 = 0 + 0;
+									local v1723;
+									local v1724;
+									while true do
+										if (v1722 == (1 + 0)) then
+											v586.Remotes.CommE:FireServer("ActivateAbility");
+											v1724 = v585.Backpack:FindFirstChild("Awakening") or v1194:FindFirstChild("Awakening");
+											v1722 = 2 + 0;
+										end
+										if (v1722 == (0 - 0)) then
+											local v1786 = 0;
+											while true do
+												if (v1786 == 1) then
+													v1722 = 1;
+													break;
+												end
+												if (v1786 == (0 - 0)) then
+													v1723 = v1194:FindFirstChild("RaceTransformed");
+													if v1723 then
+														v1723.Value = false;
+													end
+													v1786 = 1 + 0;
+												end
+											end
+										end
+										if (v1722 == 2) then
+											if (v1724 and v1724:FindFirstChild("RemoteFunction")) then
+												v1724.RemoteFunction:InvokeServer(true);
+											end
+											break;
+										end
+									end
+								end
+							end
+							if _G.AutoRaceV3_Ability then
+								local v1659 = 0;
+								local v1660;
+								while true do
+									if (v1659 == (0 - 0)) then
+										v1660 = v1194:FindFirstChildOfClass("Humanoid");
+										if (v1660 and (v1660.Health > 0) and v590()) then
+											local v1787 = 0 + 0;
+											while true do
+												if (v1787 == (89 - (40 + 49))) then
+													v588 = v588 - v1193;
+													if (v588 <= 0) then
+														local v1826 = 0 - 0;
+														while true do
+															if (v1826 == 0) then
+																v586.Remotes.CommE:FireServer("ActivateAbility");
+																v588 = 490.2 - (99 + 391);
+																break;
+															end
+														end
+													end
+													break;
+												end
+											end
+										end
+										break;
+									end
+								end
+							end
+							break;
+						end
+					end
+				end);
+			end);
+			break;
+		end
+		if (v583 == (2 + 0)) then
+			v589 = {"Last Resort","Agility","Water Body","Heavenly Blood","Heightened Senses","Energy Core","Primordial Reign"};
+			v590 = nil;
+			function v590()
+				local v1195 = 417 - (203 + 214);
+				local v1196;
+				while true do
+					if (v1195 == (1818 - (568 + 1249))) then
+						for v1518, v1519 in ipairs(v589) do
+							if (v585.Backpack:FindFirstChild(v1519) or v1196:FindFirstChild(v1519)) then
+								return true;
+							end
+						end
+						return false;
+					end
+					if (v1195 == (0 + 0)) then
+						v1196 = v585.Character;
+						if not v1196 then
+							return false;
+						end
+						v1195 = 1;
+					end
+				end
+			end
+			v103(v584, "Auto Race V4 (強制変身)", false, function(v1197)
+				_G.AutoRaceV4_Force = v1197;
+			end);
+			v583 = 3;
+		end
+		if (v583 == (2 - 1)) then
+			v587 = game:GetService("RunService");
+			_G.AutoRaceV4_Force = false;
+			_G.AutoRaceV3_Ability = false;
+			v588 = 0 - 0;
+			v583 = 1308 - (913 + 393);
+		end
+	end
+end);
+_G.BoatMaxSpeed = 100;
+_G.AutoBoatSpeedEnabled = true;
+task.spawn(function()
+	while task.wait(2 - 1) do
+		if _G.AutoBoatSpeedEnabled then
+			pcall(function()
+				local v1198 = 0;
+				local v1199;
+				while true do
+					if (v1198 == 0) then
+						v1199 = workspace:FindFirstChild("Boats");
+						if v1199 then
+							for v1661, v1662 in pairs(v1199:GetDescendants()) do
+								if v1662:IsA("VehicleSeat") then
+									if (v1662.MaxSpeed ~= _G.BoatMaxSpeed) then
+										v1662.MaxSpeed = _G.BoatMaxSpeed;
+									end
+								end
+							end
+						end
+						break;
+					end
+				end
+			end);
+		end
+	end
+end);
+v104(v108, "ボートの速度", 141 - 41, 910 - (269 + 141), _G.BoatMaxSpeed, function(v591)
+	local v592 = 0 - 0;
+	while true do
+		if (v592 == 0) then
+			_G.BoatMaxSpeed = v591;
+			_G.AutoBoatSpeedEnabled = true;
+			v592 = 1;
+		end
+		if (v592 == (1982 - (362 + 1619))) then
+			pcall(function()
+				local v1200 = workspace:FindFirstChild("Boats");
+				if v1200 then
+					for v1428, v1429 in pairs(v1200:GetDescendants()) do
+						if v1429:IsA("VehicleSeat") then
+							v1429.MaxSpeed = v591;
+						end
+					end
+				end
+			end);
+			break;
+		end
+	end
+end);
+task.spawn(function()
+	local v593 = (((typeof(v108) == "Instance") or (typeof(v108) == "userdata")) and v108) or v106;
+	if not v593 then
+		return;
+	end
+	local v594 = game:GetService("Players").LocalPlayer;
+	local v595 = game:GetService("ReplicatedStorage");
+	local v596 = game:GetService("TweenService");
+	local v597 = v595:WaitForChild("Remotes"):WaitForChild("CommF_");
+	local v598 = {RaidAutoMove=false,AutoStartRaid=false,SelectRaid="Flame",TweenSpeed=(1875 - (950 + 675))};
+	local v599 = {"Flame","Ice","Quake","Light","Dark","Spider","Rumble","Magma","Buddha","Sand"};
+	local v600 = {"Rocket-Rocket","Spin-Spin","Chop-Chop","Spring-Spring","Bomb-Bomb","Smoke-Smoke"};
+	local function v601(v884)
+		local v885 = 0 - 0;
+		local v886;
+		local v887;
+		local v888;
+		while true do
+			if ((7 - 5) == v885) then
+				v888:Play();
+				break;
+			end
+			if (v885 == (0 - 0)) then
+				v886 = v594.Character and v594.Character:FindFirstChild("HumanoidRootPart");
+				if not v886 then
+					return;
+				end
+				v885 = 2 - 1;
+			end
+			if (v885 == (1 + 0)) then
+				local v1201 = 529 - (318 + 211);
+				while true do
+					if (v1201 == 1) then
+						v885 = 9 - 7;
+						break;
+					end
+					if (v1201 == 0) then
+						v887 = (v884.Position - v886.Position).Magnitude;
+						v888 = v596:Create(v886, TweenInfo.new(v887 / v598.TweenSpeed, Enum.EasingStyle.Linear), {CFrame=v884});
+						v1201 = 1588 - (963 + 624);
+					end
+				end
+			end
+		end
+	end
+	v105(v593, "--- Click Below to Select Raid ---", function()
+	end);
+	for v889, v890 in pairs(v599) do
+		v105(v593, "Select: " .. v890, function()
+			local v975 = 0 + 0;
+			while true do
+				if (v975 == (846 - (518 + 328))) then
+					v598.SelectRaid = v890;
+					pcall(function()
+						game:GetService("StarterGui"):SetCore("SendNotification", {Title="Raid Selected",Text=("Target: " .. v890),Duration=2});
+					end);
+					break;
+				end
+			end
+		end);
+	end
+	v105(v593, "----------------------------", function()
+	end);
+	v105(v593, "Get Low Fruit (実を出す)", function()
+		for v976, v977 in pairs(v600) do
+			if v597:InvokeServer("LoadFruit", v977) then
+				break;
+			end
+		end
+	end);
+	v103(v593, "Raid Auto Move (250)", false, function(v891)
+		v598.RaidAutoMove = v891;
+	end);
+	v103(v593, "Auto Start Raid", false, function(v893)
+		v598.AutoStartRaid = v893;
+	end);
+	task.spawn(function()
+		while task.wait(2.5 - 1) do
+			if v598.AutoStartRaid then
+				pcall(function()
+					local v1282 = 0;
+					local v1283;
+					while true do
+						if ((0 - 0) == v1282) then
+							v1283 = v594.PlayerGui.Main:FindFirstChild("Timer");
+							if not (v1283 and v1283.Visible) then
+								local v1663 = 0;
+								local v1664;
+								while true do
+									if (v1663 == 0) then
+										v1664 = v594.Backpack:FindFirstChild("Special Microchip") or v594.Character:FindFirstChild("Special Microchip");
+										if v1664 then
+											local v1788 = 317 - (301 + 16);
+											local v1789;
+											local v1790;
+											local v1791;
+											while true do
+												if (v1788 == 1) then
+													v1791 = nil;
+													while true do
+														if (v1789 == 0) then
+															v1790 = workspace.Map:FindFirstChild("CircleIsland") or workspace.Map:FindFirstChild("Boat Castle");
+															v1791 = v1790 and v1790:FindFirstChild("RaidSummon2") and v1790.RaidSummon2.Button.Main;
+															v1789 = 2 - 1;
+														end
+														if (v1789 == (2 - 1)) then
+															if v1791 then
+																v601(v1791.CFrame);
+															end
+															break;
+														end
+													end
+													break;
+												end
+												if (v1788 == (0 - 0)) then
+													v1789 = 0 + 0;
+													v1790 = nil;
+													v1788 = 1;
+												end
+											end
+										else
+											local v1792 = 0 + 0;
+											while true do
+												if (v1792 == 0) then
+													v597:InvokeServer("RaidsNpc", "Select", v598.SelectRaid);
+													v597:InvokeServer("RaidsNpc", "Buy");
+													break;
+												end
+											end
+										end
+										break;
+									end
+								end
+							end
+							break;
+						end
+					end
+				end);
+			end
+		end
+	end);
+	workspace:WaitForChild("Map"):WaitForChild("RaidMap").ChildAdded:Connect(function(v895)
+		if (v598.RaidAutoMove and v895.Name:match("RaidIsland")) then
+			local v1103 = 0 - 0;
+			local v1104;
+			while true do
+				if (v1103 == 1) then
+					v1104 = v895:FindFirstChildWhichIsA("BasePart") or (v895:IsA("Model") and v895.PrimaryPart);
+					if v1104 then
+						v601(v1104.CFrame + Vector3.new(0, 31 + 19, 0));
+					end
+					break;
+				end
+				if (v1103 == (0 + 0)) then
+					if (v895.Name:match("RaidIsland1") and not v895.Name:match("RaidIsland1[0-9]")) then
+						return;
+					end
+					task.wait(1);
+					v1103 = 3 - 2;
+				end
+			end
+		end
+	end);
+end);
+v105(v106, "Fly", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))();
+	v12("Flyスクリプトを実行しました");
+end);
+v9.Noclip = false;
+v103(v106, "Noclip（壁抜け）", v9.Noclip, function(v602)
+	v9.Noclip = v602;
+end);
+game:GetService("RunService").Stepped:Connect(function()
+	if v9.Noclip then
+		local v978 = 0;
+		local v979;
+		while true do
+			if (v978 == 0) then
+				v979 = v1.Character;
+				if v979 then
+					for v1520, v1521 in pairs(v979:GetDescendants()) do
+						if v1521:IsA("BasePart") then
+							v1521.CanCollide = false;
+						end
+					end
+				end
+				break;
+			end
+		end
+	end
+end);
+local v225 = v102("Player Information");
+local v210 = game:GetService("Players");
+local v226 = game:GetService("UserInputService");
+local v227 = {["Summon Sea Beast"]=true,Awakening=true,Tool=true,["Last Resort"]=true,Agility=true,["Water Body"]=true,["Heavenly Blood"]=true,["Heightened Senses"]=true,["Energy Core"]=true,["Primordial Reign"]=true};
+local v228 = {"Last Resort","Agility","Water Body","Heavenly Blood","Heightened Senses","Energy Core","Primordial Reign"};
+local v229 = Instance.new("Frame");
+v229.Size = UDim2.new(2 - 1, -(3 + 7), 0 + 0, 1669 - 1119);
+v229.Position = UDim2.new(0, 5, 0 + 0, 618 - (520 + 93));
+v229.BackgroundColor3 = Color3.fromRGB(286 - (259 + 17), 10, 1 + 9);
+v229.Parent = v225;
+Instance.new("UICorner", v229);
+local v234 = Instance.new("Frame");
+v234.Size = UDim2.new(1, 0 + 0, 0 - 0, 641 - (396 + 195));
+v234.BackgroundColor3 = Color3.fromRGB(72 - 47, 1786 - (440 + 1321), 1854 - (1059 + 770));
+v234.Parent = v229;
+local v238 = Instance.new("TextLabel");
+v238.Size = UDim2.new(1, 0, 1, 0);
+v238.BackgroundTransparency = 4 - 3;
+v238.Text = "  PLAYER INTELLIGENCE (v3.5)";
+v238.TextColor3 = Color3.new(1, 546 - (424 + 121), 1 + 0);
+v238.Font = Enum.Font.SourceSansBold;
+v238.TextSize = 1365 - (641 + 706);
+v238.TextXAlignment = Enum.TextXAlignment.Left;
+v238.Parent = v234;
+local v247 = Instance.new("ScrollingFrame");
+v247.Size = UDim2.new(1 + 0, -(455 - (249 + 191)), 1, -65);
+v247.Position = UDim2.new(0 - 0, 4 + 3, 0 - 0, 482 - (183 + 244));
+v247.BackgroundTransparency = 1 + 0;
+v247.CanvasSize = UDim2.new(0, 730 - (434 + 296), 0 - 0, 0);
+v247.AutomaticCanvasSize = Enum.AutomaticSize.Y;
+v247.ScrollBarThickness = 517 - (169 + 343);
+v247.Parent = v229;
+Instance.new("UIListLayout", v247).Padding = UDim.new(0, 8 + 0);
+local function v256(v604, v605)
+	local v606 = 0 - 0;
+	local v607;
+	local v608;
+	local v609;
+	local v610;
+	local v611;
+	while true do
+		if (v606 == 1) then
+			v609 = nil;
+			v610 = nil;
+			v606 = 2;
+		end
+		if (v606 == (0 - 0)) then
+			v607 = 0 + 0;
+			v608 = nil;
+			v606 = 2 - 1;
+		end
+		if ((1125 - (651 + 472)) == v606) then
+			v611 = nil;
+			while true do
+				if (v607 == (1 + 0)) then
+					local v1367 = 0 + 0;
+					while true do
+						if ((1 - 0) == v1367) then
+							v607 = 485 - (397 + 86);
+							break;
+						end
+						if (v1367 == (876 - (423 + 453))) then
+							v609, v610 = pcall(function()
+								return v604[v605];
+							end);
+							if (v609 and (v610 ~= nil)) then
+								return tostring(v610);
+							end
+							v1367 = 1 + 0;
+						end
+					end
+				end
+				if ((1 + 2) == v607) then
+					return "Not Found";
+				end
+				if (2 == v607) then
+					local v1368 = 0 + 0;
+					while true do
+						if (1 == v1368) then
+							v607 = 3 + 0;
+							break;
+						end
+						if (v1368 == (0 + 0)) then
+							v611 = {v604:FindFirstChild("Data"),v604:FindFirstChild("leaderstats"),v604};
+							for v1666, v1667 in pairs(v611) do
+								if v1667 then
+									local v1725 = 0;
+									local v1726;
+									while true do
+										if (v1725 == (1190 - (50 + 1140))) then
+											v1726 = v1667:FindFirstChild(v605);
+											if (v1726 and v1726:IsA("ValueBase")) then
+												return tostring(v1726.Value);
+											end
+											break;
+										end
+									end
+								end
+							end
+							v1368 = 1 + 0;
+						end
+					end
+				end
+				if (v607 == (0 + 0)) then
+					v608 = v604:GetAttribute(v605);
+					if (v608 ~= nil) then
+						return tostring(v608);
+					end
+					v607 = 1;
+				end
+			end
+			break;
+		end
+	end
+end
+local function v257(v612, v613)
+	local v614 = v612:FindFirstChild("Data");
+	if (v614 and v614:FindFirstChild("Stats")) then
+		local v980 = 0 + 0;
+		local v981;
+		while true do
+			if (v980 == (0 - 0)) then
+				v981 = v614.Stats:FindFirstChild(v613);
+				if v981 then
+					local v1431 = 0 + 0;
+					local v1432;
+					while true do
+						if ((596 - (157 + 439)) == v1431) then
+							local v1668 = 0;
+							while true do
+								if (v1668 == (0 - 0)) then
+									v1432 = v981:FindFirstChild("Level");
+									return (v1432 and tostring(v1432.Value)) or (v981:IsA("ValueBase") and tostring(v981.Value)) or "0";
+								end
+							end
+						end
+					end
+				end
+				break;
+			end
+		end
+	end
+	return "0";
+end
+local function v258(v615)
+	local v616 = v615:FindFirstChild("Backpack");
+	local v617 = v615.Character;
+	local function v618(v896)
+		return (v616 and v616:FindFirstChild(v896)) or (v617 and v617:FindFirstChild(v896));
+	end
+	if v618("Awakening") then
+		return "v4";
+	end
+	for v897, v898 in ipairs(v228) do
+		if v618(v898) then
+			return "v3";
+		end
+	end
+	return "v1/v2";
+end
+local function v259(v619)
+	if v247:FindFirstChild(v619.Name) then
+		return;
+	end
+	local v620 = Instance.new("Frame");
+	v620.Name = v619.Name;
+	v620.Size = UDim2.new(1, -(16 - 11), 0 - 0, 983 - (782 + 136));
+	v620.BackgroundColor3 = Color3.fromRGB(35, 35, 890 - (112 + 743));
+	v620.ClipsDescendants = true;
+	v620.Parent = v247;
+	Instance.new("UICorner", v620);
+	local v627 = Instance.new("TextButton");
+	v627.Size = UDim2.new(1, 1171 - (1026 + 145), 0, 12 + 53);
+	v627.BackgroundTransparency = 719 - (493 + 225);
+	v627.Text = "";
+	v627.Parent = v620;
+	local v632 = Instance.new("ImageLabel");
+	v632.Size = UDim2.new(0, 202 - 147, 0 + 0, 147 - 92);
+	v632.Position = UDim2.new(0, 1 + 4, 0, 14 - 9);
+	v632.BackgroundTransparency = 1 + 0;
+	v632.Parent = v627;
+	task.spawn(function()
+		v632.Image = v210:GetUserThumbnailAsync(v619.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size100x100);
+	end);
+	local v637 = Instance.new("TextLabel");
+	v637.Size = UDim2.new(1, -70, 0 - 0, 25);
+	v637.Position = UDim2.new(0, 1665 - (210 + 1385), 1689 - (1201 + 488), 5);
+	v637.BackgroundTransparency = 1 + 0;
+	v637.Text = v619.DisplayName;
+	v637.Font = Enum.Font.SourceSansBold;
+	v637.TextSize = 28 - 12;
+	v637.TextXAlignment = Enum.TextXAlignment.Left;
+	v637.Parent = v627;
+	local v649 = Instance.new("TextLabel");
+	v649.Size = UDim2.new(1, -(125 - 55), 0, 20);
+	v649.Position = UDim2.new(0, 655 - (352 + 233), 0, 72 - 42);
+	v649.BackgroundTransparency = 1 + 0;
+	v649.TextColor3 = Color3.fromRGB(0 - 0, 774 - (489 + 85), 1756 - (277 + 1224));
+	v649.TextSize = 1506 - (663 + 830);
+	v649.TextXAlignment = Enum.TextXAlignment.Left;
+	v649.Font = Enum.Font.SourceSansBold;
+	v649.Parent = v627;
+	local v658 = Instance.new("TextLabel");
+	v658.Size = UDim2.new(1 + 0, -(171 - 101), 875 - (461 + 414), 3 + 12);
+	v658.Position = UDim2.new(0, 70, 0, 45);
+	v658.BackgroundTransparency = 1 + 0;
+	v658.TextColor3 = Color3.fromRGB(25 + 230, 85, 252 + 3);
+	v658.TextSize = 12;
+	v658.TextXAlignment = Enum.TextXAlignment.Left;
+	v658.Font = Enum.Font.SourceSansBold;
+	v658.Parent = v627;
+	local v667 = Instance.new("ScrollingFrame");
+	v667.Size = UDim2.new(251 - (172 + 78), -10, 0, 515 - 195);
+	v667.Position = UDim2.new(0 + 0, 7 - 2, 0 + 0, 26 + 49);
+	v667.BackgroundColor3 = Color3.fromRGB(33 - 13, 25 - 5, 20);
+	v667.CanvasSize = UDim2.new(0 + 0, 0, 0 + 0, 0);
+	v667.AutomaticCanvasSize = Enum.AutomaticSize.Y;
+	v667.ScrollBarThickness = 2 + 1;
+	v667.Parent = v620;
+	Instance.new("UICorner", v667);
+	Instance.new("UIListLayout", v667).Padding = UDim.new(0 - 0, 5);
+	local v677 = Instance.new("TextLabel");
+	v677.Size = UDim2.new(2 - 1, -20, 0 + 0, 15 + 10);
+	v677.BackgroundTransparency = 448 - (133 + 314);
+	v677.TextColor3 = Color3.fromRGB(0, 45 + 210, 150);
+	v677.Font = Enum.Font.SourceSansBold;
+	v677.TextSize = 229 - (199 + 14);
+	v677.TextXAlignment = Enum.TextXAlignment.Left;
+	v677.Parent = v667;
+	local v685 = Instance.new("TextLabel");
+	v685.Size = UDim2.new(1, -20, 0, 0 - 0);
+	v685.AutomaticSize = Enum.AutomaticSize.Y;
+	v685.BackgroundTransparency = 1550 - (647 + 902);
+	v685.TextColor3 = Color3.fromRGB(766 - 511, 255, 100);
+	v685.Font = Enum.Font.SourceSansItalic;
+	v685.TextSize = 247 - (85 + 148);
+	v685.TextXAlignment = Enum.TextXAlignment.Left;
+	v685.Parent = v667;
+	local v695 = Instance.new("TextLabel");
+	v695.Size = UDim2.new(1290 - (426 + 863), -(93 - 73), 1654 - (873 + 781), 0 - 0);
+	v695.AutomaticSize = Enum.AutomaticSize.Y;
+	v695.BackgroundTransparency = 2 - 1;
+	v695.TextColor3 = Color3.fromRGB(106 + 149, 609 - 444, 0 - 0);
+	v695.Font = Enum.Font.Code;
+	v695.TextSize = 41 - 27;
+	v695.TextXAlignment = Enum.TextXAlignment.Left;
+	v695.Parent = v667;
+	local v705 = Instance.new("TextLabel");
+	v705.Size = UDim2.new(1948 - (414 + 1533), -(18 + 2), 555 - (443 + 112), 1479 - (888 + 591));
+	v705.AutomaticSize = Enum.AutomaticSize.Y;
+	v705.BackgroundTransparency = 1;
+	v705.TextColor3 = Color3.new(2 - 1, 1, 1);
+	v705.TextSize = 1 + 13;
+	v705.TextXAlignment = Enum.TextXAlignment.Left;
+	v705.TextWrapped = true;
+	v705.Font = Enum.Font.SourceSans;
+	v705.Parent = v667;
+	local v716 = false;
+	v627.MouseButton1Click:Connect(function()
+		local v900 = 0 - 0;
+		local v901;
+		while true do
+			if (v900 == (0 + 0)) then
+				v901 = 0;
+				while true do
+					if ((0 + 0) == v901) then
+						v716 = not v716;
+						v620:TweenSize(UDim2.new(1 + 0, -(9 - 4), 0 - 0, (v716 and (2078 - (136 + 1542))) or (213 - 148)), "Out", "Quad", 0.2, true);
+						break;
+					end
+				end
+				break;
+			end
+		end
+	end);
+	task.spawn(function()
+		while v620.Parent do
+			local v982 = 0 + 0;
+			local v983;
+			local v984;
+			local v985;
+			local v986;
+			local v987;
+			while true do
+				if (v982 == 2) then
+					v986 = v258(v619);
+					v987 = v256(v619, "Fragments");
+					v982 = 4 - 1;
+				end
+				if (v982 == (1 + 0)) then
+					v984 = v256(v619, "Level");
+					v985 = v256(v619, "Race");
+					v982 = 2;
+				end
+				if (v982 == (490 - (68 + 418))) then
+					if v716 then
+						local v1433 = 0;
+						local v1434;
+						local v1435;
+						local v1436;
+						local v1437;
+						local v1438;
+						local v1439;
+						local v1440;
+						local v1441;
+						local v1442;
+						local v1443;
+						local v1444;
+						while true do
+							if (v1433 == (4 - 2)) then
+								v1440 = v257(v619, "Melee");
+								v1441 = v257(v619, "Sword");
+								v695.Text = string.format("  [ STATISTICS ]\n  Team: %s\n  Defense: %s\n  Fruit: %s\n  Gun: %s\n  Melee: %s\n  Sword: %s\n  Fragments: %s", v983, v1437, v1438, v1439, v1440, v1441, v987);
+								v1442 = {};
+								v1433 = 3;
+							end
+							if (v1433 == (0 - 0)) then
+								v1434 = v619.Character;
+								v677.Text = "  [ HEALTH ] : " .. ((v1434 and v1434:FindFirstChild("Humanoid") and math.floor(v1434.Humanoid.Health)) or "DEAD");
+								v1435 = v256(v619, "ChatTagText");
+								v1436 = v256(v619, "ExactLocation");
+								v1433 = 1;
+							end
+							if (v1433 == (4 + 0)) then
+								table.sort(v1442);
+								v1444 = {"  [ INVENTORY ]"};
+								for v1699, v1700 in ipairs(v1442) do
+									table.insert(v1444, "  - " .. v1700);
+								end
+								v705.Text = ((#v1442 > 0) and table.concat(v1444, "\n")) or "  [ INVENTORY ]\n  (Empty)";
+								break;
+							end
+							if (v1433 == 3) then
+								v1443 = nil;
+								function v1443(v1701)
+									for v1727, v1728 in pairs(v1701:GetChildren()) do
+										if (v1728:IsA("Tool") and not v227[v1728.Name]) then
+											table.insert(v1442, v1728.Name);
+										end
+									end
+								end
+								if v1434 then
+									v1443(v1434);
+								end
+								v1443(v619.Backpack);
+								v1433 = 1 + 3;
+							end
+							if (v1433 == (1 + 0)) then
+								v685.Text = string.format("  タイトル: %s\n  現在の場所: %s", v1435, v1436);
+								v1437 = v257(v619, "Defense");
+								v1438 = v257(v619, "Demon Fruit");
+								v1439 = v257(v619, "Gun");
+								v1433 = 2;
+							end
+						end
+					end
+					task.wait(0.6);
+					break;
+				end
+				if (v982 == (0 + 0)) then
+					v983 = (v619.Team and v619.Team.Name) or "None";
+					if string.find(string.lower(v983), "pirate") then
+						v637.TextColor3 = Color3.fromRGB(255, 71 - 21, 96 - 46);
+					elseif string.find(string.lower(v983), "marine") then
+						v637.TextColor3 = Color3.fromRGB(136 - 86, 551 - 401, 143 + 112);
+					else
+						v637.TextColor3 = Color3.fromRGB(255, 255, 255);
+					end
+					v982 = 1;
+				end
+				if (v982 == (4 - 1)) then
+					v649.Text = "Lv: " .. v984 .. " | " .. v985 .. " (" .. v986 .. ")";
+					v658.Text = "Fragments: " .. v987;
+					v982 = 4;
+				end
+			end
+		end
+	end);
+end
+for v717, v718 in pairs(v210:GetPlayers()) do
+	v259(v718);
+end
+v210.PlayerAdded:Connect(v259);
+v210.PlayerRemoving:Connect(function(v719)
+	if v247:FindFirstChild(v719.Name) then
+		v247[v719.Name]:Destroy();
+	end
+end);
+local v260 = v102("VFXカラー");
+local v261 = nil;
+local v262 = nil;
+local v263 = nil;
+local v264 = Color3.new(1 + 0, 1 + 0, 1 + 0);
+local v265 = false;
+local function v266(v720)
+	if not v262 then
+		return;
+	end
+	local v721 = v262:FindFirstChild("Shifted");
+	if v721 then
+		for v1105, v1106 in pairs(v721:GetAttributes()) do
+			if string.find(v1105:lower(), "shifted_color") then
+				v721:SetAttribute(v1105, v720);
+			end
+		end
+		for v1107, v1108 in pairs(v721:GetChildren()) do
+			if (string.find(v1108.Name:lower(), "shifted_color") and v1108:IsA("Color3Value")) then
+				v1108.Value = v720;
+			end
+		end
+	end
+end
+local v267 = Instance.new("Frame", v260);
+v267.Size = UDim2.new(3 - 2, 0 - 0, 0 + 0, 0 - 0);
+v267.AutomaticSize = Enum.AutomaticSize.Y;
+v267.BackgroundTransparency = 3 - 2;
+v267.LayoutOrder = -10;
+local v272 = Instance.new("UIListLayout", v267);
+v272.Padding = UDim.new(0, 3 + 2);
+local function v274()
+	for v902, v903 in pairs(v267:GetChildren()) do
+		if not v903:IsA("UIListLayout") then
+			v903:Destroy();
+		end
+	end
+	for v904, v905 in pairs(game.Players.LocalPlayer:GetChildren()) do
+		if v905.Name:find("VFXColor") then
+			local v1109 = 0 - 0;
+			local v1110;
+			while true do
+				if (v1109 == 0) then
+					v1110 = v905.Name:gsub("VFXColor", "");
+					v105(v267, "👉 選択: " .. v1110, function()
+						local v1446 = 831 - (762 + 69);
+						while true do
+							if (v1446 == (3 - 2)) then
+								v12("Active: " .. v1110);
+								if not v265 then
+									v266(v264);
+								end
+								break;
+							end
+							if (v1446 == (0 + 0)) then
+								v262 = v905;
+								v261 = v905.Name;
+								v1446 = 1 + 0;
+							end
+						end
+					end);
+					break;
+				end
+			end
+		end
+	end
+end
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+	task.wait(2.5 - 1);
+	v274();
+	if v261 then
+		local v988 = 0 + 0;
+		local v989;
+		while true do
+			if ((0 + 0) == v988) then
+				v989 = game.Players.LocalPlayer:FindFirstChild(v261);
+				if v989 then
+					v262 = v989;
+					if v265 then
+					else
+						v266(v264);
+					end
+				end
+				break;
+			end
+		end
+	end
+end);
+game.Players.LocalPlayer.ChildAdded:Connect(function(v722)
+	if v722.Name:find("VFXColor") then
+		task.wait(0.1 - 0);
+		v274();
+	end
+end);
+game.Players.LocalPlayer.ChildRemoved:Connect(function(v723)
+	if v723.Name:find("VFXColor") then
+		local v990 = 0;
+		local v991;
+		while true do
+			if (v990 == 0) then
+				v991 = 157 - (8 + 149);
+				while true do
+					if (v991 == (1320 - (1199 + 121))) then
+						task.wait(0.1 - 0);
+						v274();
+						break;
+					end
+				end
+				break;
+			end
+		end
+	end
+end);
+v105(v260, "🔥 GAMING RAINBOW (0.2s)", function()
+	local v724 = 0 - 0;
+	while true do
+		if (v724 == 1) then
+			if v263 then
+				local v1288 = 0;
+				local v1289;
+				while true do
+					if (v1288 == 0) then
+						v1289 = 0 + 0;
+						while true do
+							if ((0 - 0) == v1289) then
+								v263:Disconnect();
+								v263 = nil;
+								break;
+							end
+						end
+						break;
+					end
+				end
+			end
+			if v265 then
+				local v1290 = 0;
+				while true do
+					if (v1290 == 0) then
+						v263 = game:GetService("RunService").Heartbeat:Connect(function()
+							local v1581 = 0;
+							local v1582;
+							local v1583;
+							while true do
+								if (v1581 == (2 - 1)) then
+									v266(Color3.fromHSV(v1583, 1 + 0, 1));
+									break;
+								end
+								if (v1581 == (1807 - (518 + 1289))) then
+									local v1729 = 0;
+									while true do
+										if (v1729 == (1 - 0)) then
+											v1581 = 1 + 0;
+											break;
+										end
+										if (v1729 == (0 - 0)) then
+											v1582 = 0.2 + 0;
+											v1583 = (tick() % v1582) / v1582;
+											v1729 = 470 - (304 + 165);
+										end
+									end
+								end
+							end
+						end);
+						v12("Rainbow ON");
+						break;
+					end
+				end
+			else
+				local v1291 = 0 + 0;
+				local v1292;
+				while true do
+					if ((160 - (54 + 106)) == v1291) then
+						v1292 = 0;
+						while true do
+							if (v1292 == 0) then
+								v266(v264);
+								v12("Rainbow OFF");
+								break;
+							end
+						end
+						break;
+					end
+				end
+			end
+			break;
+		end
+		if (v724 == (1969 - (1618 + 351))) then
+			if not v262 then
+				local v1293 = 0;
+				while true do
+					if (v1293 == 0) then
+						v12("先にVFXを選択してください");
+						return;
+					end
+				end
+			end
+			v265 = not v265;
+			v724 = 1 + 0;
+		end
+	end
+end);
+local v275 = {{"Red",Color3.new(1 + 0, 0, 0 - 0)},{"Orange",Color3.new(1 + 0, 0.5 - 0, 0 + 0)},{"Yellow",Color3.new(3 - 2, 187 - (165 + 21), 111 - (61 + 50))},{"Lime",Color3.new(0.5 - 0, 1 + 0, 1460 - (1295 + 165))},{"Green",Color3.new(0 + 0, 1, 1397 - (819 + 578))},{"Mint",Color3.new(1282.4 - (546 + 736), 1938 - (1834 + 103), 0.6 + 0)},{"Aqua",Color3.new(0 + 0, 1, 0.8 - 0)},{"Cyan",Color3.new(0 - 0, 1, 2 - 1)},{"Sky",Color3.new(0.2 + 0, 0.6, 1 + 0)},{"Blue",Color3.new(0 - 0, 0 - 0, 1 + 0)},{"Purple",Color3.new(0.6, 0 - 0, 1)},{"Magenta",Color3.new(1400 - (653 + 746), 0 - 0, 1)},{"Pink",Color3.new(2 - 1, 0.4, 0.7)},{"White",Color3.new(1, 1 + 0, 1 + 0)},{"Gold",Color3.new(1 + 0, 0.8 - 0, 0)},{"Crimson",Color3.new(0.6, 0 - 0, 0)},{"Forest",Color3.new(801 - (768 + 33), 0.4 - 0, 0 - 0)},{"Navy",Color3.new(0, 0, 0.5)},{"Silver",Color3.new(1672.7 - (741 + 931), 0.7 + 0, 0.7)},{"Ghost",Color3.new(0.9, 0.9, 1 + 0)}};
+for v725, v726 in pairs(v275) do
+	v105(v260, "Color: " .. v726[1 + 0], function()
+		local v906 = 0 - 0;
+		while true do
+			if (v906 == (0 + 0)) then
+				v265 = false;
+				if v263 then
+					local v1369 = 0;
+					while true do
+						if (v1369 == (0 + 0)) then
+							v263:Disconnect();
+							v263 = nil;
+							break;
+						end
+					end
+				end
+				v906 = 1;
+			end
+			if (v906 == (4 - 3)) then
+				v264 = v726[2 + 0];
+				v266(v726[496 - (64 + 430)]);
+				break;
+			end
+		end
+	end);
+end
+v274();
+local v276 = v102("Sea Beast / Sea Event");
+local v210 = game:GetService("Players");
+local v147 = game:GetService("RunService");
+local v277 = game:GetService("Workspace");
+local v278 = game:GetService("ReplicatedStorage");
+local v279 = game:GetService("VirtualInputManager");
+local v1 = v210.LocalPlayer;
+local v280 = v278.Remotes.CommF_;
+local v281 = {DefaultY=(199 + 1),SeaBeastY=50,ShipY=(383 - (106 + 257)),MoveSpeed=(3 + 0),HuntTweenSpeed=(1071 - (496 + 225)),ReturnTweenSpeed=(511 - 261),BoatsPath=v277:WaitForChild("Boats"),SeaBeastsPath=v277:WaitForChild("SeaBeasts"),EnemiesPath=v277:WaitForChild("Enemies")};
+local v282 = {Hunting=false,Terror=false,Shark=false,Piranha=false,Brigade=false,Fishman=false,Moving=false,Processing=false,LastSeat=nil};
+local function v283(v727)
+	if not (v727 and v727.Parent) then
+		return false;
+	end
+	local v728 = v727:FindFirstChildOfClass("Humanoid");
+	if v728 then
+		return v728.Health > (0 - 0);
+	end
+	local v729 = v727:FindFirstChild("Health");
+	if (v729 and v729:IsA("ValueBase")) then
+		return v729.Value > 0;
+	end
+	return v727:FindFirstChild("HumanoidRootPart") or v727:FindFirstChildWhichIsA("BasePart", true);
+end
+local function v284()
+	local v730 = 1658 - (256 + 1402);
+	local v731;
+	local v732;
+	local v733;
+	while true do
+		if (v730 == 0) then
+			v731 = 0;
+			v732 = nil;
+			v730 = 1900 - (30 + 1869);
+		end
+		if (v730 == (1370 - (213 + 1156))) then
+			v733 = nil;
+			while true do
+				if (v731 == (188 - (96 + 92))) then
+					v732 = v1.Character;
+					v733 = v732 and v732:FindFirstChild("Humanoid");
+					v731 = 1;
+				end
+				if (v731 == (1 + 0)) then
+					if v733 then
+						local v1522 = 899 - (142 + 757);
+						while true do
+							if (v1522 == (0 + 0)) then
+								v733.Sit = false;
+								task.wait(0.3);
+								v1522 = 1 + 0;
+							end
+							if (v1522 == 1) then
+								for v1730 = 80 - (32 + 47), 1982 - (1053 + 924) do
+									if v732:FindFirstChildOfClass("Tool") then
+										break;
+									end
+									v279:SendKeyEvent(true, Enum.KeyCode.Two, false, game);
+									task.wait(0.05 + 0);
+									v279:SendKeyEvent(false, Enum.KeyCode.Two, false, game);
+									task.wait(0.1 - 0);
+								end
+								break;
+							end
+						end
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end
+local function v285()
+	for v907, v908 in ipairs({Enum.KeyCode.Z,Enum.KeyCode.X,Enum.KeyCode.C,Enum.KeyCode.F}) do
+		v279:SendKeyEvent(true, v908, false, game);
+		task.wait(0.01 - 0);
+		v279:SendKeyEvent(false, v908, false, game);
+	end
+end
+local function v286(v734, v735, v736)
+	local v737 = 1709 - (541 + 1168);
+	local v738;
+	local v739;
+	while true do
+		if (v737 == 0) then
+			if not (v734 and v734.Parent) then
+				return;
+			end
+			v738 = v1.Character and v1.Character:FindFirstChild("HumanoidRootPart");
+			v737 = 1598 - (645 + 952);
+		end
+		if (v737 == (839 - (669 + 169))) then
+			if not v738 then
+				return;
+			end
+			v739 = nil;
+			v737 = 6 - 4;
+		end
+		if (v737 == 2) then
+			v739 = v147.RenderStepped:Connect(function(v1203)
+				local v1204 = 0;
+				local v1205;
+				local v1206;
+				local v1207;
+				while true do
+					if (v1204 == (0 - 0)) then
+						v1205 = 0 + 0;
+						v1206 = nil;
+						v1204 = 1;
+					end
+					if (v1204 == (1 + 0)) then
+						v1207 = nil;
+						while true do
+							if (v1205 == 2) then
+								v738.CFrame = CFrame.new(v738.Position + ((v1206 - v738.Position).Unit * v735 * v1203));
+								v738.Velocity = Vector3.zero;
+								break;
+							end
+							if (v1205 == 1) then
+								v1207 = (v1206 - v738.Position).Magnitude;
+								if (v1207 < (769 - (181 + 584))) then
+									local v1731 = 0;
+									local v1732;
+									while true do
+										if (v1731 == 0) then
+											v1732 = 0;
+											while true do
+												if (v1732 == (1395 - (665 + 730))) then
+													v738.CFrame = CFrame.new(v1206);
+													v739:Disconnect();
+													v1732 = 1;
+												end
+												if (v1732 == 1) then
+													return;
+												end
+											end
+											break;
+										end
+									end
+								end
+								v1205 = 5 - 3;
+							end
+							if (v1205 == (0 - 0)) then
+								if not (v734 and v734.Parent and v738.Parent) then
+									local v1733 = 1350 - (540 + 810);
+									while true do
+										if (v1733 == (0 - 0)) then
+											v739:Disconnect();
+											return;
+										end
+									end
+								end
+								v1206 = v734.Position + (v736 or Vector3.new(0 - 0, 0, 0));
+								v1205 = 1 + 0;
+							end
+						end
+						break;
+					end
+				end
+			end);
+			while v739.Connected do
+				task.wait();
+			end
+			break;
+		end
+	end
+end
+local function v287()
+	local v740 = 203 - (166 + 37);
+	local v741;
+	while true do
+		if (v740 == (1882 - (22 + 1859))) then
+			if v282.Brigade then
+				for v1371, v1372 in pairs(v741) do
+					if ((v1372.Name:find("Brigade") or v1372.Name:find("Ship") or v1372.Name:find("Boat")) and v283(v1372)) then
+						return v1372, false, v281.ShipY;
+					end
+				end
+			end
+			if v282.Fishman then
+				for v1373, v1374 in pairs(v741) do
+					if ((v1374.Name:find("Fish") or v1374.Name:find("Crew")) and v283(v1374)) then
+						local v1523 = 1772 - (843 + 929);
+						local v1524;
+						while true do
+							if (v1523 == (262 - (30 + 232))) then
+								v1524 = not v1374.Name:find("Boat");
+								return v1374, v1524, (v1524 and v281.DefaultY) or v281.ShipY;
+							end
+						end
+					end
+				end
+			end
+			v740 = 5 - 3;
+		end
+		if (v740 == (779 - (55 + 722))) then
+			if v282.Piranha then
+				for v1375, v1376 in pairs(v741) do
+					if ((v1376.Name == "Piranha") and v283(v1376)) then
+						return v1376, true, v281.DefaultY;
+					end
+				end
+			end
+			if v282.Shark then
+				for v1377, v1378 in pairs(v741) do
+					if ((v1378.Name:find("Shark") or (v1378.Name == "Sharks")) and (v1378.Name ~= "Terrorshark") and v283(v1378)) then
+						return v1378, true, v281.DefaultY;
+					end
+				end
+			end
+			v740 = 3;
+		end
+		if (v740 == (0 - 0)) then
+			v741 = v281.EnemiesPath:GetChildren();
+			if v282.Terror then
+				for v1379, v1380 in pairs(v741) do
+					if ((v1380.Name == "Terrorshark") and v283(v1380)) then
+						return v1380, true, v281.DefaultY;
+					end
+				end
+			end
+			v740 = 1676 - (78 + 1597);
+		end
+		if (v740 == 3) then
+			if v282.Hunting then
+				for v1381, v1382 in pairs(v281.SeaBeastsPath:GetChildren()) do
+					if v283(v1382) then
+						return v1382, false, v281.SeaBeastY;
+					end
+				end
+			end
+			return nil;
+		end
+	end
+end
+local function v288()
+	if v282.Processing then
+		return;
+	end
+	local v742, v743, v744 = v287();
+	if not v742 then
+		return;
+	end
+	v282.Processing = true;
+	v284();
+	while true do
+		v742, v743, v744 = v287();
+		if not v742 then
+			break;
+		end
+		local v909 = v1.Character:FindFirstChild("HumanoidRootPart");
+		local v910 = v742:FindFirstChild("HumanoidRootPart") or v742:FindFirstChildWhichIsA("BasePart", true);
+		if v910 then
+			v286(v910, v281.HuntTweenSpeed, (v743 and Vector3.new(0 + 0, 14 + 1, 0 + 0)) or Vector3.new(549 - (305 + 244), v744 - v910.Position.Y, 0 + 0));
+			while v283(v742) and (v282.Hunting or v282.Terror or v282.Shark or v282.Piranha or v282.Brigade or v282.Fishman) do
+				if v743 then
+					v909.CFrame = v910.CFrame * CFrame.new(0, 20, 105 - (95 + 10));
+				else
+					v909.CFrame = CFrame.new(v910.Position.X, v744, v910.Position.Z);
+				end
+				v909.Velocity = Vector3.zero;
+				v285();
+				v147.Heartbeat:Wait();
+				if not (v282.Hunting or v282.Terror or v282.Shark or v282.Piranha or v282.Brigade or v282.Fishman) then
+					break;
+				end
+			end
+		end
+		task.wait(0.2 + 0);
+	end
+	if (v282.LastSeat and v282.LastSeat.Parent) then
+		v286(v282.LastSeat, v281.ReturnTweenSpeed, Vector3.new(0 - 0, 3 - 0, 0));
+		task.wait(762.3 - (592 + 170));
+		pcall(function()
+			v282.LastSeat:Sit(v1.Character.Humanoid);
+		end);
+	end
+	v282.Processing = false;
+end
+v281.SeaBeastsPath.ChildAdded:Connect(function()
+	task.spawn(v288);
+end);
+v281.EnemiesPath.ChildAdded:Connect(function()
+	task.spawn(v288);
+end);
+v104(v276, "Hunt Speed", 348 - 248, 500, 878 - 528, function(v746)
+	v281.HuntTweenSpeed = v746;
+end);
+v103(v276, "AUTO MOVE", false, function(v748)
+	v282.Moving = v748;
+end);
+v103(v276, "SEA BEAST", false, function(v750)
+	v282.Hunting = v750;
+end);
+v103(v276, "TERROR SHARK", false, function(v752)
+	v282.Terror = v752;
+end);
+v103(v276, "SHARKS", false, function(v754)
+	v282.Shark = v754;
+end);
+v103(v276, "PIRANHA", false, function(v756)
+	v282.Piranha = v756;
+end);
+v103(v276, "PIRATE SHIPS", false, function(v758)
+	v282.Brigade = v758;
+end);
+v103(v276, "FISHMAN / BOAT", false, function(v760)
+	v282.Fishman = v760;
+end);
+v105(v276, "RETURN TO BOAT", function()
+	local v762 = 0 + 0;
+	local v763;
+	while true do
+		if (0 == v762) then
+			v763 = 0 + 0;
+			while true do
+				if (v763 == (0 - 0)) then
+					if v282.Processing then
+						return;
+					end
+					if (v282.LastSeat and v282.LastSeat.Parent) then
+						task.spawn(function()
+							v282.Processing = true;
+							v286(v282.LastSeat, v281.ReturnTweenSpeed, Vector3.new(0 + 0, 5 - 2, 507 - (353 + 154)));
+							task.wait(0.3);
+							pcall(function()
+								v282.LastSeat:Sit(v1.Character.Humanoid);
+							end);
+							v282.Processing = false;
+						end);
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end);
+do
+	local v764 = {{"Dinghy",false},{"Sloop",true},{"Brigade",true},{"Grand Brigade",true},{"Miracle",false,true},{"The Sentinel",false,true},{"Guardian",false,true},{"Lantern",false,true},{"Sleigh",false,true},{"Beast Hunter",false,true}};
+	for v911, v912 in ipairs(v764) do
+		v105(v276, "Buy: " .. v912[1 - 0], function()
+			local v992 = 0;
+			local v993;
+			local v994;
+			local v995;
+			while true do
+				if (v992 == 0) then
+					v993 = (v912[3] and "Luxury Boat Dealer") or "Boat Dealer";
+					v994 = ((v1.Team.Name == "Marines") and "Marine") or "Pirate";
+					v992 = 231 - (19 + 211);
+				end
+				if (v992 == 2) then
+					for v1385, v1386 in ipairs(v995) do
+						if (v280:InvokeServer("BuyBoat", v1386, v993) ~= 0) then
+							task.wait(114 - (88 + 25));
+							local v1525 = v1.Character.HumanoidRootPart;
+							local v1526 = nil;
+							local v1527 = 2543 - 1544;
+							for v1585, v1586 in pairs(v281.BoatsPath:GetChildren()) do
+								local v1587 = 0;
+								local v1588;
+								while true do
+									if (v1587 == 0) then
+										v1588 = v1586:FindFirstChildWhichIsA("BasePart", true);
+										if (v1588 and ((v1588.Position - v1525.Position).Magnitude < v1527)) then
+											v1527 = (v1588.Position - v1525.Position).Magnitude;
+											v1526 = v1586;
+										end
+										break;
+									end
+								end
+							end
+							if v1526 then
+								local v1679 = v1526:FindFirstChildWhichIsA("VehicleSeat", true);
+								if v1679 then
+									v282.LastSeat = v1679;
+									v286(v1679, 125 + 125, Vector3.new(0, 3 + 0, 0));
+									task.wait(1036.2 - (1007 + 29));
+									pcall(function()
+										v1679:Sit(v1.Character.Humanoid);
+									end);
+								end
+							end
+							break;
+						end
+					end
+					break;
+				end
+				if ((1 + 0) == v992) then
+					v280:InvokeServer("BuyBoat", "Speak");
+					v995 = {v912[1],(v994 .. v912[1 + 0]),(v994 .. " " .. v912[2 - 1])};
+					v992 = 2;
+				end
+			end
+		end);
+	end
+end
+v147.Heartbeat:Connect(function()
+	local v765 = 0;
+	local v766;
+	local v767;
+	local v768;
+	while true do
+		if (v765 == (591 - (276 + 313))) then
+			if (v768.SeatPart and v768.SeatPart:IsA("VehicleSeat")) then
+				v282.LastSeat = v768.SeatPart;
+			end
+			if (v282.Moving and not v282.Processing and v282.LastSeat and v768.Sit) then
+				local v1296 = 0 - 0;
+				local v1297;
+				while true do
+					if (v1296 == 1) then
+						v767.CFrame = CFrame.new(v767.Position.X, v281.DefaultY, v767.Position.Z) * (v767.CFrame - v767.CFrame.Position);
+						break;
+					end
+					if (v1296 == (0 + 0)) then
+						v1297 = Vector3.new(v767.CFrame.LookVector.X, 0 + 0, v767.CFrame.LookVector.Z).Unit;
+						v767.CFrame = CFrame.new(v767.Position + (v1297 * v281.MoveSpeed), v767.Position + (v1297 * v281.MoveSpeed) + v767.CFrame.LookVector);
+						v1296 = 1 + 0;
+					end
+				end
+			end
+			v765 = 1975 - (495 + 1477);
+		end
+		if (v765 == (8 - 5)) then
+			if not v282.Processing then
+				if v287() then
+					task.spawn(v288);
+				end
+			end
+			break;
+		end
+		if (0 == v765) then
+			v766 = v1.Character;
+			v767 = v766 and v766:FindFirstChild("HumanoidRootPart");
+			v765 = 1;
+		end
+		if (v765 == (1 + 0)) then
+			v768 = v766 and v766:FindFirstChild("Humanoid");
+			if not (v767 and v768) then
+				return;
+			end
+			v765 = 2;
+		end
+	end
+end);
+local function v289(v769)
+	local v770 = 403 - (342 + 61);
+	local v771;
+	while true do
+		if (v770 == 0) then
+			v771 = game.Players.LocalPlayer.Character;
+			if (v771 and v771:FindFirstChild("HumanoidRootPart")) then
+				v771.HumanoidRootPart.CFrame = CFrame.new(v769);
+				v12("Teleported to Location");
+			end
+			break;
+		end
+	end
+end
+v105(v108, "Mansion (マンション)", function()
+	v289(Vector3.new(-(5447.860000000001 + 7008), 541.3399999999999 - (4 + 161), -(4632.61 + 2933)));
+end);
+v105(v108, "Hydra Island (ヒドラ)", function()
+	v289(Vector3.new(17732.43 - 12083, 1015.29, -341.05));
+end);
+v105(v108, "Sea Castle (海の城)", function()
+	v289(Vector3.new(-5029.62, 827.97 - 512, -3195.88));
+end);
+local v290 = v102("stats");
+local function v291(v772)
+	local v773 = 497 - (322 + 175);
+	local v774;
+	local v775;
+	local v776;
+	while true do
+		if (v773 == (563 - (173 + 390))) then
+			v774 = 0;
+			v775 = nil;
+			v773 = 1;
+		end
+		if (v773 == 1) then
+			v776 = nil;
+			while true do
+				local v1210 = 0;
+				while true do
+					if (v1210 == (0 + 0)) then
+						if (v774 == (314 - (203 + 111))) then
+							v775 = Instance.new("TextLabel", v290);
+							v775.Size = UDim2.new(1, -10, 0 + 0, 35);
+							v775.BackgroundColor3 = Color3.fromRGB(15 + 5, 0, 0);
+							v775.TextColor3 = Color3.fromRGB(255, 255, 744 - 489);
+							v774 = 1;
+						end
+						if (v774 == (2 + 0)) then
+							v776 = Instance.new("UIPadding", v775);
+							v776.PaddingLeft = UDim.new(706 - (57 + 649), 394 - (328 + 56));
+							return v775;
+						end
+						v1210 = 1 + 0;
+					end
+					if (v1210 == (513 - (433 + 79))) then
+						if (v774 == 1) then
+							v775.Font = Enum.Font.SourceSansBold;
+							v775.TextSize = 2 + 13;
+							v775.TextXAlignment = Enum.TextXAlignment.Left;
+							Instance.new("UICorner", v775);
+							v774 = 2;
+						end
+						break;
+					end
+				end
+			end
+			break;
+		end
+	end
+end
+local v292 = v291("Server ID: Loading...");
+local v293 = v291("滞在時間: 00:00:00");
+local v294 = v291("FPS: 0");
+local v295 = v291("Ping: 0 ms");
+v105(v290, "サーバーIDをコピー", function()
+	setclipboard(game.JobId);
+	v12("サーバーIDをクリップボードにコピーしました");
+end);
+local v147 = game:GetService("RunService");
+local v296 = game:GetService("Stats");
+local v297 = os.time();
+task.spawn(function()
+	local v777 = 0 + 0;
+	local v778;
+	while true do
+		if (v777 == 0) then
+			v778 = 0 - 0;
+			while true do
+				if (v778 == (0 - 0)) then
+					v292.Text = "Server ID: " .. (((game.JobId ~= "") and game.JobId) or "Studio/Private");
+					while task.wait(0.5 + 0) do
+						local v1447 = 0 + 0;
+						local v1448;
+						local v1449;
+						local v1450;
+						local v1451;
+						local v1452;
+						local v1453;
+						local v1454;
+						while true do
+							if (v1447 == 2) then
+								v1452 = nil;
+								v1453 = nil;
+								v1447 = 1039 - (562 + 474);
+							end
+							if (v1447 == 3) then
+								v1454 = nil;
+								while true do
+									if (v1448 == 1) then
+										v1451 = math.floor((v1449 % (8398 - 4798)) / (122 - 62));
+										v1452 = v1449 % (965 - (76 + 829));
+										v1448 = 1675 - (1506 + 167);
+									end
+									if (v1448 == (5 - 2)) then
+										v294.Text = "FPS: " .. v1453;
+										v1454 = math.floor(v296.Network.ServerStatsItem["Data Ping"]:GetValue());
+										v1448 = 4;
+									end
+									if (v1448 == 0) then
+										v1449 = os.time() - v297;
+										v1450 = math.floor(v1449 / (3866 - (58 + 208)));
+										v1448 = 1;
+									end
+									if (v1448 == 2) then
+										v293.Text = string.format("滞在時間: %02d:%02d:%02d", v1450, v1451, v1452);
+										v1453 = math.floor((1 + 0) / v147.RenderStepped:Wait());
+										v1448 = 3;
+									end
+									if (v1448 == (3 + 1)) then
+										v295.Text = "Ping: " .. v1454 .. " ms";
+										break;
+									end
+								end
+								break;
+							end
+							if (0 == v1447) then
+								v1448 = 0 + 0;
+								v1449 = nil;
+								v1447 = 1;
+							end
+							if (v1447 == (3 - 2)) then
+								v1450 = nil;
+								v1451 = nil;
+								v1447 = 339 - (258 + 79);
+							end
+						end
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end);
+local v298 = v291("--- 出現中のボス ---");
+v298.TextColor3 = Color3.fromRGB(33 + 222, 50, 0 - 0);
+local v300 = Instance.new("ScrollingFrame", v290);
+v300.Size = UDim2.new(1471 - (1219 + 251), -10, 0, 1821 - (1231 + 440));
+v300.BackgroundTransparency = 59 - (34 + 24);
+v300.BorderSizePixel = 0 + 0;
+v300.ScrollBarThickness = 5 - 2;
+v300.CanvasSize = UDim2.new(0, 0, 0 + 0, 0);
+v300.AutomaticCanvasSize = Enum.AutomaticSize.Y;
+local v307 = Instance.new("TextLabel", v300);
+v307.Size = UDim2.new(2 - 1, 0 - 0, 0, 0 - 0);
+v307.AutomaticSize = Enum.AutomaticSize.Y;
+v307.BackgroundTransparency = 3 - 2;
+v307.TextColor3 = Color3.fromRGB(255, 556 - 301, 1844 - (877 + 712));
+v307.Font = Enum.Font.SourceSansBold;
+v307.TextSize = 9 + 6;
+v307.TextXAlignment = Enum.TextXAlignment.Left;
+v307.TextYAlignment = Enum.TextYAlignment.Top;
+v307.TextWrapped = true;
+v307.Text = "待機中...";
+local v319 = {};
+local v320 = {};
+local v321 = false;
+local function v322(v779)
+	return v779:gsub("%[Lv%. %d+%]%s*", ""):gsub("%[Boss%]", ""):match("^%s*(.-)%s*$");
+end
+local function v323()
+	local v780 = 0;
+	local v781;
+	while true do
+		if (v780 == (754 - (242 + 512))) then
+			v781 = 0;
+			while true do
+				if (v781 == (0 - 0)) then
+					if v321 then
+						return;
+					end
+					v321 = true;
+					v781 = 628 - (92 + 535);
+				end
+				if (v781 == (1 + 0)) then
+					task.delay(0.5 - 0, function()
+						local v1455 = 0 + 0;
+						local v1456;
+						local v1457;
+						while true do
+							if (v1455 == 0) then
+								v1456 = {};
+								for v1703, v1704 in pairs(v320) do
+									table.insert(v1456, v1704 .. " " .. v1703);
+								end
+								v1455 = 1;
+							end
+							if ((3 - 2) == v1455) then
+								local v1680 = 0 + 0;
+								while true do
+									if (v1680 == (1 + 0)) then
+										v1455 = 1 + 1;
+										break;
+									end
+									if (v1680 == (0 - 0)) then
+										v1457 = ((#v1456 > 0) and table.concat(v1456, "\n")) or "なし";
+										if (v307.Text ~= v1457) then
+											v307.Text = v1457;
+										end
+										v1680 = 1 - 0;
+									end
+								end
+							end
+							if (v1455 == (1787 - (1476 + 309))) then
+								v321 = false;
+								break;
+							end
+						end
+					end);
+					break;
+				end
+			end
+			break;
+		end
+	end
+end
+local function v324()
+	local v782 = 1284 - (299 + 985);
+	local v783;
+	local v784;
+	while true do
+		if (v782 == (1 + 1)) then
+			if v784 then
+				local v1299 = 0 - 0;
+				local v1300;
+				while true do
+					if (v1299 == (93 - (86 + 7))) then
+						v1300 = nil;
+						function v1300(v1598)
+							local v1599 = 0 - 0;
+							local v1600;
+							while true do
+								if (v1599 == (0 + 0)) then
+									v1600 = v322(v1598.Name);
+									if (v319[v1600] or v1598.Name:find("%[Boss%]")) then
+										v319[v1600] = true;
+										v320[v1600] = "⚔️";
+										v323();
+									end
+									break;
+								end
+							end
+						end
+						v1299 = 881 - (672 + 208);
+					end
+					if (v1299 == (1 + 1)) then
+						for v1601, v1602 in pairs(v784:GetChildren()) do
+							v1300(v1602);
+						end
+						break;
+					end
+					if (v1299 == (133 - (14 + 118))) then
+						v784.ChildAdded:Connect(v1300);
+						v784.ChildRemoved:Connect(function(v1603)
+							local v1604 = v322(v1603.Name);
+							if (v320[v1604] == "⚔️") then
+								local v1705 = 445 - (339 + 106);
+								local v1706;
+								while true do
+									if (v1705 == (0 + 0)) then
+										v1706 = 0 + 0;
+										while true do
+											if (v1706 == (1395 - (440 + 955))) then
+												v320[v1604] = nil;
+												v323();
+												break;
+											end
+										end
+										break;
+									end
+								end
+							end
+						end);
+						v1299 = 2 + 0;
+					end
+				end
+			end
+			break;
+		end
+		if (v782 == (1 - 0)) then
+			v784 = game:GetService("Workspace"):FindFirstChild("Enemies");
+			if v783 then
+				local function v1301(v1388)
+					if v1388.Name:find("%[Boss%]") then
+						local v1531 = 0 + 0;
+						local v1532;
+						while true do
+							if (v1531 == 0) then
+								v1532 = v322(v1388.Name);
+								v319[v1532] = true;
+								v1531 = 2 - 1;
+							end
+							if (v1531 == 1) then
+								v320[v1532] = "📍";
+								v323();
+								break;
+							end
+						end
+					end
+				end
+				v783.ChildAdded:Connect(v1301);
+				v783.ChildRemoved:Connect(function(v1389)
+					local v1390 = 0 + 0;
+					local v1391;
+					while true do
+						if (v1390 == (353 - (260 + 93))) then
+							v1391 = v322(v1389.Name);
+							if (v320[v1391] == "📍") then
+								local v1709 = 0 + 0;
+								local v1710;
+								while true do
+									if ((0 - 0) == v1709) then
+										v1710 = 0 - 0;
+										while true do
+											if (v1710 == (1974 - (1181 + 793))) then
+												v320[v1391] = nil;
+												v323();
+												break;
+											end
+										end
+										break;
+									end
+								end
+							end
+							break;
+						end
+					end
+				end);
+				for v1392, v1393 in pairs(v783:GetChildren()) do
+					v1301(v1393);
+				end
+			end
+			v782 = 1 + 1;
+		end
+		if (v782 == (307 - (105 + 202))) then
+			v783 = game:GetService("Workspace"):FindFirstChild("_WorldOrigin");
+			if v783 then
+				v783 = v783:FindFirstChild("EnemySpawns");
+			end
+			v782 = 1 + 0;
+		end
+	end
+end
+task.spawn(v324);
+local v325 = v291("--- 特殊島 出現状況 ---");
+v325.TextColor3 = Color3.fromRGB(255, 860 - (352 + 458), 0);
+local function v327(v785)
+	local v786 = v291(v785 .. " : ❌");
+	v786.TextSize = 14;
+	return v786;
+end
+local v328 = v327("Mirage Island");
+local v329 = v327("Kitsune Island");
+local v330 = v327("Frozen Dimension");
+local v331 = v327("Prehistoric Island");
+local v332 = {["Mirage Island"]=v328,["Kitsune Island"]=v329,["Frozen Dimension"]=v330,["Prehistoric Island"]=v331};
+task.spawn(function()
+	local v788 = 0 - 0;
+	local v789;
+	while true do
+		if (v788 == 0) then
+			v789 = game:GetService("Workspace"):FindFirstChild("Map");
+			while task.wait(7 - 4) do
+				if not v789 then
+					continue;
+				end
+				for v1302, v1303 in pairs(v332) do
+					v1303.Text = v1302 .. " : ❌";
+					v1303.TextColor3 = Color3.fromRGB(150, 150, 150);
+				end
+				for v1306, v1307 in pairs(v789:GetChildren()) do
+					if v332[v1307.Name] then
+						v332[v1307.Name].Text = v1307.Name .. " : ⭕";
+						v332[v1307.Name].TextColor3 = Color3.fromRGB(0, 247 + 8, 0);
+					end
+				end
+			end
+			break;
+		end
+	end
+end);
+local v217 = -(584586.48 - 384590);
+local v333 = false;
+local v218 = nil;
+local v334 = {};
+local v335 = false;
+v9.FinalZ = v9.FinalZ or false;
+local function v337()
+	local v790 = 949 - (438 + 511);
+	while true do
+		if (v790 == (1384 - (1262 + 121))) then
+			if (v1.Character and v1.Character:FindFirstChild("Humanoid")) then
+				workspace.CurrentCamera.CameraSubject = v1.Character.Humanoid;
+			end
+			if v218 then
+				local v1310 = v1.Character and v1.Character:FindFirstChild("HumanoidRootPart");
+				if (v1310 and (v1.Character.Humanoid.Health > 0)) then
+					v1310.CFrame = v218.HumanoidRootPart.CFrame;
+				end
+				v218:Destroy();
+				v218 = nil;
+			end
+			break;
+		end
+		if ((1068 - (728 + 340)) == v790) then
+			v333 = false;
+			workspace.CurrentCamera.CameraType = Enum.CameraType.Custom;
+			v790 = 1791 - (816 + 974);
+		end
+	end
+end
+local function v338(v791)
+	local v792 = 0;
+	local v793;
+	local v794;
+	while true do
+		if (v792 == 0) then
+			if (v333 or not v9.FinalZ) then
+				return;
+			end
+			v333 = true;
+			v793 = v1.Character;
+			v794 = v793 and v793:FindFirstChild("HumanoidRootPart");
+			v792 = 2 - 1;
+		end
+		if (v792 == 2) then
+			for v1211, v1212 in ipairs(v218:GetDescendants()) do
+				if v1212:IsA("BasePart") then
+					v1212.CanCollide = false;
+				end
+			end
+			v218.HumanoidRootPart.CFrame = CFrame.new(v791 + Vector3.new(0, 10 - 7, 339 - (163 + 176)));
+			workspace.CurrentCamera.CameraSubject = v218.Humanoid;
+			task.spawn(function()
+				local v1213 = 0 - 0;
+				local v1214;
+				while true do
+					if (v1213 == 1) then
+						v337();
+						break;
+					end
+					if (v1213 == (0 - 0)) then
+						v1214 = tick();
+						while v333 and v9.FinalZ do
+							if (((tick() - v1214) > (1.5 + 0)) or (v793.Humanoid.Health <= 0)) then
+								break;
+							end
+							v794.CFrame = CFrame.new(v794.Position.X, v217, v794.Position.Z);
+							v794.AssemblyLinearVelocity = Vector3.zero;
+							game:GetService("RunService").Heartbeat:Wait();
+						end
+						v1213 = 1;
+					end
+				end
+			end);
+			break;
+		end
+		if (v792 == 1) then
+			if not v794 then
+				return;
+			end
+			v793.Archivable = true;
+			v218 = v793:Clone();
+			v218.Parent = workspace;
+			v792 = 1812 - (1564 + 246);
+		end
+	end
+end
+local function v339(v795)
+	local v796 = v795:WaitForChild("Humanoid");
+	v795.ChildAdded:Connect(function(v913)
+		if ((v913.Name == "TridentGrabZ") and v9.FinalZ) then
+			local v1121 = 345 - (124 + 221);
+			local v1122;
+			local v1123;
+			while true do
+				if (v1121 == (1 + 0)) then
+					v1123 = ((typeof(v1122) == "Vector3") and v1122) or (v1122:IsA("Model") and v1122:FindFirstChild("HumanoidRootPart") and v1122.HumanoidRootPart.Position);
+					if v1123 then
+						v338(v1123);
+					end
+					break;
+				end
+				if (v1121 == 0) then
+					task.wait();
+					v1122 = v913.Value;
+					v1121 = 1;
+				end
+			end
+		end
+	end);
+	v796.AnimationPlayed:Connect(function(v914)
+		if (v914.Name == "Saddi_Z_Attack") then
+			local v1124 = 451 - (115 + 336);
+			while true do
+				if (v1124 == 0) then
+					v335 = true;
+					task.delay(1, function()
+						v335 = false;
+					end);
+					break;
+				end
+			end
+		end
+	end);
+	game:GetService("RunService").Heartbeat:Connect(function()
+		if (not v335 or not v9.FinalZ) then
+			return;
+		end
+		local v915 = v795:FindFirstChild("HumanoidRootPart");
+		if not v915 then
+			return;
+		end
+		for v996, v997 in ipairs(game.Players:GetPlayers()) do
+			if ((v997 ~= v1) and v997.Character) then
+				local v1215 = 0;
+				local v1216;
+				local v1217;
+				local v1218;
+				while true do
+					if (v1215 == (1 - 0)) then
+						v1218 = nil;
+						while true do
+							if (v1216 == 0) then
+								v1217 = v997.Character:FindFirstChildOfClass("Humanoid");
+								v1218 = v997.Character:FindFirstChild("HumanoidRootPart");
+								v1216 = 1;
+							end
+							if ((1 + 0) == v1216) then
+								if (v1217 and v1218 and (v1217.Health > (46 - (45 + 1)))) then
+									if (v334[v997] and (v1217.Health < v334[v997])) then
+										if ((v1218.Position - v915.Position).Magnitude < (7 + 113)) then
+											local v1806 = 0;
+											while true do
+												if (v1806 == (1990 - (1282 + 708))) then
+													v335 = false;
+													v338(v1218.Position);
+													break;
+												end
+											end
+										end
+									end
+									v334[v997] = v1217.Health;
+								end
+								break;
+							end
+						end
+						break;
+					end
+					if (v1215 == 0) then
+						v1216 = 1212 - (583 + 629);
+						v1217 = nil;
+						v1215 = 1 + 0;
+					end
+				end
+			end
+		end
+	end);
+end
+if v1.Character then
+	v339(v1.Character);
+end
+v1.CharacterAdded:Connect(v339);
+if v108 then
+	v103(v108, "Final-Z (Trident/Saddi)", v9.FinalZ, function(v998)
+		local v999 = 0;
+		while true do
+			if (0 == v999) then
+				v9.FinalZ = v998;
+				if not v998 then
+					v337();
+				end
+				break;
+			end
+		end
+	end);
+end
+local function v340(v797)
+	local v798 = 0;
+	local v799;
+	local v800;
+	local v801;
+	while true do
+		if ((2 - 1) == v798) then
+			v801 = nil;
+			while true do
+				if (v799 == 0) then
+					v800 = game:GetService("ReplicatedStorage"):WaitForChild("Remotes");
+					v801 = {"CommF","CommF_","CommE"};
+					v799 = 1;
+				end
+				if (v799 == (1 + 0)) then
+					for v1462, v1463 in pairs(v801) do
+						local v1464 = 0;
+						local v1465;
+						while true do
+							if (v1464 == (1631 - (1539 + 92))) then
+								v1465 = v800:FindFirstChild(v1463);
+								if v1465 then
+									pcall(function()
+										if v1465:IsA("RemoteFunction") then
+											v1465:InvokeServer("SetTeam", v797);
+										else
+											v1465:FireServer("SetTeam", v797);
+										end
+									end);
+								end
+								break;
+							end
+						end
+					end
+					v12("Team changed to: " .. v797);
+					break;
+				end
+			end
+			break;
+		end
+		if (v798 == (1946 - (706 + 1240))) then
+			v799 = 0;
+			v800 = nil;
+			v798 = 259 - (81 + 177);
+		end
+	end
+end
+if v108 then
+	local v916 = 0;
+	local v917;
+	while true do
+		if (v916 == 2) then
+			v917.TextColor3 = Color3.fromRGB(720 - 465, 255, 255);
+			v917.Font = Enum.Font.SourceSansBold;
+			v916 = 260 - (212 + 45);
+		end
+		if ((9 - 6) == v916) then
+			v917.TextSize = 16;
+			v105(v108, "Pirate", function()
+				v340("Pirates");
+			end);
+			v916 = 1950 - (708 + 1238);
+		end
+		if (v916 == (1 + 0)) then
+			v917.BackgroundTransparency = 1;
+			v917.Text = "--- Team Changer ---";
+			v916 = 1 + 1;
+		end
+		if (v916 == 4) then
+			v105(v108, "Marine", function()
+				v340("Marines");
+			end);
+			break;
+		end
+		if (v916 == 0) then
+			v917 = Instance.new("TextLabel", v108);
+			v917.Size = UDim2.new(1668 - (586 + 1081), -(521 - (348 + 163)), 0 + 0, 30);
+			v916 = 1;
+		end
+	end
+end
+local v278 = game:GetService("ReplicatedStorage");
+local v147 = game:GetService("RunService");
+local v341 = v278:WaitForChild("Modules"):WaitForChild("Net");
+local v342 = v341["RE/RegisterAttack"];
+local v343 = v341["RE/RegisterHit"];
+local v344 = v341["RE/ShootGunEvent"];
+v9.GunM1 = false;
+local v346 = 160;
+local v347 = 282 - (215 + 65);
+local function v348()
+	local v802 = 0 - 0;
+	local v803;
+	local v804;
+	local v805;
+	local v806;
+	while true do
+		if (v802 == (1860 - (1541 + 318))) then
+			if not v804 then
+				return nil;
+			end
+			v805, v806 = nil, v346;
+			v802 = 2 + 0;
+		end
+		if (v802 == (2 + 0)) then
+			local v1125 = 0 + 0;
+			while true do
+				if (v1125 == (1750 - (1036 + 714))) then
+					for v1466, v1467 in pairs({workspace:FindFirstChild("Enemies"),workspace:FindFirstChild("Characters")}) do
+						if v1467 then
+							for v1681, v1682 in pairs(v1467:GetChildren()) do
+								if ((v1682 ~= v803) and v1682:FindFirstChild("Humanoid") and (v1682.Humanoid.Health > (0 + 0))) then
+									local v1737 = 0 + 0;
+									local v1738;
+									while true do
+										if (v1737 == (1280 - (883 + 397))) then
+											v1738 = v1682:FindFirstChild("HumanoidRootPart");
+											if (v1738 and ((v804.Position - v1738.Position).Magnitude < v806)) then
+												v806 = (v804.Position - v1738.Position).Magnitude;
+												v805 = {v1682,v1738};
+											end
+											break;
+										end
+									end
+								end
+							end
+						end
+					end
+					return v805;
+				end
+			end
+		end
+		if (v802 == 0) then
+			v803 = v1.Character;
+			v804 = v803 and v803:FindFirstChild("HumanoidRootPart");
+			v802 = 591 - (563 + 27);
+		end
+	end
+end
+v147.Stepped:Connect(function()
+	if not v9.GunM1 then
+		return;
+	end
+	local v807 = v1.Character;
+	local v808 = v807 and v807:FindFirstChildOfClass("Tool");
+	if not v808 then
+		return;
+	end
+	local v809 = v348();
+	if not v809 then
+		return;
+	end
+	local v810, v811 = v809[3 - 2], v809[2];
+	pcall(function()
+		local v918 = 1986 - (1369 + 617);
+		local v919;
+		while true do
+			if (v918 == (1487 - (85 + 1402))) then
+				v919 = 0 + 0;
+				while true do
+					if (v919 == 1) then
+						if v808:FindFirstChild("LeftClickRemote") then
+							v808.LeftClickRemote:FireServer((v811.Position - v807:GetPivot().Position).Unit, 2 - 1);
+						end
+						break;
+					end
+					if ((403 - (274 + 129)) == v919) then
+						for v1536 = 218 - (12 + 205), v347 do
+							v342:FireServer(0 + 0);
+							v343:FireServer(v811, {{v810,v811}});
+						end
+						if (v808.ToolTip == "Gun") then
+							local v1605 = 480 - (91 + 389);
+							local v1606;
+							local v1607;
+							while true do
+								if (v1605 == (297 - (90 + 207))) then
+									v344:FireServer(v811.Position, {v811});
+									v808:Activate();
+									v1605 = 1;
+								end
+								if ((862 - (706 + 155)) == v1605) then
+									v1606 = v808:FindFirstChild("RemoteEvent") or v808:FindFirstChildOfClass("RemoteEvent");
+									if v1606 then
+										v1606:FireServer("Down", v811.Position);
+									end
+									v1605 = 1797 - (730 + 1065);
+								end
+								if (v1605 == (1565 - (1339 + 224))) then
+									v1607 = v807:FindFirstChildOfClass("Humanoid");
+									if v1607 then
+										for v1794, v1795 in pairs(v1607:GetPlayingAnimationTracks()) do
+											if (v1795.Name:lower():find("gun") or v1795.Name:lower():find("shoot")) then
+												v1795:AdjustSpeed(2);
+											end
+										end
+									end
+									break;
+								end
+							end
+						end
+						v919 = 1 + 0;
+					end
+				end
+				break;
+			end
+		end
+	end);
+end);
+if v108 then
+	v103(v108, "gun m1", v9.GunM1, function(v1000)
+		local v1001 = 0;
+		while true do
+			if (0 == v1001) then
+				v9.GunM1 = v1000;
+				if v1000 then
+					v12("gun m1 有効");
+				else
+					v12("gun m1 無効");
+				end
+				break;
+			end
+		end
+	end);
+end
+local v349 = game:GetService("RunService");
+local v350 = 624 + 76;
+local v351 = {"LeftUpperArm","LeftLowerArm","LeftHand","RightUpperArm","RightLowerArm","RightHand"};
+v9.BigBuddha = false;
+local function v353()
+	local v812 = 0;
+	local v813;
+	while true do
+		if ((1805 - (323 + 1482)) == v812) then
+			if not v9.BigBuddha then
+				return;
+			end
+			v813 = v1.Character;
+			v812 = 1919 - (1177 + 741);
+		end
+		if (v812 == 2) then
+			v1.CameraMaxZoomDistance = 10 + 130;
+			break;
+		end
+		if (v812 == 1) then
+			if not v813 then
+				return;
+			end
+			for v1226, v1227 in pairs(v351) do
+				local v1228 = 0 - 0;
+				local v1229;
+				while true do
+					if (v1228 == (0 + 0)) then
+						v1229 = v813:FindFirstChild(v1227);
+						if (v1229 and v1229:IsA("BasePart")) then
+							v1229.CanQuery = false;
+							local v1609 = v1229:FindFirstChildOfClass("SpecialMesh") or Instance.new("SpecialMesh", v1229);
+							v1609.MeshType = Enum.MeshType.Brick;
+							v1609.Scale = Vector3.new(v350 * (0.1 - 0), v350, v350 * (0.1 + 0));
+							v1229.Color = Color3.new(1, 1, 110 - (96 + 13));
+							v1229.Material = Enum.Material.Neon;
+							v1229.Transparency = 0.5;
+							local v1617 = v1229:FindFirstChildOfClass("Motor6D");
+							if v1617 then
+								v1617.C0 = CFrame.new(v1617.C0.Position.X, 1921 - (962 + 959), v1617.C0.Position.Z) * CFrame.new(0, v350 / 2, 0);
+							end
+						end
+						break;
+					end
+				end
+			end
+			v812 = 4 - 2;
+		end
+	end
+end
+v349.RenderStepped:Connect(function()
+	if v9.BigBuddha then
+		pcall(v353);
+	end
+end);
+if v108 then
+	v103(v108, "大仏の範囲でかくなる", v9.BigBuddha, function(v1002)
+		local v1003 = 0;
+		while true do
+			if (v1003 == (0 + 0)) then
+				v9.BigBuddha = v1002;
+				if not v1002 then
+					local v1468 = 1351 - (461 + 890);
+					while true do
+						if (v1468 == (0 + 0)) then
+							v1.CameraMaxZoomDistance = 128;
+							v12("大仏範囲: OFF (戻すには再スポーン推奨)");
+							break;
+						end
+					end
+				else
+					v12("大仏範囲: ON ");
+				end
+				break;
+			end
+		end
+	end);
+end
